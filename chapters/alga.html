@@ -78,11 +78,56 @@
             border-radius: 4px;
             margin-top: 8px;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
             transition: background 0.3s;
         }
         .view-btn:hover {
             background-color: #1b5e20;
         }
+
+        /* പോപ്പ്-അപ്പ് (Modal) ഡിസൈൻ */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .modal-content img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .close-btn:hover { color: #000; }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -153,8 +198,8 @@
 
     <h2 class="ml-text">3. ആൽഗകളുടെ ഘടനയും ചിത്രങ്ങളും (NCERT Figure 3.1)</h2>
     <h2 class="en">3. Structure and Figures of Algae (NCERT Figure 3.1)</h2>
-    <p class="ml-text">ചിത്രങ്ങൾ വ്യക്തമായി കാണാൻ താഴെയുള്ള <strong>Click to View</strong> ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുക:</p>
-    <p class="en">Click the buttons below to view the diagrams:</p>
+    <p class="ml-text">ചിത്രങ്ങൾ കാണാൻ താഴെയുള്ള ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുക:</p>
+    <p class="en">Click the buttons below to view diagrams:</p>
 
     <div class="image-gallery">
         <!-- Volvox -->
@@ -163,7 +208,7 @@
             <h4 class="en">(a) Volvox</h4>
             <p class="ml-text">കൊളോണിയൽ പച്ച ആൽഗ.</p>
             <p class="en">Colonial green algae.</p>
-            <a href="https://commons.wikimedia.org/wiki/File:Volvox_globator.jpg" target="_blank" class="view-btn">📷 Click to View</a>
+            <button class="view-btn" onclick="openModal('https://upload.wikimedia.org/wikipedia/commons/3/36/Volvox_globator.jpg', 'Volvox (വോൾവോക്സ്)')">📷 Click to View</button>
         </div>
         <!-- Ulothrix -->
         <div class="image-card">
@@ -171,7 +216,7 @@
             <h4 class="en">(b) Ulothrix</h4>
             <p class="ml-text">തന്തുരൂപ പച്ച ആൽഗ.</p>
             <p class="en">Filamentous green algae.</p>
-            <a href="https://commons.wikimedia.org/wiki/File:Ulothrix_zonata.jpg" target="_blank" class="view-btn">📷 Click to View</a>
+            <button class="view-btn" onclick="openModal('https://upload.wikimedia.org/wikipedia/commons/c/c5/Ulothrix_zonata.jpg', 'Ulothrix (യൂലോത്രിക്സ്)')">📷 Click to View</button>
         </div>
         <!-- Laminaria -->
         <div class="image-card">
@@ -179,7 +224,7 @@
             <h4 class="en">(c) Laminaria</h4>
             <p class="ml-text">തവിട്ട് ആൽഗ.</p>
             <p class="en">Brown algae.</p>
-            <a href="https://commons.wikimedia.org/wiki/File:Laminaria_digitata.jpg" target="_blank" class="view-btn">📷 Click to View</a>
+            <button class="view-btn" onclick="openModal('https://upload.wikimedia.org/wikipedia/commons/1/1a/Laminaria_digitata.jpg', 'Laminaria (ലാമിനേരിയ)')">📷 Click to View</button>
         </div>
         <!-- Fucus -->
         <div class="image-card">
@@ -187,7 +232,7 @@
             <h4 class="en">(d) Fucus</h4>
             <p class="ml-text">മറ്റൊരു തവിട്ട് ആൽഗ.</p>
             <p class="en">Another brown algae.</p>
-            <a href="https://commons.wikimedia.org/wiki/File:Fucus_vesiculosus_01.JPG" target="_blank" class="view-btn">📷 Click to View</a>
+            <button class="view-btn" onclick="openModal('https://upload.wikimedia.org/wikipedia/commons/6/6f/Fucus_vesiculosus_01.JPG', 'Fucus (ഫ്യൂക്കസ്)')">📷 Click to View</button>
         </div>
     </div>
 
@@ -255,6 +300,15 @@
 
 </div>
 
+<!-- ഫോട്ടോ പോപ്പ്-അപ്പ് കാണിക്കാനുള്ള മോഡൽ ബോക്സ് -->
+<div id="imageModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle" style="color: #1b5e20; margin-top: 5px; font-size: 16px;"></h3>
+        <img id="modalImg" src="" alt="Diagram">
+    </div>
+</div>
+
 <script>
     let isEnglish = false;
     function toggleLanguage() {
@@ -271,6 +325,26 @@
             mlElements.forEach(el => el.style.display = 'block');
             enElements.forEach(el => el.style.display = 'none');
             btn.innerText = "Switch to English / മലയാളം";
+        }
+    }
+
+    // മോഡൽ ഓപ്പൺ ചെയ്യാൻ
+    function openModal(imgSrc, title) {
+        document.getElementById('imageModal').style.display = 'flex';
+        document.getElementById('modalImg').src = imgSrc;
+        document.getElementById('modalTitle').innerText = title;
+    }
+
+    // മോഡൽ ക്ലോസ് ചെയ്യാൻ
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // മോഡലിന് പുറത്ത് ക്ലിക്ക് ചെയ്താലും ക്ലോസ് ആകാൻ
+    window.onclick = function(event) {
+        let modal = document.getElementById('imageModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
     }
 
