@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ml" class="notranslate" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Animal Kingdom - Detailed Study Pages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 15px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .lang-btn {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .lang-btn:hover {
+            background-color: #0369a1;
+        }
+        .intro-box {
+            background-color: #e3f2fd;
+            border-left: 6px solid #1976d2;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .main-title {
+            text-align: center;
+            background-color: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        .kingdom-title {
+            text-align: center;
+            background-color: #0f172a;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .subkingdom-box {
+            flex: 1;
+            min-width: 320px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+        }
+        .sub-title-inv {
+            text-align: center;
+            color: #1d4ed8;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #bfdbfe;
+            padding-bottom: 8px;
+        }
+        .sub-title-ver {
+            text-align: center;
+            color: #15803d;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #bbf7d0;
+            padding-bottom: 8px;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .card, .ver-card {
+            background: white;
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s ease;
+            display: block;
+        }
+        .card:hover, .ver-card:hover {
+            background-color: #f1f5f9;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        .card-title, .ver-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #0f172a;
+        }
+        .card-desc, .ver-desc {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .ver-card {
+            margin-bottom: 10px;
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Detail Page View Style */
+        .detail-page {
+            display: none;
+            margin-top: 20px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+        }
+        .detail-page.active {
+            display: block;
+        }
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .back-btn {
+            background-color: #ef4444;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .back-btn:hover {
+            background-color: #dc2626;
+        }
+        .animal-image {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            background-color: #f8fafc;
+            border: 1px solid #ddd;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .animal-image:hover {
+            opacity: 0.9;
+        }
+        .click-hint {
+            text-align: center;
+            font-size: 12px;
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Modal Popup CSS for Larger View */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .info-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        /* Chapter 4 Trigger Box Style */
+        .chapter-trigger-box {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: 0.2s ease;
+        }
+        .chapter-trigger-box:hover {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            transform: translateY(-2px);
+        }
+        .chapter-trigger-title {
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #38bdf8;
+        }
+
+        @media(max-width: 768px) {
+            .grid-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="notranslate" translate="no">
+
+<div class="container notranslate" translate="no">
+
+    <!-- MAIN FLOWCHART VIEW (Home) -->
+    <div id="home-view">
+        <div class="top-bar">
+            <button class="lang-btn" onclick="toggleLanguage()">English / മലയാളം</button>
+        </div>
+
+        <div class="intro-box" id="introText">
+            ജന്തുലോകത്തെ വർഗ്ഗീകരണം കുട്ടികൾക്ക് എളുപ്പത്തിൽ പഠിക്കാൻ വേണ്ടി തയ്യാറാക്കിയതാണ്. താഴെയുള്ള ബോക്സുകളിൽ ക്ലിക്ക് ചെയ്താൽ ഓരോ വിഭാഗത്തിന്റെയും <b>ഫോട്ടോയും വിശദമായ വിവരണവും അടങ്ങിയ പ്രത്യേക പേജിലേക്ക്</b> പോകാം.
+        </div>
+
+        <div class="main-title">CLASSIFICATION OF THE ANIMAL KINGDOM: VERTEBRATES & INVERTEBRATES</div>
+        <div class="kingdom-title">KINGDOM: ANIMALIA (Multicellular, Eukaryotic)</div>
+
+        <div class="flex-container">
+            
+            <!-- INVERTEBRATA -->
+            <div class="subkingdom-box">
+                <div class="sub-title-inv" id="sub1Title">SUBKINGDOM: INVERTEBRATA (Non-chordates)</div>
+                <div class="grid-cards">
+                    <a href="#" onclick="showPage('porifera')" class="card">
+                        <div class="card-title">Porifera</div>
+                        <div class="card-desc">Sponges</div>
+                    </a>
+                    <a href="#" onclick="showPage('coelenterata')" class="card">
+                        <div class="card-title">Coelenterata</div>
+                        <div class="card-desc">Jellyfish</div>
+                    </a>
+                    <a href="#" onclick="showPage('platyhelminthes')" class="card">
+                        <div class="card-title">Platyhelminthes</div>
+                        <div class="card-desc">Flatworms</div>
+                    </a>
+                    <a href="#" onclick="showPage('nematoda')" class="card">
+                        <div class="card-title">Nematoda</div>
+                        <div class="card-desc">Roundworms</div>
+                    </a>
+                    <a href="#" onclick="showPage('annelida')" class="card">
+                        <div class="card-title">Annelida</div>
+                        <div class="card-desc">Segmented</div>
+                    </a>
+                    <a href="#" onclick="showPage('arthropoda')" class="card">
+                        <div class="card-title">Arthropoda</div>
+                        <div class="card-desc">Insects</div>
+                    </a>
+                    <a href="#" onclick="showPage('mollusca')" class="card">
+                        <div class="card-title">Mollusca</div>
+                        <div class="card-desc">Snails</div>
+                    </a>
+                    <a href="#" onclick="showPage('echinodermata')" class="card">
+                        <div class="card-title">Echinodermata</div>
+                        <div class="card-desc">Starfish</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- VERTEBRATA -->
+            <div class="subkingdom-box">
+                <div class="sub-title-ver" id="sub2Title">SUBKINGDOM: VERTEBRATA (Chordates)</div>
+                
+                <a href="#" onclick="showPage('agnatha')" class="ver-card">
+                    <div class="ver-title">SUPERCLASS: AGNATHA</div>
+                    <div class="ver-desc">Jawless Fishes (Hagfish, Lamprey)</div>
+                </a>
+
+                <a href="#" onclick="showPage('pisces')" class="ver-card">
+                    <div class="ver-title">CLASS: PISCES (Fish)</div>
+                    <div class="ver-desc">True Fishes (Salmon, Shark)</div>
+                </a>
+
+                <a href="#" onclick="showPage('tetrapoda')" class="ver-card">
+                    <div class="ver-title">CLASS: TETROPODA</div>
+                    <div class="ver-desc">Amphibia, Reptilia, Aves, Mammalia</div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Back to Chapter 4 Trigger Box (Home View) -->
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title" id="ch4TextHome">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+
+    <!-- INDIVIDUAL DETAIL PAGES WITH LOCAL FOLDER IMAGES -->
+
+    <!-- 1. Porifera -->
+    <div id="porifera" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Porifera (Sponges)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="porifera.jpg" alt="Porifera Sponge" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ഇവ പൊതുവെ 'സ്പോഞ്ചുകൾ' എന്നറിയപ്പെടുന്നു. അധികവും സമുദ്രജീവികളായ ഇവയ്ക്ക് സുഷിരങ്ങളുള്ള ശരീരഘടനയാണുള്ളത് (Ostia). ജലം ശരീരത്തിനുള്ളിലൂടെ കടന്നുപോയാണ് ഇവ പോഷകങ്ങളും ഓക്സിജനും സ്വീകരിക്കുന്നത്.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Sycon, Spongilla, Euspongia.</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 2. Coelenterata -->
+    <div id="coelenterata" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Coelenterata (Cnidaria)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="coelenterata.jpg" alt="Jellyfish" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ജലജീവികളായ ഇവയ്ക്ക് ഇരപിടിക്കാൻ സഹായിക്കുന്ന 'നൈഡോബ്ലാസ്റ്റ്' (Cnidoblasts) കോശങ്ങളുണ്ട്. ജെല്ലിഫിഷ്, ഹൈഡ തുടങ്ങിയവ ഈ വിഭാഗത്തിൽ പെടുന്നു.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Hydra, Aurelia (Jellyfish), Sea Anemone.</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 3. Platyhelminthes -->
+    <div id="platyhelminthes" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Platyhelminthes (Flatworms)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="platyhelminthes.jpg" alt="Flatworm" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ചാപപ്പുഴുക്കൾ അഥവാ ഫ്ലാറ്റ്‌വേംസ് എന്നറിയപ്പെടുന്നു. ഇവയുടെ ശരീരം ഡോർസോവെൻട്രലി പരന്നതാണ് (Flat body). മിക്കവയും മനുഷ്യരിലും മറ്റ് ജീവികളിലും পরജീവികളായി (Parasites) ജീവിക്കുന്നു.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Planaria, Liver fluke, Tapeworm.</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 4. Nematoda -->
+    <div id="nematoda" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Nematoda (Roundworms)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="nematoda.jpg" alt="Roundworm" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ഉരുണ്ട ശരീരമുള്ള വിരകളാണ് നെമറ്റോഡകൾ. ഇവയുടെ ശരീരക്കുഴി സ്യൂഡോസിലോമേറ്റ് (Pseudocoelomate) ആണ്.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Ascaris (ഉരുളൻപുഴു), Wuchereria (Filarial worm).</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 5. Annelida -->
+    <div id="annelida" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Annelida (Segmented Worms)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="annelida.jpg" alt="Earthworm" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ശരീരം ഖണ്ഡങ്ങളായി (Segments / Metameres) തിരിഞ്ഞിരിക്കുന്ന ജീവികൾ. നെഫ്രീഡിയ (Nephridia) ആണ് ഇവയിലെ വിസർജ്ജനാംഗം.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Earthworm (മണ്ണിര), Nereis, Leech (അട്ട).</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 6. Arthropoda -->
+    <div id="arthropoda" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Arthropoda (Insects)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="arthropoda.jpg" alt="Arthropod Insect" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ജന്തുലോകത്തിലെ ഏറ്റവും വലിയ ഫൈലം (Phylum). സന്ധികളുള്ള കാലുകളും (Jointed appendages) കൈറ്റിൻ കൊണ്ടുള്ള പുറംതോടും (Chitinous exoskeleton) ഇവയുടെ പ്രത്യേകതയാണ്.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Honeybee, Silkworm, Cockroach, Crab, Prawn.</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 7. Mollusca -->
+    <div id="mollusca" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Mollusca</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="mollusca.jpg" alt="Snail Mollusca" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ജന്തുലോകത്തിലെ രണ്ടാമത്തെ വലിയ ഫൈലം. മൃദുവായ ശരീരമുള്ള ഇവ സാധാരണയായി കാൽസ്യം കാർബണേറ്റ് കൊണ്ടുള്ള തോടുകളാൽ (Shell) സംരക്ഷിക്കപ്പെട്ടിരിക്കുന്നു.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Pila (നത്തക്കണ്ണൻ/ഒച്ച്), Octopus, Sepia (Cuttlefish).</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 8. Echinodermata -->
+    <div id="echinodermata" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Phylum: Echinodermata</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="echinodermata.jpg" alt="Starfish" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">മുള്ളൻ തൊലിയുള്ള സമുദ്രജീവികൾ (Spiny-skinned). ഇവയ്ക്ക് ജലസംവഹന വ്യവസ്ഥ (Water vascular system) ഉണ്ട്.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Starfish (സ്റ്റാർഫിഷ്), Sea urchin, Sea cucumber.</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 9. Agnatha -->
+    <div id="agnatha" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Superclass: Agnatha</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="agnatha.jpg" alt="Lamprey Agnatha" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">ത്താടകളില്ലാത്ത (Jawless) മത്സ്യവിഭാഗം. ഇവയുടെ വായ വട്ടത്തിലുള്ളതും മറ്റ് മീനുകളുടെ ശരീരത്തിൽ പറ്റിപ്പിടിച്ച് രക്തം കുടിക്കാൻ പാകത്തിലുള്ളതുമാണ്.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Hagfish (Myxine), Lamprey (Petromyzon).</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 10. Pisces -->
+    <div id="pisces" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Class: Pisces (Fishes)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="pisces.jpg" alt="Shark Pisces" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">യഥാർത്ഥ മത്സ്യ വിഭാഗം. ചെകിളകൾ (Gills) വഴി ശ്വസനം നടത്തുന്നു. ഇവയെ തരുണാസ്ഥി മത്സ്യങ്ങൾ (Cartilaginous - ഉദാ: സ്രാമ്പ്) എന്നും അസ്ഥി മത്സ്യങ്ങൾ (Bony fishes - ഉദാ: മത്തി, രോഹു) എന്നും രണ്ടായി തിരിക്കാം.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Shark, Stingray, Rohu, Catla.</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+    <!-- 11. Tetrapoda -->
+    <div id="tetrapoda" class="detail-page">
+        <div class="detail-header">
+            <h2 class="pageHeading">Class: Tetrapoda (Amphibia, Reptilia, Aves, Mammalia)</h2>
+            <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+        </div>
+        <img src="tetrapoda.jpg" alt="Tetrapods" class="animal-image" onclick="openModal(this)">
+        <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
+        <div class="info-box">
+            <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
+            <p class="descContent">നാല് കാലുകളോ അവയുടെ പരിണമിച്ച രൂപങ്ങളോ ഉള്ള കരജീവികളും ഉന്നത ജന്തുക്കളും. ഉഭയജീവികൾ (Amphibia), ഉരഗങ്ങൾ (Reptilia), പക്ഷികൾ (Aves), സസ്തനികൾ (Mammalia) എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു.</p>
+            <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> തവള (Frog), പാമ്പ് (Snake), കാക്ക (Crow), മനുഷ്യൻ (Human).</p>
+        </div>
+        <div class="chapter-trigger-box" onclick="goToChapterFour()">
+            <div class="chapter-trigger-title ch4TextDetail">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Image Zoom Modal Popup Container -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<!-- JavaScript for Navigation, Language & Image Popup -->
+<script>
+    let currentLang = 'ml';
+
+    function showPage(pageId) {
+        document.getElementById('home-view').style.display = 'none';
+        let pages = document.getElementsByClassName('detail-page');
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].classList.remove('active');
+        }
+        document.getElementById(pageId).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goHome() {
+        let pages = document.getElementsByClassName('detail-page');
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].classList.remove('active');
+        }
+        document.getElementById('home-view').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+   // Function for Chapter 4 Navigation
+    function goToChapterFour() {
+        // ഇവിടെ 'chapter4.html' എന്നതിന് പകരം താങ്കളുടെ നാലാം അധ്യായമുള്ള പേജിന്റെ യഥാർത്ഥ പേര് നൽകുക
+        window.location.href = "chapter4.html";
+    }
+
+    // Modal Image Functions
+    function openModal(imgElement) {
+        let modal = document.getElementById('imageModal');
+        let modalImg = document.getElementById('modalImg');
+        modal.style.display = "flex";
+        modalImg.src = imgElement.src;
+    }
+
+    function closeModal() {
+        document.getElementById('imageModal').style.display = "none";
+    }
+
+    function toggleLanguage() {
+        let introText = document.getElementById('introText');
+        let sub1 = document.getElementById('sub1Title');
+        let sub2 = document.getElementById('sub2Title');
+        let descTitles = document.getElementsByClassName('descTitle');
+        let descContents = document.getElementsByClassName('descContent');
+        let backBtns = document.querySelectorAll('.back-btn');
+        let clickHints = document.getElementsByClassName('click-hint');
+        let ch4Home = document.getElementById('ch4TextHome');
+        let ch4Details = document.getElementsByClassName('ch4TextDetail');
+
+        if (currentLang === 'ml') {
+            introText.innerHTML = "Animal kingdom classification prepared for easy learning. Click on the boxes below to go to the specific page containing photos and detailed descriptions of each group.";
+            sub1.innerHTML = "SUBKINGDOM: INVERTEBRATA (Non-chordates)";
+            sub2.innerHTML = "SUBKINGDOM: VERTEBRATA (Chordates)";
+
+            for (let t of descTitles) { t.innerHTML = "Detailed Description:"; }
+            for (let c of descContents) { 
+                c.innerHTML = "Detailed information regarding this animal group, body structure, characteristics, and physiological features for academic study."; 
+            }
+            for (let b of backBtns) { b.innerHTML = "← Back to Home Page"; }
+            for (let h of clickHints) { h.innerHTML = "🔍 Click on the image to view larger"; }
+            
+            ch4Home.innerHTML = "← Back to Chapter Number Four";
+            for (let cd of ch4Details) { cd.innerHTML = "← Back to Chapter Number Four"; }
+
+            currentLang = 'en';
+        } else {
+            introText.innerHTML = "ജന്തുലോകത്തെ വർഗ്ഗീകരണം കുട്ടികൾക്ക് എളുപ്പത്തിൽ പഠിക്കാൻ വേണ്ടി തയ്യാറാക്കിയതാണ്. താഴെയുള്ള ബോക്സുകളിൽ ക്ലിക്ക് ചെയ്താൽ ഓരോ വിഭാഗത്തിന്റെയും <b>ഫോട്ടോയും വിശദമായ വിവരണവും അടങ്ങിയ പ്രത്യേക പേജിലേക്ക്</b> പോകാം.";
+            sub1.innerHTML = "SUBKINGDOM: INVERTEBRATA (Non-chordates)";
+            sub2.innerHTML = "SUBKINGDOM: VERTEBRATA (Chordates)";
+
+            for (let t of descTitles) { t.innerHTML = "വിശദ വിവരങ്ങൾ (Description):"; }
+            for (let c of descContents) { 
+                c.innerHTML = "ഇവ പൊതുവെ 'സ്പോഞ്ചുകൾ' എന്നറിയപ്പെടുന്നു. അധികവും സമുദ്രജീവികളായ ഇവയ്ക്ക് സുഷിരങ്ങളുള്ള ശരീരഘടനയാണുള്ളത് (Ostia). ജലം ശരീരത്തിനുള്ളിലൂടെ കടന്നുപോയാണ് ഇവ പോഷകങ്ങളും ഓക്സിജനും സ്വീകരിക്കുന്നത്."; 
+            }
+            for (let b of backBtns) { b.innerHTML = "← ഹോം പേജിലേക്ക് മടങ്ങുക"; }
+            for (let h of clickHints) { h.innerHTML = "🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക"; }
+
+            ch4Home.innerHTML = "← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)";
+            for (let cd of ch4Details) { cd.innerHTML = "← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)"; }
+
+            currentLang = 'ml';
+        }
+    }
+</script>
+
+</body>
+</html>

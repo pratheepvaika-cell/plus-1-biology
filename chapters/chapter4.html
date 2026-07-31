@@ -1,32 +1,339 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 4: Animal Kingdom</title>
+    <title>Animal Kingdom - Complete Study Notes & Deep Dive</title>
     <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.8; margin: 20px; padding: 20px; background-color: #f8fafc; color: #334155; }
-        .container { max-width: 850px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; }
-        h1, h2 { color: #0f172a; }
-        ul { margin-bottom: 25px; padding-left: 20px; }
+        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 20px; line-height: 1.7; scroll-behavior: smooth; }
+        .container { max-width: 900px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
+        
+        .nav-buttons {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .lang-switch, .workout-btn {
+            padding: 0 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            box-sizing: border-box;
+            border: 2px solid #2563eb !important;
+            background-color: #eff6ff !important;
+            color: #2563eb !important;
+            white-space: nowrap;
+        }
+        
+        .lang-switch:hover, .workout-btn:hover {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+        }
+
+        /* Classification Jump Button Styling */
+        .chart-jump-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px dashed #22c55e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 25px 0;
+        }
+        .chart-jump-btn {
+            display: inline-block;
+            background-color: #16a34a;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+            transition: 0.2s;
+        }
+        .chart-jump-btn:hover {
+            background-color: #15803d;
+            transform: translateY(-2px);
+        }
+
+        h1 { color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 25px; margin-bottom: 20px; padding-right: 280px; }
+        h2 { font-size: 18px; margin-top: 30px; color: #1e293b; background: #f1f5f9; padding: 10px 15px; border-radius: 6px; border-left: 4px solid #2563eb; }
+        h3 { font-size: 16px; color: #334155; margin-top: 20px; }
+        
+        p, li { font-size: 15px; }
+        ul { margin-bottom: 20px; padding-left: 20px; }
         li { margin-bottom: 10px; }
-        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #2563eb; padding: 10px 18px; border-radius: 6px; font-weight: 600; }
-        .back-link:hover { background: #1d4ed8; }
+
+        .note-section { margin-bottom: 30px; }
+        
+        .concept-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 6px; margin: 20px 0; font-size: 14px; }
+        .scientist-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px; border-radius: 6px; margin: 20px 0; font-size: 14px; }
+        .intro-box { background: #eaf2f8; border-left: 4px solid #3498db; padding: 15px; border-radius: 6px; margin-bottom: 25px; }
+
+        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; }
+        .back-link:hover { background: #475569; }
+
+        .lang-en { display: none; }
+        .lang-ml { display: block; }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .nav-buttons { position: static; margin-bottom: 20px; justify-content: flex-start; flex-wrap: wrap; }
+            h1 { padding-right: 0; font-size: 20px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Unit I: Diversity in the Living World</h1>
-        <h2>Chapter 4: Animal Kingdom</h2>
-        
-        <h3>Key Concepts:</h3>
-        <ul>
-            <li><strong>Non-Chordates:</strong> Phyla ranging from Porifera to Hemichordata (Sponges, Coelenterates, Flatworms, Roundworms, Annelids, Arthropods, Molluscs, Echinoderms)[cite: 5].</li>
-            <li><strong>Chordates:</strong> Animals characterized by the presence of a notochord, classified into Cyclostomata, Fishes, Amphibians, Reptiles, Aves, and Mammals[cite: 5].</li>
-        </ul>
 
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="container">
+        <div class="nav-buttons">
+            <!-- Workout Button -->
+            <a href="workout_animal_kingdom.html" class="workout-btn">
+                <span class="lang-ml">വർക്ക്ഔട്ട് & എക്സർസൈസ്</span>
+                <span class="lang-en">Workout & Exercises</span>
+            </a>
+            <!-- Language Switch Button -->
+            <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
+        </div>
+
+        <h1 class="lang-ml">ആനിമൽ കിങ്ഡം: ആഴത്തിലുള്ള വിശകലനം (Animal Kingdom - Deep Dive)</h1>
+        <h1 class="lang-en">Animal Kingdom: Deep Dive Study Notes</h1>
+        
+        <div class="note-section">
+            <div class="intro-box">
+                <p class="lang-ml">ബഹുകോശ ജീവികളുടെ (Multicellular Eukaryotic Heterotrophs) ലോകമാണ് <strong>കിങ്ഡം അനിമാലിയ (Kingdom Animalia)</strong>. കോശങ്ങളിൽ സെൽ വാൾ (Cell wall) ഇല്ലാത്തതാണ് ഇവയുടെ പ്രധാന സവിശേഷത. കോടിക്കണക്കിന് ജീവികളെ തിരിച്ചറിയാനും പഠനം എളുപ്പമാക്കാനും നമ്മൾ അവയെ പ്രത്യേക മാനദണ്ഡങ്ങളുടെ അടിസ്ഥാനത്തിൽ തരംതിരിക്കുന്നു.</p>
+                <p class="lang-en">Kingdom Animalia comprises multicellular, eukaryotic heterotrophs whose cells lack cell walls. To identify and organize millions of species, classification based on specific criteria is essential.</p>
+            </div>
+
+            <!-- Classification Chart Quick Link Box -->
+            <div class="chart-jump-box">
+                <p class="lang-ml" style="margin-top:0; font-weight: 600; color: #166534;">ജന്തുലോകത്തിന്റെ ഫോട്ടോകൾ അടങ്ങിയ വിശദമായ ക്ലാസിഫിക്കേഷൻ ചാർട്ട് പരിശോധിക്കാൻ താഴെ ക്ലിക്ക് ചെയ്യുക:</p>
+                <p class="lang-en" style="margin-top:0; font-weight: 600; color: #166534;">Click below to view the detailed Animal Kingdom Classification Chart with pictures:</p>
+                
+                <!-- ഫയലിന്റെ പേര് നിങ്ങളുടെ ക്ലാസിഫിക്കേഷൻ പേജിന്റെ പേരിനനുസരിച്ച് മാറ്റുക (ഉദാ: classification.html) -->
+                <a href="classification.html" class="chart-jump-btn">
+                    <span class="lang-ml">🔍 ക്ലാസിഫിക്കേഷൻ ചാർട്ട് കാണുക (View Classification)</span>
+                    <span class="lang-en">🔍 View Classification Chart</span>
+                </a>
+            </div>
+
+            <h2 class="lang-ml">1. വർഗ്ഗീകരണത്തിന്റെ അടിസ്ഥാന മാനദണ്ഡങ്ങൾ (Basis of Classification)</h2>
+            <h2 class="lang-en">1. Basis of Classification</h2>
+            <p class="lang-ml">ജീവജാലങ്ങളുടെ പരിണാമ ചരിത്രം (Evolutionary history / Phylogeny) മനസ്സിലാക്കാൻ താഴെ പറയുന്ന അടിസ്ഥാന ഘടകങ്ങൾ നിർബന്ധമായും അറിഞ്ഞിരിക്കണം:</p>
+            <p class="lang-en">To understand the evolutionary history (phylogeny) of organisms, the following fundamental features must be known:</p>
+            
+            <h3 class="lang-ml">എ. കോശങ്ങളുടെ സംഘടന (Levels of Organisation)</h3>
+            <h3 class="lang-en">A. Levels of Organisation</h3>
+            <ul>
+                <li class="lang-ml"><strong>സെല്ലുലാർ ലെവൽ (Cellular Level):</strong> കോശങ്ങൾ അയഞ്ഞ രീതിയിൽ നിലനിൽക്കുന്നു, ടിഷ്യൂകൾ രൂപപ്പെടുന്നില്ല. ഡിവിഷൻ ഓഫ് ലേബർ (Division of labor) ഉണ്ട്. (ഉദാഹരണം: പൊരിഫറ / സ്പോഞ്ചുകൾ).</li>
+                <li class="lang-en"><strong>Cellular Level:</strong> Cells are arranged as loose aggregates, no tissues formed. Division of labor is present (e.g., Porifera / Sponges).</li>
+                
+                <li class="lang-ml"><strong>ടിഷ്യൂ ലെവൽ (Tissue Level):</strong> ഒരേപോലെയുള്ള കോശങ്ങൾ ചേർന്ന് ടിഷ്യൂകളായി മാറുന്നു. (ഉദാഹരണം: സീലന്ററേറ്റ / നിഡേരിയ).</li>
+                <li class="lang-en"><strong>Tissue Level:</strong> Cells performing the same function are arranged into tissues (e.g., Coelenterata / Cnidaria).</li>
+
+                <li class="lang-ml"><strong>ഓർഗൻ ലെവൽ (Organ Level):</strong> ടിഷ്യൂകൾ ചേർന്ന് കൃത്യമായ അവയവങ്ങൾ രൂപപ്പെടുന്നു. (ഉദാഹരണം: പ്ലാറ്റിഹെൽമിന്തിസ്).</li>
+                <li class="lang-en"><strong>Organ Level:</strong> Tissues are grouped together to form organs (e.g., Platyhelminthes).</li>
+
+                <li class="lang-ml"><strong>ഓർഗൻ സിസ്റ്റം ലെവൽ (Organ System Level):</strong> അവയവങ്ങൾ ചേർന്ന് സങ്കീർണ്ണമായ ശരീര വ്യവസ്ഥകൾ ഉണ്ടാകുന്നു. (ഉദാഹരണം: അനിലിഡ മുതൽ കോർഡേറ്റ വരെയുള്ളവ).</li>
+                <li class="lang-en"><strong>Organ System Level:</strong> Organs associate to form functional systems (e.g., Annelida to Chordata).</li>
+            </ul>
+
+            <h3 class="lang-ml">ബി. ശരീര സമമിതി (Body Symmetry)</h3>
+            <h3 class="lang-en">B. Body Symmetry</h3>
+            <ul>
+                <li class="lang-ml"><strong>അസിമെട്രിക്കൽ (Asymmetrical):</strong> ശരീരത്തെ കേന്ദ്രത്തിലൂടെ ഏത് പ്ലാനിൽ വെച്ചും തുല്യ പാതികളായി മുറിക്കാൻ കഴിയില്ല. (ഉദാഹരണം: സ്പോഞ്ചുകൾ).</li>
+                <li class="lang-en"><strong>Asymmetrical:</strong> Any plane passing through the center does not divide the body into equal halves (e.g., Sponges).</li>
+
+                <li class="lang-ml"><strong>റേഡിയൽ സിമെട്രി (Radial Symmetry):</strong> കേന്ദ്ര അക്ഷത്തിലൂടെ (Central axis) കടന്നുപോകുന്ന ഏത് പ്ലാനും ശരീരത്തെ തുല്യ പാതികളായി മാറ്റും. (ഉദാഹരണം: ഹൈഡ്ര, ജെല്ലിഫിഷ്, സ്റ്റാർഫിഷ്).</li>
+                <li class="lang-en"><strong>Radial Symmetry:</strong> Any plane passing through the central axis divides the organism into identical halves (e.g., Hydra, Jellyfish, Starfish).</li>
+
+                <li class="lang-ml"><strong>ബിലാറ്ററൽ സിമെട്രി (Bilateral Symmetry):</strong> ശരീരത്തെ ഒരേയൊരു പ്ലാനിലൂടെ മാത്രം (Left and Right halves) തുല്യമായി മുറിക്കാൻ സാധിക്കും. (ഉദാഹരണം: മനുഷ്യൻ, പൂച്ചെടി, ആർത്രോപോഡുകൾ).</li>
+                <li class="lang-en"><strong>Bilateral Symmetry:</strong> The body can be divided into identical left and right halves in only one plane (e.g., Humans, Arthropods).</li>
+            </ul>
+
+            <h3 class="lang-ml">സി. ബീജപാളികൾ (Germ Layers)</h3>
+            <h3 class="lang-en">C. Germ Layers</h3>
+            <p class="lang-ml">ഭ്രൂണവളർച്ചയുടെ ആദ്യഘട്ടത്തിൽ സെല്ലുകൾ പാളികളായി ക്രമീകരിക്കപ്പെടുന്നു:</p>
+            <p class="lang-en">Cells are arranged in embryonic layers during early development:</p>
+            <ul>
+                <li class="lang-ml"><strong>ഡിപ്ലോബ്ലാസ്റ്റിക് (Diploblastic):</strong> രണ്ട് പാളികൾ മാത്രം - പുറമെ എക്ടോഡേഴ്മും (Ectoderm) ഉള്ളിൽ എൻഡോഡേഴ്മും (Endoderm). ഇവയ്ക്ക് ഇടയിൽ അവിഭജിതമായ മീസോേഗ്ലിയ (Mesoglea) കാണപ്പെടുന്നു. (ഉദാഹരണം: സീലന്ററേറ്റ).</li>
+                <li class="lang-en"><strong>Diploblastic:</strong> Animals in which cells are arranged in two embryonic layers: an external ectoderm and an internal endoderm, with an intervening mesoglea (e.g., Coelenterates).</li>
+
+                <li class="lang-ml"><strong>ട്രിപ്ലോബ്ലാസ്റ്റിക് (Triploblastic):</strong> എക്ടോഡേഴ്ം, എൻഡോഡേഴ്ം എന്നിവയോടൊപ്പം നടുവിലായി മീസോഡേഴ്ം (Mesoderm) കൂടി ഉള്ളവ. (ഉദാഹരണം: പ്ലാറ്റിഹെൽമിന്തിസ് മുതൽ കോർഡേറ്റ വരെയുള്ളവ).</li>
+                <li class="lang-en"><strong>Triploblastic:</strong> Animals in which the developing embryo has a third germ layer, mesoderm, in addition to ectoderm and endoderm (e.g., Platyhelminthes to Chordata).</li>
+            </ul>
+
+            <h3 class="lang-ml">ഡി. ശരീരക്കുഴി അല്ലെങ്കിൽ കോലോം (Coelom)</h3>
+            <h3 class="lang-en">D. Coelom</h3>
+            <p class="lang-ml">ശരീരഭിത്തിക്കും ദഹനനാളിനും ഇടയിലുള്ള കുഴിയാണ് കോലോം. ഇത് മീസോഡേഴ്മാൽ ആവരണം ചെയ്യപ്പെട്ടിരിക്കുന്നു:</p>
+            <p class="lang-en">The body cavity which is lined by mesoderm is called coelom:</p>
+            <ul>
+                <li class="lang-ml"><strong>അക്കോലോമേറ്റുകൾ (Acoelomates):</strong> കോലോം ഇല്ല. (ഉദാഹരണം: പ്ലാറ്റിഹെൽമിന്തിസ്).</li>
+                <li class="lang-en"><strong>Acoelomates:</strong> Animals in which the body cavity is absent (e.g., Platyhelminthes).</li>
+
+                <li class="lang-ml"><strong>സ്യൂഡോക്കോലോമേറ്റുകൾ (Pseudocoelomates):</strong> മീസോഡേഴ്ം തുടർച്ചയായ പാളിയായല്ല, മറിച്ച് ഒറ്റപ്പെട്ട പൊട്ടുകളായിട്ടാണ് കാണപ്പെടുന്നത് (False coelom). (ഉദാഹരണം: അസ്കെൽമിന്തിസ് / റൗണ്ട് വോംസ്).</li>
+                <li class="lang-en"><strong>Pseudocoelomates:</strong> The body cavity is not lined by mesoderm, instead, the mesoderm is present as scattered pouches (e.g., Aschelminthes).</li>
+
+                <li class="lang-ml"><strong>യൂക്കോലോമേറ്റുകൾ / കോലോമേറ്റുകൾ (Coelomates):</strong> മീസോഡേഴ്മാൽ പൂർണ്ണമായി ആവരണം ചെയ്യപ്പെട്ട യഥാർത്ഥ കോലോം ഉള്ളവ. (ഉദാഹരണം: അനിലിഡ മുതൽ കോർഡേറ്റ വരെയുള്ളവ).</li>
+                <li class="lang-en"><strong>Coelomates:</strong> Animals possessing a true coelom that is lined by mesoderm (e.g., Annelids to Chordates).</li>
+            </ul>
+
+            <h2 class="lang-ml">2. പ്രധാന ഫീലങ്ങളുടെ ആഴത്തിലുള്ള വിശകലനം (Major Phyla Deep-Dive)</h2>
+            <h2 class="lang-en">2. Major Phyla Deep-Dive</h2>
+
+            <h3 class="lang-ml">1. ഫൈലം: പൊരിഫറ (Phylum Porifera - Sponges)</h3>
+            <h3 class="lang-en">1. Phylum Porifera - Sponges</h3>
+            <ul>
+                <li class="lang-ml">ശരീരത്തിൽ ധാരാളം സുഷിരങ്ങളുണ്ട് (ഓസ്റ്റിയ - Ostia). വെള്ളം അകത്തേക്ക് കയറുന്നത് ഈ സുഷിരങ്ങളിലൂടെയാണ്.</li>
+                <li class="lang-en">Members have numerous minute pores called ostia on the body through which water enters.</li>
+                <li class="lang-ml">വെള്ളം പുറത്തേക്ക് പോകുന്നത് വലിയ സുഷിരമായ ഓസ്കുലത്തിലൂടെയാണ് (Osculum).</li>
+                <li class="lang-en">Water leaves through a large central opening called osculum.</li>
+                <li class="lang-ml">മധ്യഭാഗത്തുള്ള കുഴിയെ സ്പോങ്കോസിൽ (Spongocoel) എന്ന് വിളിക്കുന്നു. ഇതിനെ ആവരണം ചെയ്തിരിക്കുന്നത് ഫ്ലജല്ല ഉള്ള കൊല്ലർ കോശങ്ങൾ (Choanocytes / Collar cells) ആണ്.</li>
+                <li class="lang-en">Central cavity is spongocoel, lined by flagellated cells called choanocytes or collar cells.</li>
+                <li class="lang-ml">അസ്ഥികൂടം സ്പോഞ്ചിൻ നാരുകളോ സ്പിക്കുളുകളോ കൊണ്ടാണ് നിർമ്മിതം.</li>
+                <li class="lang-en">Skeleton made up of spicules or spongin fibres.</li>
+            </ul>
+
+            <h3 class="lang-ml">2. ഫൈലം: സീലന്ററേറ്റ / നിഡേരിയ (Cnidaria)</h3>
+            <h3 class="lang-en">2. Phylum Cnidaria (Coelenterata)</h3>
+            <ul>
+                <li class="lang-ml">സ്പർശിനികളിൽ (Tentacles) നിഡോബ്ലാസ്റ്റ് (Nidoblasts / Cnidoblasts) കോശങ്ങളുണ്ട്. ഇത് ഇരപിടിക്കാനും ആത്മരക്ഷയ്ക്കും സഹായിക്കുന്നു (ഇതിൽ വിഷമുള്ള നെമറ്റോസിസ്റ്റ് ഉണ്ട്).</li>
+                <li class="lang-en">Contains stinging capsules or nematocysts on tentacles called cnidoblasts used for anchorage, defense, and capture of prey.</li>
+                <li class="lang-ml">ഇവയ്ക്ക് രണ്ട് പ്രധാന രൂപങ്ങളുണ്ട്: ഒന്നിച്ച് നിശ്ചലമായിരിക്കുന്ന സിലിണ്ടർ രൂപം (പോളിപ്പ് - Polyp - ഉദാ: ഹൈഡ്ര), സ്വതന്ത്രമായി നീന്തിനടക്കുന്ന കുടയുടെ ആകൃതിയുള്ള രൂപം (മെഡുസ - Medusa - ഉദാ: ജെല്ലിഫിഷ്).</li>
+                <li class="lang-en">Exhibits two basic body forms: sessile and cylindrical polyp (e.g., Hydra) and umbrella-shaped and free-swimming medusa (e.g., Jellyfish).</li>
+            </ul>
+
+            <h3 class="lang-ml">3. ഫൈലം: പ്ലാറ്റിഹെൽമിന്തിസ് (Platyhelminthes - Flatworms)</h3>
+            <h3 class="lang-en">3. Phylum Platyhelminthes (Flatworms)</h3>
+            <ul>
+                <li class="lang-ml">ശരീരത്തിന്റെ ഇരുവശങ്ങളും പരന്നതാണ് (Dorso-ventrally flattened).</li>
+                <li class="lang-en">Dorso-ventrally flattened body, hence called flatworms.</li>
+                <li class="lang-ml">മിക്കവയും മനുഷ്യരിലും മറ്റ് ജീവികളിലും കാണപ്പെടുന്ന പرازൈറ്റുകളാണ് (Parasites).</li>
+                <li class="lang-en">Mostly endoparasites found in animals including human beings.</li>
+                <li class="lang-ml">വിസർജ്ജനത്തിന് സഹായിക്കുന്ന പ്രത്യേക കോശങ്ങളാണ് ജ്വാലാ കോശങ്ങൾ (Flame cells).</li>
+                <li class="lang-en">Specialized cells called flame cells help in osmoregulation and excretion.</li>
+            </ul>
+
+            <h3 class="lang-ml">4. ഫൈലം: അസ്കെൽമിന്തിസ് (Aschelminthes - Roundworms)</h3>
+            <h3 class="lang-en">4. Phylum Aschelminthes (Roundworms)</h3>
+            <ul>
+                <li class="lang-ml">ഇവയുടെ ശരീരം കുറുകെ വെട്ടി നോക്കിയാൽ ഉരുണ്ടതായി കാണാം (Circular in cross-section).</li>
+                <li class="lang-en">Circular in cross-section, hence the common name roundworms.</li>
+                <li class="lang-ml">സ്യൂഡോക്കോലോമേറ്റുകൾക്ക് ഏറ്റവും മികച്ച ഉദാഹരണമാണിത്.</li>
+                <li class="lang-en">They are the prime examples of pseudocoelomate animals.</li>
+            </ul>
+
+            <h3 class="lang-ml">5. ഫൈലം: അനിലിഡ (Annelida - Segmented Worms)</h3>
+            <h3 class="lang-en">5. Phylum Annelida (Segmented Worms)</h3>
+            <ul>
+                <li class="lang-ml">ശരീരം വളയങ്ങൾ പോലെയുള്ള ഖണ്ഡങ്ങളായി തിരിച്ചിരിക്കുന്നു (മെറ്റാമെറിസം - Metamerism).</li>
+                <li class="lang-en">Body surface is distinctly marked out into segments or metameres (metamerism).</li>
+                <li class="lang-ml">വിസർജ്ജനത്തിന് സഹായിക്കുന്നത് നെഫ്രീഡിയ (Nephridia) ആണ്.</li>
+                <li class="lang-en">Nephridia help in osmoregulation and excretion.</li>
+                <li class="lang-ml">ഇവയ്ക്ക് രക്തക്കുഴലുകൾ അടങ്ങിയ ക്ലോസ്ഡ് സർക്കുലേറ്ററി സിസ്റ്റം (Closed circulatory system) ഉണ്ട്.</li>
+                <li class="lang-en">Possesses a closed circulatory system consisting of heart and blood vessels.</li>
+            </ul>
+
+            <h3 class="lang-ml">6. ഫൈലം: ആർത്രോപോഡ (Arthropoda)</h3>
+            <h3 class="lang-en">6. Phylum Arthropoda</h3>
+            <ul>
+                <li class="lang-ml">ജന്തുലോകത്തിലെ ഏറ്റവും വലിയ ഫൈലം (Largest Phylum).</li>
+                <li class="lang-en">This is the largest phylum of Animalia which includes insects.</li>
+                <li class="lang-ml">സന്ധികളുള്ള കാലുകളാണ് ഇവയുടെ പ്രത്യേകത (Jointed appendages).</li>
+                <li class="lang-en">Bodies have jointed appendages (arthros = joint, poda = appendages).</li>
+                <li class="lang-ml">ശരീരത്തിന് കട്ടികൂടിയ കൈറ്റിൻ (Chitin) കൊണ്ടുള്ള പുറംപൂശലുണ്ട് (Exoskeleton).</li>
+                <li class="lang-en">Exoskeleton is chitinous in nature.</li>
+                <li class="lang-ml">വിസർജ്ജനം മൽപീഘിയൻ നാളങ്ങൾ (Malpighian tubules) വഴിയാണ്. ശ്വസനത്തിന് ബുക്ക് ലങ്സ്, ഗില്ലുകൾ എന്നിവ ഉപയോഗിക്കുന്നു.</li>
+                <li class="lang-en">Excretion takes place through Malpighian tubules. Respiration through book lungs, gills, or tracheal system.</li>
+            </ul>
+
+            <h3 class="lang-ml">7. ഫൈലം: മൊളസ്ക (Mollusca)</h3>
+            <h3 class="lang-en">7. Phylum Mollusca</h3>
+            <ul>
+                <li class="lang-ml">ആർത്രോപോഡ കഴിഞ്ഞാൽ രണ്ടാമത്തെ വലിയ ഫൈലം.</li>
+                <li class="lang-en">Second largest animal phylum.</li>
+                <li class="lang-ml">മൃദുവായ ശരീരം കാൽസ്യം കാർബണേറ്റ് തോടാൽ (Shell) സംരക്ഷിക്കപ്പെട്ടിരിക്കുന്നു.</li>
+                <li class="lang-en">Soft body is usually protected by a calcareous shell.</li>
+                <li class="lang-ml">ശരീരം തല, മസ്കുലാർ ഫൂട്ട് (Muscular foot), വിസറൽ ഹമ്പ് (Visceral hump) എന്നിങ്ങനെ തിരിച്ചിരിക്കുന്നു.</li>
+                <li class="lang-en">Body divided into a head, muscular foot, and a visceral hump.</li>
+                <li class="lang-ml">ഭക്ഷണപ്പൊടിക്കായി വായയ്ക്കുള്ളിൽ റാഡുല (Radula) എന്ന നാക്ക് പോലെയുള്ള അവയവമുണ്ട്.</li>
+                <li class="lang-en">Mouth contains a file-like rasping organ for feeding, called radula.</li>
+            </ul>
+
+            <h3 class="lang-ml">8. ഫൈലം: കൈനോഡെർമാറ്റ (Echinodermata)</h3>
+            <h3 class="lang-en">8. Phylum Echinodermata</h3>
+            <ul>
+                <li class="lang-ml">ശരീരത്തിൽ മുള്ളുകൾ പോലുള്ള കാൽസ്യം ഘടനകളുണ്ട് (Spiny skin).</li>
+                <li class="lang-en">Endoskeleton of calcareous ossicles, hence the name spiny-skinned.</li>
+                <li class="lang-ml">ഇവയെല്ലാം കടലിൽ മാത്രം കാണപ്പെടുന്നവയാണ് (Exclusively marine).</li>
+                <li class="lang-en">All are exclusively marine organisms.</li>
+                <li class="lang-ml">ഇവയുടെ ഏറ്റവും വലിയ പ്രത്യേകതയാണ് വാട്ടർ വാസ്കുലാർ സിസ്റ്റം (Water vascular system) - ഇത് സഞ്ചാരത്തിനും (Locomotion), ഭക്ഷണസമ്പാദനത്തിനും സഹായിക്കുന്നു.</li>
+                <li class="lang-en">Features a distinctive water vascular system which helps in locomotion, capture and transport of food, and respiration.</li>
+            </ul>
+
+            <h3 class="lang-ml">9. ഫൈലം: കോർഡേറ്റ (Chordata)</h3>
+            <h3 class="lang-en">9. Phylum Chordata</h3>
+            <p class="lang-ml">ഈ ഫൈലിൽ പെടുന്ന ജീവികൾക്ക് താഴെ പറയുന്ന 3 അടിസ്ഥാന സവിശേഷതകൾ ഉണ്ടായിരിക്കും:</p>
+            <p class="lang-en">Animals belonging to phylum Chordata are fundamentally characterized by the presence of:</p>
+            <ul>
+                <li class="lang-ml"><strong>നൊട്ടോകോർഡ് (Notochord):</strong> ശരീരത്തിന് പിൻഭാഗത്തായി കാണപ്പെടുന്ന ദണ്ഡുപോലുള്ള ഘടന.</li>
+                <li class="lang-en"><strong>Notochord:</strong> A rod-like structure formed on the dorsal side.</li>
+                <li class="lang-ml"><strong>ഡോർസൽ ഫൊളാർ നാർവ് കോർഡ് (Dorsal Hollow Nerve Cord).</strong></li>
+                <li class="lang-en"><strong>Dorsal Hollow Nerve Cord.</strong></li>
+                <li class="lang-ml"><strong>ജില്ല് സ്ലിറ്റുകൾ (Pharyngeal Gill slits).</strong></li>
+                <li class="lang-en"><strong>Paired Pharyngeal Gill slits.</strong></li>
+            </ul>
+            <p class="lang-ml">കോർഡേറ്റുകളെ പ്രധാനമായും വെർട്ടിബ്രേറ്റ (Vertebrata) വിഭാഗത്തിന് കീഴിൽ ഫിഷുകൾ, ആംഫിബിയ, റെപ്റ്റീലിയ, അവെസ്, മമ്മൽസ് എന്നിങ്ങനെ തരംതിരിച്ചിരിക്കുന്നു.</p>
+            <p class="lang-en">Subphylum Vertebrata is further divided into classes like Cyclostomata, Chondrichthyes, Osteichthyes, Amphibia, Reptilia, Aves, and Mammalia.</p>
+
+            <div class="scientist-box">
+                <p class="lang-ml"><strong>നീറ്റ് / പ്ലസ് വൺ ടിപ്പ്:</strong> ഓരോ ഫൈലിലെയും റെസ്പിറേറ്ററി ഓർഗൻ, എക്സെട്രി സിസ്റ്റം, പ്രത്യേക സെല്ലുകൾ (ഉദാഹരണത്തിന്: പൊരിഫറയിലെ ചോണോസൈറ്റ്, നിഡേരിയയിലെ നിഡോബ്ലാസ്റ്റ്) എന്നിവ ഓർമ്മയിൽ വെക്കുക. പ്രവേശന പരീക്ഷകളിൽ നിരന്തരം ചോദിക്കുന്ന ഭാഗമാണിത്.</p>
+                <p class="lang-en"><strong>NEET / Plus One Tip:</strong> Remember respiratory organs, excretory systems, and special cells (e.g., choanocytes in sponges, cnidoblasts in cnidarians) as they are frequently asked in entrance exams.</p>
+            </div>
+        </div>
+
+        <a href="../biology.html" class="back-link lang-ml">← ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
+        <a href="../biology.html" class="back-link lang-en">← Back to Biology Index</a>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            
+            const mlElements = document.querySelectorAll('.lang-ml');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.querySelector('.lang-switch');
+
+            if (currentLang === 'en') {
+                if(btn) btn.textContent = 'മലയാളത്തിലേക്ക് മാറ്റുക';
+                mlElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+            } else {
+                if(btn) btn.textContent = 'Switch to English';
+                enElements.forEach(el => el.style.display = 'none');
+                mlElements.forEach(el => el.style.display = 'block');
+            }
+        });
+
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            const newLang = currentLang === 'ml' ? 'en' : 'ml';
+            
+            localStorage.setItem('preferredLang', newLang);
+            location.reload();
+        }
+    </script>
 </body>
 </html>
