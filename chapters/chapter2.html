@@ -8,7 +8,8 @@
         body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 20px; line-height: 1.7; scroll-behavior: smooth; }
         .container { max-width: 900px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
         
-        .nav-buttons {
+        /* Top Navigation for Workout and Language Switcher buttons */
+        .top-nav {
             position: absolute;
             top: 25px;
             right: 40px;
@@ -17,7 +18,7 @@
             align-items: center;
         }
 
-        .lang-switch, .workout-btn {
+        .top-btn, .lang-switch {
             padding: 0 16px;
             border-radius: 6px;
             cursor: pointer;
@@ -30,16 +31,16 @@
             align-items: center;
             justify-content: center;
             height: 40px;
+            border: 2px solid #2563eb;
+            background-color: #eff6ff;
+            color: #2563eb;
             box-sizing: border-box;
-            border: 2px solid #2563eb !important;
-            background-color: #eff6ff !important;
-            color: #2563eb !important;
             white-space: nowrap;
         }
         
-        .lang-switch:hover, .workout-btn:hover {
-            background-color: #2563eb !important;
-            color: #ffffff !important;
+        .top-btn:hover, .lang-switch:hover {
+            background-color: #2563eb;
+            color: #ffffff;
         }
 
         h1 { color: #0f172a; font-size: 26px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 25px; margin-bottom: 20px; padding-right: 320px; }
@@ -55,6 +56,37 @@
         th { background: #f1f5f9; color: #0f172a; }
 
         .highlight-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px; border-radius: 6px; margin: 20px 0; }
+
+        /* Professional Full-Width Bottom Action Button */
+        .bottom-actions {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            transition: 0.2s;
+            box-sizing: border-box;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        .home-action {
+            background-color: #475569;
+            color: #ffffff;
+            border: 1px solid #475569;
+        }
+        .home-action:hover {
+            background-color: #334155;
+        }
         
         .lang-en { display: none; }
         .lang-ml { display: block; }
@@ -63,10 +95,12 @@
 <body>
 
     <div class="container">
-        <div class="nav-buttons">
-           <a href="workout_q2.html" class="workout-btn lang-ml">പ്രശ്നോത്തരികൾ കാണുക →</a>
-	   <a href="workout_q2.html" class="workout-btn lang-en">View Workout & MCQs →</a>
-           <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
+        <!-- Top Right Navigation Buttons (Workout & Language Switcher) -->
+        <div class="top-nav">
+            <a href="workout_q2.html" class="top-btn lang-ml">Workout & Exercises</a>
+            <a href="workout_q2.html" class="top-btn lang-en">Workout & Exercises</a>
+            
+            <button class="lang-switch" onclick="toggleLanguage()">മലയാളത്തിലേക്ക് മാറ്റുക</button>
         </div>
 
         <!-- MALAYALAM CONTENT -->
@@ -326,8 +360,14 @@
         </div>
 
         <div class="highlight-box">
-            <p class="lang-ml"><strong>തുടർനടപടി:</strong> ഈ പാഠഭാഗങ്ങൾ പൂർണ്ണമായി മനസ്സിലാക്കിയ ശേഷം, മുകളിലുള്ള <strong>"പ്രശ്നോത്തരികൾ കാണുക" (View Workout & MCQs)</strong> ബട്ടൺ ക്ലിക്ക് ചെയ്ത് നീറ്റ് മാതൃകയിലുള്ള ചോദ്യങ്ങളും വർക്ക്ഔട്ടുകളും ചെയ്യുക!</p>
-            <p class="lang-en"><strong>Next Step:</strong> Once you have reviewed these notes, click the <strong>"View Workout & MCQs"</strong> button above to practice NEET-pattern questions and exercises!</p>
+            <p class="lang-ml"><strong>തുടർനടപടി:</strong> ഈ പാഠഭാഗങ്ങൾ പൂർണ്ണമായി മനസ്സിലാക്കിയ ശേഷം, മുകളിലെ ബട്ടൺ ഉപയോഗിച്ച് വർക്ക്ഔട്ട് പേജിലേക്കോ താഴെയുള്ള ബട്ടൺ വഴി ഹോം പേജിലേക്കോ പോകാം!</p>
+            <p class="lang-en"><strong>Next Step:</strong> Once you have reviewed these notes, use the top button for workouts or the bottom button to navigate back to the home page!</p>
+        </div>
+
+        <!-- Professional Full-Width Bottom Action Button -->
+        <div class="bottom-actions">
+            <a href="index.html" class="action-btn home-action lang-ml">← ഹോം പേജിലേക്ക് മടങ്ങുക (Back to Home Page)</a>
+            <a href="index.html" class="action-btn home-action lang-en">← Back to Home Page</a>
         </div>
     </div>
 
