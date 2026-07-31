@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: The Living World - Complete Study Notes</title>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 20px; line-height: 1.7; scroll-behavior: smooth; }
+        .container { max-width: 900px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
+        
+        .nav-buttons {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Both buttons sharing the exact same size, height, padding, and blue outline design */
+        .lang-switch, .workout-btn {
+            padding: 0 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            box-sizing: border-box;
+            border: 2px solid #2563eb !important;
+            background-color: #eff6ff !important;
+            color: #2563eb !important;
+            white-space: nowrap;
+        }
+        
+        /* Hover Effect for Both Buttons */
+        .lang-switch:hover, .workout-btn:hover {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+        }
+
+        h1 { color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 25px; margin-bottom: 20px; padding-right: 280px; }
+        h2 { font-size: 18px; margin-top: 30px; color: #1e293b; background: #f1f5f9; padding: 10px 15px; border-radius: 6px; border-left: 4px solid #2563eb; }
+        h3 { font-size: 16px; color: #334155; margin-top: 20px; }
+        
+        p, li { font-size: 15px; }
+        ul { margin-bottom: 20px; }
+
+        .note-section { margin-bottom: 30px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background: #f1f5f9; color: #0f172a; }
+
+        .concept-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 6px; margin: 20px 0; font-size: 14px; }
+        .scientist-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px; border-radius: 6px; margin: 20px 0; font-size: 14px; }
+
+        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; }
+        .back-link:hover { background: #475569; }
+
+        .lang-en { display: none; }
+        .lang-ml { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav-buttons">
+            <!-- Workout Button -->
+            <a href="workout_q1.html" class="workout-btn">
+                <span class="lang-ml">വർക്ക്ഔട്ട് & എക്സർസൈസ്</span>
+                <span class="lang-en">Workout & Exercises</span>
+            </a>
+            <!-- Language Switch Button -->
+            <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
+        </div>
+
+        <h1 class="lang-ml">ചാപ്റ്റർ 1: ജീവിതലോകം (സമ്പൂർണ്ണ പഠനക്കുറിപ്പുകൾ)</h1>
+        <h1 class="lang-en">Chapter 1: The Living World (Complete Study Notes)</h1>
+        
+        <div class="note-section">
+            <div class="scientist-box">
+                <p class="lang-ml"><strong>പ്രത്യേക ശ്രദ്ധയ്ക്ക് (Ernst Mayr):</strong> ഹാർവാർഡ് സർവ്വകലാശാലയിലെ പരിണാമ ജീവശാസ്ത്രജ്ഞനായ എർൺസ്റ്റ് മേയർ (1904-2004) '20-ാം നൂറ്റാണ്ടിലെ ഡാർവിൻ' എന്നറിയപ്പെടുന്നു. സ്പീഷിസിന്റെ ആധുനിക നിർവചനം നൽകിയത് അദ്ദേഹമാണ്.</p>
+                <p class="lang-en"><strong>Notable Scientist (Ernst Mayr):</strong> Ernst Mayr (1904–2004), the Harvard evolutionary biologist, has been called 'The Darwin of the 20th century'. He pioneered the currently accepted definition of a biological species.</p>
+            </div>
+
+            <h2 class="lang-ml">1. എന്താണ് ജീവൻ? (What is Living?)</h2>
+            <h2 class="lang-en">1. What is Living?</h2>
+            <p class="lang-ml">ജീവനുള്ളവയുടെ പ്രധാന ലക്ഷണങ്ങൾ: വളർച്ച (Growth), പ്രജനനം (Reproduction), മെറ്റബോളിസം (Metabolism), കോശഘടന (Cellular organization), ബോധക്ഷമത (Consciousness).</p>
+            <p class="lang-en">Key features: Growth, Reproduction, Metabolism, Cellular organization, and Consciousness.</p>
+            <ul>
+                <li class="lang-ml"><strong>വളരെ പ്രധാനം:</strong> വളർച്ചയും പ്രജനനവും ജീവന്റെ <strong>'നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളല്ല' (Not defining properties)</strong>. കാരണം, നിർജീവ വസ്തുക്കളും വളർച്ച നേടുകയും, ചില ജീവികൾക്ക് പ്രജനനം നടത്താൻ കഴിയാതിരിക്കുകയും ചെയ്യുന്നു. മെറ്റബോളിസവും ബോധക്ഷമതയുമാണ് യഥാർത്ഥ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങൾ (Defining properties).</li>
+                <li class="lang-en"><strong>Important Note:</strong> Growth and reproduction are NOT defining properties, whereas metabolism and consciousness are defining properties.</li>
+            </ul>
+
+            <h2 class="lang-ml">2. ജൈവവൈവിധ്യവും നാമകരണവും (Diversity & Nomenclature)</h2>
+            <h2 class="lang-en">2. Diversity and Nomenclature</h2>
+            <ul>
+                <li class="lang-ml">ഭൂമിയിൽ ഇതുവരെ തിരിച്ചറിഞ്ഞ സ്പീഷിസുകളുടെ എണ്ണം <strong>1.7 - 1.8 ദശലക്ഷം</strong> ആണ് (Biodiversity).</li>
+                <li class="lang-en">Total number of known and described species is between <strong>1.7-1.8 million</strong>.</li>
+                <li class="lang-ml"><strong>ICBN:</strong> സസ്യങ്ങളുടെ ശാസ്ത്രീയ നാമകരണത്തിനുള്ള അന്താരാഷ്ട്ര കോഡ് (International Code for Botanical Nomenclature).</li>
+                <li class="lang-en"><strong>ICBN:</strong> International Code for Botanical Nomenclature.</li>
+                <li class="lang-ml"><strong>ICZN:</strong> ജന്തുക്കളുടെ നാമകരണത്തിനുള്ള അന്താരാഷ്ട്ര കോഡ് (International Code of Zoological Nomenclature).</li>
+                <li class="lang-en"><strong>ICZN:</strong> International Code of Zoological Nomenclature.</li>
+                <li class="lang-ml"><strong>ഇരുനാമ നാമകരണം (Binomial Nomenclature):</strong> കാര്യുസ് ലിന്നേയസ് ആവിഷ്കരിച്ചത്. ഇതിൽ ജീനസും (Genus), സ്പീഷിസും (Species) അടങ്ങിയിരിക്കുന്നു (ഉദാ: <i>Mangifera indica</i> Linn.).</li>
+                <li class="lang-en"><strong>Binomial Nomenclature:</strong> Given by Carolus Linnaeus. Consists of Generic name and specific epithet (e.g., <i>Mangifera indica</i> Linn.).</li>
+            </ul>
+
+            <h2 class="lang-ml">3. ടാക്സോണമിക് കാറ്റഗറികളും ഹൈറാർജിയും - സമഗ്ര വിശകലനം (Taxonomic Categories & Hierarchy)</h2>
+            <h2 class="lang-en">3. Taxonomic Categories & Hierarchy - Detailed Analysis</h2>
+            
+            <p class="lang-ml">വർഗ്ഗീകരണം എന്നത് ഒറ്റപ്പെട്ട ഒരു പ്രക്രിയയല്ല, മറിച്ച് പടവുകളായുള്ള ക്രമീകരണമാണ് (Hierarchy). ഓരോ പടിയെയും <strong>റാങ്ക് അല്ലെങ്കിൽ കാറ്റഗറി</strong> എന്ന് വിളിക്കുന്നു. ഈ കാറ്റഗറികളുടെ പൊതുവായ യൂണിറ്റാണ് <strong>ടാക്സോൺ (Taxon)</strong>.</p>
+            <p class="lang-en">Classification is not a single step process but involves a hierarchy of steps where each step represents a rank or category, known as taxonomic category and taxon.</p>
+
+            <div class="concept-box">
+                <h3 class="lang-ml" style="margin-top:0; color:#1e40af;">💡 ഈ ചാർട്ട്/ഹൈറാർജി എങ്ങനെ മനസ്സിലാക്കണം? (How to study this hierarchy?)</h3>
+                <h3 class="lang-en" style="margin-top:0; color:#1e40af;">💡 How to understand this Taxonomic Hierarchy?</h3>
+                
+                <p class="lang-ml"><strong>1. ആരോഹണ ക്രമം (Ascending Order):</strong> ഏറ്റവും താഴെയുള്ള അടിസ്ഥാന ഘട്ടമായ സ്പീഷിസിൽ തുടങ്ങി ഏറ്റവും ഉയർന്ന കിങ്ഡം വരെയാണ് ഇത് ക്രമീകരിച്ചിരിക്കുന്നത്:</p>
+                <p class="lang-en"><strong>1. Ascending Order:</strong> Arranged from the lowest basic category (Species) to the highest category (Kingdom):</p>
+                
+                <p class="lang-ml">Species (സ്പീഷിസ്) ➔ Genus (ജീനസ്) ➔ Family (ഫാമിലി) ➔ Order (ഓർഡർ) ➔ Class (ക്ലാസ്) ➔ Phylum/Division (ഫൈലം/ഡിവിഷൻ) ➔ Kingdom (കിങ്ഡം)</p>
+                <p class="lang-en">Species ➔ Genus ➔ Family ➔ Order ➔ Class ➔ Phylum/Division ➔ Kingdom</p>
+
+                <p class="lang-ml"><strong>2. സവിശേഷതകളുടെ മാറ്റം (Rule of Common Characteristics):</strong></p>
+                <p class="lang-en"><strong>2. Rule of Common Characteristics:</strong></p>
+                <ul>
+                    <li class="lang-ml"><strong>താഴെ നിന്ന് മുകളിലേക്ക് പോകുമ്പോൾ (Species ➔ Kingdom):</strong> ജീവികൾ തമ്മിലുള്ള പൊതുവായ സവിശേഷതകൾ (Common characteristics) <strong>കുറഞ്ഞുവരുന്നു</strong>. കാരണം വലിയൊരു വിഭാഗത്തിലേക്ക് ജീവികളെ ഉൾപ്പെടുത്തുമ്പോൾ സാദൃശ്യങ്ങൾ കുറയുകയും വ്യത്യാസങ്ങൾ കൂടുകയും ചെയ്യുന്നു.</li>
+                    <p class="lang-en">As we go higher from species to kingdom, the number of common characteristics <strong>goes on decreasing</strong>.</p>
+                    
+                    <li class="lang-ml"><strong>മുകളിൽ നിന്ന് താഴേക്ക് വരുമ്പോൾ:</strong> ജീവികൾ തമ്മിൽ കൂടുതൽ സാദൃശ്യങ്ങളും അടുത്ത ബന്ധവും കാണപ്പെടുന്നു. സ്പീഷിസ് തലത്തിലാണ് ഏറ്റവും കൂടുതൽ സമാനതകളുള്ളത്.</li>
+                    <p class="lang-en">Lower the taxa, more are the characteristics that the members within the taxon share.</p>
+                </ul>
+            </div>
+
+            <h2 class="lang-ml">4. പ്രധാനപ്പെട്ട ജീവികളുടെ വർഗ്ഗീകരണ പട്ടിക (Table 1.1)</h2>
+            <h2 class="lang-en">4. Taxonomic Categories Table</h2>
+            <table>
+                <tr>
+                    <th>Common Name</th>
+                    <th>Biological Name</th>
+                    <th>Genus</th>
+                    <th>Family</th>
+                    <th>Order</th>
+                    <th>Class</th>
+                    <th>Phylum/Division</th>
+                </tr>
+                <tr>
+                    <td><strong>Man (മനുഷ്യൻ)</strong></td>
+                    <td><i>Homo sapiens</i></td>
+                    <td>Homo</td>
+                    <td>Hominidae</td>
+                    <td>Primata</td>
+                    <td>Mammalia</td>
+                    <td>Chordata</td>
+                </tr>
+                <tr>
+                    <td><strong>Housefly (ഈച്ച)</strong></td>
+                    <td><i>Musca domestica</i></td>
+                    <td>Musca</td>
+                    <td>Muscidae</td>
+                    <td>Diptera</td>
+                    <td>Insecta</td>
+                    <td>Arthropoda</td>
+                </tr>
+                <tr>
+                    <td><strong>Mango (മാവ്)</strong></td>
+                    <td><i>Mangifera indica</i></td>
+                    <td>Mangifera</td>
+                    <td>Anacardiaceae</td>
+                    <td>Sapindales</td>
+                    <td>Dicotyledonae</td>
+                    <td>Angiospermae</td>
+                </tr>
+                <tr>
+                    <td><strong>Wheat (ഗോതമ്പ്)</strong></td>
+                    <td><i>Triticum aestivum</i></td>
+                    <td>Triticum</td>
+                    <td>Poaceae</td>
+                    <td>Poales</td>
+                    <td>Monocotyledonae</td>
+                    <td>Angiospermae</td>
+                </tr>
+            </table>
+
+            <h2 class="lang-ml">5. ടാക്സോണമിക് സഹായ ഉപകരണങ്ങൾ (Taxonomic Aids)</h2>
+            <h2 class="lang-en">5. Taxonomic Aids</h2>
+            <ul>
+                <li class="lang-ml"><strong>ഹെർബേറിയം (Herbarium):</strong> സസ്യജാലങ്ങളെ ശേഖരിച്ച് ഉണക്കി, പ്രസ് ചെയ്ത് ഷീറ്റുകളിൽ സൂക്ഷിക്കുന്ന സ്ഥലം. ലേബലിൽ തീയതി, സ്ഥലം, പേര് എന്നിവ ഉണ്ടായിരിക്കും.</li>
+                <li class="lang-en"><strong>Herbarium:</strong> Storehouse of plant specimens collected, dried, pressed, and preserved on sheets with proper labels.</li>
+
+                <li class="lang-ml"><strong>ബൊട്ടാണിക്കൽ ഗാർഡൻ (Botanical Gardens):</strong> തിരിച്ചറിയലിനായി ജീവനുള്ള സസ്യങ്ങളെ സംരക്ഷിക്കുന്ന ഉദ്യാനങ്ങൾ (ഉദാ: ക്യൂ ഗാർഡൻ).</li>
+                <li class="lang-en"><strong>Botanical Gardens:</strong> Collections of living plants for reference (e.g., Kew Botanical Garden).</li>
+
+                <li class="lang-ml"><strong>മ്യൂസിയം (Museum):</strong> സസ്യങ്ങളുടെയും ജന്തുക്കളുടെയും മാതൃകകൾ പ്രിസർവേറ്റീവ് ലായണികളിൽ ജാറുകളിൽ സൂക്ഷിക്കുന്ന സ്ഥലം.</li>
+                <li class="lang-en"><strong>Museum:</strong> Specimens of plants and animals preserved in containers or jars in preservative solutions.</li>
+
+                <li class="lang-ml"><strong>സൂോളജിക്കൽ പാർക്കുകൾ (Zoological Parks):</strong> വന്യജീവികളെ മനുഷ്യന്റെ സംരക്ഷണത്തിൽ ജീവനുള്ളതായി പ്രദർശിപ്പിക്കുന്ന സ്ഥലങ്ങൾ.</li>
+                <li class="lang-en"><strong>Zoological Parks:</strong> Places where wild animals are kept in protected environments under human care.</li>
+
+                <li class="lang-ml"><strong>കീ (Key):</strong> സസ്യങ്ങളെയും ജന്തുക്കളെയും തിരിച്ചറിയാൻ ഉപയോഗിക്കുന്ന അനലിറ്റിക്കൽ ഉപകരണം. ഇതിിലെ വിരുദ്ധ സ്വഭാവ ജോഡിയെ <strong>കപ്ലറ്റ് (Couplet)</strong> എന്നും ഓരോ സ്റ്റേറ്റ്‌മെന്റിനെ <strong>ലീഡ് (Lead)</strong> എന്നും വിളിക്കുന്നു.</li>
+                <li class="lang-en"><strong>Key:</strong> Taxonomic aid based on contrasting characters called <strong>couplet</strong>, and each statement in the key is called a <strong>lead</strong>.</li>
+            </ul>
+        </div>
+
+        <a href="../biology.html" class="back-link lang-ml">← ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
+        <a href="../biology.html" class="back-link lang-en">← Back to Biology Index</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            
+            const mlElements = document.querySelectorAll('.lang-ml');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.querySelector('.lang-switch');
+
+            if (currentLang === 'en') {
+                if(btn) btn.textContent = 'മലയാളത്തിലേക്ക് മാറ്റുക';
+                mlElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+            } else {
+                if(btn) btn.textContent = 'Switch to English';
+                enElements.forEach(el => el.style.display = 'none');
+                mlElements.forEach(el => el.style.display = 'block');
+            }
+        });
+
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            const newLang = currentLang === 'ml' ? 'en' : 'ml';
+            
+            localStorage.setItem('preferredLang', newLang);
+            location.reload();
+        }
+    </script>
+</body>
+</html>
