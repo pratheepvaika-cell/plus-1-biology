@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="ml" translate="no">
+<html lang="ml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google" content="notranslate">
-    <meta http-equiv="Content-Language" content="ml">
     <title>3.1 Algae - Complete Study with Diagrams</title>
     <style>
         body {
@@ -101,147 +99,200 @@
             border-radius: 8px;
             margin: 20px 0;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #64748b;
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .back-btn, .lang-trigger {
+            background-color: #2e7d32;
             color: white;
             padding: 10px 18px;
-            margin-bottom: 20px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
             transition: background 0.3s;
+        }
+        .back-btn {
+            background-color: #64748b;
         }
         .back-btn:hover {
             background-color: #475569;
         }
+        .lang-trigger:hover {
+            background-color: #1b5e20;
+        }
+        /* ഭാഷ മാറ്റുമ്പോൾ ഹൈഡ് ചെയ്യാൻ */
+        .en { display: none; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="chapter3.html" class="back-btn">← Back to Chapter 3</a>
+    <div class="top-bar">
+        <a href="chapter3.html" class="back-btn">← Back to Chapter 3</a>
+        <!-- ലാംഗ്വേജ് മാറ്റാനുള്ള ട്രിഗർ ബട്ടൺ -->
+        <button class="lang-trigger" onclick="toggleLanguage()">Switch to English / ഇംഗ്ലീഷിലേക്ക് മാറ്റുക</button>
+    </div>
     
-    <h1>3.1 ALGAE (ആൽഗകൾ) - സമഗ്ര പഠനവും ചിത്രങ്ങളും</h1>
+    <h1 class="ml-text">3.1 ALGAE (ആൽഗകൾ) - സമഗ്ര പഠനവും ചിത്രങ്ങളും</h1>
+    <h1 class="en">3.1 ALGAE - Complete Study and Diagrams</h1>
     
-    <h2>1. എന്താണ് ആൽഗകൾ? (What are Algae?)</h2>
+    <h2 class="ml-text">1. എന്താണ് ആൽഗകൾ? (What are Algae?)</h2>
+    <h2 class="en">1. What are Algae?</h2>
     <ul>
-        <li>ആൽഗകൾ എന്നാൽ <strong>ഹരിതകം അടങ്ങിയതും (chlorophyll-bearing)</strong>, ലളിതമായതും (simple), താലസ് പോലെയുള്ളതും (thalloid), സ്വപോഷികളായതും (autotrophic) ആയ ജീവികളാണ്.</li>
-        <li>ഇവ പ്രധാനമായും ജലത്തിൽ ജീവിക്കുന്നവയാണ് (largely aquatic - ശുദ്ധജലത്തിലും ഉപ്പുവെള്ളത്തിലും കാണപ്പെടുന്നു).</li>
+        <li class="ml-text">ആൽഗകൾ എന്നാൽ <strong>ഹരിതകം അടങ്ങിയതും (chlorophyll-bearing)</strong>, ലളിതമായതും (simple), താലസ് പോലെയുള്ളതും (thalloid), സ്വപോഷികളായതും (autotrophic) ആയ ജീവികളാണ്.</li>
+        <li class="en">Algae are chlorophyll-bearing, simple, thalloid, autotrophic, and largely aquatic organisms.</li>
+        
+        <li class="ml-text">ഇവ പ്രധാനമായും ജലത്തിൽ ജീവിക്കുന്നവയാണ് (largely aquatic - ശുദ്ധജലത്തിലും ഉപ്പുവെള്ളത്തിലും കാണപ്പെടുന്നു).</li>
+        <li class="en">They are largely aquatic (both freshwater and marine) organisms.</li>
     </ul>
 
-    <h2>2. ആൽഗകൾ എവിടെയാണ് ജീവിക്കുന്നത്? (Habitats)</h2>
+    <h2 class="ml-text">2. ആൽഗകൾ എവിടെയാണ് ജീവിക്കുന്നത്? (Habitats)</h2>
+    <h2 class="en">2. Habitats of Algae</h2>
     <ul>
-        <li><strong>ജലവാസികൾ:</strong> ശുദ്ധജലത്തിലും (Freshwater) കടലിലും (Marine) കാണപ്പെടുന്നു.</li>
-        <li><strong>മറ്റ് ആവാസവ്യവസ്ഥകൾ:</strong> ഈർപ്പമുള്ള കല്ലുകൾ, മണ്ണ്, തടികൾ എന്നിവയിലും ഇവ വളരുന്നു.</li>
-        <li><strong>സഹജീവിതം (Associations):</strong> 
-            <ul>
-                <li>ഫംഗസുകളുമായി ചേർന്ന് <span class="highlight">ലൈക്കൻ (Lichen)</span> ആയും,</li>
-                <li>മൃഗങ്ങളുടെ ശരീരത്തിലും (ഉദാഹരണത്തിന് സ്ലോത്ത് കരടിയുടെ മേൽ - Sloth bear) ഇവ കാണപ്പെടുന്നു.</li>
-            </ul>
-        </li>
+        <li class="ml-text"><strong>ജലവാസികൾ:</strong> ശുദ്ധജലത്തിലും (Freshwater) കടലിലും (Marine) കാണപ്പെടുന്നു.</li>
+        <li class="en"><strong>Aquatic:</strong> Found in fresh water as well as marine environments.</li>
+        
+        <li class="ml-text"><strong>മറ്റ് ആവാസവ്യവസ്ഥകൾ:</strong> ഈർപ്പമുള്ള കല്ലുകൾ, മണ്ണ്, തടികൾ എന്നിവയിലും ഇവ വളരുന്നു.</li>
+        <li class="en"><strong>Other Habitats:</strong> They also occur on moist stones, soils, and wood.</li>
+        
+        <li class="ml-text"><strong>സഹജീവിതം (Associations):</strong> ഫംഗസുകളുമായി ചേർന്ന് ലൈക്കൻ (Lichen) ആയും, മൃഗങ്ങളുടെ ശരീരത്തിലും കാണപ്പെടുന്നു.</li>
+        <li class="en"><strong>Associations:</strong> Some occur in association with fungi (lichen) and animals (e.g., on sloth bear).</li>
     </ul>
 
-    <h2>3. ആൽഗകളുടെ ഘടനയും ചിത്രങ്ങളും (NCERT Figure 3.1 - Identification)</h2>
-    <p>പരീക്ഷയ്ക്ക് ചിത്രങ്ങൾ തിരിച്ചറിഞ്ഞ് (Identify the figures) എഴുതാൻ കുട്ടികൾ നിർബന്ധമായും അറിഞ്ഞിരിക്കേണ്ട ചിത്രങ്ങളാണ് താഴെ നൽകിയിരിക്കുന്നത്:</p>
-
+    <h2 class="ml-text">3. ആൽഗകളുടെ ഘടനയും ചിത്രങ്ങളും (NCERT Figure 3.1)</h2>
+    <h2 class="en">3. Structure and Figures of Algae (NCERT Figure 3.1)</h2>
+    
     <div class="image-gallery">
         <div class="image-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Volvox_globator.jpg" alt="Volvox">
-            <h4>(a) വോൾവോക്സ് (Volvox)</h4>
-            <p>കൊളോണിയൽ രൂപത്തിലുള്ള പച്ച ആൽഗ. ഉള്ളിൽ മകൾ കോളനികൾ കാണാം.</p>
+            <h4 class="ml-text">(a) വോൾവോക്സ് (Volvox)</h4>
+            <h4 class="en">(a) Volvox</h4>
+            <p class="ml-text">കൊളോണിയൽ രൂപത്തിലുള്ള പച്ച ആൽഗ.</p>
+            <p class="en">Colonial green algae.</p>
         </div>
         <div class="image-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Ulothrix_zonata.jpg" alt="Ulothrix">
-            <h4>(b) യൂലോത്രിക്സ് (Ulothrix)</h4>
-            <p>തന്തുരൂപത്തിലുള്ള (Filamentous) പച്ച ആൽഗ.</p>
+            <h4 class="ml-text">(b) യൂലോത്രിക്സ് (Ulothrix)</h4>
+            <h4 class="en">(b) Ulothrix</h4>
+            <p class="ml-text">തന്തുരൂപത്തിലുള്ള (Filamentous) പച്ച ആൽഗ.</p>
+            <p class="en">Filamentous green algae.</p>
         </div>
         <div class="image-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Laminaria_digitata.jpg" alt="Laminaria">
-            <h4>(c) ലാമिनेരിയ (Laminaria)</h4>
-            <p>തവിട്ട് ആൽഗ. Holdfast, Stipe, Frond എന്നീ ഭാഗങ്ങൾ വ്യക്തമാണ്.</p>
+            <h4 class="ml-text">(c) ലാമिनेരിയ (Laminaria)</h4>
+            <h4 class="en">(c) Laminaria</h4>
+            <p class="ml-text">തവിട്ട് ആൽഗ (Brown Algae).</p>
+            <p class="en">Brown algae.</p>
         </div>
         <div class="image-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Fucus_vesiculosus_01.JPG" alt="Fucus">
-            <h4>(d) ഫ്യൂക്കസ് (Fucus)</h4>
-            <p>മറ്റൊരു പ്രധാന തവിട്ട് ആൽഗ (Brown Algae).</p>
+            <h4 class="ml-text">(d) ഫ്യൂക്കസ് (Fucus)</h4>
+            <h4 class="en">(d) Fucus</h4>
+            <p class="ml-text">മറ്റൊരു പ്രധാന തവിട്ട് ആൽഗ.</p>
+            <p class="en">Another major brown algae.</p>
         </div>
     </div>
 
-    <h3>ലാമിനേരിയയുടെ പ്രധാന ഭാഗങ്ങൾ (Diagram Labelling):</h3>
+    <h2 class="ml-text">4. ആൽഗകളുടെ പ്രജനന രീതികൾ (Reproduction)</h2>
+    <h2 class="en">4. Reproduction in Algae</h2>
     <ul>
-        <li><strong>Holdfast:</strong> ആൽഗയെ പ്രതലത്തിൽ ഉറപ്പിച്ചുനിർത്തുന്ന അടിഭാഗം.</li>
-        <li><strong>Stipe:</strong> തണ്ട് പോലെ നീண்டுനിൽക്കുന്ന ഭാഗം.</li>
-        <li><strong>Frond:</strong> ഇല പോലെ പ്രകാശസംശ്ലേഷണം നടത്തുന്ന പരന്ന ഭാഗം.</li>
+        <li class="ml-text"><strong>Vegetative Reproduction:</strong> കഷണങ്ങളാകൽ (Fragmentation) വഴി നടക്കുന്നു.</li>
+        <li class="en"><strong>Vegetative Reproduction:</strong> Takes place by fragmentation.</li>
+        
+        <li class="ml-text"><strong>Asexual Reproduction:</strong> ഫ്ലെജല്ലയുള്ള സ്യൂഡോസ്പോറുകൾ (Zoospores) വഴി.</li>
+        <li class="en"><strong>Asexual Reproduction:</strong> By flagellated zoospores.</li>
+        
+        <li class="ml-text"><strong>Sexual Reproduction:</strong> Isogamous, Anisogamous അല്ലെങ്കിൽ Oogamous രീതികളിൽ.</li>
+        <li class="en"><strong>Sexual Reproduction:</strong> Through isogamous, anisogamous, or oogamous methods.</li>
     </ul>
 
-    <h2>4. ആൽഗകളുടെ പ്രജനന രീതികൾ (Reproduction)</h2>
+    <h2 class="ml-text">5. സാമ്പത്തിക പ്രാധാന്യം (Economic Importance)</h2>
+    <h2 class="en">5. Economic Importance</h2>
     <ul>
-        <li><strong>Vegetative Reproduction:</strong> കഷണങ്ങളാകൽ (Fragmentation) വഴി നടക്കുന്നു.</li>
-        <li><strong>Asexual Reproduction:</strong> ഫ്ലെജല്ലയുള്ളതും ചലനാത്മകവുമായ <span class="highlight">സ്യൂഡോസ്പോറുകൾ (Zoospores)</span> വഴി.</li>
-        <li><strong>Sexual Reproduction:</strong> 
-            <ul>
-                <li><em>Isogamous:</em> തുല്യമായ ഗ്യാമറ്റുകൾ (ഉദാ: Ulothrix).</li>
-                <li><em>Anisogamous:</em> വലിപ്പവ്യത്യാസമുള്ള ഗ്യാമറ്റുകൾ (ഉദാ: Eudorina).</li>
-                <li><em>Oogamous:</em> ചലനശേഷിയില്ലാത്ത പെൺ ഗ്യാമറ്റും ചലനാത്മകമായ ആൺ ഗ്യാമറ്റും (ഉദാ: Volvox, Fucus).</li>
-            </ul>
-        </li>
+        <li class="ml-text">ഭൂമിയിലെ ആകെ കാർബൺ ഡൈഓക്സൈഡ് സ്ഥിരീകരണത്തിന്റെ പകുതിയും ആൽഗകൾ ചെയ്യുന്നു.</li>
+        <li class="en">At least a half of the total carbon dioxide fixation on earth is carried out by algae.</li>
+        
+        <li class="ml-text">ഭക്ഷണമായി: Porphyra, Laminaria, Sargassum.</li>
+        <li class="en">As food: Porphyra, Laminaria, and Sargassum.</li>
+        
+        <li class="ml-text">ഹൈഡ്രോകോളോയിഡുകൾ: അൽജിൻ (തവിട്ട്), കറാജീൻ (ചുവന്ന).</li>
+        <li class="en">Hydrocolloids: Algin (brown algae) and carrageen (red algae).</li>
+        
+        <li class="ml-text">അഗാർ (Agar): Gelidium, Gracilaria എന്നിവയിൽ നിന്ന് ലഭിക്കുന്നു.</li>
+        <li class="en">Agar: Obtained from Gelidium and Gracilaria.</li>
     </ul>
 
-    <h2>5. മനുഷ്യനും പ്രകൃതിക്കും ആൽഗകൾ കൊണ്ടുള്ള ഗുണങ്ങൾ (Economic Importance)</h2>
-    <ul>
-        <li>ഭൂമിയിലെ ആകെ കാർബൺ ഡൈഓക്സൈഡ് സ്ഥിരീകരണത്തിന്റെ പകുതിയും ആൽഗകൾ ചെയ്യുന്നു. ഓക്സിജൻ അളവ് കൂട്ടുന്നു.</li>
-        <li>ഭക്ഷണമായി: Porphyra, Laminaria, Sargassum.</li>
-        <li>ഹൈഡ്രോകോളോയിഡുകൾ: അൽജിൻ (തവിട്ട് ആൽഗ), കറാജീൻ (ചുവന്ന ആൽഗ).</li>
-        <li>അഗാർ (Agar): Gelidium, Gracilaria എന്നിവയിൽ നിന്ന് (ഐസ്ക്രീമിനും സൂക്ഷ്മജീവികളെ വളർത്താനും).</li>
-        <li>ബഹിരാകാശ ഭക്ഷണം: ക്ലോറെല്ല (Chlorella).</li>
-    </ul>
-
-    <h2>6. ആൽഗകളുടെ ക്ലാസിഫിക്കേഷനും നിറവ്യത്യാസങ്ങളും (Classes & Pigments Lecture)</h2>
+    <h2 class="ml-text">6. ക്ലാസുകളും പിഗ്മെന്റുകളും (Classes & Pigments)</h2>
+    <h2 class="en">6. Classes and Pigments</h2>
     
-    <div class="lecture-box">
-        <h3>💡 അധ്യാപകരുടെ ലെക്ചർ: എന്തുകൊണ്ടാണ് ആൽഗകൾക്ക് വ്യത്യസ്ത നിറങ്ങൾ വരുന്നത്?</h3>
-        <p><strong>1. പച്ച ആൽഗകൾ (Chlorophyceae):</strong> ക്ലോറോഫിൽ a, b ഉള്ളതുകൊണ്ട് തെളിഞ്ഞ പച്ച നിറം.</p>
-        <p><strong>2. തവിട്ട് ആൽഗകൾ (Phaeophyceae):</strong> <strong>ഫ്യൂക്കോക്യാന്തിൻ (Fucoxanthin)</strong> എന്ന പിഗ്മെന്റ് ഉള്ളതുകൊണ്ട് തവിട്ട് നിറം.</p>
-        <p><strong>3. ചുവന്ന ആൽഗകൾ (Rhodophyceae):</strong> ആഴങ്ങളിലെ നീല വെളിച്ചത്തെ ആഗിരണം ചെയ്യുന്ന <strong>ആർ-ഫൈക്കോഎരിത്രിൻ (r-Phycoerythrin)</strong> ഉള്ളതുകൊണ്ട് ചുവപ്പ് നിറം.</p>
-    </div>
-
     <table>
         <tr>
             <th>Classes</th>
             <th>Common Name</th>
             <th>Major Pigments</th>
             <th>Stored Food</th>
-            <th>Cell Wall</th>
-            <th>Examples</th>
         </tr>
         <tr>
             <td><strong>Chlorophyceae</strong></td>
-            <td>Green algae</td>
+            <td>
+                <span class="ml-text">Green algae (പച്ച ആൽഗ)</span>
+                <span class="en">Green algae</span>
+            </td>
             <td>Chlorophyll a, b</td>
             <td>Starch</td>
-            <td>Cellulose & Pectose</td>
-            <td>Chlamydomonas, Volvox, Ulothrix, Spirogyra, Chara</td>
         </tr>
         <tr>
             <td><strong>Phaeophyceae</strong></td>
-            <td>Brown algae</td>
-            <td>Chlorophyll a, c, <span class="highlight">Fucoxanthin</span></td>
+            <td>
+                <span class="ml-text">Brown algae (തവിട്ട് ആൽഗ)</span>
+                <span class="en">Brown algae</span>
+            </td>
+            <td>Chlorophyll a, c, Fucoxanthin</td>
             <td>Mannitol, Laminarin</td>
-            <td>Cellulose & Algin</td>
-            <td>Ectocarpus, Dictyota, Laminaria, Sargassum, Fucus</td>
         </tr>
         <tr>
             <td><strong>Rhodophyceae</strong></td>
-            <td>Red algae</td>
-            <td>Chlorophyll a, d, <span class="highlight">r-Phycoerythrin</span></td>
+            <td>
+                <span class="ml-text">Red algae (ചുവന്ന ആൽഗ)</span>
+                <span class="en">Red algae</span>
+            </td>
+            <td>Chlorophyll a, d, r-Phycoerythrin</td>
             <td>Floridean starch</td>
-            <td>Cellulose, pectin & poly sulphate esters</td>
-            <td>Polysiphonia, Porphyra, Gracilaria, Gelidium</td>
         </tr>
     </table>
 
 </div>
+
+<!-- ഭാഷ മാറ്റാൻ സഹായിക്കുന്ന ജാവസ്ക്രിപ്റ്റ് കോഡ് -->
+<script>
+    let isEnglish = false;
+    function toggleLanguage() {
+        isEnglish = !isEnglish;
+        const mlElements = document.querySelectorAll('.ml-text');
+        const enElements = document.querySelectorAll('.en');
+        const btn = document.querySelector('.lang-trigger');
+
+        if (isEnglish) {
+            mlElements.log = mlElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = 'block');
+            btn.innerText = "Switch to മലയാളം";
+        } else {
+            mlElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'none');
+            btn.innerText = "Switch to English / ഇംഗ്ലീഷിലേക്ക് മാറ്റുക";
+        }
+    }
+
+    // പേജ് ലോഡ് ചെയ്യുമ്പോൾ ഇംഗ്ലീഷ് ഭാഗങ്ങൾ ഹൈഡ് ചെയ്തു വെക്കാൻ
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+    });
+</script>
 
 </body>
 </html>
