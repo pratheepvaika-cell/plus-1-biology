@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBSE Plus One PCMB Hub</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         
         * {
             box-sizing: border-box;
@@ -15,67 +15,70 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #f8fafc;
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
             color: #334155;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .app-container {
             width: 100%;
-            max-width: 850px;
+            max-width: 900px;
             background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
         .top-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 18px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .board-info span {
             font-size: 11px;
             font-weight: 700;
             background: #e0f2fe;
-            color: #0369a1;
-            padding: 4px 10px;
-            border-radius: 4px;
+            color: #0284c7;
+            padding: 5px 12px;
+            border-radius: 20px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .board-info h1 {
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
             color: #0f172a;
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .lang-switch {
             display: flex;
             background: #f1f5f9;
             padding: 4px;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid #cbd5e1;
         }
 
         .lang-btn {
             background: transparent;
             border: none;
-            padding: 6px 12px;
+            padding: 6px 14px;
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
-            border-radius: 6px;
+            border-radius: 8px;
             color: #64748b;
             transition: all 0.2s;
         }
@@ -83,58 +86,71 @@
         .lang-btn.active {
             background: #ffffff;
             color: #0f172a;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
 
         .greeting-section {
             margin-bottom: 25px;
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            padding: 20px;
+            border-radius: 14px;
+            color: #ffffff;
         }
 
         .greeting-section h2 {
             font-size: 20px;
             font-weight: 700;
-            color: #1e293b;
         }
 
         .greeting-section p {
             font-size: 13px;
-            color: #64748b;
-            margin-top: 4px;
+            color: #e0f2fe;
+            margin-top: 6px;
         }
 
         .section-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            color: #475569;
+            color: #64748b;
             margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .subject-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            gap: 15px;
             margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .subject-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .subject-card.full-width {
+                grid-column: span 1 !important;
+            }
         }
 
         .subject-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 16px;
+            border-radius: 12px;
+            padding: 18px;
             text-decoration: none;
             color: #334155;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .subject-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
-            transform: translateY(-2px);
+            border-color: #0284c7;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
+            transform: translateY(-4px);
         }
 
         .subject-card.full-width {
@@ -146,11 +162,11 @@
 
         .sub-icon {
             font-size: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             background: #f8fafc;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -162,24 +178,24 @@
         }
 
         .sub-info h4 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .sub-info p {
-            font-size: 11px;
+            font-size: 12px;
             color: #64748b;
         }
 
         .status-badge {
-            font-size: 10px;
-            padding: 3px 8px;
+            font-size: 11px;
+            padding: 4px 10px;
             border-radius: 20px;
             font-weight: 600;
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .badge-ready {
@@ -196,8 +212,8 @@
             text-align: center;
             font-size: 12px;
             color: #94a3b8;
-            padding-top: 15px;
-            border-top: 1px solid #e2e8f0;
+            padding-top: 18px;
+            border-top: 1px solid #f1f5f9;
         }
     </style>
 </head>
@@ -210,7 +226,6 @@
                 <span>CBSE / NCERT Curriculum</span>
                 <h1>Higher Secondary Plus One (PCMB)</h1>
             </div>
-            <!-- Language Switcher Trigger -->
             <div class="lang-switch">
                 <button class="lang-btn active" onclick="setLanguage('en')">English</button>
                 <button class="lang-btn" onclick="setLanguage('ml')">മലയാളം</button>
@@ -225,7 +240,6 @@
         <div class="section-title" id="core-title">Core Subjects</div>
 
         <div class="subject-grid">
-            <!-- Biology Link pointing to biology.html -->
             <a href="biology.html" class="subject-card">
                 <div>
                     <div class="sub-icon">🧬</div>
