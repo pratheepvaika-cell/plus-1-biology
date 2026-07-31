@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +20,50 @@
             padding: 35px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
         }
+
+        /* Top Navigation for Workout and Language Switcher buttons */
+        .top-nav {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .top-btn, .lang-switch {
+            padding: 0 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            border: 2px solid #2e7d32;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            box-sizing: border-box;
+            white-space: nowrap;
+        }
+        
+        .top-btn:hover, .lang-switch:hover {
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+
         h1 {
             color: #2e7d32;
-            text-align: center;
+            text-align: left;
             border-bottom: 3px solid #4caf50;
             padding-bottom: 10px;
+            padding-right: 320px;
         }
         h2 {
             color: #388e3c;
@@ -64,7 +102,6 @@
             padding: 2px 5px;
             border-radius: 3px;
         }
-        /* ബട്ടണിനായുള്ള സ്റ്റൈൽ */
         .view-more-btn {
             display: inline-block;
             background-color: #2e7d32;
@@ -80,11 +117,48 @@
         .view-more-btn:hover {
             background-color: #1b5e20;
         }
+
+        /* Professional Full-Width Bottom Action Button */
+        .bottom-actions {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            transition: 0.2s;
+            box-sizing: border-box;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        .home-action {
+            background-color: #475569;
+            color: #ffffff;
+            border: 1px solid #475569;
+        }
+        .home-action:hover {
+            background-color: #334155;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Top Right Navigation Buttons (Workout & Language Switcher) -->
+    <div class="top-nav">
+        <a href="workout_q3.html" class="top-btn">Workout & Exercises</a>
+        <button class="lang-switch" onclick="toggleLanguage()">മലയാളത്തിലേക്ക് മാറ്റുക</button>
+    </div>
+
     <h1>CHAPTER 3: PLANT KINGDOM (സസ്യലോകം)</h1>
 
     <!-- Introduction Section -->
@@ -134,7 +208,6 @@
         </tr>
     </table>
 
-    <!-- ആൽഗയെക്കുറിച്ചുള്ള കൂടുതൽ പേജിലേക്ക് പോകാനുള്ള ബട്ടൺ -->
     <a href="alga.html" class="view-more-btn">👉 Click Here to View More Algae Details</a>
 
     <!-- 3.2 Bryophytes -->
@@ -166,7 +239,17 @@
         <li>Divided into two classes: Dicotyledons and Monocotyledons.</li>
     </ul>
 
+    <!-- Professional Full-Width Bottom Action Button -->
+    <div class="bottom-actions">
+        <a href="index.html" class="action-btn home-action">← ഹോം പേജിലേക്ക് മടങ്ങുക (Back to Home Page)</a>
+    </div>
 </div>
+
+<script>
+    function toggleLanguage() {
+        alert('Language toggle functionality can be linked here!');
+    }
+</script>
 
 </body>
 </html>
