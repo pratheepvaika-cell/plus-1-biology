@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Interactive Workout & Question Bank - Chapter 2: Biological Classification</title>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 20px; line-height: 1.7; scroll-behavior: smooth; }
+        .container { max-width: 900px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
+        
+        .nav-buttons {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .lang-switch, .back-btn {
+            padding: 0 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            box-sizing: border-box;
+            border: 2px solid #2563eb !important;
+            background-color: #eff6ff !important;
+            color: #2563eb !important;
+            white-space: nowrap;
+        }
+        
+        .lang-switch:hover, .back-btn:hover {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+        }
+
+        h1 { color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 25px; margin-bottom: 20px; padding-right: 280px; }
+        h2 { font-size: 18px; margin-top: 30px; color: #1e293b; background: #f1f5f9; padding: 10px 15px; border-radius: 6px; border-left: 4px solid #2563eb; }
+        
+        p, li { font-size: 15px; }
+        ul { margin-bottom: 20px; }
+
+        .question-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .question-box p { font-weight: 600; color: #0f172a; margin-top: 0; }
+        
+        .options { list-style-type: none; padding-left: 0; }
+        .options li { 
+            padding: 10px 14px; 
+            margin-bottom: 8px; 
+            background: #ffffff; 
+            border: 1px solid #cbd5e1; 
+            border-radius: 6px; 
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .options li:hover { background: #f1f5f9; border-color: #94a3b8; }
+        
+        .options li.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #166534; font-weight: 600; }
+        .options li.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b; }
+
+        .action-btn {
+            background-color: #0f766e;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        .action-btn:hover { background-color: #115e59; }
+
+        .answer-reveal {
+            display: none;
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #166534;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background: #f1f5f9; color: #0f172a; }
+
+        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; }
+        .back-link:hover { background: #475569; }
+
+        .lang-en { display: none; }
+        .lang-ml { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="nav-buttons">
+            <a href="chapter2.html" class="back-btn lang-ml">← തിരികെ നോട്ട്സിലേക്ക്</a>
+            <a href="chapter2.html" class="back-btn lang-en">← Back to Notes</a>
+            <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
+        </div>
+
+        <h1 class="lang-ml">ചാപ്റ്റർ 2: ജീവ വർഗീകരണം (Biological Classification) - വർക്ക്ഔട്ട് & ചോദ്യശേഖരം</h1>
+        <h1 class="lang-en">Chapter 2: Biological Classification - Advanced Workout & Question Bank</h1>
+
+        <!-- SECTION A: MCQs -->
+        <h2 class="lang-ml">വിഭാഗം എ: മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (NEET Pattern MCQs)</h2>
+        <h2 class="lang-en">Section A: Multiple Choice Questions (NEET Pattern MCQs)</h2>
+
+        <!-- Q1 -->
+        <div class="question-box">
+            <p class="lang-ml">1. അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണം (Five Kingdom Classification) ആവിഷ്കരിച്ചത് ആര്?</p>
+            <p class="lang-en">1. Who proposed the Five Kingdom Classification?</p>
+            
+            <ul class="options lang-ml" data-correct="1">
+                <li onclick="checkAnswer(this, false)">(A) കരോലസ് ലിന്നേയസ് (Carolus Linnaeus)</li>
+                <li onclick="checkAnswer(this, true)">(B) ആർ.എച്ച്. വിറ്റേക്കർ (R.H. Whittaker)</li>
+                <li onclick="checkAnswer(this, false)">(C) എർൺസ്റ്റ് മേയർ (Ernst Mayr)</li>
+                <li onclick="checkAnswer(this, false)">(D) അറിസ്റ്റോട്ടിൽ (Aristotle)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="1">
+                <li onclick="checkAnswer(this, false)">(A) Carolus Linnaeus</li>
+                <li onclick="checkAnswer(this, true)">(B) R.H. Whittaker</li>
+                <li onclick="checkAnswer(this, false)">(C) Ernst Mayr</li>
+                <li onclick="checkAnswer(this, false)">(D) Aristotle</li>
+            </ul>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) ആർ.എച്ച്. വിറ്റേക്കർ (1969)</span>
+                <span class="lang-en"><strong>Answer:</strong> (B) R.H. Whittaker (1969)</span>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-box">
+            <p class="lang-ml">2. കോശഭിത്തി തികച്ചും ഇല്ലാത്ത ഏറ്റവും ചെറിയ ജീവകോശങ്ങൾ ഏവ?</p>
+            <p class="lang-en">2. Which organisms completely lack a cell wall and are the smallest living cells known?</p>
+            
+            <ul class="options lang-ml" data-correct="3">
+                <li onclick="checkAnswer(this, false)">(A) ബാക്ടീരിയ (Bacteria)</li>
+                <li onclick="checkAnswer(this, false)">(B) വൈറസ് (Viruses)</li>
+                <li onclick="checkAnswer(this, false)">(C) യീസ്റ്റ് (Yeast)</li>
+                <li onclick="checkAnswer(this, true)">(D) മൈക്കോപ്ലാസ്മ (Mycoplasma)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="3">
+                <li onclick="checkAnswer(this, false)">(A) Bacteria</li>
+                <li onclick="checkAnswer(this, false)">(B) Viruses</li>
+                <li onclick="checkAnswer(this, false)">(C) Yeast</li>
+                <li onclick="checkAnswer(this, true)">(D) Mycoplasma</li>
+            </ul>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (D) മൈക്കോപ്ലാസ്മ (Mycoplasma)</span>
+                <span class="lang-en"><strong>Answer:</strong> (D) Mycoplasma</span>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-box">
+            <p class="lang-ml">3. സസ്യങ്ങളിൽ 'മൊസൈക് രോഗം' (Mosaic disease of tobacco) ഉണ്ടാക്കുന്ന രോഗാണുവിനെ കണ്ടെത്തിയത് ആര്?</p>
+            <p class="lang-en">3. Who recognized certain microbes as causal organisms of the mosaic disease of tobacco?</p>
+            
+            <ul class="options lang-ml" data-correct="0">
+                <li onclick="checkAnswer(this, true)">(A) ദിമിത്രി ഇവാനോവ്സ്കി (Dmitri Ivanowsky)</li>
+                <li onclick="checkAnswer(this, false)">(B) എം.ഡബ്ല്യു. ബെജറിങ്ക് (M.W. Beijerinck)</li>
+                <li onclick="checkAnswer(this, false)">(C) ഡബ്ല്യു.എം. സ്റ്റാൻലി (W.M. Stanley)</li>
+                <li onclick="checkAnswer(this, false)">(D) ടി.ഒ. ഡീനർ (T.O. Diener)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="0">
+                <li onclick="checkAnswer(this, true)">(A) Dmitri Ivanowsky</li>
+                <li onclick="checkAnswer(this, false)">(B) M.W. Beijerinck</li>
+                <li onclick="checkAnswer(this, false)">(C) W.M. Stanley</li>
+                <li onclick="checkAnswer(this, false)">(D) T.O. Diener</li>
+            </ul>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (A) ദിമിത്രി ഇവാനോവ്സ്കി (1892)</span>
+                <span class="lang-en"><strong>Answer:</strong> (A) Dmitri Ivanowsky (1892)</span>
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-box">
+            <p class="lang-ml">4. പ്രോട്ടീൻ കോട്ട് ഇല്ലാത്ത, സ്വതന്ത്ര ആർ.എൻ.എ (Free RNA) മാത്രം അടങ്ങിയ രോഗാണു ഏത്?</p>
+            <p class="lang-en">4. Infectious agents consisting only of free RNA without a protein coat are called:</p>
+            
+            <ul class="options lang-ml" data-correct="2">
+                <li onclick="checkAnswer(this, false)">(A) വൈറസുകൾ (Viruses)</li>
+                <li onclick="checkAnswer(this, false)">(B) പ്രിയോണുകൾ (Prions)</li>
+                <li onclick="checkAnswer(this, true)">(C) വെയറോയ്ഡുകൾ (Viroids)</li>
+                <li onclick="checkAnswer(this, false)">(D) ലൈക്കണുകൾ (Lichens)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="2">
+                <li onclick="checkAnswer(this, false)">(A) Viruses</li>
+                <li onclick="checkAnswer(this, false)">(B) Prions</li>
+                <li onclick="checkAnswer(this, true)">(C) Viroids</li>
+                <li onclick="checkAnswer(this, false)">(D) Lichens</li>
+            </ul>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (C) വെയറോയ്ഡുകൾ (Viroids - ടി.ഒ. ഡീനർ 1971-ൽ കണ്ടെത്തി)</span>
+                <span class="lang-en"><strong>Answer:</strong> (C) Viroids (Discovered by T.O. Diener in 1971)</span>
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-box">
+            <p class="lang-ml">5. പൂപ്പലുകളുടെ (Fungi) കോശഭിത്തിയിൽ അടങ്ങിയിരിക്കുന്ന പ്രധാന ഘടകം ഏതാണ്?</p>
+            <p class="lang-en">5. The cell walls of fungi are composed of:</p>
+            
+            <ul class="options lang-ml" data-correct="1">
+                <li onclick="checkAnswer(this, false)">(A) സെല്ലുലോസ് (Cellulose)</li>
+                <li onclick="checkAnswer(this, true)">(B) ചിറ്റിൻ (Chitin and polysaccharides)</li>
+                <li onclick="checkAnswer(this, false)">(C) പെപ്റ്റിഡോഗ്ലൈക്കാൻ (Peptidoglycan)</li>
+                <li onclick="checkAnswer(this, false)">(D) സിലിക്ക (Silica)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="1">
+                <li onclick="checkAnswer(this, false)">(A) Cellulose</li>
+                <li onclick="checkAnswer(this, true)">(B) Chitin and polysaccharides</li>
+                <li onclick="checkAnswer(this, false)">(C) Peptidoglycan</li>
+                <li onclick="checkAnswer(this, false)">(D) Silica</li>
+            </ul>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) ചിറ്റിൻ (Chitin)</span>
+                <span class="lang-en"><strong>Answer:</strong> (B) Chitin and polysaccharides</span>
+            </div>
+        </div>
+
+
+        <!-- SECTION B: True or False -->
+        <h2 class="lang-ml">വിഭാഗം ബി: ശരിയോ തെറ്റോ കണ്ടെത്തുക (True or False)</h2>
+        <h2 class="lang-en">Section B: True or False</h2>
+        
+        <div class="question-box">
+            <p class="lang-ml">1. ആർ.എച്ച്. വിറ്റേക്കറുടെ വർഗ്ഗീകരണത്തിൽ ബാക്ടീരിയകളെല്ലാം 'കിങ്ഡംൊ മൊണേറ'യിലാണ് ഉൾപ്പെടുത്തിയിരിക്കുന്നത്.</p>
+            <p class="lang-en">1. All bacteria are included in Kingdom Monera in Whittaker's classification.</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-en"><strong>Answer:</strong> True</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">2. ഡയറ്റമുകളുടെ കോശഭിത്തിയിൽ സിലിക്ക അടങ്ങിയിരിക്കുന്നതിനാൽ അവ നശിച്ചുപോകാത്തവയാണ്.</p>
+            <p class="lang-en">2. Diatom cell walls are embedded with silica and thus indestructible.</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-en"><strong>Answer:</strong> True</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">3. ലൈക്കണുകൾ മലിനീകരണത്തിന്റെ മോശം സൂചകങ്ങളാണ് (Pollution indicators).</p>
+            <p class="lang-en">3. Lichens are poor indicators of pollution.</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (അവ നല്ല സൂചകങ്ങളാണ്, മലിന പ്രദേശങ്ങളിൽ വളരില്ല)</span>
+                <span class="lang-en"><strong>Answer:</strong> False (They are very good pollution indicators)</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">4. വൈറസുകളിൽ ആർ.എൻ.എയും ഡി.എൻ.എയും ഒരുമിച്ച് കാണപ്പെടുന്നു.</p>
+            <p class="lang-en">4. Both RNA and endocellar DNA are present together in a single virus.</p>
+            <button class="action-2 action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (ഏതെങ്കിലും ഒന്നു മാത്രമേ കാണപ്പെടൂ)</span>
+                <span class="lang-en"><strong>Answer:</strong> False (No virus contains both RNA and DNA)</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">5. മീഥെയ്ൻ വാതകം (ബയോഗ്യാസ്) ഉത്പാദിപ്പിക്കുന്നതിൽ മിഥാനോജനുകൾക്ക് പങ്കുണ്ട്.</p>
+            <p class="lang-en">5. Methanogens are responsible for the production of methane (biogas).</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-en"><strong>Answer:</strong> True</span>
+            </div>
+        </div>
+
+
+        <!-- SECTION C: Short Answers -->
+        <h2 class="lang-ml">വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങൾ (Short Answers)</h2>
+        <h2 class="lang-en">Section C: Short Answers</h2>
+        
+        <div class="question-box">
+            <p class="lang-ml">1. ആർ.എച്ച്. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തിലെ പ്രധാന മാനദണ്ഡങ്ങൾ ഏവ?</p>
+            <p class="lang-en">1. What are the main criteria used by R.H. Whittaker for classification?</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> കോശഘടന (Cell structure), ശരീര സംഘടന (Body organization), പോഷണ രീതി (Mode of nutrition), പ്രജനനം (Reproduction), ഫൈലോജെനെറ്റിക് ബന്ധങ്ങൾ (Phylogenetic relationships).</span>
+                <span class="lang-en"><strong>Answer:</strong> Cell structure, body organization, mode of nutrition, reproduction, and phylogenetic relationships.</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">2. ആർക്കാബാക്ടീരിയകൾ കഠിനമായ സാഹചര്യങ്ങളെ അതിജീവിക്കുന്നത് എങ്ങനെയെന്ന് വ്യക്തമാക്കുക.</p>
+            <p class="lang-en">2. How do archaebacteria survive in extreme conditions?</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> അവയുടെ കോശഭിത്തിയുടെ ഘടന മറ്റ് ബാക്ടീരിയകളിൽ നിന്ന് വ്യത്യസ്തമായതുകൊണ്ടാണ് കഠിനമായ ചൂട്, ഉപ്പ്, ചതുപ്പ് നിലങ്ങൾ തുടങ്ങിയ ഇടങ്ങളിൽ അവ ജീവിക്കുന്നത്.</span>
+                <span class="lang-en"><strong>Answer:</strong> They differ from other bacteria in having a different cell wall structure which is responsible for their survival in extreme conditions.</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">3. ലൈക്കണുകളിലെ ശാഖകളും ആൽഗകളും അറിയപ്പെടുന്ന പേരുകൾ എന്തെല്ലാം?</p>
+            <p class="lang-en">3. What are the algal and fungal components of lichens known as?</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ആൽഗ ഘടകം - ഫൈക്കോബയോണ്ട് (Phycobiont), പൂപ്പൽ ഘടകം - മൈക്കോബയോണ്ട് (Mycobiont).</span>
+                <span class="lang-en"><strong>Answer:</strong> Algal component - Phycobiont; Fungal component - Mycobiont.</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">4. പ്രിയോണുകൾ (Prions) അഥവാ എന്താണ്? അവ ഉണ്ടാക്കുന്ന പ്രധാന രോഗം ഏത്?</p>
+            <p class="lang-en">4. What are prions? Name a notable disease caused by them.</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> സാധാരണയിൽ നിന്ന് വ്യത്യസ്തമായി മടക്കുകളുള്ള പ്രോട്ടീൻ അടങ്ങിയ രോഗാണുക്കളാണ് പ്രിയോണുകൾ. ഇവ കന്നുകാലികളിൽ 'മാഡ് കൗ ഡിസീസ്' (Mad cow disease / BSE) ഉണ്ടാക്കുന്നു.</span>
+                <span class="lang-en"><strong>Answer:</strong> Infectious agents consisting of abnormally folded proteins. Example: Bovine spongiform encephalopathy (BSE) or Mad cow disease.</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">5. ഡ്യൂട്ടറോമൈസിറ്റുകളെ 'അപൂർണ്ണ പൂപ്പലുകൾ' (Imperfect fungi) എന്ന് വിളിക്കാൻ കാരണമെന്ത്?</p>
+            <p class="lang-en">5. Why are Deuteromycetes commonly known as 'imperfect fungi'?</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ഈ പൂപ്പലുകളുടെ ലൈംഗിക അല്ലെങ്കിൽ വെജിറ്റേറ്റീവ് ഘട്ടങ്ങൾ (Sexual phases) ഇതുവരെ കണ്ടെത്തപ്പെട്ടിട്ടില്ലാത്തതിനാലാണ് അവയെ അങ്ങനെ വിളിക്കുന്നത്.</span>
+                <span class="lang-en"><strong>Answer:</strong> Because only the asexual or vegetative phases of these fungi are known.</span>
+            </div>
+        </div>
+
+
+       <!-- SECTION D: Match the Following -->
+        <h2 class="lang-ml">വിഭാഗം ഡി: മാച്ച് ദി ഫോളോയിങ് (Match the Following)</h2>
+        <h2 class="lang-en">Section D: Match the Following</h2>
+        
+        <div class="question-box">
+            <!-- Grid Container for Match the Following -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
+                <!-- Header Left -->
+                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-ml">പട്ടിക A (Protistan / Group)</div>
+                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-en">Group / Organism</div>
+                
+                <!-- Header Right -->
+                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-ml">പട്ടിക B (Key Feature / Example)</div>
+                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-en">Key Feature / Example</div>
+
+                <!-- Row 1 -->
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">1. ക്രൈസോഫൈറ്റുകൾ (Chrysophytes)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">1. Chrysophytes</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">എ. ഡയറ്റമേഷ്യസ് മണ്ണ് (Diatomaceous earth)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">a. Diatomaceous earth</div>
+
+                <!-- Row 2 -->
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">2. ഡൈനൊഫ്ലാജിലേറ്റുകൾ (Dinoflagellates)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">2. Dinoflagellates</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">ബി. റെഡ് ടൈഡ്സ് (Gonyaulax / Red tides)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">b. Red tides (Gonyaulax)</div>
+
+                <!-- Row 3 -->
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">3. യൂഗ്ലിനോയ്ഡുകൾ (Euglenoids)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">3. Euglenoids</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">സി. പെല്ലിക്കിൾ പാളി (Pellicle layer)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">c. Pellicle layer</div>
+
+                <!-- Row 4 -->
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">4. സ്ലൈം മോൾഡുകൾ (Slime moulds)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">4. Slime moulds</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">ഡി. പ്ലാസ്മോഡിയം അഗ്രഗേഷൻ (Plasmodium)</div>
+                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">d. Plasmodium aggregation</div>
+            </div>
+
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ശരിയായ ക്രമീകരണം:</strong> 1 ➔ a | 2 ➔ b | 3 ➔ c | 4 ➔ d</span>
+                <span class="lang-en"><strong>Correct Matching:</strong> 1 ➔ a | 2 ➔ b | 3 ➔ c | 4 ➔ d</span>
+            </div>
+        </div>
+
+        <!-- SECTION E: Essay / Analytical Questions -->
+        <h2 class="lang-ml">വിഭാഗം ഇ: വിശദമായ ഉത്തരങ്ങൾ (Essay / Analytical Questions)</h2>
+        <h2 class="lang-en">Section E: Essay / Analytical Questions</h2>
+        
+        <div class="question-box">
+            <p class="lang-ml">1. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തിന്റെ ഗുണങ്ങളും, അതിലേക്ക് നയിച്ച കാരണങ്ങളും വിശദീകരിക്കുക.</p>
+            <p class="lang-en">1. Explain the drawbacks of the two kingdom classification and how Whittaker's five kingdom classification resolved them.</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> പഴയ രണ്ട് ജൈവമണ്ഡല സമ്പ്രദായം പ്രൊകാരിയോറ്റുകളെയും യൂകാരിയോറ്റുകളെയും, ഏകകോശ-ബഹുകോശ ജീവികളെയും, ഫംഗസുകളെയും പച്ചച്ചെടികളെയും ഒരുമിച്ച് ഉൾപ്പെടുത്തിയിരുന്നു. ഫംഗസുകളുടെ കോശഭിത്തി ചിറ്റിൻ കൊണ്ടുണ്ടാക്കിയതാണെങ്കിലും അവയെ സസ്യങ്ങളിൽ ഉൾപ്പെടുത്തി. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണം കോശഘടന, പോഷണ രീതി, ഫൈലോജെനി എന്നിവ അടിസ്ഥാനമാക്കി ഇവയെല്ലാം വേറിട്ട രാജധാനികളിൽ (Monera, Protista, Fungi മുതലായവ) കൃത്യമായി തരംതിരിച്ചു.</span>
+                <span class="lang-en"><strong>Hint / Answer:</strong> The two-kingdom system grouped prokaryotes with eukaryotes, unicellular with multicellular organisms, and fungi with green plants. Whittaker's five-kingdom classification resolved these issues by incorporating cell structure, mode of nutrition, and phylogenetic relationships, separating fungi into Kingdom Fungi, prokaryotes into Monera, and unicellular eukaryotes into Protista.</span>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="lang-ml">2. ഫംഗസുകളിലെ ലൈംഗിക പ്രജനന ചക്രത്തിലെ പ്രധാന മൂന്ന് ഘട്ടങ്ങൾ ഏവ? വിശദീകരിക്കുക.</p>
+            <p class="lang-en">2. Describe the three steps involved in the sexual cycle of fungi.</p>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> 
+                1. പ്ലാസ്മോഗമി (Plasmogamy): ചലനശേഷിയുള്ളതോ അല്ലാത്തതോ ആയ രണ്ട് ഗാമിറ്റുകളുടെ പ്രോട്ടോപ്ലാസങ്ങൾ തമ്മിലുള്ള സംയോജനം. <br>
+                2. കാരിയോഗമി (Karyogami): രണ്ട് കേന്ദ്രക്കണ്ണുകൾ (Nuclei) തമ്മിലുള്ള സംയോജനം. <br>
+                3. മിയോസിസ് (Meiosis): സൈഗോട്ടിൽ നടക്കുന്ന അപചയ വിഭജനം വഴി ഹാപ്ലോയ്ഡ് സ്പോറുകൾ ഉണ്ടാകുന്നു. (ചില ഫംഗസുകളിൽ n+n അഥവാ ഡൈകാരിയോട്ടിക് ഘട്ടവും കാണപ്പെടുന്നു).</span>
+                <span class="lang-en"><strong>Hint / Answer:</strong> 
+                1. Fusion of protoplasms between two motile or non-motile gametes (Plasmogamy). <br>
+                2. Fusion of two nuclei (Karyogami). <br>
+                3. Meiosis in zygote resulting in haploid spores. (Some fungi also exhibit an intervening dikaryotic stage, n+n).</span>
+            </div>
+        </div>
+
+        <a href="../biology.html" class="back-link lang-ml">← ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
+        <a href="../biology.html" class="back-link lang-en">← Back to Biology Index</a>
+    </div>
+
+    <script>
+        // Interactive MCQ checking logic
+        function checkAnswer(liElement, isCorrect) {
+            const ul = liElement.parentElement;
+            const items = ul.children;
+            
+            for (let item of items) {
+                item.classList.remove('correct', 'wrong');
+            }
+
+            if (isCorrect) {
+                liElement.classList.add('correct');
+            } else {
+                liElement.classList.add('wrong');
+                for (let item of items) {
+                    if (item.getAttribute('onclick').includes('true')) {
+                        item.classList.add('correct');
+                    }
+                }
+            }
+        }
+
+        // Toggle Show/Hide Answer for descriptive/other questions
+        function toggleAnswer(btn) {
+            const revealDiv = btn.nextElementSibling;
+            
+            if (revealDiv.style.display === 'block') {
+                revealDiv.style.display = 'none';
+                btn.textContent = btn.textContent.includes('മറയ്ക്കുക') ? 'ഉത്തരം കാണുക' : 'Show Answer';
+            } else {
+                revealDiv.style.display = 'block';
+                btn.textContent = btn.textContent.includes('കാണുക') ? (btn.textContent.includes('Show') ? 'Hide Answer' : 'ഉത്തരം മറയ്ക്കുക') : btn.textContent;
+            }
+        }
+
+        // Language toggle script
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            applyLanguage(currentLang);
+        });
+
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            const newLang = currentLang === 'ml' ? 'en' : 'ml';
+            localStorage.setItem('preferredLang', newLang);
+            applyLanguage(newLang);
+        }
+
+        function applyLanguage(lang) {
+            const mlElements = document.querySelectorAll('.lang-ml');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.querySelector('.lang-switch');
+
+            if (lang === 'en') {
+                if(btn) btn.textContent = 'മലയാളത്തിലേക്ക് മാറ്റുക';
+                mlElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+            } else {
+                if(btn) btn.textContent = 'Switch to English';
+                enElements.forEach(el => el.style.display = 'none');
+                mlElements.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
+</body>
+</html>
