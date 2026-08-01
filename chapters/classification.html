@@ -136,7 +136,6 @@
             padding: 12px;
         }
 
-        /* Detail Page View Style */
         .detail-page {
             display: none;
             margin-top: 20px;
@@ -169,7 +168,6 @@
             background-color: #dc2626;
         }
         
-        /* Image container and Fallback styling */
         .img-container {
             width: 100%;
             max-height: 240px;
@@ -209,7 +207,6 @@
             font-weight: bold;
         }
 
-        /* Modal Popup CSS for Larger View */
         .modal {
             display: none;
             position: fixed;
@@ -246,7 +243,6 @@
             margin-bottom: 15px;
         }
 
-        /* Chapter 4 Trigger Box Style */
         .chapter-trigger-box {
             margin-top: 30px;
             background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -280,7 +276,7 @@
 
 <div class="container notranslate" translate="no">
 
-    <!-- MAIN FLOWCHART VIEW (Home) -->
+    <!-- HOME VIEW -->
     <div id="home-view">
         <div class="top-bar">
             <button class="lang-btn" onclick="toggleLanguage()">English / മലയാളം</button>
@@ -356,14 +352,13 @@
 
         </div>
 
-        <!-- Back to Chapter 4 Trigger Box (Home View) -->
         <div class="chapter-trigger-box" onclick="goToChapterFour()">
             <div class="chapter-trigger-title" id="ch4TextHome">← നാലാം അധ്യായത്തിലേക്ക് മടങ്ങുക (Back to Chapter Number Four)</div>
         </div>
     </div>
 
 
-    <!-- INDIVIDUAL DETAIL PAGES WITH IMAGE ERROR HANDLING -->
+    <!-- DETAIL PAGES WITH CORRECTED FILE NAMES -->
 
     <!-- 1. Porifera -->
     <div id="porifera" class="detail-page">
@@ -372,8 +367,8 @@
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
         <div class="img-container">
-            <img src="porifera.jpg" alt="Porifera Sponge" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (porifera.jpg ഫയൽ പരിശോധിക്കുക)</div>
+            <img src="Porifera.jpg" alt="Porifera Sponge" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (Porifera.jpg ഫയൽ പരിശോധിക്കുക)</div>
         </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
@@ -420,7 +415,7 @@
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
-            <p class="descContent">ചാപപ്പുഴുക്കൾ അഥവാ ഫ്ലാറ്റ്‌വേംസ് എന്നറിയപ്പെടുന്നു. ഇവയുടെ ശരീരം ഡോർസോവെൻട്രലി പരന്നതാണ് (Flat body). മിക്കവയും മനുഷ്യരിലും മറ്റ് ജീവികളിലും পরജീവികളായി (Parasites) ജീവിക്കുന്നു.</p>
+            <p class="descContent">ചാപപ്പുഴുക്കൾ അഥവാ ഫ്ലാറ്റ്‌വേംസ് എന്നറിയപ്പെടുന്നു. ഇവയുടെ ശരീരം ഡോർസോവെൻട്രലി പരന്നതാണ് (Flat body). മിക്കവയും മനുഷ്യരിലും മറ്റ് ജീവികളിലും പരജീവികളായി (Parasites) ജീവിക്കുന്നു.</p>
             <p class="exContent"><b>ഉദാഹരണങ്ങൾ (Examples):</b> Planaria, Liver fluke, Tapeworm.</p>
         </div>
         <div class="chapter-trigger-box" onclick="goToChapterFour()">
@@ -598,13 +593,12 @@
 
 </div>
 
-<!-- Image Zoom Modal Popup Container -->
+<!-- Modal Popup Container -->
 <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close-modal">&times;</span>
     <img class="modal-content" id="modalImg">
 </div>
 
-<!-- JavaScript for Navigation, Language & Image Popup -->
 <script>
     let currentLang = 'ml';
 
