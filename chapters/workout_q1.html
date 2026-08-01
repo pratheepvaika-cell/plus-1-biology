@@ -3,32 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Interactive Workout & Question Bank - Chapter 1</title>
+    <title>Chapter 1: The Living World - Advanced Workout & Question Bank</title>
+    <!-- FontAwesome Icons for Modern Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 20px; line-height: 1.7; scroll-behavior: smooth; }
-        .container { max-width: 900px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
+        body { 
+            font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, sans-serif; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+            color: #334155; 
+            margin: 0; 
+            padding: 20px; 
+            line-height: 1.7; 
+            scroll-behavior: smooth; 
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: #ffffff; 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            position: relative; 
+        }
         
         .nav-buttons {
-            position: absolute;
-            top: 25px;
-            right: 40px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
             align-items: center;
+            margin-bottom: 25px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
         }
 
         .lang-switch, .back-btn {
-            padding: 0 16px;
-            border-radius: 6px;
+            padding: 0 18px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             text-decoration: none;
-            font-size: 14px;
-            transition: 0.2s;
+            font-size: 13px;
+            transition: all 0.2s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             height: 40px;
             box-sizing: border-box;
             border: 2px solid #2563eb !important;
@@ -40,26 +61,54 @@
         .lang-switch:hover, .back-btn:hover {
             background-color: #2563eb !important;
             color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
-        h1 { color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 25px; margin-bottom: 20px; padding-right: 280px; }
-        h2 { font-size: 18px; margin-top: 30px; color: #1e293b; background: #f1f5f9; padding: 10px 15px; border-radius: 6px; border-left: 4px solid #2563eb; }
+        h1 { 
+            color: #0f172a; 
+            font-size: 24px; 
+            border-bottom: 2px solid #f1f5f9; 
+            padding-bottom: 15px; 
+            margin-top: 0; 
+            margin-bottom: 25px; 
+        }
+        h2 { 
+            font-size: 17px; 
+            margin-top: 35px; 
+            color: #1e293b; 
+            background: #f1f5f9; 
+            padding: 12px 18px; 
+            border-radius: 8px; 
+            border-left: 4px solid #2563eb; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
         
         p, li { font-size: 15px; }
         ul { margin-bottom: 20px; }
 
-        .question-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .question-box { 
+            background: #f8fafc; 
+            border: 1px solid #e2e8f0; 
+            padding: 22px; 
+            border-radius: 12px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
         .question-box p { font-weight: 600; color: #0f172a; margin-top: 0; }
         
         .options { list-style-type: none; padding-left: 0; }
         .options li { 
-            padding: 10px 14px; 
-            margin-bottom: 8px; 
+            padding: 12px 16px; 
+            margin-bottom: 10px; 
             background: #ffffff; 
             border: 1px solid #cbd5e1; 
-            border-radius: 6px; 
+            border-radius: 8px; 
             cursor: pointer;
             transition: all 0.2s ease;
+            font-size: 14px;
         }
         .options li:hover { background: #f1f5f9; border-color: #94a3b8; }
         
@@ -75,8 +124,11 @@
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 12px;
             transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
         .action-btn:hover { background-color: #115e59; }
 
@@ -84,19 +136,61 @@
             display: none;
             background: #f0fdf4;
             border-left: 4px solid #22c55e;
-            padding: 12px 15px;
-            border-radius: 4px;
-            margin-top: 12px;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin-top: 14px;
             font-size: 14px;
             color: #166534;
         }
 
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
-        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
-        th { background: #f1f5f9; color: #0f172a; }
+        /* Fixed Table styling to prevent mobile dark-mode text hiding issues */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 25px 0; 
+            font-size: 13px; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+            background-color: #ffffff !important; 
+        }
+        th, td { 
+            border: 1px solid #e2e8f0 !important; 
+            padding: 12px 15px; 
+            text-align: left; 
+            color: #334155 !important; 
+            background-color: #ffffff !important;
+        }
+        th { 
+            background: #f8fafc !important; 
+            color: #0f172a !important; 
+            font-weight: bold; 
+        }
+        tr:nth-child(even) td { 
+            background-color: #fdfdfd !important; 
+        }
+        tr:hover td { 
+            background-color: #f1f5f9 !important; 
+        }
 
-        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; }
-        .back-link:hover { background: #475569; }
+        .back-link { 
+            display: inline-flex; 
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px; 
+            text-decoration: none; 
+            color: #fff; 
+            background: #64748b; 
+            padding: 12px 20px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            font-size: 14px; 
+            transition: background 0.2s, transform 0.2s;
+        }
+        .back-link:hover { 
+            background: #475569; 
+            transform: translateY(-2px);
+        }
 
         .lang-en { display: none; }
         .lang-ml { display: block; }
@@ -106,17 +200,24 @@
 
     <div class="container">
         <div class="nav-buttons">
-            <a href="chapter1.html" class="back-btn lang-ml">← തിരികെ നോട്ട്സിലേക്ക്</a>
-            <a href="chapter1.html" class="back-btn lang-en">← Back to Notes</a>
-            <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
+            <a href="chapter1.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="lang-ml">തിരികെ നോട്ട്സിലേക്ക്</span>
+                <span class="lang-en">Back to Notes</span>
+            </a>
+            <button class="lang-switch" onclick="toggleLanguage()">
+                <i class="fa-solid fa-globe"></i>
+                <span class="lang-ml">Switch to English</span>
+                <span class="lang-en">മലയാളത്തിലേക്ക്</span>
+            </button>
         </div>
 
         <h1 class="lang-ml">ചാപ്റ്റർ 1: ദി ലിവിങ് വേൾഡ് - വിപുലമായ വർക്ക്ഔട്ട് & ചോദ്യശേഖരം</h1>
         <h1 class="lang-en">Chapter 1: The Living World - Advanced Workout & Question Bank</h1>
 
         <!-- SECTION A: MCQs -->
-        <h2 class="lang-ml">വിഭാഗം എ: മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (NEET Pattern MCQs)</h2>
-        <h2 class="lang-en">Section A: Multiple Choice Questions (NEET Pattern MCQs)</h2>
+        <h2 class="lang-ml"><i class="fa-solid fa-list-check" style="color: #2563eb;"></i> വിഭാഗം എ: മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (NEET Pattern MCQs)</h2>
+        <h2 class="lang-en"><i class="fa-solid fa-list-check" style="color: #2563eb;"></i> Section A: Multiple Choice Questions (NEET Pattern MCQs)</h2>
 
         <!-- Q1 -->
         <div class="question-box">
@@ -135,8 +236,8 @@
                 <li onclick="checkAnswer(this, true)">(C) Metabolism</li>
                 <li onclick="checkAnswer(this, false)">(D) Increase in body mass</li>
             </ul>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> (C) മെറ്റബോളിസം</span>
                 <span class="lang-en"><strong>Answer:</strong> (C) Metabolism</span>
@@ -160,8 +261,8 @@
                 <li onclick="checkAnswer(this, false)">(C) Robert May</li>
                 <li onclick="checkAnswer(this, false)">(D) Lamarck</li>
             </ul>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) എർൺസ്റ്റ് മേയർ</span>
                 <span class="lang-en"><strong>Answer:</strong> (B) Ernst Mayr</span>
@@ -185,8 +286,8 @@
                 <li onclick="checkAnswer(this, false)">(C) ICVN</li>
                 <li onclick="checkAnswer(this, false)">(D) ICNCP</li>
             </ul>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) ICBN (International Code for Botanical Nomenclature)</span>
                 <span class="lang-en"><strong>Answer:</strong> (B) ICBN (International Code for Botanical Nomenclature)</span>
@@ -210,8 +311,8 @@
                 <li onclick="checkAnswer(this, true)">(C) Carolus Linnaeus</li>
                 <li onclick="checkAnswer(this, false)">(D) Darwin</li>
             </ul>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> (C) കരോലസ് ലിന്നേയസ്</span>
                 <span class="lang-en"><strong>Answer:</strong> (C) Carolus Linnaeus</span>
@@ -235,8 +336,8 @@
                 <li onclick="checkAnswer(this, false)">(C) Taxon</li>
                 <li onclick="checkAnswer(this, false)">(D) Category</li>
             </ul>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) കപ്ലറ്റ് (Couplet)</span>
                 <span class="lang-en"><strong>Answer:</strong> (B) Couplet</span>
@@ -245,14 +346,14 @@
 
 
         <!-- SECTION B: True or False -->
-        <h2 class="lang-ml">വിഭാഗം ബി: ശരിയോ തെറ്റോ കണ്ടെത്തുക (True or False)</h2>
-        <h2 class="lang-en">Section B: True or False</h2>
+        <h2 class="lang-ml"><i class="fa-solid fa-check-double" style="color: #2563eb;"></i> വിഭാഗം ബി: ശരിയോ തെറ്റോ കണ്ടെത്തുക (True or False)</h2>
+        <h2 class="lang-en"><i class="fa-solid fa-check-double" style="color: #2563eb;"></i> Section B: True or False</h2>
         
         <div class="question-box">
             <p class="lang-ml">1. വളർച്ചയും പ്രജനനവും ജീവന്റെ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളല്ല.</p>
             <p class="lang-en">1. Growth and reproduction are not defining properties of living organisms.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
@@ -262,19 +363,19 @@
         <div class="question-box">
             <p class="lang-ml">2. മാനിന്റെ ശാസ്ത്രീയ നാമം <i>Mangifera indica</i> എന്നാണ്.</p>
             <p class="lang-en">2. The scientific name of man is <i>Mangifera indica</i>.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (*Homo sapiens* എന്നാണ്)</span>
-                <span class="lang-en"><strong>Answer:</strong> False (It is *Homo sapiens*)</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (<i>Homo sapiens</i> എന്നാണ്)</span>
+                <span class="lang-en"><strong>Answer:</strong> False (It is <i>Homo sapiens</i>)</span>
             </div>
         </div>
 
         <div class="question-box">
             <p class="lang-ml">3. ടാക്സോണമിക് ഹൈറാർജിയിൽ ഏറ്റവും താഴെയുള്ള അടിസ്ഥാന ഘട്ടമാണ് സ്പീഷിസ് (Species).</p>
             <p class="lang-en">3. Species is the lowest basic category in taxonomic hierarchy.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
@@ -284,8 +385,8 @@
         <div class="question-box">
             <p class="lang-ml">4. റോയൽ ബൊട്ടാണിക്കൽ ഗാർഡൻ സ്ഥിതി ചെയ്യുന്നത് ഇംഗ്ലണ്ടിലെ ക്യൂവിലാണ്.</p>
             <p class="lang-en">4. Royal Botanical Garden is located in Kew, England.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
@@ -295,8 +396,8 @@
         <div class="question-box">
             <p class="lang-ml">5. ഒരു ടാക്സോണമിക് കീ-യിലെ ഓരോ സ്റ്റേറ്റ്‌മെന്റിനെയും 'കപ്ലറ്റ്' എന്ന് വിളിക്കുന്നു.</p>
             <p class="lang-en">5. Each statement in a taxonomic key is called a couplet.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് ('ലീഡ്' എന്നാണ് വിളിക്കുന്നത്)</span>
                 <span class="lang-en"><strong>Answer:</strong> False (It is called a 'lead')</span>
@@ -305,14 +406,14 @@
 
 
         <!-- SECTION C: Short Answers -->
-        <h2 class="lang-ml">വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങൾ (Short Answers)</h2>
-        <h2 class="lang-en">Section C: Short Answers</h2>
+        <h2 class="lang-ml"><i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i> വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങൾ (Short Answers)</h2>
+        <h2 class="lang-en"><i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i> Section C: Short Answers</h2>
         
         <div class="question-box">
             <p class="lang-ml">1. ഭൂമിയിൽ ഇതുവരെ തിരിച്ചറിഞ്ഞ ജീവജാലങ്ങളുടെ സ്പീഷിസ് എണ്ണം എത്രയാണ്?</p>
             <p class="lang-en">1. What is the total number of species known and described on Earth?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> 1.7 - 1.8 ദശലക്ഷം</span>
                 <span class="lang-en"><strong>Answer:</strong> 1.7 - 1.8 million</span>
@@ -322,8 +423,8 @@
         <div class="question-box">
             <p class="lang-ml">2. പൂച്ചയുടെയും സിംഹത്തിന്റെയും കുടുംബം (Family) ഏതാണ്?</p>
             <p class="lang-en">2. What is the family of cat and lion?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> ഫെലിഡേ (Felidae)</span>
                 <span class="lang-en"><strong>Answer:</strong> Felidae</span>
@@ -333,8 +434,8 @@
         <div class="question-box">
             <p class="lang-ml">3. മ്യൂസിയങ്ങളിൽ ജന്തുക്കളെ ഏത് ലായണിയിലാണ് സാധാരണയായി സൂക്ഷിക്കുന്നത്?</p>
             <p class="lang-en">3. In what solution are animals usually preserved in museums?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> പ്രിസർവേറ്റീവ് ലായണി (Preservative solution)</span>
                 <span class="lang-en"><strong>Answer:</strong> Preservative solution</span>
@@ -344,8 +445,8 @@
         <div class="question-box">
             <p class="lang-ml">4. സസ്യങ്ങളെ ശേഖരിച്ച് ഉണക്കി, പ്രസ് ചെയ്ത് ഷീറ്റുകളിൽ സൂക്ഷിക്കുന്ന സംവിധാനം ഏത്?</p>
             <p class="lang-en">4. What is the system of collecting, pressing, and preserving plant specimens on sheets?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> ഹെർബേറിയം (Herbarium)</span>
                 <span class="lang-en"><strong>Answer:</strong> Herbarium</span>
@@ -355,8 +456,8 @@
         <div class="question-box">
             <p class="lang-ml">5. 'ഹോമോ' എന്നത് ഏത് ടാക്സോണമിക് കാറ്റഗറിയെ സൂചിപ്പിക്കുന്നു?</p>
             <p class="lang-en">5. What taxonomic category does 'Homo' represent?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം:</strong> ജീനസ് (Genus)</span>
                 <span class="lang-en"><strong>Answer:</strong> Genus</span>
@@ -365,8 +466,8 @@
 
 
         <!-- SECTION D: Match the Following -->
-        <h2 class="lang-ml">വിഭാഗം ഡി: മാച്ച് ദി ഫോളോയിങ് (Match the Following)</h2>
-        <h2 class="lang-en">Section D: Match the Following</h2>
+        <h2 class="lang-ml"><i class="fa-solid fa-arrows-split-up-and-left" style="color: #2563eb;"></i> വിഭാഗം ഡി: മാച്ച് ദി ഫോളോയിങ് (Match the Following)</h2>
+        <h2 class="lang-en"><i class="fa-solid fa-arrows-split-up-and-left" style="color: #2563eb;"></i> Section D: Match the Following</h2>
         
         <div class="question-box">
             <table>
@@ -403,8 +504,8 @@
                     <td>iv. Poales</td>
                 </tr>
             </table>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ശരിയായ ക്രമീകരണം:</strong> 1 ➔ b ➔ i | 2 ➔ d ➔ ii | 3 ➔ c ➔ iii | 4 ➔ a ➔ iv</span>
                 <span class="lang-en"><strong>Correct Matching:</strong> 1 ➔ b ➔ i | 2 ➔ d ➔ ii | 3 ➔ c ➔ iii | 4 ➔ a ➔ iv</span>
@@ -413,16 +514,16 @@
 
 
         <!-- SECTION E: Essay / Analytical Questions -->
-        <h2 class="lang-ml">വിഭാഗം ഇ: വിശദമായ ഉത്തരങ്ങൾ (Essay / Analytical Questions)</h2>
-        <h2 class="lang-en">Section E: Essay / Analytical Questions</h2>
+        <h2 class="lang-ml"><i class="fa-solid fa-brain" style="color: #2563eb;"></i> വിഭാഗം ഇ: വിശദമായ ഉത്തരങ്ങൾ (Essay / Analytical Questions)</h2>
+        <h2 class="lang-en"><i class="fa-solid fa-brain" style="color: #2563eb;"></i> Section E: Essay / Analytical Questions</h2>
         
         <div class="question-box">
             <p class="lang-ml">1. വളർച്ചയും പ്രജനനവും ജീവന്റെ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളല്ലാത്തത് എന്തുകൊണ്ട്? വിശദീകരിക്കുക.</p>
             <p class="lang-en">1. Why are growth and reproduction not defining properties of living organisms? Explain.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> നിർജീവ വസ്തുക്കളും (പർവ്വതങ്ങൾ, മണൽക്കൂനകൾ) അനുകൂല സാഹചര്യങ്ങളിൽ പുറമേ നിന്ന് വസ്തുക്കൾ അടിഞ്ഞുകൂടി വളർച്ച കാണിക്കാറുണ്ട്. അതുപോലെ മൺസെട്രിക് ജോഡികൾ, വന്ധ്യരായ മനുഷ്യർ, മടിയൻ തേനീച്ചകൾ തുടങ്ങിയവയ്ക്ക് പ്രജനനം നടത്താൻ കഴിയില്ല. അതിനാൽ ഇവയെ ജീവന്റെ പൂർണ്ണമായ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളായി കണക്കാക്കാനാകില്ല.</span>
+                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> നിർജീവ വസ്തുക്കളും (പർവ്വതങ്ങൾ, മണൽക്കൂനകൾ) അനുകൂല സാഹചര്യങ്ങളിൽ പുറമേ നിന്ന് വസ്തുക്കൾ അടിഞ്ഞുകൂടി വളർച്ച കാണിക്കാറുണ്ട്. അതുപോലെ വന്ധ്യരായ മനുഷ്യർ, മടിയൻ തേനീച്ചകൾ തുടങ്ങിയവയ്ക്ക് പ്രജനനം നടത്താൻ കഴിയില്ല. അതിനാൽ ഇവയെ ജീവന്റെ പൂർണ്ണമായ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളായി കണക്കാക്കാനാകില്ല.</span>
                 <span class="lang-en"><strong>Hint / Answer:</strong> Non-living objects also grow by accumulation of material on the surface. Also, sterile human couples, worker bees, etc., cannot reproduce. Hence, growth and reproduction cannot be considered defining properties of living organisms.</span>
             </div>
         </div>
@@ -430,16 +531,16 @@
         <div class="question-box">
             <p class="lang-ml">2. ടാക്സോണമിക് ഹൈറാർജിയിൽ താഴെ നിന്ന് മുകളിലേക്ക് പോകുമ്പോൾ പൊതുവായ സവിശേഷതകൾക്ക് എന്ത് മാറ്റമാണ് സംഭവിക്കുന്നത്?</p>
             <p class="lang-en">2. What happens to the number of common characteristics as we go higher from species to kingdom in taxonomic hierarchy?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
                 <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> സ്പീഷിസിൽ തുടങ്ങി കിങ്ഡം വരെയുള്ള ആരോഹണ ക്രമത്തിൽ, ജീവികൾ തമ്മിലുള്ള പൊതുവായ സവിശേഷതകൾ (Common characteristics) കുറഞ്ഞുവരുന്നു. താഴെയുള്ള തലങ്ങളിൽ (Species/Genus) സമാനതകൾ കൂടുതലായിരിക്കും.</span>
                 <span class="lang-en"><strong>Hint / Answer:</strong> As we go higher from species to kingdom, the number of common characteristics goes on decreasing. Lower taxa share more characteristics.</span>
             </div>
         </div>
 
-        <a href="chapter1.html" class="back-link lang-ml">← തിരികെ നോട്ട്സിലേക്ക് മടങ്ങുക</a>
-        <a href="chapter1.html" class="back-link lang-en">← Back to Notes</a>
+        <a href="chapter1.html" class="back-link lang-ml"><i class="fa-solid fa-arrow-left"></i> തിരികെ നോട്ട്സിലേക്ക് മടങ്ങുക</a>
+        <a href="chapter1.html" class="back-link lang-en"><i class="fa-solid fa-arrow-left"></i> Back to Notes</a>
     </div>
 
     <script>
@@ -470,10 +571,18 @@
             
             if (revealDiv.style.display === 'block') {
                 revealDiv.style.display = 'none';
-                btn.textContent = btn.textContent.includes('മറയ്ക്കുക') ? 'ഉത്തരം കാണുക' : 'Show Answer';
+                if(btn.innerHTML.includes('മറയ്ക്കുക')) {
+                    btn.innerHTML = btn.innerHTML.includes('ഉത്തരം') ? '<i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക' : '<i class="fa-solid fa-eye"></i> Show Answer';
+                } else {
+                    btn.innerHTML = '<i class="fa-solid fa-eye"></i> Show Answer';
+                }
             } else {
                 revealDiv.style.display = 'block';
-                btn.textContent = btn.textContent.includes('കാണുക') ? (btn.textContent.includes('Show') ? 'Hide Answer' : 'ഉത്തരം മറയ്ക്കുക') : btn.textContent;
+                if(btn.innerHTML.includes('കാണുക')) {
+                    btn.innerHTML = btn.innerHTML.includes('Show') ? '<i class="fa-solid fa-eye-slash"></i> Hide Answer' : '<i class="fa-solid fa-eye-slash"></i> ഉത്തരം മറയ്ക്കുക';
+                } else {
+                    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Answer';
+                }
             }
         }
 
@@ -493,14 +602,11 @@
         function applyLanguage(lang) {
             const mlElements = document.querySelectorAll('.lang-ml');
             const enElements = document.querySelectorAll('.lang-en');
-            const btn = document.querySelector('.lang-switch');
 
             if (lang === 'en') {
-                if(btn) btn.textContent = 'മലയാളത്തിലേക്ക് മാറ്റുക';
                 mlElements.forEach(el => el.style.display = 'none');
                 enElements.forEach(el => el.style.display = 'block');
             } else {
-                if(btn) btn.textContent = 'Switch to English';
                 enElements.forEach(el => el.style.display = 'none');
                 mlElements.forEach(el => el.style.display = 'block');
             }
