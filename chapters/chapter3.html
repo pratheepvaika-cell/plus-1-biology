@@ -11,13 +11,13 @@
             background-color: #f4f9f4;
             color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
         }
         .container {
             max-width: 950px;
             margin: auto;
             background: #fff;
-            padding: 35px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: relative;
@@ -26,26 +26,26 @@
         /* Top Navigation for Workout and Language Switcher buttons */
         .top-nav {
             position: absolute;
-            top: 25px;
-            right: 35px;
+            top: 20px;
+            right: 25px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
         }
 
         .top-btn, .lang-switch {
-            padding: 0 16px;
+            padding: 0 12px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             transition: 0.2s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            height: 40px;
+            height: 36px;
             border: 2px solid #2e7d32;
             background-color: #e8f5e9;
             color: #2e7d32;
@@ -63,35 +63,49 @@
             text-align: left;
             border-bottom: 3px solid #4caf50;
             padding-bottom: 10px;
-            padding-right: 320px;
+            padding-right: 220px;
+            font-size: 24px;
         }
         h2 {
             color: #388e3c;
             border-left: 5px solid #81c784;
             padding-left: 10px;
             margin-top: 30px;
+            font-size: 20px;
         }
         h3 {
             color: #558b2f;
+            font-size: 16px;
+        }
+        p, li {
+            font-size: 15px;
         }
         ul {
             background-color: #e8f5e9;
-            padding: 15px 20px 15px 40px;
+            padding: 15px 20px 15px 35px;
             border-radius: 5px;
         }
         li {
             margin-bottom: 8px;
         }
+        
+        /* Table Responsive Wrapper */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            min-width: 500px;
         }
         th, td {
             border: 1px solid #c8e6c9;
             padding: 10px;
             text-align: left;
+            font-size: 14px;
         }
         th {
             background-color: #a5d6a7;
@@ -106,11 +120,12 @@
             display: inline-block;
             background-color: #2e7d32;
             color: white;
-            padding: 12px 20px;
+            padding: 10px 18px;
             margin: 15px 0 25px 0;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
+            font-size: 14px;
             transition: background 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -120,7 +135,7 @@
 
         /* Professional Full-Width Bottom Action Button */
         .bottom-actions {
-            margin-top: 40px;
+            margin-top: 30px;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -128,11 +143,11 @@
 
         .action-btn {
             width: 100%;
-            padding: 14px 20px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             text-align: center;
             transition: 0.2s;
             box-sizing: border-box;
@@ -147,6 +162,40 @@
         }
         .home-action:hover {
             background-color: #334155;
+        }
+
+        /* Mobile Responsive Media Query */
+        @media (max-width: 768px) {
+            body {
+                padding: 8px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .top-nav {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-bottom: 15px;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+            h1 {
+                padding-right: 0;
+                font-size: 20px;
+                border-bottom-width: 2px;
+                padding-bottom: 8px;
+            }
+            h2 {
+                font-size: 17px;
+                margin-top: 20px;
+            }
+            p, li {
+                font-size: 14px;
+            }
+            ul {
+                padding: 10px 15px 10px 25px;
+            }
         }
     </style>
 </head>
@@ -181,32 +230,34 @@
         <li>Provide half of total carbon dioxide fixation on earth, oxygen production, food sources (Porphyra, Laminaria, Sargassum), hydrocolloids (algin, carrageen, agar), and space food (Chlorella).</li>
     </ul>
     
-    <table>
-        <tr>
-            <th>Classes</th>
-            <th>Common Name</th>
-            <th>Major Pigments</th>
-            <th>Stored Food</th>
-        </tr>
-        <tr>
-            <td>Chlorophyceae</td>
-            <td>Green algae</td>
-            <td>Chlorophyll a, b</td>
-            <td>Starch</td>
-        </tr>
-        <tr>
-            <td>Phaeophyceae</td>
-            <td>Brown algae</td>
-            <td>Chlorophyll a, c, fucoxanthin</td>
-            <td>Mannitol, laminarin</td>
-        </tr>
-        <tr>
-            <td>Rhodophyceae</td>
-            <td>Red algae</td>
-            <td>Chlorophyll a, d, phycoerythrin</td>
-            <td>Floridean starch</td>
-        </tr>
-    </table>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Classes</th>
+                <th>Common Name</th>
+                <th>Major Pigments</th>
+                <th>Stored Food</th>
+            </tr>
+            <tr>
+                <td>Chlorophyceae</td>
+                <td>Green algae</td>
+                <td>Chlorophyll a, b</td>
+                <td>Starch</td>
+            </tr>
+            <tr>
+                <td>Phaeophyceae</td>
+                <td>Brown algae</td>
+                <td>Chlorophyll a, c, fucoxanthin</td>
+                <td>Mannitol, laminarin</td>
+            </tr>
+            <tr>
+                <td>Rhodophyceae</td>
+                <td>Red algae</td>
+                <td>Chlorophyll a, d, phycoerythrin</td>
+                <td>Floridean starch</td>
+            </tr>
+        </table>
+    </div>
 
     <a href="alga.html" class="view-more-btn">👉 Click Here to View More Algae Details</a>
 
@@ -239,12 +290,12 @@
         <li>Divided into two classes: Dicotyledons and Monocotyledons.</li>
     </ul>
 
-    <!-- Professional Full-Width Bottom Action Button -->
+    <!-- Professional Full-Width Bottom Action Button linking to biology page -->
     <div class="bottom-actions">
-        <a href="index.html" class="action-btn home-action lang-en">← Back to Home Page</a>
-        </div>
+        <a href="../biology.html" class="action-btn home-action lang-ml">← Back to Biology Index</a>
     </div>
 
+</div> <!-- /.container ക്ലോസിങ് ടാഗ് -->
 
 <script>
     function toggleLanguage() {
