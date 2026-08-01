@@ -4,138 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 3: Plant Kingdom - Complete Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f9f4;
-            color: #333;
-            margin: 0;
-            padding: 15px;
-        }
-        .container {
-            max-width: 950px;
-            margin: auto;
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        /* Top Navigation for Workout and Language Switcher buttons */
+        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 15px; line-height: 1.6; scroll-behavior: smooth; }
+        .container { max-width: 850px; margin: auto; background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); position: relative; }
+        
+        /* Top Navigation Layout - Buttons aligned to the Right side */
         .top-nav {
-            position: absolute;
-            top: 20px;
-            right: 25px;
             display: flex;
-            gap: 8px;
+            gap: 12px;
             align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
         .top-btn, .lang-switch {
-            padding: 0 12px;
-            border-radius: 6px;
+            padding: 10px 16px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
             text-decoration: none;
-            font-size: 13px;
-            transition: 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 14px;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            height: 36px;
-            border: 2px solid #2e7d32;
-            background-color: #e8f5e9;
-            color: #2e7d32;
+            border: 2px solid #2563eb;
+            background-color: #eff6ff;
+            color: #2563eb;
             box-sizing: border-box;
-            white-space: nowrap;
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
         }
         
         .top-btn:hover, .lang-switch:hover {
-            background-color: #2e7d32;
+            background-color: #2563eb;
             color: #ffffff;
+            transform: translateY(-1px);
         }
 
-        h1 {
-            color: #2e7d32;
-            text-align: left;
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 10px;
-            padding-right: 220px;
-            font-size: 24px;
-        }
-        h2 {
-            color: #388e3c;
-            border-left: 5px solid #81c784;
-            padding-left: 10px;
-            margin-top: 30px;
-            font-size: 20px;
-        }
-        h3 {
-            color: #558b2f;
-            font-size: 16px;
-        }
-        p, li {
-            font-size: 15px;
-        }
-        ul {
-            background-color: #e8f5e9;
-            padding: 15px 20px 15px 35px;
-            border-radius: 5px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
+        h1 { color: #0f172a; font-size: 22px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 10px; margin-bottom: 20px; font-weight: 700; }
+        h2 { font-size: 17px; margin-top: 35px; color: #1e293b; background: #f1f5f9; padding: 10px 14px; border-radius: 6px; border-left: 4px solid #2563eb; font-weight: 600; }
+        h3 { font-size: 15px; color: #0f766e; margin-top: 20px; font-weight: 600; }
         
-        /* Table Responsive Wrapper */
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 500px;
-        }
-        th, td {
-            border: 1px solid #c8e6c9;
-            padding: 10px;
-            text-align: left;
-            font-size: 14px;
-        }
-        th {
-            background-color: #a5d6a7;
-            color: #1b5e20;
-        }
-        .highlight {
-            background-color: #fff9c4;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-        .view-more-btn {
-            display: inline-block;
-            background-color: #2e7d32;
-            color: white;
-            padding: 10px 18px;
-            margin: 15px 0 25px 0;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: background 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .view-more-btn:hover {
-            background-color: #1b5e20;
-        }
+        p, li { font-size: 14px; }
+        ul, ol { margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 6px; }
 
-        /* Professional Full-Width Bottom Action Button */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background: #f1f5f9; color: #0f172a; font-weight: 600; }
+
+        /* Highlight Boxes */
+        .highlight-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 16px; border-radius: 8px; margin: 20px 0; border: 1px solid #dcfce7; }
+        .highlight-title { font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-size: 14px; }
+        
+        /* Study Tips Box Styles */
+        .tips-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 8px; margin: 25px 0; border: 1px solid #dbeafe; }
+        .tips-title { font-weight: 700; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-size: 14px; }
+
+        mark { background-color: #fef08a; padding: 2px 4px; border-radius: 3px; font-weight: 600; color: #713f12; }
+
+        /* Professional Full-Width Bottom Action Button Styles */
         .bottom-actions {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -143,165 +76,214 @@
 
         .action-btn {
             width: 100%;
-            padding: 12px 20px;
+            padding: 14px 20px;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             font-size: 15px;
             text-align: center;
-            transition: 0.2s;
+            transition: all 0.2s ease;
             box-sizing: border-box;
             display: block;
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            cursor: pointer;
+            border: none;
         }
 
         .home-action {
             background-color: #475569;
             color: #ffffff;
-            border: 1px solid #475569;
-        }
-        .home-action:hover {
-            background-color: #334155;
         }
 
-        /* Mobile Responsive Media Query */
-        @media (max-width: 768px) {
-            body {
-                padding: 8px;
-            }
-            .container {
-                padding: 15px;
-            }
-            .top-nav {
-                position: relative;
-                top: 0;
-                right: 0;
-                margin-bottom: 15px;
-                justify-content: flex-end;
-                flex-wrap: wrap;
-            }
-            h1 {
-                padding-right: 0;
-                font-size: 20px;
-                border-bottom-width: 2px;
-                padding-bottom: 8px;
-            }
-            h2 {
-                font-size: 17px;
-                margin-top: 20px;
-            }
-            p, li {
-                font-size: 14px;
-            }
-            ul {
-                padding: 10px 15px 10px 25px;
-            }
+        .home-action:hover {
+            background-color: #334155;
+            transform: translateY(-1px);
         }
+        
+        .lang-en { display: none; }
+        .lang-ml { display: block; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Top Right Navigation Buttons (Workout & Language Switcher) -->
-    <div class="top-nav">
-        <a href="workout_q3.html" class="top-btn">Workout & Exercises</a>
-        <button class="lang-switch" onclick="toggleLanguage()">മലയാളത്തിലേക്ക് മാറ്റുക</button>
+    <div class="container">
+        <!-- Top Inline Navigation Buttons aligned to the Right -->
+        <div class="top-nav">
+            <a href="workout_q3.html" class="top-btn lang-ml">🏋️‍♂️ വർക്ക്ഔട്ട് & എക്സർസൈസ്</a>
+            <a href="workout_q3.html" class="top-btn lang-en">🏋️‍♂️ Workout & Exercises</a>
+            
+            <button class="lang-switch" onclick="toggleLanguage()">🌐 Switch to English</button>
+        </div>
+
+        <!-- MALAYALAM CONTENT -->
+        <div class="lang-ml">
+            <h1>ചാപ്റ്റർ 3: സസ്യലോകം (Plant Kingdom - സമ്പൂർണ്ണ പഠനക്കുറിപ്പുകൾ)</h1>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">📌 ആമുഖം (Introduction)</div>
+                <p>മുൻ അധ്യായത്തിൽ വിറ്റേക്കറുടെ (1969) അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തെക്കുറിച്ച് നമ്മൾ പഠിച്ചു. ഈ അധ്യായത്തിൽ <mark>പ്ലാന്റേ (Plant Kingdom)</mark> എന്ന സസ്യലോകത്തെക്കുറിച്ചുള്ള കൂടുതൽ വിശദമായ വർഗ്ഗീകരണമാണ് ചർച്ച ചെയ്യുന്നത്.</p>
+            </div>
+
+            <!-- Study Tips & Highlights Section -->
+            <div class="tips-box">
+                <div class="tips-title">💡 പ്രധാന പഠന ടിപ്സുകളും ഹൈലൈറ്റുകളും (Study Tips & Highlights)</div>
+                <ul>
+                    <li><strong>वर्ഗ്ഗീകരണ രീതികൾ:</strong> ആർട്ടിഫിഷ്യൽ, നാച്ചുറൽ, ഫൈലോജെനെറ്റിക് വർഗ്ഗീകരണ സമ്പ്രദായങ്ങളുടെ അടിസ്ഥാനങ്ങൾ ഓർക്കുക.</li>
+                    <li><strong>ആൽഗ ക്ലാസുകൾ:</strong> ക്ലോറോഫൈസിയേ, ഫിയോഫൈസിയേ, റോഡോഫൈസിയേ എന്നിവയിലെ വർണ്ണകങ്ങളും (Pigments) സംഭരിച്ചുവെക്കുന്ന ഭക്ഷണവും (Stored food) പരീക്ഷയ്ക്ക് വളരെ പ്രധാനമാണ്.</li>
+                    <li><strong>സസ്യങ്ങളുടെ ഉഭയജീവികൾ:</strong> ബ്രയോഫൈറ്റുകളെ 'സസ്യലോകത്തിന്റെ ഉഭയജീവികൾ' (Amphibians of plant kingdom) എന്ന് വിളിക്കുന്നു.</li>
+                </ul>
+            </div>
+
+            <h2>3.1 ആൽഗകൾ (Algae)</h2>
+            <p>ക്ലോറോഫിൽ അടങ്ങിയതും, ലളിതവും, തല്ലോയ്ഡ് രൂപത്തിലുള്ളതും, സ്വപോഷികളായ ജലജീവികളുമാണ് ആൽഗകൾ.</p>
+            <ul>
+                <li>പ്രധാനമായും കഷണങ്ങളായി മുറിഞ്ഞും (Fragmentation), സൂസ്പോറുകൾ വഴിയും, ലൈംഗിക രീതിയിലും (Isogamous, Anisogamous, Oogamous) പ്രജനനം നടക്കുന്നു.</li>
+                <li>ഭൂമിയിലെ ആകെ കാർബൺ ഡയോക്സൈഡ് ഫിക്സേഷന്റെ പകുതിയും ആൽഗകളാണ് നിർവ്വഹിക്കുന്നത്.</li>
+            </ul>
+
+            <h3>ആൽഗകളുടെ പ്രധാന ക്ലാസുകൾ</h3>
+            <table>
+                <tr>
+                    <th>ക്ലാസ്</th>
+                    <th>സാധാരണ പേര്</th>
+                    <th>പ്രധാന വർണ്ണകങ്ങൾ</th>
+                    <th>സംഭരിച്ച ഭക്ഷണം</th>
+                </tr>
+                <tr>
+                    <td><strong>ക്ലോറോഫൈസിയേ</strong></td>
+                    <td>പച്ച ആൽഗകൾ (Green algae)</td>
+                    <td>ക്ലോറോഫിൽ a, b</td>
+                    <td>സ്റ്റാർച്ച് (Starch)</td>
+                </tr>
+                <tr>
+                    <td><strong>ഫിയോഫൈസിയേ</strong></td>
+                    <td>ബ്രൗൺ ആൽഗകൾ (Brown algae)</td>
+                    <td>ക്ലോറോഫിൽ a, c, ഫ്യൂക്കോക്സാന്തിൻ</td>
+                    <td>മാനിട്ടോൾ, ലമിനാരിൻ</td>
+                </tr>
+                <tr>
+                    <td><strong>റോഡോഫൈസിയേ</strong></td>
+                    <td>ചുവന്ന ആൽഗകൾ (Red algae)</td>
+                    <td>ക്ലോറോഫിൽ a, d, ഫൈക്കോഎരിത്രിൻ</td>
+                    <td>ഫ്ലോറിഡിയൻ സ്റ്റാർച്ച്</td>
+                </tr>
+            </table>
+
+            <h2>3.2 ബ്രയോഫൈറ്റുകൾ (Bryophytes)</h2>
+            <p>ഇവയെ <mark>സസ്യലോകത്തിന്റെ ഉഭയജീവികൾ</mark> (Amphibians of plant kingdom) എന്ന് വിളിക്കുന്നു. കാരണം ഇവ മണ്ണിൽ വളരുന്നുവെങ്കിലും ലൈംഗിക പ്രജനനത്തിനായി ജലത്തെ ആശ്രയിക്കുന്നു.</p>
+
+            <h2>3.3 ടെറിഡോഫൈറ്റുകൾ (Pteridophytes)</h2>
+            <p>വാസ്കുലാർ ടിഷ്യു (സൈലം, ഫ്ലോയം) ആദ്യമായി കാണപ്പെടുന്ന കരയിലെ സസ്യങ്ങളാണ് ടെറിഡോഫൈറ്റുകൾ. ഇവയിൽ ഹെറ്ററോസ്പോറി (Heterospory) കാണപ്പെടുന്നു.</p>
+
+            <h2>3.4 ജിംനോസ്പേമുകൾ (Gymnosperms)</h2>
+            <p>അണ്ഡങ്ങൾ അഭാശയ ഭിത്തിയാൽ പൊതിയപ്പെടാത്തതിനാൽ വിത്തുകൾ നഗ്നമായി കാണപ്പെടുന്ന <mark>നഗ്നബീജ സസ്യങ്ങൾ</mark> (Naked-seeded plants) ആണ്.</p>
+
+            <h2>3.5 ആഞ്ചിയോസ്പേമുകൾ (Angiosperms)</h2>
+            <p>പൂക്കളിൽ പരാഗരേണുക്കളும் അണ്ഡങ്ങളും വികസിക്കുകയും, വിത്തുകൾ ഫലങ്ങൾക്കുള്ളിൽ സംരക്ഷിക്കപ്പെടുകയും ചെയ്യുന്ന <mark>പൂത്തുണ്ടാകുന്ന സസ്യങ്ങൾ</mark> (Flowering plants) ആണ്.</p>
+        </div>
+
+        <!-- ENGLISH CONTENT -->
+        <div class="lang-en">
+            <h1>Chapter 3: Plant Kingdom - Complete Study Guide</h1>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">📌 Introduction</div>
+                <p>In the previous chapter, we looked at Whittaker's Five Kingdom classification. In this chapter, we deal in detail with further classification within Kingdom Plantae, popularly known as the <mark>plant kingdom</mark>.</p>
+            </div>
+
+            <!-- Study Tips & Highlights Section (English) -->
+            <div class="tips-box">
+                <div class="tips-title">💡 Study Tips & Key Highlights</div>
+                <ul>
+                    <li><strong>Classification Systems:</strong> Remember the basis of Artificial, Natural, and Phylogenetic systems of classification.</li>
+                    <li><strong>Algae Classes:</strong> Chlorophyceae, Phaeophyceae, and Rhodophyceae pigment types and stored food materials are high-yield exam topics.</li>
+                    <li><strong>Amphibians of Plant Kingdom:</strong> Bryophytes are known as plant amphibians because they require water for fertilization.</li>
+                </ul>
+            </div>
+
+            <h2>3.1 Algae</h2>
+            <p>Chlorophyll-bearing, simple, thalloid, autotrophic, and largely aquatic organisms.</p>
+            <ul>
+                <li>Reproduction takes place through vegetative, asexual (zoospores), and sexual methods.</li>
+                <li>Fix half of the total carbon dioxide on earth through photosynthesis.</li>
+            </ul>
+
+            <h3>Major Classes of Algae</h3>
+            <table>
+                <tr>
+                    <th>Classes</th>
+                    <th>Common Name</th>
+                    <th>Major Pigments</th>
+                    <th>Stored Food</th>
+                </tr>
+                <tr>
+                    <td><strong>Chlorophyceae</strong></td>
+                    <td>Green algae</td>
+                    <td>Chlorophyll a, b</td>
+                    <td>Starch</td>
+                </tr>
+                <tr>
+                    <td><strong>Phaeophyceae</strong></td>
+                    <td>Brown algae</td>
+                    <td>Chlorophyll a, c, fucoxanthin</td>
+                    <td>Mannitol, laminarin</td>
+                </tr>
+                <tr>
+                    <td><strong>Rhodophyceae</strong></td>
+                    <td>Red algae</td>
+                    <td>Chlorophyll a, d, phycoerythrin</td>
+                    <td>Floridean starch</td>
+                </tr>
+            </table>
+
+            <h2>3.2 Bryophytes</h2>
+            <p>Referred to as the <mark>amphibians of the plant kingdom</mark> because they live in soil but depend on water for sexual reproduction.</p>
+
+            <h2>3.3 Pteridophytes</h2>
+            <p>First terrestrial plants to possess vascular tissues (xylem and phloem). Exhibit <mark>heterospory</mark> as a precursor to seed habit.</p>
+
+            <h2>3.4 Gymnosperms</h2>
+            <p>Plants in which the ovules are not enclosed by any ovary wall and remain exposed as <mark>naked-seeded plants</mark>.</p>
+
+            <h2>3.5 Angiosperms</h2>
+            <p>Flowering plants where pollen grains and ovules develop in flowers, and seeds are enclosed inside fruits.</p>
+        </div>
+
+        <div class="bottom-actions">
+            <a href="../biology.html" class="action-btn home-action lang-ml">← ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
+            <a href="../biology.html" class="action-btn home-action lang-en">← Back to Biology Index</a>
+        </div>
+
     </div>
 
-    <h1>CHAPTER 3: PLANT KINGDOM (സസ്യലോകം)</h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            applyLanguage(currentLang);
+        });
 
-    <!-- Introduction Section -->
-    <h2>1. Introduction & Classification Systems</h2>
-    <p>In the previous chapter, we looked at the broad classification of living organisms under the system proposed by Whittaker (1969) wherein he suggested the Five Kingdom classification viz. Monera, Protista, Fungi, Animalia and Plantae. In this chapter, we deal in detail with further classification within Kingdom Plantae popularly known as the 'plant kingdom'.</p>
-    
-    <ul>
-        <li><strong>Changes in Understanding:</strong> Fungi, and members of Monera and Protista having cell walls have now been excluded from Plantae. Cyanobacteria (blue-green algae) are no longer considered algae.</li>
-        <li><strong>Artificial Systems:</strong> Based on superficial morphological characters (e.g., Linnaeus system based on androecium structure); separated closely related species and gave equal weightage to vegetative and sexual characteristics.</li>
-        <li><strong>Natural Systems:</strong> Based on natural affinities considering external and internal features like anatomy, embryology, and phytochemistry (given by George Bentham and Joseph Dalton Hooker).</li>
-        <li><strong>Phylogenetic Systems:</strong> Based on evolutionary relationships assuming common ancestry.</li>
-        <li><strong>Modern Tools:</strong> Numerical Taxonomy (using computers), Cytotaxonomy (chromosome structure/number), and Chemotaxonomy (chemical constituents).</li>
-    </ul>
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem('preferredLang') || 'ml';
+            const newLang = currentLang === 'ml' ? 'en' : 'ml';
+            localStorage.setItem('preferredLang', newLang);
+            applyLanguage(newLang);
+        }
 
-    <!-- 3.1 Algae -->
-    <h2>3.1 Algae (ആൽഗകൾ)</h2>
-    <ul>
-        <li>Chlorophyll-bearing, simple, thalloid, autotrophic, and largely aquatic organisms.</li>
-        <li>Reproduction takes place through vegetative (fragmentation), asexual (zoospores), and sexual methods (isogamous, anisogamous, or oogamous).</li>
-        <li>Provide half of total carbon dioxide fixation on earth, oxygen production, food sources (Porphyra, Laminaria, Sargassum), hydrocolloids (algin, carrageen, agar), and space food (Chlorella).</li>
-    </ul>
-    
-    <div class="table-container">
-        <table>
-            <tr>
-                <th>Classes</th>
-                <th>Common Name</th>
-                <th>Major Pigments</th>
-                <th>Stored Food</th>
-            </tr>
-            <tr>
-                <td>Chlorophyceae</td>
-                <td>Green algae</td>
-                <td>Chlorophyll a, b</td>
-                <td>Starch</td>
-            </tr>
-            <tr>
-                <td>Phaeophyceae</td>
-                <td>Brown algae</td>
-                <td>Chlorophyll a, c, fucoxanthin</td>
-                <td>Mannitol, laminarin</td>
-            </tr>
-            <tr>
-                <td>Rhodophyceae</td>
-                <td>Red algae</td>
-                <td>Chlorophyll a, d, phycoerythrin</td>
-                <td>Floridean starch</td>
-            </tr>
-        </table>
-    </div>
+        function applyLanguage(lang) {
+            const mlElements = document.querySelectorAll('.lang-ml');
+            const enElements = document.querySelectorAll('.lang-en');
+            const langSwitchBtn = document.querySelector('.lang-switch');
 
-    <a href="alga.html" class="view-more-btn">👉 Click Here to View More Algae Details</a>
-
-    <!-- 3.2 Bryophytes -->
-    <h2>3.2 Bryophytes (ബ്രയോഫൈറ്റുകൾ)</h2>
-    <ul>
-        <li>Referred to as the <span class="highlight">'amphibians of the plant kingdom'</span> because they live in soil but depend on water for sexual reproduction.</li>
-        <li>Include liverworts (e.g., <em>Marchantia</em> with gemma cups) and mosses (e.g., <em>Funaria</em> with gametophyte and sporophyte phases).</li>
-    </ul>
-
-    <!-- 3.3 Pteridophytes -->
-    <h2>3.3 Pteridophytes (ടെറിഡോഫൈറ്റുകൾ)</h2>
-    <ul>
-        <li>First terrestrial plants to possess vascular tissues (xylem and phloem).</li>
-        <li>Main plant body is a sporophyte differentiated into true root, stem, and leaves.</li>
-        <li>Exhibits <span class="highlight">heterospory</span> (production of two kinds of spores: microspores and megaspores), which is a precursor to the seed habit. Includes horsetails and ferns.</li>
-    </ul>
-
-    <!-- 3.4 Gymnosperms -->
-    <h2>3.4 Gymnosperms (ജിംനോസ്പേമുകൾ)</h2>
-    <ul>
-        <li>Plants in which the ovules are not enclosed by any ovary wall and remain exposed (<span class="highlight">naked-seeded plants</span>).</li>
-        <li>Include medium-sized or tall trees like <em>Sequoia</em>, <em>Pinus</em> (with mycorrhiza), and <em>Cycas</em> (with coralloid roots).</li>
-    </ul>
-
-    <!-- 3.5 Angiosperms -->
-    <h2>3.5 Angiosperms (ആഞ്ചിയോസ്പേമുകൾ)</h2>
-    <ul>
-        <li>Flowering plants where pollen grains and ovules are developed in flowers, and seeds are enclosed inside fruits.</li>
-        <li>Divided into two classes: Dicotyledons and Monocotyledons.</li>
-    </ul>
-
-    <!-- Professional Full-Width Bottom Action Button linking to biology page -->
-    <div class="bottom-actions">
-        <a href="../biology.html" class="action-btn home-action lang-ml">← Back to Biology Index</a>
-    </div>
-
-</div> <!-- /.container ക്ലോസിങ് ടാഗ് -->
-
-<script>
-    function toggleLanguage() {
-        alert('Language toggle functionality can be linked here!');
-    }
-</script>
-
+            if (lang === 'en') {
+                if(langSwitchBtn) langSwitchBtn.innerHTML = '🌐 മലയാളത്തിലേക്ക് മാറ്റുക';
+                mlElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+            } else {
+                if(langSwitchBtn) langSwitchBtn.innerHTML = '🌐 Switch to English';
+                enElements.forEach(el => el.style.display = 'none');
+                mlElements.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
 </body>
 </html>
