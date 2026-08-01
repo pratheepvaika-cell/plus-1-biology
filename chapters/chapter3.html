@@ -37,7 +37,6 @@
             position: relative; 
         }
         
-        /* Top Navigation Layout - Buttons aligned to the Right side */
         .top-nav {
             display: flex;
             gap: 12px;
@@ -83,7 +82,6 @@
             font-weight: 700; 
         }
 
-        /* Chapter Style Headings with Left Border and Shadow Box Effect */
         h2 { 
             font-size: 18px; 
             margin-top: 35px; 
@@ -112,7 +110,6 @@
         th, td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
         th { background: #f1f5f9; color: var(--text-heading); font-weight: 600; }
 
-        /* Highlight Boxes matching green style */
         .highlight-box { 
             background: #f0fdf4; 
             border-left: 6px solid #16a34a; 
@@ -126,7 +123,6 @@
         }
         .highlight-title { font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 15px; }
         
-        /* Study Tips Box Styles */
         .tips-box { 
             background: #eff6ff; 
             border-left: 6px solid #2563eb; 
@@ -142,7 +138,89 @@
 
         mark { background-color: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #713f12; }
 
-        /* Professional Full-Width Bottom Action Button Styles */
+        /* Dedicated Click Here Algae Page Link Box */
+        .algae-link-card {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px dashed #2563eb;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+            transition: all 0.2s ease;
+        }
+        .algae-link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+            border-color: #1d4ed8;
+        }
+        .algae-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 15px;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+        .algae-link-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: scale(1.02);
+        }
+
+        .figure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .figure-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+        }
+
+        .figure-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+            border-color: #3b82f6;
+        }
+
+        .figure-card h4 {
+            color: #1e293b;
+            margin: 0 0 6px 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .figure-card p {
+            font-size: 13px;
+            margin: 0 0 12px 0;
+            color: #64748b;
+        }
+
+        .fig-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 6px 12px;
+            font-size: 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
+        }
+
         .bottom-actions {
             margin-top: 35px;
             display: flex;
@@ -189,7 +267,6 @@
 <body>
 
     <div class="container">
-        <!-- Top Inline Navigation Buttons aligned to the Right -->
         <div class="top-nav">
             <a href="workout_q3.html" class="top-btn lang-ml">🏋️‍♂️ വർക്ക്ഔട്ട് & എക്സർസൈസ്</a>
             <a href="workout_q3.html" class="top-btn lang-en">🏋️‍♂️ Workout & Exercises</a>
@@ -206,7 +283,6 @@
                 <p style="margin:0;">മുൻ അധ്യായത്തിൽ വിറ്റേക്കറുടെ (1969) അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തെക്കുറിച്ച് നമ്മൾ പഠിച്ചു. ഈ അധ്യായത്തിൽ <mark>പ്ലാന്റേ (Plant Kingdom)</mark> എന്ന സസ്യലോകത്തെക്കുറിച്ചുള്ള കൂടുതൽ വിശദമായ വർഗ്ഗീകരണമാണ് ചർച്ച ചെയ്യുന്നത്.</p>
             </div>
 
-            <!-- Study Tips & Highlights Section -->
             <div class="tips-box">
                 <div class="tips-title">💡 പ്രധാന പഠന ടിപ്സുകളും ഹൈലൈറ്റുകളും (Study Tips & Highlights)</div>
                 <ul style="margin-bottom:0;">
@@ -216,12 +292,44 @@
                 </ul>
             </div>
 
-            <h2>🌿 3.1 ആൽഗകൾ (Algae)</h2>
-            <p>ക്ലോറോഫിൽ അടങ്ങിയതും, ലളിതവും, തല്ലോയ്ഡ് രൂപത്തിലുള്ളതും, സ്വപോഷികളായ ജലജീവികളുമാണ് ആൽഗകൾ.</p>
+            <h2>🌿 3.1 എന്താണ് ആൽഗകൾ? (What are Algae?)</h2>
+            
+            <!-- Click Here Algae Page Link Box -->
+            <div class="algae-link-card">
+                <h3 style="margin: 0 0 5px 0; color: #1e40af;">🌊 ആൽഗകളെക്കുറിച്ച് കൂടുതൽ പഠിക്കാം!</h3>
+                <p style="margin: 0 0 12px 0; font-size: 14px; color: #475569;">ആൽഗകളുടെ പ്രത്യേകതകളും സമഗ്രമായ പഠനക്കുറിപ്പുകളും കാണാൻ താഴെ ക്ലിക്ക് ചെയ്യുക.</p>
+                <a href="alga.html" class="algae-link-btn">👉 ഇവിടെ ക്ലിക്ക് ചെയ്യുക (Click Here for Algae Page)</a>
+            </div>
+
+            <p>ആൽഗകൾ എന്നാൽ ഹരിതകം അടങ്ങിയതും (chlorophyll-bearing), ലളിതവും, തല്ലോയ്ഡ് പോലെഉള്ളതും (thalloid), സ്വപോഷികളായതുമായ (autotrophic) ജലജീവികളാണ്.</p>
             <ul>
                 <li>പ്രധാനമായും കഷണങ്ങളായി മുറിഞ്ഞും (Fragmentation), സൂസ്പോറുകൾ വഴിയും, ലൈംഗിക രീതിയിലും (Isogamous, Anisogamous, Oogamous) പ്രജനനം നടക്കുന്നു.</li>
                 <li>ഭൂമിയിലെ ആകെ കാർബൺ ഡയോക്സൈഡ് ഫിക്സേഷന്റെ പകുതിയും ആൽഗകളാണ് നിർവ്വഹിക്കുന്നത്.</li>
             </ul>
+
+            <h3 style="margin-top: 30px;">🔬 ആൽഗകളുടെ ഘടനയും ചിത്രങ്ങളും (NCERT Figure 3.1)</h3>
+            <div class="figure-grid">
+                <div class="figure-card" style="border-top: 4px solid #10b981;">
+                    <h4>(a) വോൾവോക്സ് (Volvox)</h4>
+                    <p>കൊളോണിയൽ പച്ച ആൽഗ</p>
+                    <span class="fig-badge" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">Green Algae</span>
+                </div>
+                <div class="figure-card" style="border-top: 4px solid #3b82f6;">
+                    <h4>(b) യൂലോത്രിക്സ് (Ulothrix)</h4>
+                    <p>തന്തുരൂപ പച്ച ആൽഗ</p>
+                    <span class="fig-badge">Filamentous</span>
+                </div>
+                <div class="figure-card" style="border-top: 4px solid #f59e0b;">
+                    <h4>(c) ലാമिनेരിയ (Laminaria)</h4>
+                    <p>തവിട്ട് ആൽഗ</p>
+                    <span class="fig-badge" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">Brown Algae</span>
+                </div>
+                <div class="figure-card" style="border-top: 4px solid #ef4444;">
+                    <h4>(d) ഫ്യൂക്കസ് (Fucus)</h4>
+                    <p>മറ്റൊരു തവിട്ട് ആൽഗ</p>
+                    <span class="fig-badge" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">Brown Algae</span>
+                </div>
+            </div>
 
             <h3>ആൽഗകളുടെ പ്രധാന ക്ലാസുകൾ</h3>
             <table>
@@ -273,7 +381,6 @@
                 <p style="margin:0;">In the previous chapter, we looked at Whittaker's Five Kingdom classification. In this chapter, we deal in detail with further classification within Kingdom Plantae, popularly known as the <mark>plant kingdom</mark>.</p>
             </div>
 
-            <!-- Study Tips & Highlights Section (English) -->
             <div class="tips-box">
                 <div class="tips-title">💡 Study Tips & Key Highlights</div>
                 <ul style="margin-bottom:0;">
@@ -283,12 +390,44 @@
                 </ul>
             </div>
 
-            <h2>🌿 3.1 Algae</h2>
-            <p>Chlorophyll-bearing, simple, thalloid, autotrophic, and largely aquatic organisms.</p>
+            <h2>🌿 3.1 What are Algae?</h2>
+            
+            <!-- Click Here Algae Page Link Box (English) -->
+            <div class="algae-link-card">
+                <h3 style="margin: 0 0 5px 0; color: #1e40af;">🌊 Learn More About Algae!</h3>
+                <p style="margin: 0 0 12px 0; font-size: 14px; color: #475569;">Click below to explore detailed notes and characteristics of algae.</p>
+                <a href="alga.html" class="algae-link-btn">👉 Click Here for Algae Page</a>
+            </div>
+
+            <p>Algae are chlorophyll-bearing, simple, thalloid, autotrophic, and largely aquatic organisms.</p>
             <ul>
                 <li>Reproduction takes place through vegetative, asexual (zoospores), and sexual methods.</li>
                 <li>Fix half of the total carbon dioxide on earth through photosynthesis.</li>
             </ul>
+
+            <h3 style="margin-top: 30px;">🔬 Structure and Figures of Algae (NCERT Figure 3.1)</h3>
+            <div class="figure-grid">
+                <div class="figure-card" style="border-top: 4px solid #10b981;">
+                    <h4>(a) Volvox</h4>
+                    <p>Colonial green algae</p>
+                    <span class="fig-badge" style="background:#d1fae5; color:#065f46; border-color:#a7f3d0;">Green Algae</span>
+                </div>
+                <div class="figure-card" style="border-top: 4px solid #3b82f6;">
+                    <h4>(b) Ulothrix</h4>
+                    <p>Filamentous green algae</p>
+                    <span class="fig-badge">Filamentous</span>
+                </div>
+                <div class="figure-card" style="border-top: 4px solid #f59e0b;">
+                    <h4>(c) Laminaria</h4>
+                    <p>Brown algae</p>
+                    <span class="fig-badge" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">Brown Algae</span>
+                </div>
+                <div class="figure-card" style="border-top: 4px solid #ef4444;">
+                    <h4>(d) Fucus</h4>
+                    <p>Another brown algae</p>
+                    <span class="fig-badge" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">Brown Algae</span>
+                </div>
+            </div>
 
             <h3>Major Classes of Algae</h3>
             <table>
