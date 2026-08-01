@@ -99,16 +99,18 @@
         }
         .question-box p { font-weight: 600; color: #0f172a; margin-top: 0; }
         
-        .options { list-style-type: none; padding-left: 0; }
+        .options { list-style-type: none; padding-left: 0; display: flex; gap: 12px; margin-top: 15px; }
         .options li { 
-            padding: 12px 16px; 
-            margin-bottom: 10px; 
+            padding: 10px 20px; 
             background: #ffffff; 
             border: 1px solid #cbd5e1; 
             border-radius: 8px; 
             cursor: pointer;
             transition: all 0.2s ease;
             font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            flex: 1;
         }
         .options li:hover { background: #f1f5f9; border-color: #94a3b8; }
         
@@ -349,58 +351,103 @@
         <h2 class="lang-ml"><i class="fa-solid fa-check-double" style="color: #2563eb;"></i> വിഭാഗം ബി: ശരിയോ തെറ്റോ കണ്ടെത്തുക (True or False)</h2>
         <h2 class="lang-en"><i class="fa-solid fa-check-double" style="color: #2563eb;"></i> Section B: True or False</h2>
         
+        <!-- TF1 -->
         <div class="question-box">
             <p class="lang-ml">1. വളർച്ചയും പ്രജനനവും ജീവന്റെ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളല്ല.</p>
             <p class="lang-en">1. Growth and reproduction are not defining properties of living organisms.</p>
+            <ul class="options lang-ml" data-correct="0">
+                <li onclick="checkAnswer(this, true)">ശരി (True)</li>
+                <li onclick="checkAnswer(this, false)">തെറ്റ് (False)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="0">
+                <li onclick="checkAnswer(this, true)">True</li>
+                <li onclick="checkAnswer(this, false)">False</li>
+            </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി (True)</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
             </div>
         </div>
 
+        <!-- TF2 -->
         <div class="question-box">
             <p class="lang-ml">2. മാനിന്റെ ശാസ്ത്രീയ നാമം <i>Mangifera indica</i> എന്നാണ്.</p>
             <p class="lang-en">2. The scientific name of man is <i>Mangifera indica</i>.</p>
+            <ul class="options lang-ml" data-correct="1">
+                <li onclick="checkAnswer(this, false)">ശരി (True)</li>
+                <li onclick="checkAnswer(this, true)">തെറ്റ് (False)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="1">
+                <li onclick="checkAnswer(this, false)">True</li>
+                <li onclick="checkAnswer(this, true)">False</li>
+            </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (<i>Homo sapiens</i> എന്നാണ്)</span>
-                <span class="lang-en"><strong>Answer:</strong> False (It is <i>Homo sapiens</i>)</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (മാനിന്റെ ശാസ്ത്രീയ നാമം <i>Homo sapiens</i> എന്നാണ്)</span>
+                <span class="lang-en"><strong>Answer:</strong> False (Scientific name of man is <i>Homo sapiens</i>)</span>
             </div>
         </div>
 
+        <!-- TF3 -->
         <div class="question-box">
             <p class="lang-ml">3. ടാക്സോണമിക് ഹൈറാർജിയിൽ ഏറ്റവും താഴെയുള്ള അടിസ്ഥാന ഘട്ടമാണ് സ്പീഷിസ് (Species).</p>
             <p class="lang-en">3. Species is the lowest basic category in taxonomic hierarchy.</p>
+            <ul class="options lang-ml" data-correct="0">
+                <li onclick="checkAnswer(this, true)">ശരി (True)</li>
+                <li onclick="checkAnswer(this, false)">തെറ്റ് (False)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="0">
+                <li onclick="checkAnswer(this, true)">True</li>
+                <li onclick="checkAnswer(this, false)">False</li>
+            </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി (True)</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
             </div>
         </div>
 
+        <!-- TF4 -->
         <div class="question-box">
             <p class="lang-ml">4. റോയൽ ബൊട്ടാണിക്കൽ ഗാർഡൻ സ്ഥിതി ചെയ്യുന്നത് ഇംഗ്ലണ്ടിലെ ക്യൂവിലാണ്.</p>
             <p class="lang-en">4. Royal Botanical Garden is located in Kew, England.</p>
+            <ul class="options lang-ml" data-correct="0">
+                <li onclick="checkAnswer(this, true)">ശരി (True)</li>
+                <li onclick="checkAnswer(this, false)">തെറ്റ് (False)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="0">
+                <li onclick="checkAnswer(this, true)">True</li>
+                <li onclick="checkAnswer(this, false)">False</li>
+            </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി (True)</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
             </div>
         </div>
 
+        <!-- TF5 -->
         <div class="question-box">
             <p class="lang-ml">5. ഒരു ടാക്സോണമിക് കീ-യിലെ ഓരോ സ്റ്റേറ്റ്‌മെന്റിനെയും 'കപ്ലറ്റ്' എന്ന് വിളിക്കുന്നു.</p>
             <p class="lang-en">5. Each statement in a taxonomic key is called a couplet.</p>
+            <ul class="options lang-ml" data-correct="1">
+                <li onclick="checkAnswer(this, false)">ശരി (True)</li>
+                <li onclick="checkAnswer(this, true)">തെറ്റ് (False)</li>
+            </ul>
+            <ul class="options lang-en" data-correct="1">
+                <li onclick="checkAnswer(this, false)">True</li>
+                <li onclick="checkAnswer(this, true)">False</li>
+            </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് ('ലീഡ്' എന്നാണ് വിളിക്കുന്നത്)</span>
-                <span class="lang-en"><strong>Answer:</strong> False (It is called a 'lead')</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (ഓരോ സ്റ്റേറ്റ്‌മെന്റിനെയും 'ലീഡ്' എന്നാണ് വിളിക്കുന്നത്)</span>
+                <span class="lang-en"><strong>Answer:</strong> False (Each statement is called a 'lead')</span>
             </div>
         </div>
 
@@ -544,7 +591,7 @@
     </div>
 
     <script>
-        // Interactive MCQ checking logic
+        // Interactive MCQ & True/False checking logic
         function checkAnswer(liElement, isCorrect) {
             const ul = liElement.parentElement;
             const items = ul.children;
