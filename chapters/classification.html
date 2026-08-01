@@ -168,23 +168,38 @@
         .back-btn:hover {
             background-color: #dc2626;
         }
+        
+        /* Image container and Fallback styling */
+        .img-container {
+            width: 100%;
+            max-height: 240px;
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
         .animal-image {
             width: 100%;
             height: auto;
-            max-height: 220px;
+            max-height: 230px;
             object-fit: contain;
-            border-radius: 8px;
-            margin-bottom: 5px;
-            background-color: #f8fafc;
-            border: 1px solid #ddd;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
             cursor: pointer;
             transition: 0.2s;
+            display: block;
         }
         .animal-image:hover {
             opacity: 0.9;
+        }
+        .image-fallback {
+            padding: 30px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
         }
         .click-hint {
             text-align: center;
@@ -348,7 +363,7 @@
     </div>
 
 
-    <!-- INDIVIDUAL DETAIL PAGES WITH LOCAL FOLDER IMAGES -->
+    <!-- INDIVIDUAL DETAIL PAGES WITH IMAGE ERROR HANDLING -->
 
     <!-- 1. Porifera -->
     <div id="porifera" class="detail-page">
@@ -356,7 +371,10 @@
             <h2 class="pageHeading">Phylum: Porifera (Sponges)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="porifera.jpg" alt="Porifera Sponge" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="porifera.jpg" alt="Porifera Sponge" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (porifera.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -374,7 +392,10 @@
             <h2 class="pageHeading">Phylum: Coelenterata (Cnidaria)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="coelenterata.jpg" alt="Jellyfish" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="coelenterata.jpg" alt="Jellyfish" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (coelenterata.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -392,7 +413,10 @@
             <h2 class="pageHeading">Phylum: Platyhelminthes (Flatworms)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="platyhelminthes.jpg" alt="Flatworm" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="platyhelminthes.jpg" alt="Flatworm" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (platyhelminthes.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -410,7 +434,10 @@
             <h2 class="pageHeading">Phylum: Nematoda (Roundworms)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="nematoda.jpg" alt="Roundworm" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="nematoda.jpg" alt="Roundworm" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (nematoda.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -428,7 +455,10 @@
             <h2 class="pageHeading">Phylum: Annelida (Segmented Worms)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="annelida.jpg" alt="Earthworm" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="annelida.jpg" alt="Earthworm" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (annelida.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -446,7 +476,10 @@
             <h2 class="pageHeading">Phylum: Arthropoda (Insects)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="arthropoda.jpg" alt="Arthropod Insect" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="arthropoda.jpg" alt="Arthropod Insect" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (arthropoda.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -464,7 +497,10 @@
             <h2 class="pageHeading">Phylum: Mollusca</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="mollusca.jpg" alt="Snail Mollusca" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="mollusca.jpg" alt="Snail Mollusca" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (mollusca.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -482,7 +518,10 @@
             <h2 class="pageHeading">Phylum: Echinodermata</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="echinodermata.jpg" alt="Starfish" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="echinodermata.jpg" alt="Starfish" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (echinodermata.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -500,7 +539,10 @@
             <h2 class="pageHeading">Superclass: Agnatha</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="agnatha.jpg" alt="Lamprey Agnatha" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="agnatha.jpg" alt="Lamprey Agnatha" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (agnatha.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -518,7 +560,10 @@
             <h2 class="pageHeading">Class: Pisces (Fishes)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="pisces.jpg" alt="Shark Pisces" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="pisces.jpg" alt="Shark Pisces" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (pisces.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -536,7 +581,10 @@
             <h2 class="pageHeading">Class: Tetrapoda (Amphibia, Reptilia, Aves, Mammalia)</h2>
             <a href="#" onclick="goHome()" class="back-btn">← ഹോം പേജിലേക്ക് മടങ്ങുക</a>
         </div>
-        <img src="tetrapoda.jpg" alt="Tetrapods" class="animal-image" onclick="openModal(this)">
+        <div class="img-container">
+            <img src="tetrapoda.jpg" alt="Tetrapods" class="animal-image" onclick="openModal(this)" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="image-fallback" style="display:none;">📷 ഫോട്ടോ ലഭ്യമല്ല (tetrapoda.jpg ഫയൽ പരിശോധിക്കുക)</div>
+        </div>
         <div class="click-hint">🔍 ഫോട്ടോ വലുതായി കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക</div>
         <div class="info-box">
             <h3 class="descTitle">വിശദ വിവരങ്ങൾ (Description):</h3>
@@ -579,13 +627,10 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-   // Function for Chapter 4 Navigation
     function goToChapterFour() {
-        // ഇവിടെ 'chapter4.html' എന്നതിന് പകരം താങ്കളുടെ നാലാം അധ്യായമുള്ള പേജിന്റെ യഥാർത്ഥ പേര് നൽകുക
         window.location.href = "chapter4.html";
     }
 
-    // Modal Image Functions
     function openModal(imgElement) {
         let modal = document.getElementById('imageModal');
         let modalImg = document.getElementById('modalImg');
