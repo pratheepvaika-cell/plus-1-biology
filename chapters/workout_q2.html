@@ -3,23 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Interactive Workout & Question Bank - Chapter 2: Biological Classification</title>
+    <title>Chapter 2: Biological Classification - Master Workout & Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 20px; line-height: 1.7; scroll-behavior: smooth; }
-        .container { max-width: 900px; margin: auto; background: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); position: relative; }
-        
-        .nav-buttons {
-            position: absolute;
-            top: 25px;
-            right: 40px;
-            display: flex;
-            gap: 10px;
-            align-items: center;
+        :root {
+            --outer-bg: #0f172a;
+            --container-bg: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --primary-color: #ec4899; /* Cute Pink Accent */
+            --primary-light: #fce7f3;
+            --border-color: #fbcfe8;
         }
 
-        .lang-switch, .back-btn {
+        body { 
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif; 
+            background: var(--outer-bg); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 30px 20px; 
+            line-height: 1.7; 
+            scroll-behavior: smooth; 
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: var(--container-bg); 
+            padding: 40px; 
+            border-radius: 16px; 
+            border: 2px solid var(--border-color); 
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25), 0 10px 25px -5px rgba(0, 0, 0, 0.08); 
+            position: relative; 
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .top-btn, .lang-switch {
             padding: 0 16px;
-            border-radius: 6px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
             text-decoration: none;
@@ -31,240 +60,463 @@
             justify-content: center;
             height: 40px;
             box-sizing: border-box;
-            border: 2px solid #2563eb !important;
-            background-color: #eff6ff !important;
-            color: #2563eb !important;
-            white-space: nowrap;
+            border: 2px solid var(--primary-color) !important;
+            background-color: var(--primary-light) !important;
+            color: var(--primary-color) !important;
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
         }
         
-        .lang-switch:hover, .back-btn:hover {
-            background-color: #2563eb !important;
+        .top-btn:hover, .lang-switch:hover {
+            background-color: var(--primary-color) !important;
             color: #ffffff !important;
+            transform: translateY(-1px);
         }
 
-        /* Updated Back to Notes Button Styling */
-        .back-notes-btn {
-            display: inline-flex;
+        h1 { 
+            color: var(--text-heading); 
+            font-size: 24px; 
+            border-bottom: 2px dashed var(--border-color); 
+            padding-bottom: 12px; 
+            margin-top: 15px; 
+            margin-bottom: 25px; 
+            font-weight: 700; 
+        }
+
+        h2 { 
+            font-size: 18px; 
+            margin-top: 35px; 
+            margin-bottom: 15px;
+            color: var(--text-heading); 
+            background: #fdf2f8; 
+            padding: 12px 18px; 
+            border-radius: 0 12px 12px 0; 
+            border-left: 6px solid var(--primary-color); 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
-            border: 2px solid #0d9488;
-            background: linear-gradient(135deg, #0d9488, #0f766e);
-            color: #ffffff !important;
-            margin-top: 30px;
+            gap: 10px;
         }
-
-        .back-notes-btn:hover {
-            background: linear-gradient(135deg, #0f766e, #115e59);
-            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.35);
-            transform: translateY(-2px);
-        }
-
-        h1 { color: #0f172a; font-size: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 25px; margin-bottom: 20px; padding-right: 280px; }
-        h2 { font-size: 18px; margin-top: 30px; color: #1e293b; background: #f1f5f9; padding: 10px 15px; border-radius: 6px; border-left: 4px solid #2563eb; }
         
-        p, li { font-size: 15px; }
-        ul { margin-bottom: 20px; }
+        p, li { font-size: 15px; color: var(--text-main); }
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
 
-        .question-box { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        .question-box p { font-weight: 600; color: #0f172a; margin-top: 0; }
+        .question-box { background: #fff1f2; border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(236, 72, 153, 0.05); }
+        .question-box p { font-weight: 600; color: var(--text-heading); margin-top: 0; }
         
         .options { list-style-type: none; padding-left: 0; }
         .options li { 
-            padding: 10px 14px; 
+            padding: 12px 16px; 
             margin-bottom: 8px; 
             background: #ffffff; 
-            border: 1px solid #cbd5e1; 
-            border-radius: 6px; 
+            border: 1px solid #fbcfe8; 
+            border-radius: 10px; 
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        .options li:hover { background: #f1f5f9; border-color: #94a3b8; }
+        .options li:hover { background: #fdf2f8; border-color: #ec4899; }
         
         .options li.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #166534; font-weight: 600; }
         .options li.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b; }
 
+        .tf-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        .tf-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            border: 1px solid #fbcfe8;
+            background: #ffffff;
+            color: #334155;
+            transition: all 0.2s ease;
+        }
+
+        .tf-btn:hover { background: #fdf2f8; border-color: #ec4899; }
+        .tf-btn.correct-tf { background: #dcfce7 !important; border-color: #22c55e !important; color: #166534 !important; font-weight: 600; }
+        .tf-btn.wrong-tf { background: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b !important; }
+
         .action-btn {
-            background-color: #0f766e;
+            background-color: #db2777;
             color: white;
             border: none;
             padding: 8px 16px;
             font-size: 13px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: 20px;
             cursor: pointer;
             margin-top: 10px;
             transition: 0.2s;
         }
-        .action-btn:hover { background-color: #115e59; }
+        .action-btn:hover { background-color: #be185d; }
 
         .answer-reveal {
             display: none;
-            background: #f0fdf4;
-            border-left: 4px solid #22c55e;
+            background: #fdf2f8;
+            border-left: 4px solid #db2777;
             padding: 12px 15px;
-            border-radius: 4px;
+            border-radius: 8px;
             margin-top: 12px;
             font-size: 14px;
-            color: #166534;
+            color: #831843;
+            border-top: 1px solid #fbcfe8;
+            border-right: 1px solid #fbcfe8;
+            border-bottom: 1px solid #fbcfe8;
         }
 
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
-        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
-        th { background: #f1f5f9; color: #0f172a; }
+        .answer-textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #fbcfe8;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            box-sizing: border-box;
+            background: #ffffff;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+        .answer-textarea:focus {
+            outline: none;
+            border-color: #db2777;
+            box-shadow: 0 0 0 3px rgba(219, 39, 119, 0.1);
+        }
 
-        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; }
-        .back-link:hover { background: #475569; }
+        .scoreboard-box {
+            background: #fdf2f8;
+            color: var(--text-heading);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.1);
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid #fbcfe8;
+        }
+        .score-info h3 { margin: 0 0 4px 0; font-size: 16px; color: #831843; font-weight: 700; }
+        .score-info p { margin: 0; font-size: 13px; color: #9d174d; }
+        
+        .score-action-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .check-score-btn, .test-voice-btn {
+            background-color: #db2777;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 5px rgba(219, 39, 119, 0.3);
+        }
+        .check-score-btn:hover { background-color: #be185d; }
+
+        .test-voice-btn {
+            background-color: #a855f7;
+            box-shadow: 0 2px 5px rgba(168, 85, 247, 0.3);
+        }
+        .test-voice-btn:hover {
+            background-color: #9333ea;
+        }
+
+        .score-display {
+            font-size: 18px;
+            font-weight: bold;
+            background: #ffffff;
+            color: #db2777;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #fbcfe8;
+        }
+
+        /* Modal Pop-up */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .cartoon-modal {
+            background: linear-gradient(135deg, #ffffff 0%, #fdf2f8 100%);
+            width: 90%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 24px;
+            border: 3px solid #ec4899;
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.3);
+            text-align: center;
+            position: relative;
+            animation: popUpAnim 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popUpAnim {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .cartoon-modal .icon-header {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: bounceIcon 1s infinite alternate;
+        }
+
+        @keyframes bounceIcon {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
+        }
+
+        .cartoon-modal h2 {
+            margin: 0 0 10px 0;
+            color: #831843;
+            font-size: 22px;
+            background: none;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .cartoon-modal p {
+            color: #4b5563;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .close-modal-btn {
+            background: #ec4899;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.4);
+            transition: 0.2s;
+        }
+
+        .close-modal-btn:hover {
+            background: #db2777;
+            transform: scale(1.05);
+        }
+
+        .bottom-actions {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-home-btn {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 15px;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            cursor: pointer;
+            border: none;
+            background-color: #64748b;
+            color: #ffffff;
+        }
+        .action-home-btn:hover {
+            background-color: #475569;
+            transform: translateY(-1px);
+        }
 
         .lang-en { display: none; }
         .lang-ml { display: block; }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .top-nav { justify-content: flex-start; }
+            h1 { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- MODAL POPUP -->
+    <div class="modal-overlay" id="cartoonModalOverlay">
+        <div class="cartoon-modal">
+            <div class="icon-header" id="modalIcon">🌸✨</div>
+            <h2 id="modalTitle">Wonderful!</h2>
+            <p id="modalMessage">Your feedback message will appear here!</p>
+            <button class="close-modal-btn" onclick="closeCartoonModal()">Yay! Continue 💖</button>
+        </div>
+    </div>
+
     <div class="container">
-        <div class="nav-buttons">
-            <a href="chapter2.html" class="back-btn lang-ml">← തിരികെ നോട്ട്സിലേക്ക്</a>
-            <a href="chapter2.html" class="back-btn lang-en">← Back to Notes</a>
-            <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
+        <div class="top-nav">
+            <a href="chapter2.html" class="top-btn lang-ml">📖 ചാപ്റ്റർ 2 നോട്ട്സിലേക്ക്</a>
+            <a href="chapter2.html" class="top-btn lang-en">📖 Back to Notes</a>
+            <button class="lang-switch" onclick="toggleLanguage()">🌐 Switch to English</button>
         </div>
 
-        <h1 class="lang-ml">ചാപ്റ്റർ 2: ജീവ വർഗീകരണം (Biological Classification) - വർക്ക്ഔട്ട് & ചോദ്യശേഖരം</h1>
-        <h1 class="lang-en">Chapter 2: Biological Classification - Advanced Workout & Question Bank</h1>
+        <h1 class="lang-ml">🌸 ചാപ്റ്റർ 2: ജീവലോകത്തിന്റെ വർഗ്ഗീകരണം (Biological Classification) - മാസ്റ്റർ വർക്ക്ഔട്ട്</h1>
+        <h1 class="lang-en">🌸 Chapter 2: Biological Classification - Master Workout</h1>
 
         <!-- SECTION A: MCQs -->
-        <h2 class="lang-ml">വിഭാഗം എ: മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (NEET Pattern MCQs)</h2>
-        <h2 class="lang-en">Section A: Multiple Choice Questions (NEET Pattern MCQs)</h2>
+        <h2 class="lang-ml">വിഭാഗം എ: മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (MCQs)</h2>
+        <h2 class="lang-en">Section A: Multiple Choice Questions (MCQs)</h2>
 
         <!-- Q1 -->
-        <div class="question-box">
-            <p class="lang-ml">1. അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണം (Five Kingdom Classification) ആവിഷ്കരിച്ചത് ആര്?</p>
+        <div class="question-box" data-qid="1">
+            <p class="lang-ml">1. പഞ്ചജഗത് വർഗ്ഗീകരണം (Five Kingdom Classification) ആവിഷ്കരിച്ചത് ആര്?</p>
             <p class="lang-en">1. Who proposed the Five Kingdom Classification?</p>
             
-            <ul class="options lang-ml" data-correct="1">
-                <li onclick="checkAnswer(this, false)">(A) കരോലസ് ലിന്നേയസ് (Carolus Linnaeus)</li>
-                <li onclick="checkAnswer(this, true)">(B) ആർ.എച്ച്. വിറ്റേക്കർ (R.H. Whittaker)</li>
-                <li onclick="checkAnswer(this, false)">(C) എർൺസ്റ്റ് മേയർ (Ernst Mayr)</li>
-                <li onclick="checkAnswer(this, false)">(D) അറിസ്റ്റോട്ടിൽ (Aristotle)</li>
+            <ul class="options lang-ml" data-correct="2">
+                <li onclick="checkAnswer(this, false, 1)">(A) കരോളസ് ലിനേയസ് (Carolus Linnaeus)</li>
+                <li onclick="checkAnswer(this, false, 1)">(B) അരിസ്റ്റോട്ടിൽ (Aristotle)</li>
+                <li onclick="checkAnswer(this, true, 1)">(C) ആർ.എച്ച്. വിറ്റേക്കർ (R.H. Whittaker)</li>
+                <li onclick="checkAnswer(this, false, 1)">(D) ലൂയി പാസ്ചർ (Louis Pasteur)</li>
             </ul>
-            <ul class="options lang-en" data-correct="1">
-                <li onclick="checkAnswer(this, false)">(A) Carolus Linnaeus</li>
-                <li onclick="checkAnswer(this, true)">(B) R.H. Whittaker</li>
-                <li onclick="checkAnswer(this, false)">(C) Ernst Mayr</li>
-                <li onclick="checkAnswer(this, false)">(D) Aristotle</li>
+            <ul class="options lang-en" data-correct="2">
+                <li onclick="checkAnswer(this, false, 1)">(A) Carolus Linnaeus</li>
+                <li onclick="checkAnswer(this, false, 1)">(B) Aristotle</li>
+                <li onclick="checkAnswer(this, true, 1)">(C) R.H. Whittaker</li>
+                <li onclick="checkAnswer(this, false, 1)">(D) Louis Pasteur</li>
             </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) ആർ.എച്ച്. വിറ്റേക്കർ (1969)</span>
-                <span class="lang-en"><strong>Answer:</strong> (B) R.H. Whittaker (1969)</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (C) ആർ.എച്ച്. വിറ്റേക്കർ (R.H. Whittaker)</span>
+                <span class="lang-en"><strong>Answer:</strong> (C) R.H. Whittaker</span>
             </div>
         </div>
 
         <!-- Q2 -->
-        <div class="question-box">
-            <p class="lang-ml">2. കോശഭിത്തി തികച്ചും ഇല്ലാത്ത ഏറ്റവും ചെറിയ ജീവകോശങ്ങൾ ഏവ?</p>
-            <p class="lang-en">2. Which organisms completely lack a cell wall and are the smallest living cells known?</p>
+        <div class="question-box" data-qid="2">
+            <p class="lang-ml">2. ബാക്ടീരിയകൾ ഉൾപ്പെടുന്ന ജഗത് (Kingdom) ഏത്?</p>
+            <p class="lang-en">2. Which kingdom includes all bacteria?</p>
             
-            <ul class="options lang-ml" data-correct="3">
-                <li onclick="checkAnswer(this, false)">(A) ബാക്ടീരിയ (Bacteria)</li>
-                <li onclick="checkAnswer(this, false)">(B) വൈറസ് (Viruses)</li>
-                <li onclick="checkAnswer(this, false)">(C) യീസ്റ്റ് (Yeast)</li>
-                <li onclick="checkAnswer(this, true)">(D) മൈക്കോപ്ലാസ്മ (Mycoplasma)</li>
+            <ul class="options lang-ml" data-correct="0">
+                <li onclick="checkAnswer(this, true, 2)">(A) മൊണിറ (Monera)</li>
+                <li onclick="checkAnswer(this, false, 2)">(B) പ്രോട്ടിസ്റ്റ (Protista)</li>
+                <li onclick="checkAnswer(this, false, 2)">(C) ഫംഗൈ (Fungi)</li>
+                <li onclick="checkAnswer(this, false, 2)">(D) പ്ലാന്റേ (Plantae)</li>
             </ul>
-            <ul class="options lang-en" data-correct="3">
-                <li onclick="checkAnswer(this, false)">(A) Bacteria</li>
-                <li onclick="checkAnswer(this, false)">(B) Viruses</li>
-                <li onclick="checkAnswer(this, false)">(C) Yeast</li>
-                <li onclick="checkAnswer(this, true)">(D) Mycoplasma</li>
+            <ul class="options lang-en" data-correct="0">
+                <li onclick="checkAnswer(this, true, 2)">(A) Monera</li>
+                <li onclick="checkAnswer(this, false, 2)">(B) Protista</li>
+                <li onclick="checkAnswer(this, false, 2)">(C) Fungi</li>
+                <li onclick="checkAnswer(this, false, 2)">(D) Plantae</li>
             </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> (D) മൈക്കോപ്ലാസ്മ (Mycoplasma)</span>
-                <span class="lang-en"><strong>Answer:</strong> (D) Mycoplasma</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (A) മൊണിറ (Monera)</span>
+                <span class="lang-en"><strong>Answer:</strong> (A) Monera</span>
             </div>
         </div>
 
         <!-- Q3 -->
-        <div class="question-box">
-            <p class="lang-ml">3. സസ്യങ്ങളിൽ 'മൊസൈക് രോഗം' (Mosaic disease of tobacco) ഉണ്ടാക്കുന്ന രോഗാണുവിനെ കണ്ടെത്തിയത് ആര്?</p>
-            <p class="lang-en">3. Who recognized certain microbes as causal organisms of the mosaic disease of tobacco?</p>
+        <div class="question-box" data-qid="3">
+            <p class="lang-ml">3. ഫംഗസുകളുടെ കോശഭിത്തി നിർമ്മിച്ചിരിക്കുന്ന വസ്തു ഏതാണ്?</p>
+            <p class="lang-en">3. The cell wall of fungi is composed of:</p>
             
-            <ul class="options lang-ml" data-correct="0">
-                <li onclick="checkAnswer(this, true)">(A) ദിമിത്രി ഇവാനോവ്സ്കി (Dmitri Ivanowsky)</li>
-                <li onclick="checkAnswer(this, false)">(B) എം.ഡബ്ല്യു. ബെജറിങ്ക് (M.W. Beijerinck)</li>
-                <li onclick="checkAnswer(this, false)">(C) ഡബ്ല്യു.എം. സ്റ്റാൻലി (W.M. Stanley)</li>
-                <li onclick="checkAnswer(this, false)">(D) ടി.ഒ. ഡീനർ (T.O. Diener)</li>
+            <ul class="options lang-ml" data-correct="1">
+                <li onclick="checkAnswer(this, false, 3)">(A) സെല്ലുലോസ് (Cellulose)</li>
+                <li onclick="checkAnswer(this, true, 3)">(B) കൈറ്റിൻ (Chitin)</li>
+                <li onclick="checkAnswer(this, false, 3)">(C) പെപ്റ്റിഡോഗ്ലൈക്കാൻ (Peptidoglycan)</li>
+                <li onclick="checkAnswer(this, false, 3)">(D) ലിഗ്നിൻ (Lignin)</li>
             </ul>
-            <ul class="options lang-en" data-correct="0">
-                <li onclick="checkAnswer(this, true)">(A) Dmitri Ivanowsky</li>
-                <li onclick="checkAnswer(this, false)">(B) M.W. Beijerinck</li>
-                <li onclick="checkAnswer(this, false)">(C) W.M. Stanley</li>
-                <li onclick="checkAnswer(this, false)">(D) T.O. Diener</li>
+            <ul class="options lang-en" data-correct="1">
+                <li onclick="checkAnswer(this, false, 3)">(A) Cellulose</li>
+                <li onclick="checkAnswer(this, true, 3)">(B) Chitin</li>
+                <li onclick="checkAnswer(this, false, 3)">(C) Peptidoglycan</li>
+                <li onclick="checkAnswer(this, false, 3)">(D) Lignin</li>
             </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> (A) ദിമിത്രി ഇവാനോവ്സ്കി (1892)</span>
-                <span class="lang-en"><strong>Answer:</strong> (A) Dmitri Ivanowsky (1892)</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) കൈറ്റിൻ (Chitin)</span>
+                <span class="lang-en"><strong>Answer:</strong> (B) Chitin</span>
             </div>
         </div>
 
         <!-- Q4 -->
-        <div class="question-box">
-            <p class="lang-ml">4. പ്രോട്ടീൻ കോട്ട് ഇല്ലാത്ത, സ്വതന്ത്ര ആർ.എൻ.എ (Free RNA) മാത്രം അടങ്ങിയ രോഗാണു ഏത്?</p>
-            <p class="lang-en">4. Infectious agents consisting only of free RNA without a protein coat are called:</p>
+        <div class="question-box" data-qid="4">
+            <p class="lang-ml">4. വൈറസുകളെക്കുറിച്ച് പഠിക്കുന്ന ശാസ്ത്ര ശാഖ ഏതാണ്?</p>
+            <p class="lang-en">4. The study of viruses is known as:</p>
             
             <ul class="options lang-ml" data-correct="2">
-                <li onclick="checkAnswer(this, false)">(A) വൈറസുകൾ (Viruses)</li>
-                <li onclick="checkAnswer(this, false)">(B) പ്രിയോണുകൾ (Prions)</li>
-                <li onclick="checkAnswer(this, true)">(C) വെയറോയ്ഡുകൾ (Viroids)</li>
-                <li onclick="checkAnswer(this, false)">(D) ലൈക്കണുകൾ (Lichens)</li>
+                <li onclick="checkAnswer(this, false, 4)">(A) ബാക്ടീരിയോളജി (Bacteriology)</li>
+                <li onclick="checkAnswer(this, false, 4)">(B) മൈക്കോളജി (Mycology)</li>
+                <li onclick="checkAnswer(this, true, 4)">(C) വൈറോളജി (Virology)</li>
+                <li onclick="checkAnswer(this, false, 4)">(D) ഫൈക്കോളജി (Phycology)</li>
             </ul>
             <ul class="options lang-en" data-correct="2">
-                <li onclick="checkAnswer(this, false)">(A) Viruses</li>
-                <li onclick="checkAnswer(this, false)">(B) Prions</li>
-                <li onclick="checkAnswer(this, true)">(C) Viroids</li>
-                <li onclick="checkAnswer(this, false)">(D) Lichens</li>
+                <li onclick="checkAnswer(this, false, 4)">(A) Bacteriology</li>
+                <li onclick="checkAnswer(this, false, 4)">(B) Mycology</li>
+                <li onclick="checkAnswer(this, true, 4)">(C) Virology</li>
+                <li onclick="checkAnswer(this, false, 4)">(D) Phycology</li>
             </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> (C) വെയറോയ്ഡുകൾ (Viroids - ടി.ഒ. ഡീനർ 1971-ൽ കണ്ടെത്തി)</span>
-                <span class="lang-en"><strong>Answer:</strong> (C) Viroids (Discovered by T.O. Diener in 1971)</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (C) വൈറോളജി (Virology)</span>
+                <span class="lang-en"><strong>Answer:</strong> (C) Virology</span>
             </div>
         </div>
 
         <!-- Q5 -->
-        <div class="question-box">
-            <p class="lang-ml">5. പൂപ്പലുകളുടെ (Fungi) കോശഭിത്തിയിൽ അടങ്ങിയിരിക്കുന്ന പ്രധാന ഘടകം ഏതാണ്?</p>
-            <p class="lang-en">5. The cell walls of fungi are composed of:</p>
+        <div class="question-box" data-qid="5">
+            <p class="lang-ml">5. പ്രകൃതിയിലെ ഏറ്റവും മികച്ച മലിനീകരണ സൂചകങ്ങൾ (Pollution indicators) എന്നറിയപ്പെടുന്നവ ഏവ?</p>
+            <p class="lang-en">5. Which of the following are considered the best natural pollution indicators?</p>
             
-            <ul class="options lang-ml" data-correct="1">
-                <li onclick="checkAnswer(this, false)">(A) സെല്ലുലോസ് (Cellulose)</li>
-                <li onclick="checkAnswer(this, true)">(B) ചിറ്റിൻ (Chitin and polysaccharides)</li>
-                <li onclick="checkAnswer(this, false)">(C) പെപ്റ്റിഡോഗ്ലൈക്കാൻ (Peptidoglycan)</li>
-                <li onclick="checkAnswer(this, false)">(D) സിലിക്ക (Silica)</li>
+            <ul class="options lang-ml" data-correct="0">
+                <li onclick="checkAnswer(this, true, 5)">(A) ലൈക്കണുകൾ (Lichens)</li>
+                <li onclick="checkAnswer(this, false, 5)">(B) മൈക്കോറൈസ (Mycorrhiza)</li>
+                <li onclick="checkAnswer(this, false, 5)">(C) യീസ്റ്റ് (Yeast)</li>
+                <li onclick="checkAnswer(this, false, 5)">(D) സയനോബാക്ടീരിയ (Cyanobacteria)</li>
             </ul>
-            <ul class="options lang-en" data-correct="1">
-                <li onclick="checkAnswer(this, false)">(A) Cellulose</li>
-                <li onclick="checkAnswer(this, true)">(B) Chitin and polysaccharides</li>
-                <li onclick="checkAnswer(this, false)">(C) Peptidoglycan</li>
-                <li onclick="checkAnswer(this, false)">(D) Silica</li>
+            <ul class="options lang-en" data-correct="0">
+                <li onclick="checkAnswer(this, true, 5)">(A) Lichens</li>
+                <li onclick="checkAnswer(this, false, 5)">(B) Mycorrhiza</li>
+                <li onclick="checkAnswer(this, false, 5)">(C) Yeast</li>
+                <li onclick="checkAnswer(this, false, 5)">(D) Cyanobacteria</li>
             </ul>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> (B) ചിറ്റിൻ (Chitin)</span>
-                <span class="lang-en"><strong>Answer:</strong> (B) Chitin and polysaccharides</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> (A) ലൈക്കണുകൾ (Lichens)</span>
+                <span class="lang-en"><strong>Answer:</strong> (A) Lichens</span>
             </div>
         </div>
 
@@ -273,228 +525,255 @@
         <h2 class="lang-ml">വിഭാഗം ബി: ശരിയോ തെറ്റോ കണ്ടെത്തുക (True or False)</h2>
         <h2 class="lang-en">Section B: True or False</h2>
         
-        <div class="question-box">
-            <p class="lang-ml">1. ആർ.എച്ച്. വിറ്റേക്കറുടെ വർഗ്ഗീകരണത്തിൽ ബാക്ടീരിയകളെല്ലാം 'കിങ്ഡംൊ മൊണേറ'യിലാണ് ഉൾപ്പെടുത്തിയിരിക്കുന്നത്.</p>
-            <p class="lang-en">1. All bacteria are included in Kingdom Monera in Whittaker's classification.</p>
+        <!-- TF Q1 -->
+        <div class="question-box" data-qid="6">
+            <p class="lang-ml">1. ബാക്ടീരിയകൾ പ്രോകാരിയോട്ടിക് ജീവികളാണ്.</p>
+            <p class="lang-en">1. Bacteria are prokaryotic organisms.</p>
+            
+            <div class="tf-buttons">
+                <button class="tf-btn" onclick="checkTF(this, true, true, 6)">
+                    <span class="lang-ml">ശരി (True)</span><span class="lang-en">True</span>
+                </button>
+                <button class="tf-btn" onclick="checkTF(this, false, true, 6)">
+                    <span class="lang-ml">തെറ്റ് (False)</span><span class="lang-en">False</span>
+                </button>
+            </div>
+
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി (True)</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
             </div>
         </div>
 
-        <div class="question-box">
-            <p class="lang-ml">2. ഡയറ്റമുകളുടെ കോശഭിത്തിയിൽ സിലിക്ക അടങ്ങിയിരിക്കുന്നതിനാൽ അവ നശിച്ചുപോകാത്തവയാണ്.</p>
-            <p class="lang-en">2. Diatom cell walls are embedded with silica and thus indestructible.</p>
+        <!-- TF Q2 -->
+        <div class="question-box" data-qid="7">
+            <p class="lang-ml">2. വൈറസുകൾക്ക് ജീവകോശങ്ങളുടെ ഘടനയുണ്ട്.</p>
+            <p class="lang-en">2. Viruses possess a proper cellular structure.</p>
+            
+            <div class="tf-buttons">
+                <button class="tf-btn" onclick="checkTF(this, true, false, 7)">
+                    <span class="lang-ml">ശരി (True)</span><span class="lang-en">True</span>
+                </button>
+                <button class="tf-btn" onclick="checkTF(this, false, false, 7)">
+                    <span class="lang-ml">തെറ്റ് (False)</span><span class="lang-en">False</span>
+                </button>
+            </div>
+
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (False)</span>
+                <span class="lang-en"><strong>Answer:</strong> False</span>
+            </div>
+        </div>
+
+        <!-- TF Q3 -->
+        <div class="question-box" data-qid="8">
+            <p class="lang-ml">3. യീസ്റ്റ് ഒരു ഏകകോശ ഫംഗസ് ആണ്.</p>
+            <p class="lang-en">3. Yeast is a unicellular fungus.</p>
+            
+            <div class="tf-buttons">
+                <button class="tf-btn" onclick="checkTF(this, true, true, 8)">
+                    <span class="lang-ml">ശരി (True)</span><span class="lang-en">True</span>
+                </button>
+                <button class="tf-btn" onclick="checkTF(this, false, true, 8)">
+                    <span class="lang-ml">തെറ്റ് (False)</span><span class="lang-en">False</span>
+                </button>
+            </div>
+
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-reveal">
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി (True)</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
             </div>
         </div>
 
-        <div class="question-box">
-            <p class="lang-ml">3. ലൈക്കണുകൾ മലിനീകരണത്തിന്റെ മോശം സൂചകങ്ങളാണ് (Pollution indicators).</p>
-            <p class="lang-en">3. Lichens are poor indicators of pollution.</p>
+        <!-- TF Q4 -->
+        <div class="question-box" data-qid="9">
+            <p class="lang-ml">4. പ്രോട്ടിസ്റ്റ ജഗത്തിൽ ഉൾപ്പെടുന്ന ജീവികൾ പ്രോകാരിയോറ്റുകളാണ്.</p>
+            <p class="lang-en">4. Organisms included in Kingdom Protista are prokaryotes.</p>
+            
+            <div class="tf-buttons">
+                <button class="tf-btn" onclick="checkTF(this, true, false, 9)">
+                    <span class="lang-ml">ശരി (True)</span><span class="lang-en">True</span>
+                </button>
+                <button class="tf-btn" onclick="checkTF(this, false, false, 9)">
+                    <span class="lang-ml">തെറ്റ് (False)</span><span class="lang-en">False</span>
+                </button>
+            </div>
+
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (അവ നല്ല സൂചകങ്ങളാണ്, മലിന പ്രദേശങ്ങളിൽ വളരില്ല)</span>
-                <span class="lang-en"><strong>Answer:</strong> False (They are very good pollution indicators)</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (False)</span>
+                <span class="lang-en"><strong>Answer:</strong> False (യൂകാരിയോറ്റുകൾ ആണ്)</span>
             </div>
         </div>
 
-        <div class="question-box">
-            <p class="lang-ml">4. വൈറസുകളിൽ ആർ.എൻ.എയും ഡി.എൻ.എയും ഒരുമിച്ച് കാണപ്പെടുന്നു.</p>
-            <p class="lang-en">4. Both RNA and endocellar DNA are present together in a single virus.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
-            <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> തെറ്റ് (ഏതെങ്കിലും ഒന്നു മാത്രമേ കാണപ്പെടൂ)</span>
-                <span class="lang-en"><strong>Answer:</strong> False (No virus contains both RNA and DNA)</span>
+        <!-- TF Q5 -->
+        <div class="question-box" data-qid="10">
+            <p class="lang-ml">5. പ്രിയോണുകൾ (Prions) പ്രോട്ടീൻ മാത്രം അടങ്ങിയ അണുബാധ ഉണ്ടാക്കുന്ന ഘടകങ്ങളാണ്.</p>
+            <p class="lang-en">5. Prions are infectious agents consisting only of proteins.</p>
+            
+            <div class="tf-buttons">
+                <button class="tf-btn" onclick="checkTF(this, true, true, 10)">
+                    <span class="lang-ml">ശരി (True)</span><span class="lang-en">True</span>
+                </button>
+                <button class="tf-btn" onclick="checkTF(this, false, true, 10)">
+                    <span class="lang-ml">തെറ്റ് (False)</span><span class="lang-en">False</span>
+                </button>
             </div>
-        </div>
 
-        <div class="question-box">
-            <p class="lang-ml">5. മീഥെയ്ൻ വാതകം (ബയോഗ്യാസ്) ഉത്പാദിപ്പിക്കുന്നതിൽ മിഥാനോജനുകൾക്ക് പങ്കുണ്ട്.</p>
-            <p class="lang-en">5. Methanogens are responsible for the production of methane (biogas).</p>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി</span>
+                <span class="lang-ml"><strong>ഉത്തരം:</strong> ശരി (True)</span>
                 <span class="lang-en"><strong>Answer:</strong> True</span>
             </div>
         </div>
 
 
         <!-- SECTION C: Short Answers -->
-        <h2 class="lang-ml">വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങൾ (Short Answers)</h2>
-        <h2 class="lang-en">Section C: Short Answers</h2>
-        
+        <h2 class="lang-ml">വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങളും സ്വയം വിലയിരുത്തലും (Short Answers & Self-Evaluation)</h2>
+        <h2 class="lang-en">Section C: Short Answers & Self-Evaluation</h2>
+
+        <!-- SA Q1 -->
         <div class="question-box">
-            <p class="lang-ml">1. ആർ.എച്ച്. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തിലെ പ്രധാന മാനദണ്ഡങ്ങൾ ഏവ?</p>
-            <p class="lang-en">1. What are the main criteria used by R.H. Whittaker for classification?</p>
+            <p class="lang-ml">1. ആർ.എച്ച്. വിറ്റേക്കർ നിർദ്ദേശിച്ച പഞ്ചജഗത് വർഗ്ഗീകരണം (Five Kingdoms) ഏവ?</p>
+            <p class="lang-en">1. What are the five kingdoms proposed by R.H. Whittaker?</p>
+            <textarea class="answer-textarea lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+            <textarea class="answer-textarea lang-en" placeholder="Type your answer here..."></textarea>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> കോശഘടന (Cell structure), ശരീര സംഘടന (Body organization), പോഷണ രീതി (Mode of nutrition), പ്രജനനം (Reproduction), ഫൈലോജെനെറ്റിക് ബന്ധങ്ങൾ (Phylogenetic relationships).</span>
-                <span class="lang-en"><strong>Answer:</strong> Cell structure, body organization, mode of nutrition, reproduction, and phylogenetic relationships.</span>
+                <span class="lang-ml"><strong>മാതൃകാ ഉത്തരം:</strong> മൊണിറ (Monera), പ്രോട്ടിസ്റ്റ (Protista), ഫംഗൈ (Fungi), പ്ലാന്റേ (Plantae), അനിമേലിയ (Animalia).</span>
+                <span class="lang-en"><strong>Model Answer:</strong> Monera, Protista, Fungi, Plantae, and Animalia.</span>
             </div>
         </div>
 
+        <!-- SA Q2 -->
         <div class="question-box">
-            <p class="lang-ml">2. ആർക്കാബാക്ടീരിയകൾ കഠിനമായ സാഹചര്യങ്ങളെ അതിജീവിക്കുന്നത് എങ്ങനെയെന്ന് വ്യക്തമാക്കുക.</p>
-            <p class="lang-en">2. How do archaebacteria survive in extreme conditions?</p>
+            <p class="lang-ml">2. എന്താണ് ലൈക്കണുകൾ (Lichens)?</p>
+            <p class="lang-en">2. What are Lichens?</p>
+            <textarea class="answer-textarea lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+            <textarea class="answer-textarea lang-en" placeholder="Type your answer here..."></textarea>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> അവയുടെ കോശഭിത്തിയുടെ ഘടന മറ്റ് ബാക്ടീരിയകളിൽ നിന്ന് വ്യത്യസ്തമായതുകൊണ്ടാണ് കഠിനമായ ചൂട്, ഉപ്പ്, ചതുപ്പ് നിലങ്ങൾ തുടങ്ങിയ ഇടങ്ങളിൽ അവ ജീവിക്കുന്നത്.</span>
-                <span class="lang-en"><strong>Answer:</strong> They differ from other bacteria in having a different cell wall structure which is responsible for their survival in extreme conditions.</span>
+                <span class="lang-ml"><strong>മാതൃകാ ഉത്തരം:</strong> ആൽഗയും ഫംഗസും തമ്മിലുള്ള സഹജീവന ബന്ധമാണ് (Symbiotic association) ലൈക്കണുകൾ.</span>
+                <span class="lang-en"><strong>Model Answer:</strong> Symbiotic associations between algae and fungi.</span>
             </div>
         </div>
 
+        <!-- SA Q3 -->
         <div class="question-box">
-            <p class="lang-ml">3. ലൈക്കണുകളിലെ ശാഖകളും ആൽഗകളും അറിയപ്പെടുന്ന പേരുകൾ എന്തെല്ലാം?</p>
-            <p class="lang-en">3. What are the algal and fungal components of lichens known as?</p>
+            <p class="lang-ml">3. വൈറസുകളുടെ പ്രധാന ഘടകങ്ങൾ എന്തൊക്കെയാണ്?</p>
+            <p class="lang-en">3. What are the main components of viruses?</p>
+            <textarea class="answer-textarea lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+            <textarea class="answer-textarea lang-en" placeholder="Type your answer here..."></textarea>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ആൽഗ ഘടകം - ഫൈക്കോബയോണ്ട് (Phycobiont), പൂപ്പൽ ഘടകം - മൈക്കോബയോണ്ട് (Mycobiont).</span>
-                <span class="lang-en"><strong>Answer:</strong> Algal component - Phycobiont; Fungal component - Mycobiont.</span>
+                <span class="lang-ml"><strong>മാതൃകാ ഉത്തരം:</strong> ഒരു ജനിതക വസ്തുവും (DNA അല്ലെങ്കിൽ RNA) അതിനെ പൊതിഞ്ഞുനിൽക്കുന്ന പ്രോട്ടീൻ ആവരണവും (Capsid).</span>
+                <span class="lang-en"><strong>Model Answer:</strong> Genetic material (DNA or RNA) and a protein coat (capsid).</span>
             </div>
         </div>
 
+        <!-- SA Q4 -->
         <div class="question-box">
-            <p class="lang-ml">4. പ്രിയോണുകൾ (Prions) അഥവാ എന്താണ്? അവ ഉണ്ടാക്കുന്ന പ്രധാന രോഗം ഏത്?</p>
-            <p class="lang-en">4. What are prions? Name a notable disease caused by them.</p>
+            <p class="lang-ml">4. എന്താണ് വയോയ്ഡ് (Viroid)?</p>
+            <p class="lang-en">4. What is a Viroid?</p>
+            <textarea class="answer-textarea lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+            <textarea class="answer-textarea lang-en" placeholder="Type your answer here..."></textarea>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> സാധാരണയിൽ നിന്ന് വ്യത്യസ്തമായി മടക്കുകളുള്ള പ്രോട്ടീൻ അടങ്ങിയ രോഗാണുക്കളാണ് പ്രിയോണുകൾ. ഇവ കന്നുകാലികളിൽ 'മാഡ് കൗ ഡിസീസ്' (Mad cow disease / BSE) ഉണ്ടാക്കുന്നു.</span>
-                <span class="lang-en"><strong>Answer:</strong> Infectious agents consisting of abnormally folded proteins. Example: Bovine spongiform encephalopathy (BSE) or Mad cow disease.</span>
+                <span class="lang-ml"><strong>മാതൃകാ ഉത്തരം:</strong> പ്രോട്ടീൻ ആവരണം ഇല്ലാത്ത, സ്വതന്ത്ര ആർ.എൻ.എ (Free RNA) മാത്രം അടങ്ങിയ രോഗകാരിയായ സൂക്ഷ്മ ഘടകം.</span>
+                <span class="lang-en"><strong>Model Answer:</strong> Infectious agents consisting of free low molecular weight RNA without a protein coat.</span>
             </div>
         </div>
 
+        <!-- SA Q5 -->
         <div class="question-box">
-            <p class="lang-ml">5. ഡ്യൂട്ടറോമൈസിറ്റുകളെ 'അപൂർണ്ണ പൂപ്പലുകൾ' (Imperfect fungi) എന്ന് വിളിക്കാൻ കാരണമെന്ത്?</p>
-            <p class="lang-en">5. Why are Deuteromycetes commonly known as 'imperfect fungi'?</p>
+            <p class="lang-ml">5. ബാക്ടീരിയകളുടെ പ്രധാനപ്പെട്ട നാല് രൂപങ്ങൾ ഏവ?</p>
+            <p class="lang-en">5. What are the four major shapes of bacteria?</p>
+            <textarea class="answer-textarea lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+            <textarea class="answer-textarea lang-en" placeholder="Type your answer here..."></textarea>
             <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
             <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ഈ പൂപ്പലുകളുടെ ലൈംഗിക അല്ലെങ്കിൽ വെജിറ്റേറ്റീവ് ഘട്ടങ്ങൾ (Sexual phases) ഇതുവരെ കണ്ടെത്തപ്പെട്ടിട്ടില്ലാത്തതിനാലാണ് അവയെ അങ്ങനെ വിളിക്കുന്നത്.</span>
-                <span class="lang-en"><strong>Answer:</strong> Because only the asexual or vegetative phases of these fungi are known.</span>
+                <span class="lang-ml"><strong>മാതൃകാ ഉത്തരം:</strong> കോക്കസ് (Spherical), ബാസിലസ് (Rod-shaped), സ്പൈറിലം (Spiral), വ്ര്ബിയോ (Comma-shaped).</span>
+                <span class="lang-en"><strong>Model Answer:</strong> Coccus, Bacillus, Spirillum, and Vibrio.</span>
             </div>
         </div>
 
-
-       <!-- SECTION D: Match the Following -->
-        <h2 class="lang-ml">വിഭാഗം ഡി: മാച്ച് ദി ഫോളോയിങ് (Match the Following)</h2>
-        <h2 class="lang-en">Section D: Match the Following</h2>
-        
-        <div class="question-box">
-            <!-- Grid Container for Match the Following -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
-                <!-- Header Left -->
-                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-ml">പട്ടിക A (Protistan / Group)</div>
-                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-en">Group / Organism</div>
-                
-                <!-- Header Right -->
-                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-ml">പട്ടിക B (Key Feature / Example)</div>
-                <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px; font-weight: bold;" class="lang-en">Key Feature / Example</div>
-
-                <!-- Row 1 -->
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">1. ക്രൈസോഫൈറ്റുകൾ (Chrysophytes)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">1. Chrysophytes</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">എ. ഡയറ്റമേഷ്യസ് മണ്ണ് (Diatomaceous earth)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">a. Diatomaceous earth</div>
-
-                <!-- Row 2 -->
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">2. ഡൈനൊഫ്ലാജിലേറ്റുകൾ (Dinoflagellates)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">2. Dinoflagellates</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">ബി. റെഡ് ടൈഡ്സ് (Gonyaulax / Red tides)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">b. Red tides (Gonyaulax)</div>
-
-                <!-- Row 3 -->
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">3. യൂഗ്ലിനോയ്ഡുകൾ (Euglenoids)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">3. Euglenoids</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">സി. പെല്ലിക്കിൾ പാളി (Pellicle layer)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">c. Pellicle layer</div>
-
-                <!-- Row 4 -->
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">4. സ്ലൈം മോൾഡുകൾ (Slime moulds)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">4. Slime moulds</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-ml">ഡി. പ്ലാസ്മോഡിയം അഗ്രഗേഷൻ (Plasmodium)</div>
-                <div style="background: #ffffff; border: 1px solid #cbd5e1; padding: 10px;" class="lang-en">d. Plasmodium aggregation</div>
+        <!-- LIVE SCOREBOARD -->
+        <div class="scoreboard-box">
+            <div class="score-info">
+                <h3 class="lang-ml">💖 പ്രോഗ്രസ് റിപ്പോർട്ട് (Progress Report)</h3>
+                <h3 class="lang-en">💖 Live Progress Report</h3>
+                <p class="lang-ml">എല്ലാ ചോദ്യങ്ങൾക്കും ഉത്തരങ്ങൾ നൽകിയ ശേഷം സ്കോർ പരിശോധിക്കൂ.</p>
+                <p class="lang-en">Attempt questions and check your score.</p>
             </div>
-
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
-            <div class="answer-reveal">
-                <span class="lang-ml"><strong>ശരിയായ ക്രമീകരണം:</strong> 1 ➔ a | 2 ➔ b | 3 ➔ c | 4 ➔ d</span>
-                <span class="lang-en"><strong>Correct Matching:</strong> 1 ➔ a | 2 ➔ b | 3 ➔ c | 4 ➔ d</span>
+            <div class="score-action-area">
+                <button class="check-score-btn lang-ml" onclick="triggerScoreAlert()">✨ സ്കോർ പരിശോധിക്കുക</button>
+                <button class="check-score-btn lang-en" onclick="triggerScoreAlert()">✨ Check Score</button>
+                <button class="test-voice-btn lang-ml" onclick="testVoiceManually()">🎙️ വോയിസ് കേൾക്കൂ</button>
+                <button class="test-voice-btn lang-en" onclick="testVoiceManually()">🎙️ Test Voice</button>
+                <div class="score-display">
+                    <span id="score-val">0</span> / <span id="total-val">10</span>
+                </div>
             </div>
         </div>
 
-        <!-- SECTION E: Essay / Analytical Questions -->
-        <h2 class="lang-ml">വിഭാഗം ഇ: വിശദമായ ഉത്തരങ്ങൾ (Essay / Analytical Questions)</h2>
-        <h2 class="lang-en">Section E: Essay / Analytical Questions</h2>
-        
-        <div class="question-box">
-            <p class="lang-ml">1. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തിന്റെ ഗുണങ്ങളും, അതിലേക്ക് നയിച്ച കാരണങ്ങളും വിശദീകരിക്കുക.</p>
-            <p class="lang-en">1. Explain the drawbacks of the two kingdom classification and how Whittaker's five kingdom classification resolved them.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
-            <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> പഴയ രണ്ട് ജൈവമണ്ഡല സമ്പ്രദായം പ്രൊകാരിയോറ്റുകളെയും യൂകാരിയോറ്റുകളെയും, ഏകകോശ-ബഹുകോശ ജീവികളെയും, ഫംഗസുകളെയും പച്ചച്ചെടികളെയും ഒരുമിച്ച് ഉൾപ്പെടുത്തിയിരുന്നു. ഫംഗസുകളുടെ കോശഭിത്തി ചിറ്റിൻ കൊണ്ടുണ്ടാക്കിയതാണെങ്കിലും അവയെ സസ്യങ്ങളിൽ ഉൾപ്പെടുത്തി. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണം കോശഘടന, പോഷണ രീതി, ഫൈലോജെനി എന്നിവ അടിസ്ഥാനമാക്കി ഇവയെല്ലാം വേറിട്ട രാജധാനികളിൽ (Monera, Protista, Fungi മുതലായവ) കൃത്യമായി തരംതിരിച്ചു.</span>
-                <span class="lang-en"><strong>Hint / Answer:</strong> The two-kingdom system grouped prokaryotes with eukaryotes, unicellular with multicellular organisms, and fungi with green plants. Whittaker's five-kingdom classification resolved these issues by incorporating cell structure, mode of nutrition, and phylogenetic relationships, separating fungi into Kingdom Fungi, prokaryotes into Monera, and unicellular eukaryotes into Protista.</span>
-            </div>
+        <div class="bottom-actions">
+            <a href="chapter2.html" class="action-home-btn lang-ml">← ചാപ്റ്റർ 2 നോട്ട്സിലേക്ക് മടങ്ങുക</a>
+            <a href="chapter2.html" class="action-home-btn lang-en" style="display:none;">← Back to Chapter 2 Notes</a>
         </div>
-
-        <div class="question-box">
-            <p class="lang-ml">2. ഫംഗസുകളിലെ ലൈംഗിക പ്രജനന ചക്രത്തിലെ പ്രധാന മൂന്ന് ഘട്ടങ്ങൾ ഏവ? വിശദീകരിക്കുക.</p>
-            <p class="lang-en">2. Describe the three steps involved in the sexual cycle of fungi.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)">ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)">Show Answer</button>
-            <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> 
-                1. പ്ലാസ്മോഗമി (Plasmogamy): ചലനശേഷിയുള്ളതോ അല്ലാത്തതോ ആയ രണ്ട് ഗാമിറ്റുകളുടെ പ്രോട്ടോപ്ലാസങ്ങൾ തമ്മിലുള്ള സംയോജനം. <br>
-                2. കാരിയോഗമി (Karyogami): രണ്ട് കേന്ദ്രക്കണ്ണുകൾ (Nuclei) തമ്മിലുള്ള സംയോജനം. <br>
-                3. മിയോസിസ് (Meiosis): സൈഗോട്ടിൽ നടക്കുന്ന അപചയ വിഭജനം വഴി ഹാപ്ലോയ്ഡ് സ്പോറുകൾ ഉണ്ടാകുന്നു. (ചില ഫംഗസുകളിൽ n+n അഥവാ ഡൈകാരിയോട്ടിക് ഘട്ടവും കാണപ്പെടുന്നു).</span>
-                <span class="lang-en"><strong>Hint / Answer:</strong> 
-                1. Fusion of protoplasms between two motile or non-motile gametes (Plasmogamy). <br>
-                2. Fusion of two nuclei (Karyogami). <br>
-                3. Meiosis in zygote resulting in haploid spores. (Some fungi also exhibit an intervening dikaryotic stage, n+n).</span>
-            </div>
-        </div>
-
-        <a href="../chapter2/notes.html" class="back-notes-btn lang-ml">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            തിരികെ നോട്ട്സിലേക്ക് മടങ്ങുക
-        </a>
-        <a href="chapter2.html" class="back-notes-btn lang-ml">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            തിരികെ നോട്ട്സിലേക്ക് മടങ്ങുക
-        </a>
-        <a href="chapter2.html" class="back-notes-btn lang-en">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Notes
-        </a>
     </div>
 
     <script>
-        // Interactive MCQ checking logic
-        function checkAnswer(liElement, isCorrect) {
+        const answeredQuestions = {};
+        let score = 0;
+        const totalQuestions = 10;
+        let usVoice = null;
+
+        function loadVoices() {
+            if (!('speechSynthesis' in window)) return;
+            const voices = window.speechSynthesis.getVoices();
+            usVoice = voices.find(voice => 
+                (voice.lang === 'en-US' || voice.lang === 'en_US') && 
+                (voice.name.toLowerCase().includes('google') || 
+                 voice.name.toLowerCase().includes('natural') || 
+                 voice.name.toLowerCase().includes('zira') || 
+                 voice.name.toLowerCase().includes('samantha') || 
+                 voice.name.toLowerCase().includes('jenny'))
+            ) || voices.find(voice => voice.lang.includes('en-US')) || voices.find(voice => voice.lang.includes('en')) || voices[0];
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+        }
+
+        function checkAnswer(liElement, isCorrect, qId) {
             const ul = liElement.parentElement;
             const items = ul.children;
-            
+            const alreadyAnswered = answeredQuestions[qId];
+
             for (let item of items) {
                 item.classList.remove('correct', 'wrong');
             }
 
             if (isCorrect) {
                 liElement.classList.add('correct');
+                if (!alreadyAnswered) {
+                    score++;
+                    answeredQuestions[qId] = true;
+                }
             } else {
                 liElement.classList.add('wrong');
                 for (let item of items) {
@@ -502,13 +781,107 @@
                         item.classList.add('correct');
                     }
                 }
+                if (!alreadyAnswered) {
+                    answeredQuestions[qId] = true;
+                }
+            }
+            document.getElementById('score-val').textContent = score;
+        }
+
+        function checkTF(btnElement, userChoice, actualAnswer, qId) {
+            const container = btnElement.parentElement;
+            const buttons = container.getElementsByClassName('tf-btn');
+            const alreadyAnswered = answeredQuestions[qId];
+
+            for (let btn of buttons) {
+                btn.classList.remove('correct-tf', 'wrong-tf');
+            }
+
+            if (userChoice === actualAnswer) {
+                btnElement.classList.add('correct-tf');
+                if (!alreadyAnswered) {
+                    score++;
+                    answeredQuestions[qId] = true;
+                }
+            } else {
+                btnElement.classList.add('wrong-tf');
+                for (let btn of buttons) {
+                    const isTrueBtn = btn.getAttribute('onclick').includes('true');
+                    if (isTrueBtn === actualAnswer) {
+                        btn.classList.add('correct-tf');
+                    }
+                }
+                if (!alreadyAnswered) {
+                    answeredQuestions[qId] = true;
+                }
+            }
+            document.getElementById('score-val').textContent = score;
+        }
+
+        function getUSSpeechTextForScore() {
+            switch(score) {
+                case 10: return `Incredible job! A perfect 10 out of 10! You have mastered biological classification completely. Outstanding brilliance!`;
+                case 9: return `Brilliant work! You scored 9 out of 10! Just missed one, you are exceptionally close to absolute perfection!`;
+                case 8: return `Great job! You scored 8 out of 10! That is a stellar performance, keep that wonderful momentum going!`;
+                case 7: return `Well done! You scored 7 out of 10! A very solid score, with just a little more focus you'll hit the top!`;
+                case 6: return `Good effort! You scored 6 out of 10! You've crossed the passing level, keep pushing forward to achieve even higher!`;
+                case 5: return `Not bad! You scored 5 out of 10! You are halfway through, a quick review of the notes will boost you up!`;
+                case 4: return `You scored 4 out of 10. Don't be discouraged, go through the notes once more and you will definitely do better!`;
+                case 3: return `You scored 3 out of 10. Keep your chin up! Read the chapter summary again and try to give it another shot.`;
+                case 2: return `You scored 2 out of 10. Learning takes practice, take your time to re-read the core concepts and try again!`;
+                case 1: return `You scored 1 out of 10. Don't worry at all, every expert was once a beginner. Read the notes carefully and try again!`;
+                default: return `You haven't scored any points yet. Please attempt some questions first, then check your score!`;
             }
         }
 
-        // Toggle Show/Hide Answer for descriptive/other questions
+        function getCartoonModalContent() {
+            if (score >= 9) return { icon: "👑💖", title: "Super Star! 🌟", text: `Amazing! You scored ${score} out of ${totalQuestions}! You are a true champion!` };
+            if (score >= 7) return { icon: "🌸✨", title: "Wonderful Job! 🎉", text: `Great work! You scored ${score} out of ${totalQuestions}! Keep shining!` };
+            if (score >= 5) return { icon: "🌷👍", title: "Good Effort! 🌟", text: `You scored ${score} out of ${totalQuestions}! A little more practice and you'll be at the top!` };
+            return { icon: "🌱💪", title: "Keep Going! 💖", text: `You scored ${score} out of ${totalQuestions}. Don't worry, read the notes once more and try again!` };
+        }
+
+        function testVoiceManually() {
+            loadVoices();
+            const speechText = getUSSpeechTextForScore();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(speechText);
+                utterance.rate = 0.65;
+                utterance.pitch = 1.2;
+                if (usVoice) { utterance.voice = usVoice; }
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function triggerScoreAlert() {
+            loadVoices();
+            const speechText = getUSSpeechTextForScore();
+            const modalData = getCartoonModalContent();
+
+            document.getElementById('modalIcon').textContent = modalData.icon;
+            document.getElementById('modalTitle').textContent = modalData.title;
+            document.getElementById('modalMessage').innerHTML = `${modalData.text}<br><br><b>Score: ${score} / ${totalQuestions}</b>`;
+            
+            document.getElementById('cartoonModalOverlay').style.display = 'flex';
+
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(speechText);
+                utterance.rate = 0.85; 
+                utterance.pitch = 1.2; 
+                if (usVoice) { utterance.voice = usVoice; }
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function closeCartoonModal() {
+            document.getElementById('cartoonModalOverlay').style.display = 'none';
+            if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
+        }
+
         function toggleAnswer(btn) {
             const revealDiv = btn.nextElementSibling;
-            
             if (revealDiv.style.display === 'block') {
                 revealDiv.style.display = 'none';
                 btn.textContent = btn.textContent.includes('മറയ്ക്കുക') ? 'ഉത്തരം കാണുക' : 'Show Answer';
@@ -518,10 +891,11 @@
             }
         }
 
-        // Language toggle script
         document.addEventListener("DOMContentLoaded", function() {
             const currentLang = localStorage.getItem('preferredLang') || 'ml';
             applyLanguage(currentLang);
+            document.getElementById('total-val').textContent = totalQuestions;
+            loadVoices();
         });
 
         function toggleLanguage() {
@@ -534,14 +908,14 @@
         function applyLanguage(lang) {
             const mlElements = document.querySelectorAll('.lang-ml');
             const enElements = document.querySelectorAll('.lang-en');
-            const btn = document.querySelector('.lang-switch');
+            const langSwitchBtn = document.querySelector('.lang-switch');
 
             if (lang === 'en') {
-                if(btn) btn.textContent = 'മലയാളത്തിലേക്ക് മാറ്റുക';
+                if(langSwitchBtn) langSwitchBtn.innerHTML = '🌐 മലയാളത്തിലേക്ക് മാറ്റുക';
                 mlElements.forEach(el => el.style.display = 'none');
                 enElements.forEach(el => el.style.display = 'block');
             } else {
-                if(btn) btn.textContent = 'Switch to English';
+                if(langSwitchBtn) langSwitchBtn.innerHTML = '🌐 Switch to English';
                 enElements.forEach(el => el.style.display = 'none');
                 mlElements.forEach(el => el.style.display = 'block');
             }
