@@ -3,37 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 4: Animal Kingdom - Complete Study Notes & Deep Dive</title>
+    <title>Chapter 4: Animal Kingdom - Complete Study Notes</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --primary-light: #eff6ff;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
+            --outer-bg: #0f172a;
+            --container-bg: #ffffff;
             --text-main: #334155;
             --text-heading: #0f172a;
+            --primary-color: #2563eb;
+            --primary-light: #eff6ff;
             --border-color: #e2e8f0;
         }
 
         body { 
             font-family: 'Plus Jakarta Sans', Arial, sans-serif; 
-            background: var(--bg-color); 
+            background: var(--outer-bg); 
             color: var(--text-main); 
             margin: 0; 
-            padding: 20px; 
+            padding: 30px 20px; 
             line-height: 1.7; 
-            scroll-behavior: smooth; 
         }
 
         .container { 
             max-width: 900px; 
             margin: auto; 
-            background: var(--card-bg); 
+            background: var(--container-bg); 
             padding: 40px; 
             border-radius: 12px; 
             border: 1px solid var(--border-color); 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 10px 25px -5px rgba(0, 0, 0, 0.08); 
             position: relative; 
         }
         
@@ -63,12 +62,12 @@
             border: 2px solid var(--primary-color) !important;
             background-color: var(--primary-light) !important;
             color: var(--primary-color) !important;
-            white-space: nowrap;
         }
         
         .lang-switch:hover, .workout-btn:hover, .top-home-btn:hover {
             background-color: var(--primary-color) !important;
             color: #ffffff !important;
+            transform: translateY(-1px);
         }
 
         .chart-jump-box {
@@ -78,7 +77,14 @@
             border-radius: 10px;
             text-align: center;
             margin: 25px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
+
+        .chart-jump-box p {
+            margin-bottom: 15px !important;
+            color: #166534;
+        }
+
         .chart-jump-btn {
             display: inline-block;
             background-color: #16a34a;
@@ -96,27 +102,85 @@
             transform: translateY(-2px);
         }
 
-        h1 { color: var(--text-heading); font-size: 26px; border-bottom: 2px solid var(--border-color); padding-bottom: 12px; margin-top: 15px; margin-bottom: 20px; }
-        h2 { font-size: 19px; margin-top: 30px; color: #1e293b; background: #f1f5f9; padding: 10px 15px; border-radius: 6px; border-left: 4px solid var(--primary-color); }
-        h3 { font-size: 16px; color: var(--text-main); margin-top: 20px; }
+        h1 { 
+            color: var(--text-heading); 
+            font-size: 24px; 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 12px; 
+            margin-top: 15px; 
+            margin-bottom: 25px; 
+        }
+
+        /* Chapter 1 Style Headings with Left Border and Shadow Box Effect */
+        h2 { 
+            font-size: 18px; 
+            margin-top: 35px; 
+            margin-bottom: 15px;
+            color: var(--text-heading); 
+            background: #f8fafc; 
+            padding: 12px 18px; 
+            border-radius: 0 8px 8px 0; 
+            border-left: 6px solid var(--primary-color); 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 { font-size: 16px; color: var(--primary-color); margin-top: 20px; margin-bottom: 10px; }
         
-        p, li { font-size: 15px; }
+        p, li { font-size: 15px; color: var(--text-main); }
         ul { margin-bottom: 20px; padding-left: 20px; }
         li { margin-bottom: 10px; }
 
         .note-section { margin-bottom: 30px; }
         
-        .highlight-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 16px; border-radius: 8px; margin: 20px 0; border: 1px solid #dcfce7; }
-        .highlight-title { font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-size: 15px; }
+        /* Green Notable / Highlight Box Style as seen in image */
+        .highlight-box { 
+            background: #f0fdf4; 
+            border-left: 6px solid #16a34a; 
+            padding: 18px; 
+            border-radius: 0 10px 10px 0; 
+            margin: 20px 0; 
+            border-top: 1px solid #bbf7d0;
+            border-right: 1px solid #bbf7d0;
+            border-bottom: 1px solid #bbf7d0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+        }
+        .highlight-title { font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 15px; }
         
-        .tips-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 8px; margin: 25px 0; border: 1px solid #dbeafe; }
-        .tips-title { font-weight: 700; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-size: 15px; }
+        .tips-box { 
+            background: #eff6ff; 
+            border-left: 6px solid #2563eb; 
+            padding: 18px; 
+            border-radius: 0 10px 10px 0; 
+            margin: 25px 0; 
+            border-top: 1px solid #bfdbfe;
+            border-right: 1px solid #bfdbfe;
+            border-bottom: 1px solid #bfdbfe;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+        }
+        .tips-title { font-weight: 700; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 15px; }
 
-        .intro-box { background: #eaf2f8; border-left: 4px solid #3498db; padding: 15px; border-radius: 6px; margin-bottom: 25px; }
+        .intro-box { 
+            background: #f8fafc; 
+            border-left: 6px solid #3b82f6; 
+            padding: 18px; 
+            border-radius: 0 10px 10px 0; 
+            margin-bottom: 25px; 
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+        }
+        
         mark { background-color: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #713f12; }
 
-        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: 0.2s; }
-        .back-link:hover { background: #475569; }
+        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #fff; background: #64748b; padding: 10px 18px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .back-link:hover { background: #475569; transform: translateY(-1px); }
 
         .lang-en { display: none; }
         .lang-ml { display: block; }
@@ -124,7 +188,7 @@
         @media (max-width: 768px) {
             .container { padding: 20px; }
             .nav-buttons { justify-content: flex-start; }
-            h1 { font-size: 22px; }
+            h1 { font-size: 20px; }
         }
     </style>
 </head>
@@ -144,118 +208,122 @@
             <button class="lang-switch" onclick="toggleLanguage()">Switch to English</button>
         </div>
 
-        <h1 class="lang-ml">ചാപ്റ്റർ 4: ആനിമൽ കിങ്ഡം - ആഴത്തിലുള്ള വിശകലനം (Chapter 4: Animal Kingdom)</h1>
-        <h1 class="lang-en">Chapter 4: Animal Kingdom - Deep Dive Study Notes</h1>
+        <h1 class="lang-ml">Chapter 4: Animal Kingdom (Complete Study Notes)</h1>
+        <h1 class="lang-en" style="display:none;">Chapter 4: Animal Kingdom (Complete Study Notes)</h1>
         
         <div class="note-section">
             <div class="intro-box">
-                <p class="lang-ml">ബഹുകോശ ജീവികളുടെ ലോകമാണ് <mark>ചാപ്റ്റർ 4: കിങ്ഡം അനിമാലിയ (Kingdom Animalia)</mark>. കോശങ്ങളിൽ സെൽ വാൾ (Cell wall) ഇല്ലാത്തതാണ് ഇവയുടെ പ്രധാന സവിശേഷത.</p>
-                <p class="lang-en">Chapter 4 comprises multicellular, eukaryotic heterotrophs of Kingdom Animalia whose cells lack cell walls.</p>
+                <p class="lang-ml" style="margin:0;">ബഹുകോശ ജീവികളുടെ ലോകമാണ് <mark>ചാപ്റ്റർ 4: കിങ്ഡം അനിമാലിയ (Kingdom Animalia)</mark>. കോശങ്ങളിൽ സെൽ വാൾ (Cell wall) ഇല്ലാത്തതാണ് ഇവയുടെ പ്രധാന സവിശേഷത.</p>
+                <p class="lang-en" style="margin:0; display:none;">Chapter 4 comprises multicellular, eukaryotic heterotrophs of <mark>Kingdom Animalia</mark> whose cells lack <mark>cell walls</mark>.</p>
             </div>
 
-            <!-- Highlights Box -->
+            <!-- Highlights Box with Green Shade matching image -->
             <div class="highlight-box">
                 <div class="highlight-title">📌 പ്രധാന ഹൈലൈറ്റുകൾ (Key Highlights)</div>
                 <p class="lang-ml" style="margin:0;">കോടിക്കണക്കിന് ജീവികളെ കൃത്യമായി പഠിക്കാനും അവയുടെ പരിണാമ ബന്ധങ്ങൾ മനസ്സിലാക്കാനും ജന്തുലോകത്തെ പ്രത്യേക മാനദണ്ഡങ്ങളുടെ അടിസ്ഥാനത്തിൽ ഫീലങ്ങളായി തിരിച്ചിരിക്കുന്നു.</p>
-                <p class="lang-en" style="margin:0; display:none;">To organize millions of species, classification based on specific criteria like symmetry, coelom, segmentation, and organization levels is essential.</p>
+                <p class="lang-en" style="margin:0; display:none;">To organize millions of species, classification based on specific criteria like <mark>symmetry</mark>, <mark>coelom</mark>, <mark>segmentation</mark>, and <mark>organization levels</mark> is essential.</p>
             </div>
 
             <!-- Classification Chart Quick Link Box -->
             <div class="chart-jump-box">
-                <p class="lang-ml" style="margin-top:0; font-weight: 600; color: #166534;">ജന്തുലോകത്തിന്റെ ഫോട്ടോകൾ അടങ്ങിയ വിശദമായ ക്ലാസിഫിക്കേഷൻ ചാർട്ട് പരിശോധിക്കാൻ താഴെ ക്ലിക്ക് ചെയ്യുക:</p>
-                <p class="lang-en" style="margin-top:0; font-weight: 600; color: #166534;">Click below to view the detailed Animal Kingdom Classification Chart with pictures:</p>
+                <p class="lang-ml" style="font-weight: 600; color: #166534;">ജന്തുലോകത്തിന്റെ ഫോട്ടോകൾ അടങ്ങിയ വിശദമായ ക്ലാസിഫിക്കേഷൻ ചാർട്ട് പരിശോധിക്കാൻ താഴെ ക്ലിക്ക് ചെയ്യുക:</p>
+                <p class="lang-en" style="font-weight: 600; color: #166534; display:none;">Click below to view the detailed Animal Kingdom Classification Chart with pictures:</p>
                 
                 <a href="classification.html" class="chart-jump-btn">
                     <span class="lang-ml">🔍 ക്ലാസിഫിക്കേഷൻ ചാർട്ട് കാണുക (View Classification)</span>
-                    <span class="lang-en">🔍 View Classification Chart</span>
+                    <span class="lang-en" style="display:none;">🔍 View Classification Chart</span>
                 </a>
             </div>
 
-            <h2 class="lang-ml">1. വർഗ്ഗീകരണത്തിന്റെ അടിസ്ഥാന മാനദണ്ഡങ്ങൾ (Basis of Classification)</h2>
-            <h2 class="lang-en">1. Basis of Classification</h2>
+            <h2>
+                <span class="lang-ml">🧬 1. വർഗ്ഗീകരണത്തിന്റെ അടിസ്ഥാന മാനദണ്ഡങ്ങൾ (Basis of Classification)</span>
+                <span class="lang-en" style="display:none;">🧬 1. Basis of Classification</span>
+            </h2>
             
             <h3 class="lang-ml">എ. കോശങ്ങളുടെ സംഘടന (Levels of Organisation)</h3>
-            <h3 class="lang-en">A. Levels of Organisation</h3>
+            <h3 class="lang-en" style="display:none;">A. Levels of Organisation</h3>
             <ul>
                 <li class="lang-ml"><strong>സെല്ലുലാർ ലെവൽ:</strong> കോശങ്ങൾ അയഞ്ഞ രീതിയിൽ നിലനിൽക്കുന്നു (ഉദാഹരണം: <mark>പൊരിഫറ / സ്പോഞ്ചുകൾ</mark>).</li>
-                <li class="lang-en"><strong>Cellular Level:</strong> Cells are arranged as loose aggregates (e.g., Porifera).</li>
+                <li class="lang-en" style="display:none;"><strong>Cellular Level:</strong> Cells are arranged as loose aggregates (e.g., <mark>Porifera</mark>).</li>
                 
                 <li class="lang-ml"><strong>ടിഷ്യൂ ലെവൽ:</strong> ഒരേപോലെയുള്ള കോശങ്ങൾ ചേർന്ന് ടിഷ്യൂകളായി മാറുന്നു (ഉദാഹരണം: <mark>സീലന്ററേറ്റ</mark>).</li>
-                <li class="lang-en"><strong>Tissue Level:</strong> Cells grouped into tissues (e.g., Coelenterata).</li>
+                <li class="lang-en" style="display:none;"><strong>Tissue Level:</strong> Cells grouped into tissues (e.g., <mark>Coelenterata</mark>).</li>
 
                 <li class="lang-ml"><strong>ഓർഗൻ സിസ്റ്റം ലെവൽ:</strong> സങ്കീർണ്ണമായ ശരീര വ്യവസ്ഥകൾ ഉണ്ടാകുന്നു (ഉദാഹരണം: <mark>അനിലിഡ മുതൽ കോർഡേറ്റ വരെ</mark>).</li>
-                <li class="lang-en"><strong>Organ System Level:</strong> Complex organ systems are formed (e.g., Annelida to Chordata).</li>
+                <li class="lang-en" style="display:none;"><strong>Organ System Level:</strong> Complex organ systems are formed (e.g., <mark>Annelida to Chordata</mark>).</li>
             </ul>
 
             <h3 class="lang-ml">ബി. ശരീര സമമിതി (Body Symmetry)</h3>
-            <h3 class="lang-en">B. Body Symmetry</h3>
+            <h3 class="lang-en" style="display:none;">B. Body Symmetry</h3>
             <ul>
                 <li class="lang-ml"><strong>അസിമെട്രിക്കൽ:</strong> തുല്യ പാതികളായി മുറിക്കാൻ കഴിയില്ല (<mark>സ്പോഞ്ചുകൾ</mark>).</li>
-                <li class="lang-en"><strong>Asymmetrical:</strong> Cannot be divided into equal halves (Sponges).</li>
+                <li class="lang-en" style="display:none;"><strong>Asymmetrical:</strong> Cannot be divided into equal halves (<mark>Sponges</mark>).</li>
 
                 <li class="lang-ml"><strong>റേഡിയൽ സിമെട്രി:</strong> കേന്ദ്ര അക്ഷത്തിലൂടെ ഏത് പ്ലാനും തുല്യ പാതികളാക്കും (<mark>ഹൈഡ്ര, ജെല്ലിഫിഷ്</mark>).</li>
-                <li class="lang-en"><strong>Radial Symmetry:</strong> Any plane through central axis divides equally (Hydra, Jellyfish).</li>
+                <li class="lang-en" style="display:none;"><strong>Radial Symmetry:</strong> Any plane through central axis divides equally (<mark>Hydra, Jellyfish</mark>).</li>
 
                 <li class="lang-ml"><strong>ബിലാറ്ററൽ സിമെട്രി:</strong> ഒരേയൊരു പ്ലാനിലൂടെ മാത്രം തുല്യമായി മുറിക്കാം (<mark>മനുഷ്യൻ, ആർത്രോപോഡുകൾ</mark>).</li>
-                <li class="lang-en"><strong>Bilateral Symmetry:</strong> Divided in only one plane (Humans, Arthropods).</li>
+                <li class="lang-en" style="display:none;"><strong>Bilateral Symmetry:</strong> Divided in only one plane (<mark>Humans, Arthropods</mark>).</li>
             </ul>
 
             <h3 class="lang-ml">സി. ബീജപാളികളും കോലോമും (Germ Layers & Coelom)</h3>
-            <h3 class="lang-en">C. Germ Layers & Coelom</h3>
+            <h3 class="lang-en" style="display:none;">C. Germ Layers & Coelom</h3>
             <ul>
                 <li class="lang-ml"><strong>ഡിപ്ലോബ്ലാസ്റ്റിക്:</strong> രണ്ട് പാളികൾ മാത്രം (എക്ടോഡേഴ്ം, എൻഡോഡേഴ്ം).</li>
-                <li class="lang-en"><strong>Diploblastic:</strong> Two embryonic layers (Ectoderm and Endoderm).</li>
+                <li class="lang-en" style="display:none;"><strong>Diploblastic:</strong> Two embryonic layers (<mark>Ectoderm and Endoderm</mark>).</li>
 
                 <li class="lang-ml"><strong>ട്രിപ്ലോബ്ലാസ്റ്റിക്:</strong> നടുവിലായി മീസോഡേഴ്ം കൂടി ഉള്ളവ.</li>
-                <li class="lang-en"><strong>Triploblastic:</strong> With a third germ layer, mesoderm.</li>
+                <li class="lang-en" style="display:none;"><strong>Triploblastic:</strong> With a third germ layer, <mark>mesoderm</mark>.</li>
 
                 <li class="lang-ml"><strong>അക്കോലോമേറ്റുകൾ:</strong> കോലോം ഇല്ലാത്തവ (<mark>പ്ലാറ്റിഹെൽമിന്തിസ്</mark>).</li>
-                <li class="lang-en"><strong>Acoelomates:</strong> Body cavity absent (Platyhelminthes).</li>
+                <li class="lang-en" style="display:none;"><strong>Acoelomates:</strong> Body cavity absent (<mark>Platyhelminthes</mark>).</li>
 
                 <li class="lang-ml"><strong>സ്യൂഡോക്കോലോമേറ്റുകൾ:</strong> വ്യാജ കോലോം ഉള്ളവ (<mark>അസ്കെൽമിന്തിസ്</mark>).</li>
-                <li class="lang-en"><strong>Pseudocoelomates:</strong> False coelom present (Aschelminthes).</li>
+                <li class="lang-en" style="display:none;"><strong>Pseudocoelomates:</strong> False coelom present (<mark>Aschelminthes</mark>).</li>
             </ul>
 
-            <h3 class="lang-ml">ഡി. ഖണ്ഡങ്ങളും നൊട്ടോകോർഡും (Segmentation & Notochord - Newly Added)</h3>
-            <h3 class="lang-en">D. Segmentation & Notochord</h3>
+            <h3 class="lang-ml">ഡി. ഖണ്ഡങ്ങളും നൊട്ടോകോർഡും (Segmentation & Notochord)</h3>
+            <h3 class="lang-en" style="display:none;">D. Segmentation & Notochord</h3>
             <ul>
                 <li class="lang-ml"><strong>മെറ്റാമെറിസം (Segmentation):</strong> ചില ജീവികളിൽ ശരീരം ഖണ്ഡങ്ങളായി (Segments) വിഭജിക്കപ്പെട്ടിരിക്കുന്നു (ഉദാഹരണം: മണ്ണുവിര - അനിലിഡ).</li>
-                <li class="lang-en"><strong>Metamerism:</strong> External and internal serial segmentation of the body (e.g., Earthworm).</li>
+                <li class="lang-en" style="display:none;"><strong>Metamerism:</strong> External and internal serial segmentation of the body (e.g., <mark>Earthworm</mark>).</li>
 
                 <li class="lang-ml"><strong>നൊട്ടോകോർഡ് (Notochord):</strong> മീസോഡേഴ്മിൽ നിന്ന് രൂപപ്പെടുന്ന വടിപോലുള്ള ഘടന. ഇത് കോർഡേറ്റകളെ മറ്റ് ഫീലങ്ങളിൽ നിന്ന് വേർതിരിക്കുന്നു.</li>
-                <li class="lang-en"><strong>Notochord:</strong> Mesodermally derived rod-like structure on the dorsal side during embryonic life in Chordates.</li>
+                <li class="lang-en" style="display:none;"><strong>Notochord:</strong> Mesodermally derived <mark>rod-like structure</mark> on the dorsal side during embryonic life in Chordates.</li>
             </ul>
 
-            <h2 class="lang-ml">2. പ്രധാന ഫീലങ്ങളുടെ ആഴത്തിലുള്ള വിശകലനം (Major Phyla Deep-Dive)</h2>
-            <h2 class="lang-en">2. Major Phylum Highlights</h2>
+            <h2>
+                <span class="lang-ml">📚 2. പ്രധാന ഫീലങ്ങളുടെ ആഴത്തിലുള്ള വിശകലനം (Major Phyla Deep-Dive)</span>
+                <span class="lang-en" style="display:none;">📚 2. Major Phylum Highlights</span>
+            </h2>
 
             <ul>
                 <li class="lang-ml"><strong>പൊരിഫറ:</strong> ശരീരത്തിൽ സുഷിരങ്ങൾ (ഓസ്റ്റിയ, ഓസ്കുല), കൊല്ലർ കോശങ്ങൾ (<mark>Choanocytes</mark>).</li>
-                <li class="lang-en"><strong>Porifera:</strong> Presence of ostia, osculum, and choanocytes.</li>
+                <li class="lang-en" style="display:none;"><strong>Porifera:</strong> Presence of ostia, osculum, and <mark>choanocytes</mark>.</li>
 
                 <li class="lang-ml"><strong>സീലന്ററേറ്റ (നിഡേരിയ):</strong> സ്പർശിനികളിൽ നിഡോബ്ലാസ്റ്റ് കോശങ്ങളും നെമറ്റോസിസ്റ്റും.</li>
-                <li class="lang-en"><strong>Cnidaria:</strong> Tentacles with cnidoblasts and nematocysts.</li>
+                <li class="lang-en" style="display:none;"><strong>Cnidaria:</strong> Tentacles with <mark>cnidoblasts and nematocysts</mark>.</li>
 
                 <li class="lang-ml"><strong>പ്ലാറ്റിഹെൽമിന്തിസ്:</strong> പരന്ന ശരീരം, വിസർജ്ജനത്തിന് ജ്വാലാ കോശങ്ങൾ (<mark>Flame cells</mark>).</li>
-                <li class="lang-en"><strong>Platyhelminthes:</strong> Flat body, flame cells for excretion.</li>
+                <li class="lang-en" style="display:none;"><strong>Platyhelminthes:</strong> Flat body, <mark>flame cells</mark> for excretion.</li>
 
                 <li class="lang-ml"><strong>അസ്കെൽമിന്തിസ്:</strong> ഉരുണ്ട വിരകൾ, സ്യൂഡോക്കോലോമേറ്റുകൾ.</li>
-                <li class="lang-en"><strong>Aschelminthes:</strong> Roundworms, pseudocoelomates.</li>
+                <li class="lang-en" style="display:none;"><strong>Aschelminthes:</strong> Roundworms, <mark>pseudocoelomates</mark>.</li>
 
                 <li class="lang-ml"><strong>അനിലിഡ:</strong> ഖണ്ഡങ്ങളുള്ള ശരീരം (മെറ്റാമെറിസം), നെഫ്രീഡിയ.</li>
-                <li class="lang-en"><strong>Annelida:</strong> Metameric segmentation, nephridia.</li>
+                <li class="lang-en" style="display:none;"><strong>Annelida:</strong> Metameric segmentation, <mark>nephridia</mark>.</li>
 
                 <li class="lang-ml"><strong>ആർത്രോപോഡ:</strong> ജന്തുലോകത്തിലെ ഏറ്റവും വലിയ ഫൈലം, സന്ധികളുള്ള കാലുകൾ, കൈറ്റിൻ പുറംപൂശൽ, മൽപീഘിയൻ നാളങ്ങൾ.</li>
-                <li class="lang-en"><strong>Arthropoda:</strong> Largest phylum, jointed appendages, chitinous exoskeleton, Malpighian tubules.</li>
+                <li class="lang-en" style="display:none;"><strong>Arthropoda:</strong> Largest phylum, jointed appendages, chitinous exoskeleton, <mark>Malpighian tubules</mark>.</li>
 
                 <li class="lang-ml"><strong>മൊളസ്ക:</strong> മൃദുവായ ശരീരം, തോട്, ഭക്ഷണത്തിന് റാഡുല (<mark>Radula</mark>).</li>
-                <li class="lang-en"><strong>Mollusca:</strong> Soft body, shell, radula for feeding.</li>
+                <li class="lang-en" style="display:none;"><strong>Mollusca:</strong> Soft body, shell, <mark>radula</mark> for feeding.</li>
 
                 <li class="lang-ml"><strong>കൈനോഡെർമാറ്റ:</strong> മുള്ളുകളുള്ള ശരീരം, സമുദ്രവാസികൾ, <mark>വാട്ടർ വാസ്കുലാർ സിസ്റ്റം</mark>.</li>
-                <li class="lang-en"><strong>Echinodermata:</strong> Spiny skin, exclusively marine, water vascular system.</li>
+                <li class="lang-en" style="display:none;"><strong>Echinodermata:</strong> Spiny skin, exclusively marine, <mark>water vascular system</mark>.</li>
 
                 <li class="lang-ml"><strong>കോർഡേറ്റ:</strong> നൊട്ടോകോർഡ്, ഡോർസൽ നാർവ് കോർഡ്, ഫ്ലാഞ്ചിയൽ ജില്ല് സ്ലിറ്റുകൾ.</li>
-                <li class="lang-en"><strong>Chordata:</strong> Notochord, dorsal nerve cord, pharyngeal gill slits.</li>
+                <li class="lang-en" style="display:none;"><strong>Chordata:</strong> Notochord, dorsal nerve cord, <mark>pharyngeal gill slits</mark>.</li>
             </ul>
 
             <!-- Study Tips & Highlights Box -->
@@ -263,13 +331,13 @@
                 <div class="tips-title">💡 പരീക്ഷാ ടിപ്സുകളും പ്രധാന ഓർമ്മപ്പെടുത്തലുകളും (Exam Study Tips)</div>
                 <ul style="margin-bottom:0;">
                     <li class="lang-ml"><strong>പ്രത്യേക കോശങ്ങൾ ഓർക്കുക:</strong> പൊരിഫറയിലെ ചോണോസൈറ്റ്, പ്ലാറ്റിഹെൽമിന്തിസിലെ ഫ്ലെയിം സെൽസ്, ആർത്രോപോഡയിലെ മൽപീഘിയൻ ട്യൂബ്യൂൾസ് എന്നിവ പ്രവേശന പരീക്ഷകളിൽ നിർബന്ധമായും ചോദിക്കുന്നവയാണ്.</li>
-                    <li class="lang-en" style="display:none;"><strong>Remember Special Cells:</strong> Choanocytes in sponges, flame cells in flatworms, and Malpighian tubules in arthropods are high-yield NEET questions.</li>
+                    <li class="lang-en" style="display:none;"><strong>Remember Special Cells:</strong> <mark>Choanocytes</mark> in sponges, <mark>flame cells</mark> in flatworms, and <mark>Malpighian tubules</mark> in arthropods are high-yield NEET questions.</li>
                 </ul>
             </div>
         </div>
 
         <a href="../biology.html" class="back-link lang-ml">← ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
-        <a href="../biology.html" class="back-link lang-en">← Back to Biology Index</a>
+        <a href="../biology.html" class="back-link lang-en" style="display:none;">← Back to Biology Index</a>
     </div>
 
     <script>

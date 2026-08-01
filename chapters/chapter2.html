@@ -6,8 +6,36 @@
     <title>Chapter 2: Biological Classification - Complete Notes & Study Guide</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', Arial, sans-serif; background: #f8fafc; color: #334155; margin: 0; padding: 15px; line-height: 1.6; scroll-behavior: smooth; }
-        .container { max-width: 850px; margin: auto; background: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); position: relative; }
+        :root {
+            --outer-bg: #0f172a;
+            --container-bg: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --primary-color: #2563eb;
+            --primary-light: #eff6ff;
+            --border-color: #e2e8f0;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif; 
+            background: var(--outer-bg); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 30px 20px; 
+            line-height: 1.7; 
+            scroll-behavior: smooth; 
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: var(--container-bg); 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 10px 25px -5px rgba(0, 0, 0, 0.08); 
+            position: relative; 
+        }
         
         /* Top Navigation Layout - Buttons aligned to the Right side */
         .top-nav {
@@ -20,51 +48,99 @@
         }
 
         .top-btn, .lang-switch {
-            padding: 10px 16px;
-            border-radius: 8px;
+            padding: 0 16px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             text-decoration: none;
             font-size: 14px;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #2563eb;
-            background-color: #eff6ff;
-            color: #2563eb;
+            height: 40px;
             box-sizing: border-box;
+            border: 2px solid var(--primary-color) !important;
+            background-color: var(--primary-light) !important;
+            color: var(--primary-color) !important;
             font-family: 'Plus Jakarta Sans', Arial, sans-serif;
         }
         
         .top-btn:hover, .lang-switch:hover {
-            background-color: #2563eb;
-            color: #ffffff;
+            background-color: var(--primary-color) !important;
+            color: #ffffff !important;
             transform: translateY(-1px);
         }
 
-        h1 { color: #0f172a; font-size: 22px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 10px; margin-bottom: 20px; font-weight: 700; }
-        h2 { font-size: 17px; margin-top: 35px; color: #1e293b; background: #f1f5f9; padding: 10px 14px; border-radius: 6px; border-left: 4px solid #2563eb; font-weight: 600; }
-        h3 { font-size: 15px; color: #0f766e; margin-top: 20px; font-weight: 600; }
+        h1 { 
+            color: var(--text-heading); 
+            font-size: 24px; 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 12px; 
+            margin-top: 15px; 
+            margin-bottom: 25px; 
+            font-weight: 700; 
+        }
+
+        /* Chapter 1 Style Headings with Left Border and Shadow Box Effect */
+        h2 { 
+            font-size: 18px; 
+            margin-top: 35px; 
+            margin-bottom: 15px;
+            color: var(--text-heading); 
+            background: #f8fafc; 
+            padding: 12px 18px; 
+            border-radius: 0 8px 8px 0; 
+            border-left: 6px solid var(--primary-color); 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 { font-size: 16px; color: var(--primary-color); margin-top: 20px; margin-bottom: 10px; font-weight: 600; }
         
-        p, li { font-size: 14px; }
-        ul, ol { margin-bottom: 15px; padding-left: 20px; }
-        li { margin-bottom: 6px; }
+        p, li { font-size: 15px; color: var(--text-main); }
+        ul, ol { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
 
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
-        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
-        th { background: #f1f5f9; color: #0f172a; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 14px; background: #ffffff; }
+        th, td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+        th { background: #f1f5f9; color: var(--text-heading); font-weight: 600; }
 
-        /* Highlight Boxes */
-        .highlight-box { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 16px; border-radius: 8px; margin: 20px 0; border: 1px solid #dcfce7; }
-        .highlight-title { font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-size: 14px; }
+        /* Highlight Boxes matching Chapter 1 green style */
+        .highlight-box { 
+            background: #f0fdf4; 
+            border-left: 6px solid #16a34a; 
+            padding: 18px; 
+            border-radius: 0 10px 10px 0; 
+            margin: 20px 0; 
+            border-top: 1px solid #bbf7d0;
+            border-right: 1px solid #bbf7d0;
+            border-bottom: 1px solid #bbf7d0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+        }
+        .highlight-title { font-weight: 700; color: #166534; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 15px; }
         
         /* Study Tips Box Styles */
-        .tips-box { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px; border-radius: 8px; margin: 25px 0; border: 1px solid #dbeafe; }
-        .tips-title { font-weight: 700; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-size: 14px; }
+        .tips-box { 
+            background: #eff6ff; 
+            border-left: 6px solid #2563eb; 
+            padding: 18px; 
+            border-radius: 0 10px 10px 0; 
+            margin: 25px 0; 
+            border-top: 1px solid #bfdbfe;
+            border-right: 1px solid #bfdbfe;
+            border-bottom: 1px solid #bfdbfe;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
+        }
+        .tips-title { font-weight: 700; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; font-size: 15px; }
 
-        mark { background-color: #fef08a; padding: 2px 4px; border-radius: 3px; font-weight: 600; color: #713f12; }
+        mark { background-color: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #713f12; }
 
         /* Professional Full-Width Bottom Action Button Styles */
         .bottom-actions {
@@ -91,17 +167,23 @@
         }
 
         .home-action {
-            background-color: #475569;
+            background-color: #64748b;
             color: #ffffff;
         }
 
         .home-action:hover {
-            background-color: #334155;
+            background-color: #475569;
             transform: translateY(-1px);
         }
         
         .lang-en { display: none; }
         .lang-ml { display: block; }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .top-nav { justify-content: flex-start; }
+            h1 { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -121,20 +203,20 @@
             
             <div class="highlight-box">
                 <div class="highlight-title">📌 പ്രമുഖ ശാസ്ത്രജ്ഞൻ (Notable Scientist)</div>
-                <p><strong>അറിസ്റ്റോട്ടിൽ (Aristotle):</strong> ശാസ്ത്രീയമായി ജീവികളെ ആദ്യമായി വർഗ്ഗീകരിച്ചത് അറിസ്റ്റോട്ടിൽ ആണ്. സസ്യങ്ങളെ മരങ്ങൾ, കുറ്റിച്ചെടികൾ, ഔഷധച്ചെടികൾ എന്നിങ്ങനെയും മൃഗങ്ങളെ രണ്ട് വിഭാഗങ്ങളായും അദ്ദേഹം തരംതിരിച്ചു.</p>
+                <p style="margin:0;"><strong>അറിസ്റ്റോട്ടിൽ (Aristotle):</strong> ശാസ്ത്രീയമായി ജീവികളെ ആദ്യമായി വർഗ്ഗീകരിച്ചത് അറിസ്റ്റോട്ടിൽ ആണ്. സസ്യങ്ങളെ മരങ്ങൾ, കുറ്റിച്ചെടികൾ, ഔഷധച്ചെടികൾ എന്നിങ്ങനെയും മൃഗങ്ങളെ രണ്ട് വിഭാഗങ്ങളായും അദ്ദേഹം തരംതിരിച്ചു.</p>
             </div>
 
             <!-- Study Tips & Highlights Section -->
             <div class="tips-box">
                 <div class="tips-title">💡 പ്രധാന പഠന ടിപ്സുകളും ഹൈലൈറ്റുകളും (Study Tips & Highlights)</div>
-                <ul>
+                <ul style="margin-bottom:0;">
                     <li><strong>വിറ്റേക്കറുടെ മാനദണ്ഡങ്ങൾ:</strong> അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണത്തിന് വിറ്റേക്കർ ഉപയോഗിച്ച മാനദണ്ഡങ്ങൾ (Cell structure, Thallus organisation, Mode of nutrition, Reproduction, Phylogenetic relationship) പരീക്ഷയ്ക്ക് വളരെ പ്രധാനപ്പെട്ടതാണ്.</li>
                     <li><strong>വ്യത്യാസങ്ങൾ മനസ്സിലാക്കുക:</strong> പ്രൊകാരിയോറ്റുകളും (Monera) യൂകാരിയോറ്റുകളും തമ്മിലുള്ള അടിസ്ഥാന വ്യറ്റ്യാസങ്ങൾ ഓർത്തു വെക്കുക.</li>
                     <li><strong>ഉദാഹരണങ്ങൾ:</strong> ഓരോ ഫൈലത്തിന്റെയും കിങ്ഡത്തിന്റെയും കീഴിലുള്ള ഉദാഹരണങ്ങൾ (ഉദാഹരണത്തിന്: ഡൈനൊഫ്ലാജിലേറ്റുകൾ, റെഡ് ടൈഡ്സ്) ചോദിക്കാറുള്ളതാണ്.</li>
                 </ul>
             </div>
 
-            <h2>ലിന്നേയസിന്റെ രണ്ട് ജൈവമണ്ഡല സമ്പ്രദായം (Two Kingdom Classification)</h2>
+            <h2>🧬 ലിന്നേയസിന്റെ രണ്ട് ജൈവമണ്ഡല സമ്പ്രദായം (Two Kingdom Classification)</h2>
             <p>കരോലസ് ലിന്നേയസിന്റെ കാലത്ത് <mark>പ്ലാന്റേ (Plantae)</mark>, <mark>അനിമാലിയ (Animalia)</mark> എന്നീ രണ്ട് ജൈവമണ്ഡലങ്ങൾ രൂപീകരിച്ചു. എന്നാൽ ഇതിലെ പ്രധാന പോരായ്മകൾ:</p>
             <ul>
                 <li>പ്രൊകാരിയോറ്റുകളും യൂകാരിയോറ്റുകളും തമ്മിൽ വേർതിരിച്ചറിഞ്ഞില്ല.</li>
@@ -142,7 +224,7 @@
                 <li>പ്രകാശസംശ്ലേഷണം നടത്തുന്ന ആൽഗകളും ഫംഗസുകളും ഒരുപോലെ സസ്യങ്ങളിൽ ഉൾപ്പെടുത്തി.</li>
             </ul>
 
-            <h2>ആർ.എച്ച്. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണം (Five Kingdom Classification - 1969)</h2>
+            <h2>🔬 ആർ.എച്ച്. വിറ്റേക്കറുടെ അഞ്ച് ജൈവമണ്ഡല വർഗ്ഗീകരണം (Five Kingdom Classification - 1969)</h2>
             <p>ആർ.എച്ച്. വിറ്റേക്കർ ജീവജാലങ്ങളെ <strong>മൊണേറ, പ്രൊട്ടിസ്റ്റ, ഫംഗസ്, പ്ലാന്റേ, അനിമാലിയ</strong> എന്നിങ്ങനെ അഞ്ച് വിഭാഗങ്ങളായി തിരിച്ചിരിക്കുന്നു. അദ്ദേഹം ഉപയോഗിച്ച പ്രധാന മാനദണ്ഡങ്ങൾ കോശഘടന, ശരീര സംഘടന, പോഷണ രീതി, പ്രജനനം, ഫൈലോജെനെറ്റിക് ബന്ധങ്ങൾ എന്നിവയാണ്.</p>
 
             <h3>അഞ്ച് ജൈവമണ്ഡലങ്ങളുടെ സവിശേഷതകൾ (Table 2.1)</h3>
@@ -197,7 +279,7 @@
                 </tr>
             </table>
 
-            <h2>2.1 കിങ്ഡം മൊണേറ (Kingdom Monera)</h2>
+            <h2>🦠 2.1 കിങ്ഡം മൊണേറ (Kingdom Monera)</h2>
             <p>ബാക്ടീരിയകളാണ് ഈ ജൈവമണ്ഡലത്തിലെ ഏക അംഗങ്ങൾ. രൂപത്തിന്റെ അടിസ്ഥാനത്തിൽ കൊക്കസ്, ബാസില്ലസ്, വിബ്രിയോ, സ്പൈറില്ലം എന്നിങ്ങനെ തിരിക്കുന്നു.</p>
             <ul>
                 <li><strong>ആർക്കാബാക്ടീരിയകൾ:</strong> ഹാലോഫൈലുകൾ, തെർമോഅസിഡോഫൈലുകൾ, മിഥാനോജനുകൾ.</li>
@@ -205,13 +287,13 @@
                 <li><strong>മൈക്കോപ്ലാസ്മ:</strong> കോശഭിത്തി തികച്ചും ഇല്ലാത്ത ഏറ്റവും ചെറിയ കോശങ്ങൾ.</li>
             </ul>
 
-            <h2>2.2 കിങ്ഡം പ്രൊട്ടിസ്റ്റ & 2.3 കിങ്ഡം ഫംഗസ്</h2>
+            <h2>🧪 2.2 കിങ്ഡം പ്രൊട്ടിസ്റ്റ & 2.3 കിങ്ഡം ഫംഗസ്</h2>
             <ul>
                 <li><strong>പ്രൊട്ടിസ്റ്റ:</strong> ക്രൈസോഫൈറ്റുകൾ (ഡയറ്റമേഷ്യസ് മണ്ണ്), ഡൈനൊഫ്ലാജിലേറ്റുകൾ (റെഡ് ടൈഡ്സ്), യൂഗ്ലിനോയ്ഡുകൾ (പെല്ലിക്കിൾ), സ്ലെയ്ം മോൾഡുകൾ, പ്രോട്ടോസോവകൾ.</li>
                 <li><strong>ഫംഗസ്:</strong> ചിറ്റിൻ കോശഭിത്തി. ഫൈക്കോമൈസിറ്റുകൾ, ആസ്കോമൈസിറ്റുകൾ, ബസീഡിയോമൈസിറ്റുകൾ, ഡ്യൂട്ടറോമൈസിറ്റുകൾ.</li>
             </ul>
 
-            <h2>2.4 പ്ലാന്റേ, 2.5 അനിമാലിയ & 2.6 വൈറസുകൾ, വെയറോയ്ഡുകൾ, പ്രിയോണുകൾ</h2>
+            <h2>🌿 2.4 പ്ലാന്റേ, 2.5 അനിമാലിയ & 2.6 വൈറസുകൾ, വെയറോയ്ഡുകൾ, പ്രിയോണുകൾ</h2>
             <ul>
                 <li><strong>വൈറസുകൾ:</strong> അക്കോശ ജീവികൾ; ക്യാപ്സിഡ് പ്രോട്ടീൻ കോട്ട്.</li>
                 <li><strong>വെയറോയ്ഡുകൾ:</strong> ടി.ഒ. ഡീനർ കണ്ടെത്തിയത്; പ്രോട്ടീൻ കോട്ട് ഇല്ലാത്ത ആർ.എൻ.എ മാത്രം.</li>
@@ -226,20 +308,20 @@
             
             <div class="highlight-box">
                 <div class="highlight-title">📌 Notable Scientist</div>
-                <p><strong>Aristotle:</strong> Earliest to attempt a more scientific classification, dividing plants into trees, shrubs, and herbs, and animals into two groups.</p>
+                <p style="margin:0;"><strong>Aristotle:</strong> Earliest to attempt a more scientific classification, dividing plants into trees, shrubs, and herbs, and animals into two groups.</p>
             </div>
 
             <!-- Study Tips & Highlights Section (English) -->
             <div class="tips-box">
                 <div class="tips-title">💡 Study Tips & Key Highlights</div>
-                <ul>
+                <ul style="margin-bottom:0;">
                     <li><strong>Whittaker’s Criteria:</strong> Remember the core criteria used for Five Kingdom Classification (Cell structure, Thallus organisation, Mode of nutrition, Reproduction, Phylogenetic relationship).</li>
                     <li><strong>Clear Distinctions:</strong> Note down the fundamental differences between Prokaryotes (Monera) and Eukaryotes.</li>
                     <li><strong>Key Examples:</strong> Memorize specific classification examples (e.g., Dinoflagellates causing Red tides) frequently asked in exams.</li>
                 </ul>
             </div>
 
-            <h2>Two Kingdom & Five Kingdom Classification</h2>
+            <h2>🧬 Two Kingdom & Five Kingdom Classification</h2>
             <p>Linnaeus proposed Two Kingdom classification. R.H. Whittaker (1969) proposed the <mark>Five Kingdom Classification</mark> (Monera, Protista, Fungi, Plantae, Animalia).</p>
 
             <h3>Characteristics of the Five Kingdoms (Table 2.1)</h3>
@@ -278,13 +360,13 @@
                 </tr>
             </table>
 
-            <h2>2.1 Kingdom Monera & 2.2 Kingdom Protista</h2>
+            <h2>🦠 2.1 Kingdom Monera & 2.2 Kingdom Protista</h2>
             <ul>
                 <li><strong>Monera:</strong> Archaebacteria, Eubacteria (Cyanobacteria with heterocysts), Mycoplasma (no cell wall).</li>
                 <li><strong>Protista:</strong> Chrysophytes, Dinoflagellates (Red tides), Euglenoids (Pellicle), Slime moulds, Protozoans.</li>
             </ul>
 
-            <h2>2.3 Kingdom Fungi, 2.4 Plantae, 2.5 Animalia & 2.6 Viruses</h2>
+            <h2>🍄 2.3 Kingdom Fungi, 2.4 Plantae, 2.5 Animalia & 2.6 Viruses</h2>
             <ul>
                 <li><strong>Fungi:</strong> Phycomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes.</li>
                 <li><strong>Viruses & Viroids:</strong> Non-cellular, Capsid protein coat. Viroids discovered by T.O. Diener (free RNA).</li>
@@ -294,7 +376,7 @@
 
         <div class="bottom-actions">
             <a href="../biology.html" class="action-btn home-action lang-ml">← ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
-            <a href="../biology.html" class="action-btn home-action lang-en">← Back to Biology Index</a>
+            <a href="../biology.html" class="action-btn home-action lang-en" style="display:none;">← Back to Biology Index</a>
         </div>
 
     </div>
