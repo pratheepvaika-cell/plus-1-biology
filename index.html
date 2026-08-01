@@ -1,332 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ml" class="notranslate" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBSE Plus One PCMB Hub</title>
+    <meta name="google" content="notranslate">
+    <title>Higher Secondary Plus One (PCMB) - Study Portal</title>
+    <!-- FontAwesome Icons for Modern Design -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-            color: #334155;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-        }
-
-        .app-container {
-            width: 100%;
-            max-width: 900px;
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 18px;
-            margin-bottom: 22px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .board-info span {
-            font-size: 11px;
-            font-weight: 700;
-            background: #e0f2fe;
-            color: #0284c7;
-            padding: 5px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .board-info h1 {
-            font-size: 20px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-top: 8px;
-        }
-
-        .lang-switch {
-            display: flex;
-            background: #f1f5f9;
-            padding: 4px;
-            border-radius: 10px;
-            border: 1px solid #cbd5e1;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: none;
-            padding: 6px 14px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 8px;
-            color: #64748b;
-            transition: all 0.2s;
-        }
-
-        .lang-btn.active {
-            background: #ffffff;
-            color: #0f172a;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-        }
-
-        .greeting-section {
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
             padding: 20px;
-            border-radius: 14px;
-            color: #ffffff;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #333;
+            min-height: 100vh;
         }
-
-        .greeting-section h2 {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .greeting-section p {
-            font-size: 13px;
-            color: #e0f2fe;
-            margin-top: 6px;
-        }
-
-        .section-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: #64748b;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .subject-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .subject-grid {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            .subject-card.full-width {
-                grid-column: span 1 !important;
-            }
-        }
-
-        .subject-card {
+        .container {
+            max-width: 900px;
+            margin: auto;
             background: #ffffff;
-            border: 1px solid #e2e8f0;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+        .lang-btn {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .lang-btn:hover {
+            background-color: #0369a1;
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .curriculum-tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #0f172a;
+            margin: 0;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            padding: 18px 20px;
             border-radius: 12px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 15px;
+            border-left: 4px solid #0284c7;
+            padding-left: 10px;
+        }
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+        .subject-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
             padding: 18px;
             text-decoration: none;
-            color: #334155;
-            transition: all 0.3s ease;
+            color: inherit;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .subject-card:hover {
-            border-color: #0284c7;
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
-            transform: translateY(-4px);
-        }
-
-        .subject-card.full-width {
-            grid-column: span 3;
-            flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            gap: 10px;
+            transition: all 0.25s ease;
         }
-
-        .sub-icon {
-            font-size: 24px;
-            margin-bottom: 12px;
-            background: #f8fafc;
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
+        .subject-card:hover {
+            transform: translateY(-3px);
+            border-color: #0284c7;
+            box-shadow: 0 6px 15px rgba(2, 132, 199, 0.15);
+            background-color: #ffffff;
+        }
+        .subject-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 0;
+        }
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #e2e8f0;
+            font-size: 20px;
         }
+        /* Subject specific colors */
+        .bio-icon { background: #dcfce7; color: #16a34a; }
+        .phy-icon { background: #fae8ff; color: #9333ea; }
+        .chem-icon { background: #ffedd5; color: #c2410c; }
+        .math-icon { background: #dbeafe; color: #2563eb; }
+        .eng-icon { background: #ffeeeb; color: #e11d48; }
 
-        .subject-card.full-width .sub-icon {
-            margin-bottom: 0;
+        .subject-text {
+            min-width: 0;
         }
-
-        .sub-info h4 {
+        .subject-name {
             font-size: 15px;
-            font-weight: 700;
+            font-weight: bold;
             color: #0f172a;
-            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
-        .sub-info p {
-            font-size: 12px;
-            color: #64748b;
-        }
-
-        .status-badge {
+        .subject-desc {
             font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 10px;
+            color: #64748b;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-
-        .badge-ready {
-            background: #dcfce7;
+        .status-badge {
+            font-size: 10px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .badge-active {
+            background-color: #dcfce7;
             color: #16a34a;
         }
-
         .badge-soon {
-            background: #f1f5f9;
+            background-color: #e2e8f0;
             color: #64748b;
         }
-
-        .footer-note {
+        .footer-text {
             text-align: center;
+            margin-top: 30px;
             font-size: 12px;
             color: #94a3b8;
-            padding-top: 18px;
-            border-top: 1px solid #f1f5f9;
         }
     </style>
 </head>
-<body>
+<body class="notranslate" translate="no">
 
-    <div class="app-container">
-        
-        <div class="top-header">
-            <div class="board-info">
-                <span>CBSE / NCERT Curriculum</span>
-                <h1>Higher Secondary Plus One (PCMB)</h1>
-            </div>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLanguage('en')">English</button>
-                <button class="lang-btn" onclick="setLanguage('ml')">മലയാളം</button>
-            </div>
-        </div>
+<div class="container notranslate" translate="no">
 
-        <div class="greeting-section">
-            <h2 id="welcome-text">Welcome to Study Portal</h2>
-            <p id="sub-welcome-text">Select your subject to access chapter-wise notes and question banks.</p>
-        </div>
-
-        <div class="section-title" id="core-title">Core Subjects</div>
-
-        <div class="subject-grid">
-            <a href="biology.html" class="subject-card">
-                <div>
-                    <div class="sub-icon">🧬</div>
-                    <div class="sub-info">
-                        <h4>Biology</h4>
-                        <p>Botany & Zoology</p>
-                    </div>
-                </div>
-                <div><span class="status-badge badge-ready">Active</span></div>
-            </a>
-
-            <a href="physics.html" class="subject-card">
-                <div>
-                    <div class="sub-icon">⚛️</div>
-                    <div class="sub-info">
-                        <h4>Physics</h4>
-                        <p>Mechanics & Waves</p>
-                    </div>
-                </div>
-                <div><span class="status-badge badge-soon">Coming Soon</span></div>
-            </a>
-
-            <a href="chemistry.html" class="subject-card">
-                <div>
-                    <div class="sub-icon">🧪</div>
-                    <div class="sub-info">
-                        <h4>Chemistry</h4>
-                        <p>Organic & Inorganic</p>
-                    </div>
-                </div>
-                <div><span class="status-badge badge-soon">Coming Soon</span></div>
-            </a>
-
-            <a href="maths.html" class="subject-card">
-                <div>
-                    <div class="sub-icon">📐</div>
-                    <div class="sub-info">
-                        <h4>Mathematics</h4>
-                        <p>Calculus & Algebra</p>
-                    </div>
-                </div>
-                <div><span class="status-badge badge-soon">Coming Soon</span></div>
-            </a>
-
-            <a href="english.html" class="subject-card full-width">
-                <div style="display: flex; align-items: center; gap: 14px;">
-                    <div class="sub-icon" style="margin: 0;">📖</div>
-                    <div class="sub-info">
-                        <h4>English Core (Hornbill & Snapshots)</h4>
-                        <p>Literature, Prose, Poetry & Grammar</p>
-                    </div>
-                </div>
-                <div><span class="status-badge badge-soon">Coming Soon</span></div>
-            </a>
-        </div>
-
-        <div class="footer-note">
-            NCERT Study Hub &copy; 2026. All rights reserved.
-        </div>
+    <div class="top-bar">
+        <button class="lang-btn" onclick="toggleLanguage()">English / മലയാളം</button>
     </div>
 
-    <script>
-        function setLanguage(lang) {
-            localStorage.setItem('preferredLang', lang);
+    <div class="header-section">
+        <div class="curriculum-tag">CBSE / NCERT CURRICULUM</div>
+        <h1 id="mainTitle">Higher Secondary Plus One (PCMB)</h1>
+    </div>
 
-            const btns = document.querySelectorAll('.lang-btn');
-            btns.forEach(b => b.classList.remove('active'));
-            
-            if(lang === 'en') {
-                event.target.classList.add('active');
-                document.getElementById('welcome-text').innerText = "Welcome to Study Portal";
-                document.getElementById('sub-welcome-text').innerText = "Select your subject to access chapter-wise notes and question banks.";
-                document.getElementById('core-title').innerText = "Core Subjects";
-            } else {
-                event.target.classList.add('active');
-                document.getElementById('welcome-text').innerText = "പഠന പോർട്ടലിലേക്ക് സ്വാഗതം";
-                document.getElementById('sub-welcome-text').innerText = "ചാപ്റ്റർ നോട്ടുകളും ചോദ്യബാങ്കുകളും കാണാൻ വിഷയം തിരഞ്ഞെടുക്കുക.";
-                document.getElementById('core-title').innerText = "പ്രധാന വിഷയങ്ങൾ";
-            }
-        }
+    <div class="intro-box" id="introText">
+        👋 പഠന പോർട്ടലിലേക്ക് സ്വാഗതം! ചാപ്റ്റർ നോട്ടുകളും ചോദ്യബാങ്കുകളും കാണാൻ താഴെയുള്ള വിഷയങ്ങളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക.
+    </div>
 
-        window.onload = function() {
-            const savedLang = localStorage.getItem('preferredLang') || 'en';
-            if(savedLang === 'ml') {
-                document.querySelectorAll('.lang-btn')[1].click();
-            }
+    <div class="section-title" id="secTitle">പ്രധാന വിഷയങ്ങൾ (Core Subjects)</div>
+
+    <div class="subjects-grid">
+        <!-- Biology (Active) -->
+        <a href="biology.html" class="subject-card">
+            <div class="subject-info">
+                <div class="icon-box bio-icon">
+                    <i class="fa-solid fa-dna"></i>
+                </div>
+                <div class="subject-text">
+                    <div class="subject-name">Biology</div>
+                    <div class="subject-desc">Botany & Zoology</div>
+                </div>
+            </div>
+            <div>
+                <span class="status-badge badge-active" id="badgeBio">Active</span>
+            </div>
+        </a>
+
+        <!-- Physics (Coming Soon) -->
+        <a href="#" class="subject-card">
+            <div class="subject-info">
+                <div class="icon-box phy-icon">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <div class="subject-text">
+                    <div class="subject-name">Physics</div>
+                    <div class="subject-desc">Mechanics & Waves</div>
+                </div>
+            </div>
+            <div>
+                <span class="status-badge badge-soon" id="badgePhy">Coming Soon</span>
+            </div>
+        </a>
+
+        <!-- Chemistry (Coming Soon) -->
+        <a href="#" class="subject-card">
+            <div class="subject-info">
+                <div class="icon-box chem-icon">
+                    <i class="fa-solid fa-flask-vial"></i>
+                </div>
+                <div class="subject-text">
+                    <div class="subject-name">Chemistry</div>
+                    <div class="subject-desc">Organic & Inorganic</div>
+                </div>
+            </div>
+            <div>
+                <span class="status-badge badge-soon" id="badgeChem">Coming Soon</span>
+            </div>
+        </a>
+
+        <!-- Mathematics (Coming Soon) -->
+        <a href="#" class="subject-card">
+            <div class="subject-info">
+                <div class="icon-box math-icon">
+                    <i class="fa-solid fa-square-root-variable"></i>
+                </div>
+                <div class="subject-text">
+                    <div class="subject-name">Mathematics</div>
+                    <div class="subject-desc">Calculus & Algebra</div>
+                </div>
+            </div>
+            <div>
+                <span class="status-badge badge-soon" id="badgeMath">Coming Soon</span>
+            </div>
+        </a>
+
+        <!-- English Core (Coming Soon) -->
+        <a href="#" class="subject-card">
+            <div class="subject-info">
+                <div class="icon-box eng-icon">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <div class="subject-text">
+                    <div class="subject-name">English Core</div>
+                    <div class="subject-desc">Hornbill & Snapshots</div>
+                </div>
+            </div>
+            <div>
+                <span class="status-badge badge-soon" id="badgeEng">Coming Soon</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer-text">
+        NCERT Study Hub © 2026. All rights reserved.
+    </div>
+
+</div>
+
+<script>
+    let currentLang = 'ml';
+
+    function toggleLanguage() {
+        let mainTitle = document.getElementById('mainTitle');
+        let introText = document.getElementById('introText');
+        let secTitle = document.getElementById('secTitle');
+        let badgeBio = document.getElementById('badgeBio');
+        let badgePhy = document.getElementById('badgePhy');
+        let badgeChem = document.getElementById('badgeChem');
+        let badgeMath = document.getElementById('badgeMath');
+        let badgeEng = document.getElementById('badgeEng');
+
+        if (currentLang === 'ml') {
+            mainTitle.innerText = "Higher Secondary Plus One (PCMB)";
+            introText.innerText = "👋 Welcome to Study Portal! Select your subject below to access chapter-wise notes and question banks.";
+            secTitle.innerText = "Core Subjects";
+            badgeBio.innerText = "Active";
+            badgePhy.innerText = "Coming Soon";
+            badgeChem.innerText, badgeChem.innerText = "Coming Soon";
+            badgeMath.innerText = "Coming Soon";
+            badgeEng.innerText = "ComingSoon";
+            currentLang = 'en';
+        } else {
+            mainTitle.innerText = "ഹയർ സെക്കൻഡറി പ്ലസ് വൺ (PCMB)";
+            introText.innerText = "👋 പഠന പോർട്ടലിലേക്ക് സ്വാഗതം! ചാപ്റ്റർ നോട്ടുകളും ചോദ്യബാങ്കുകളും കാണാൻ താഴെയുള്ള വിഷയങ്ങളിൽ നിന്ന് തിരഞ്ഞെടുക്കുക.";
+            secTitle.innerText = "പ്രധാന വിഷയങ്ങൾ (Core Subjects)";
+            badgeBio.innerText = "ആക്റ്റീവ്";
+            badgePhy.innerText = "ഉടൻ വരുന്നു";
+            badgeChem.innerText = "ഉടൻ വരുന്നു";
+            badgeMath.innerText = "ഉടൻ വരുന്നു";
+            badgeEng.innerText = "ഉടൻ വരുന്നു";
+            currentLang = 'ml';
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
