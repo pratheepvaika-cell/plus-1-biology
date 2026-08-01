@@ -100,6 +100,15 @@
         .question-box p { font-weight: 600; color: #0f172a; margin-top: 0; }
         
         .options { list-style-type: none; padding-left: 0; display: flex; gap: 12px; margin-top: 15px; }
+        .options.mcq { display: block; }
+        .options.mcq li {
+            display: block;
+            margin-bottom: 10px;
+            flex: none;
+            text-align: left;
+            padding: 12px 16px;
+        }
+        
         .options li { 
             padding: 10px 20px; 
             background: #ffffff; 
@@ -117,6 +126,30 @@
         .options li.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #166534; font-weight: 600; }
         .options li.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b; }
 
+        /* User input area for writing answers */
+        .answer-input-area {
+            margin-top: 15px;
+            margin-bottom: 12px;
+        }
+        .answer-input-area textarea {
+            width: 100%;
+            height: 75px;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            box-sizing: border-box;
+            background: #ffffff;
+            color: #334155;
+        }
+        .answer-input-area textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
         .action-btn {
             background-color: #0f766e;
             color: white;
@@ -126,7 +159,7 @@
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 12px;
+            margin-top: 5px;
             transition: 0.2s;
             display: inline-flex;
             align-items: center;
@@ -143,6 +176,15 @@
             margin-top: 14px;
             font-size: 14px;
             color: #166534;
+        }
+        
+        .answer-reveal ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+        .answer-reveal li {
+            margin-bottom: 4px;
+            font-size: 14px;
         }
 
         /* Fixed Table styling to prevent mobile dark-mode text hiding issues */
@@ -226,13 +268,13 @@
             <p class="lang-ml">1. താഴെ പറയുന്നവയിൽ ജീവന്റെ യഥാർത്ഥ നിർവചിക്കപ്പെട്ട ലക്ഷണം (Defining Property) ഏതാണ്?</p>
             <p class="lang-en">1. Which of the following is a defining property of living organisms?</p>
             
-            <ul class="options lang-ml" data-correct="2">
+            <ul class="options mcq lang-ml" data-correct="2">
                 <li onclick="checkAnswer(this, false)">(A) വളർച്ച (Growth)</li>
                 <li onclick="checkAnswer(this, false)">(B) പ്രജനനം (Reproduction)</li>
                 <li onclick="checkAnswer(this, true)">(C) മെറ്റബോളിസം (Metabolism)</li>
                 <li onclick="checkAnswer(this, false)">(D) ശരീരഭാരം വർദ്ധിക്കൽ (Increase in body mass)</li>
             </ul>
-            <ul class="options lang-en" data-correct="2">
+            <ul class="options mcq lang-en" data-correct="2">
                 <li onclick="checkAnswer(this, false)">(A) Growth</li>
                 <li onclick="checkAnswer(this, false)">(B) Reproduction</li>
                 <li onclick="checkAnswer(this, true)">(C) Metabolism</li>
@@ -251,13 +293,13 @@
             <p class="lang-ml">2. '20-ാം നൂറ്റാണ്ടിലെ ഡാർവിൻ' എന്നറിയപ്പെടുന്ന പരിണാമ ജീവശാസ്ത്രജ്ഞൻ ആര്?</p>
             <p class="lang-en">2. Who is known as 'The Darwin of the 20th century'?</p>
             
-            <ul class="options lang-ml" data-correct="1">
+            <ul class="options mcq lang-ml" data-correct="1">
                 <li onclick="checkAnswer(this, false)">(A) കരോലസ് ലിന്നേയസ്</li>
                 <li onclick="checkAnswer(this, true)">(B) എർൺസ്റ്റ് മേയർ</li>
                 <li onclick="checkAnswer(this, false)">(C) റോബർട്ട് മേയ്</li>
                 <li onclick="checkAnswer(this, false)">(D) ലാമാർക്ക്</li>
             </ul>
-            <ul class="options lang-en" data-correct="1">
+            <ul class="options mcq lang-en" data-correct="1">
                 <li onclick="checkAnswer(this, false)">(A) Carolus Linnaeus</li>
                 <li onclick="checkAnswer(this, true)">(B) Ernst Mayr</li>
                 <li onclick="checkAnswer(this, false)">(C) Robert May</li>
@@ -276,13 +318,13 @@
             <p class="lang-ml">3. സസ്യങ്ങളുടെ ശാസ്ത്രീയ നാമകരണത്തിനുള്ള അന്താരാഷ്ട്ര കോഡ് ഏതാണ്?</p>
             <p class="lang-en">3. What is the international code for botanical nomenclature?</p>
             
-            <ul class="options lang-ml" data-correct="1">
+            <ul class="options mcq lang-ml" data-correct="1">
                 <li onclick="checkAnswer(this, false)">(A) ICZN</li>
                 <li onclick="checkAnswer(this, true)">(B) ICBN</li>
                 <li onclick="checkAnswer(this, false)">(C) ICVN</li>
                 <li onclick="checkAnswer(this, false)">(D) ICNCP</li>
             </ul>
-            <ul class="options lang-en" data-correct="1">
+            <ul class="options mcq lang-en" data-correct="1">
                 <li onclick="checkAnswer(this, false)">(A) ICZN</li>
                 <li onclick="checkAnswer(this, true)">(B) ICBN</li>
                 <li onclick="checkAnswer(this, false)">(C) ICVN</li>
@@ -301,13 +343,13 @@
             <p class="lang-ml">4. ഇരുനാമ നാമകരണ സമ്പ്രദായം (Binomial Nomenclature) ആവിഷ്കരിച്ചത് ആര്?</p>
             <p class="lang-en">4. Who introduced Binomial Nomenclature?</p>
             
-            <ul class="options lang-ml" data-correct="2">
+            <ul class="options mcq lang-ml" data-correct="2">
                 <li onclick="checkAnswer(this, false)">(A) ജോൺ റേ</li>
                 <li onclick="checkAnswer(this, false)">(B) അറിസ്റ്റോട്ടിൽ</li>
                 <li onclick="checkAnswer(this, true)">(C) കരോലസ് ലിന്നേയസ്</li>
                 <li onclick="checkAnswer(this, false)">(D) ഡാർവിൻ</li>
             </ul>
-            <ul class="options lang-en" data-correct="2">
+            <ul class="options mcq lang-en" data-correct="2">
                 <li onclick="checkAnswer(this, false)">(A) John Ray</li>
                 <li onclick="checkAnswer(this, false)">(B) Aristotle</li>
                 <li onclick="checkAnswer(this, true)">(C) Carolus Linnaeus</li>
@@ -326,13 +368,13 @@
             <p class="lang-ml">5. ടാക്സോണമിക് കീ-യിൽ (Taxonomic Key) കാണപ്പെടുന്ന വിരുദ്ധ സ്വഭാവ ജോഡിയെ എന്ത് വിളിക്കുന്നു?</p>
             <p class="lang-en">5. What is the contrasting pair of characters in a taxonomic key called?</p>
             
-            <ul class="options lang-ml" data-correct="1">
+            <ul class="options mcq lang-ml" data-correct="1">
                 <li onclick="checkAnswer(this, false)">(A) ലീഡ് (Lead)</li>
                 <li onclick="checkAnswer(this, true)">(B) കപ്ലറ്റ് (Couplet)</li>
                 <li onclick="checkAnswer(this, false)">(C) ടാക്സോൺ (Taxon)</li>
                 <li onclick="checkAnswer(this, false)">(D) കാറ്റഗറി (Category)</li>
             </ul>
-            <ul class="options lang-en" data-correct="1">
+            <ul class="options mcq lang-en" data-correct="1">
                 <li onclick="checkAnswer(this, false)">(A) Lead</li>
                 <li onclick="checkAnswer(this, true)">(B) Couplet</li>
                 <li onclick="checkAnswer(this, false)">(C) Taxon</li>
@@ -452,62 +494,139 @@
         </div>
 
 
-        <!-- SECTION C: Short Answers -->
-        <h2 class="lang-ml"><i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i> വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങൾ (Short Answers)</h2>
+        <!-- SECTION C: Short Answers (With Interactive Text Input & Evaluation Guide) -->
+        <h2 class="lang-ml"><i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i> വിഭാഗം സി: ഹ്രസ്വ ഉത്തരങ്ങൾ (Short Answers - Self Evaluation)</h2>
         <h2 class="lang-en"><i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i> Section C: Short Answers</h2>
         
+        <!-- SA1 -->
         <div class="question-box">
             <p class="lang-ml">1. ഭൂമിയിൽ ഇതുവരെ തിരിച്ചറിഞ്ഞ ജീവജാലങ്ങളുടെ സ്പീഷിസ് എണ്ണം എത്രയാണ്?</p>
             <p class="lang-en">1. What is the total number of species known and described on Earth?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക... (Type your answer, then check key points below)"></textarea>
+                <textarea class="lang-en" placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> ഉത്തരം & കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Answer & Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> 1.7 - 1.8 ദശലക്ഷം</span>
-                <span class="lang-en"><strong>Answer:</strong> 1.7 - 1.8 million</span>
+                <span class="lang-ml">
+                    <strong>ഉത്തര സൂചന / വിലയിരുത്തൽ (Evaluation Guide):</strong><br>
+                    നിങ്ങൾ എഴുതിയ ഉത്തരത്തിൽ താഴെ പറയുന്നവ ഉൾപ്പെട്ടിട്ടുണ്ടെങ്കിൽ അത് ശരിയായി കണക്കാക്കാം:
+                    <ul>
+                        <li>1.7 മുതൽ 1.8 ദശലക്ഷം (Millions) എന്ന കൃത്യമായ സംഖ്യയോ അതിനോടടുത്ത ആശയമോ ഉണ്ടായിരിക്കണം.</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Evaluation Guide:</strong><br>
+                    Check if your answer includes:
+                    <ul>
+                        <li>1.7 to 1.8 million species.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
+        <!-- SA2 -->
         <div class="question-box">
             <p class="lang-ml">2. പൂച്ചയുടെയും സിംഹത്തിന്റെയും കുടുംബം (Family) ഏതാണ്?</p>
             <p class="lang-en">2. What is the family of cat and lion?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+                <textarea class="lang-en" placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> ഉത്തരം & കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Answer & Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ഫെലിഡേ (Felidae)</span>
-                <span class="lang-en"><strong>Answer:</strong> Felidae</span>
+                <span class="lang-ml">
+                    <strong>ഉത്തര സൂചന / വിലയിരുത്തൽ (Evaluation Guide):</strong>
+                    <ul>
+                        <li>ഉത്തരം <strong>'ഫെലിഡേ' (Felidae)</strong> എന്നാണെങ്കിൽ നിങ്ങളുടെ ഉത്തരം പൂർണ്ണമായും ശരിയാണ്!</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Evaluation Guide:</strong>
+                    <ul>
+                        <li>Correct answer is <strong>Felidae</strong>.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
+        <!-- SA3 -->
         <div class="question-box">
             <p class="lang-ml">3. മ്യൂസിയങ്ങളിൽ ജന്തുക്കളെ ഏത് ലായണിയിലാണ് സാധാരണയായി സൂക്ഷിക്കുന്നത്?</p>
             <p class="lang-en">3. In what solution are animals usually preserved in museums?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+                <textarea class="lang-en" placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> ഉത്തരം & കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Answer & Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> പ്രിസർവേറ്റീവ് ലായണി (Preservative solution)</span>
-                <span class="lang-en"><strong>Answer:</strong> Preservative solution</span>
+                <span class="lang-ml">
+                    <strong>ഉത്തര സൂചന / വിലയിരുത്തൽ (Evaluation Guide):</strong>
+                    <ul>
+                        <li>ഫോർമാലിൻ (Formalin) അല്ലെങ്കിൽ പ്രിസർവേറ്റീവ് ലായണി (Preservative solution) എന്ന് എഴുതിയിട്ടുണ്ടെങ്കിൽ ശരിയായി കണക്കാക്കാം.</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Evaluation Guide:</strong>
+                    <ul>
+                        <li>Should mention Formalin or Preservative solution.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
+        <!-- SA4 -->
         <div class="question-box">
             <p class="lang-ml">4. സസ്യങ്ങളെ ശേഖരിച്ച് ഉണക്കി, പ്രസ് ചെയ്ത് ഷീറ്റുകളിൽ സൂക്ഷിക്കുന്ന സംവിധാനം ഏത്?</p>
             <p class="lang-en">4. What is the system of collecting, pressing, and preserving plant specimens on sheets?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+                <textarea class="lang-en" placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> ഉത്തരം & കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Answer & Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ഹെർബേറിയം (Herbarium)</span>
-                <span class="lang-en"><strong>Answer:</strong> Herbarium</span>
+                <span class="lang-ml">
+                    <strong>ഉത്തര സൂചന / വിലയിരുത്തൽ (Evaluation Guide):</strong>
+                    <ul>
+                        <li>ഉത്തരം <strong>'ഹെർബേറിയം' (Herbarium)</strong> എന്നാണെങ്കിൽ ശരിയാണ്.</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Evaluation Guide:</strong>
+                    <ul>
+                        <li>Correct answer is <strong>Herbarium</strong>.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
+        <!-- SA5 -->
         <div class="question-box">
             <p class="lang-ml">5. 'ഹോമോ' എന്നത് ഏത് ടാക്സോണമിക് കാറ്റഗറിയെ സൂചിപ്പിക്കുന്നു?</p>
             <p class="lang-en">5. What taxonomic category does 'Homo' represent?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ ടൈപ്പ് ചെയ്യുക..."></textarea>
+                <textarea class="lang-en" placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> ഉത്തരം & കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Answer & Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം:</strong> ജീനസ് (Genus)</span>
-                <span class="lang-en"><strong>Answer:</strong> Genus</span>
+                <span class="lang-ml">
+                    <strong>ഉത്തര സൂചന / വിലയിരുത്തൽ (Evaluation Guide):</strong>
+                    <ul>
+                        <li>ഉത്തരം <strong>'ജീനസ്' (Genus)</strong> എന്നാണെങ്കിൽ ശരിയാണ്.</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Evaluation Guide:</strong>
+                    <ul>
+                        <li>Correct answer is <strong>Genus</strong>.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
@@ -560,29 +679,64 @@
         </div>
 
 
-        <!-- SECTION E: Essay / Analytical Questions -->
-        <h2 class="lang-ml"><i class="fa-solid fa-brain" style="color: #2563eb;"></i> വിഭാഗം ഇ: വിശദമായ ഉത്തരങ്ങൾ (Essay / Analytical Questions)</h2>
+        <!-- SECTION E: Essay / Analytical Questions (With Self Evaluation Guidelines) -->
+        <h2 class="lang-ml"><i class="fa-solid fa-brain" style="color: #2563eb;"></i> വിഭാഗം ഇ: വിശദമായ ഉത്തരങ്ങൾ (Essay / Analytical Questions - Self Evaluation)</h2>
         <h2 class="lang-en"><i class="fa-solid fa-brain" style="color: #2563eb;"></i> Section E: Essay / Analytical Questions</h2>
         
+        <!-- ES1 -->
         <div class="question-box">
             <p class="lang-ml">1. വളർച്ചയും പ്രജനനവും ജീവന്റെ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളല്ലാത്തത് എന്തുകൊണ്ട്? വിശദീകരിക്കുക.</p>
             <p class="lang-en">1. Why are growth and reproduction not defining properties of living organisms? Explain.</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ വിശദമായി എഴുതാം..."></textarea>
+                <textarea class="lang-en" placeholder="Type your detailed answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> വിലയിരുത്താനുള്ള കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Evaluation Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> നിർജീവ വസ്തുക്കളും (പർവ്വതങ്ങൾ, മണൽക്കൂനകൾ) അനുകൂല സാഹചര്യങ്ങളിൽ പുറമേ നിന്ന് വസ്തുക്കൾ അടിഞ്ഞുകൂടി വളർച്ച കാണിക്കാറുണ്ട്. അതുപോലെ വന്ധ്യരായ മനുഷ്യർ, മടിയൻ തേനീച്ചകൾ തുടങ്ങിയവയ്ക്ക് പ്രജനനം നടത്താൻ കഴിയില്ല. അതിനാൽ ഇവയെ ജീവന്റെ പൂർണ്ണമായ നിർവചിക്കപ്പെട്ട ലക്ഷണങ്ങളായി കണക്കാക്കാനാകില്ല.</span>
-                <span class="lang-en"><strong>Hint / Answer:</strong> Non-living objects also grow by accumulation of material on the surface. Also, sterile human couples, worker bees, etc., cannot reproduce. Hence, growth and reproduction cannot be considered defining properties of living organisms.</span>
+                <span class="lang-ml">
+                    <strong>സ്വയം വിലയിരുത്താനുള്ള പ്രധാന പോയിന്റുകൾ (Key Points to Check):</strong>
+                    <ul>
+                        <li>വളർച്ച നിർജീവ വസ്തുക്കളിലും (മലകൾ, മണൽക്കൂനകൾ) കാണപ്പെടുന്നുണ്ടെന്ന് സൂചിപ്പിച്ചിട്ടുണ്ടോ?</li>
+                        <li>എല്ലാ ജീവികളും പ്രജനനം നടത്തുന്നില്ല (ഉദാഹരണത്തിന്: വന്ധ്യരായ ദമ്പതികൾ, മടിയൻ തേനീച്ചകൾ) എന്ന് വ്യക്തമാക്കിയിട്ടുണ്ടോ?</li>
+                        <li>ഈ കാരണങ്ങളാൽ ഇവ രണ്ടിനെയും 'Defining properties' ആയി പൂർണ്ണമായി കണക്കാക്കാൻ കഴിയില്ലെന്ന് എഴുതിയിട്ടുണ്ടെങ്കിൽ നിങ്ങളുടെ ഉത്തരം ശരിയാണ്!</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Key Points to Check:</strong>
+                    <ul>
+                        <li>Non-living objects also grow (accumulation of mass on surface).</li>
+                        <li>All living organisms do not reproduce (sterile couples, worker bees).</li>
+                        <li>Conclusion that they are not defining properties.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
+        <!-- ES2 -->
         <div class="question-box">
             <p class="lang-ml">2. ടാക്സോണമിക് ഹൈറാർജിയിൽ താഴെ നിന്ന് മുകളിലേക്ക് പോകുമ്പോൾ പൊതുവായ സവിശേഷതകൾക്ക് എന്ത് മാറ്റമാണ് സംഭവിക്കുന്നത്?</p>
             <p class="lang-en">2. What happens to the number of common characteristics as we go higher from species to kingdom in taxonomic hierarchy?</p>
-            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക</button>
-            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-eye"></i> Show Answer</button>
+            <div class="answer-input-area">
+                <textarea class="lang-ml" placeholder="നിങ്ങളുടെ ഉത്തരം ഇവിടെ വിശദമായി എഴുതാം..."></textarea>
+                <textarea class="lang-en" placeholder="Type your detailed answer here..."></textarea>
+            </div>
+            <button class="action-btn lang-ml" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> വിലയിരുത്താനുള്ള കീ-പോയിന്റുകൾ കാണുക</button>
+            <button class="action-btn lang-en" onclick="toggleAnswer(this)"><i class="fa-solid fa-square-check"></i> View Evaluation Key Points</button>
             <div class="answer-reveal">
-                <span class="lang-ml"><strong>ഉത്തരം / സൂചന:</strong> സ്പീഷിസിൽ തുടങ്ങി കിങ്ഡം വരെയുള്ള ആരോഹണ ക്രമത്തിൽ, ജീവികൾ തമ്മിലുള്ള പൊതുവായ സവിശേഷതകൾ (Common characteristics) കുറഞ്ഞുവരുന്നു. താഴെയുള്ള തലങ്ങളിൽ (Species/Genus) സമാനതകൾ കൂടുതലായിരിക്കും.</span>
-                <span class="lang-en"><strong>Hint / Answer:</strong> As we go higher from species to kingdom, the number of common characteristics goes on decreasing. Lower taxa share more characteristics.</span>
+                <span class="lang-ml">
+                    <strong>സ്വയം വിലയിരുത്താനുള്ള പ്രധാന പോയിന്റുകൾ (Key Points to Check):</strong>
+                    <ul>
+                        <li>സ്പീഷിസിൽ നിന്ന് കിങ്ഡത്തിലേക്ക് പോകുമ്പോൾ പൊതുവായ സവിശേഷതകൾ <strong>കുറഞ്ഞുവരുന്നു (Decreases)</strong> എന്ന് എഴുതിയിട്ടുണ്ടോ?</li>
+                        <li>താഴെയുള്ള തലങ്ങളിൽ സമാനതകൾ കൂടുതലായിരിക്കും എന്ന് വ്യക്തമാക്കിയിട്ടുണ്ടെങ്കിൽ ഉത്തരം ശരിയാണ്.</li>
+                    </ul>
+                </span>
+                <span class="lang-en">
+                    <strong>Key Points to Check:</strong>
+                    <ul>
+                        <li>Number of common characteristics goes on <strong>decreasing</strong> as we go from species to kingdom.</li>
+                    </ul>
+                </span>
             </div>
         </div>
 
@@ -619,16 +773,16 @@
             if (revealDiv.style.display === 'block') {
                 revealDiv.style.display = 'none';
                 if(btn.innerHTML.includes('മറയ്ക്കുക')) {
-                    btn.innerHTML = btn.innerHTML.includes('ഉത്തരം') ? '<i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക' : '<i class="fa-solid fa-eye"></i> Show Answer';
+                    btn.innerHTML = btn.innerHTML.includes('വിലയിരുത്താനുള്ള') ? '<i class="fa-solid fa-square-check"></i> വിലയിരുത്താനുള്ള കീ-പോയിന്റുകൾ കാണുക' : '<i class="fa-solid fa-eye"></i> ഉത്തരം കാണുക';
                 } else {
-                    btn.innerHTML = '<i class="fa-solid fa-eye"></i> Show Answer';
+                    btn.innerHTML = btn.innerHTML.includes('Key') ? '<i class="fa-solid fa-square-check"></i> View Evaluation Key Points' : '<i class="fa-solid fa-eye"></i> Show Answer';
                 }
             } else {
                 revealDiv.style.display = 'block';
                 if(btn.innerHTML.includes('കാണുക')) {
-                    btn.innerHTML = btn.innerHTML.includes('Show') ? '<i class="fa-solid fa-eye-slash"></i> Hide Answer' : '<i class="fa-solid fa-eye-slash"></i> ഉത്തരം മറയ്ക്കുക';
+                    btn.innerHTML = btn.innerHTML.includes('വിലയിരുത്താനുള്ള') ? '<i class="fa-solid fa-eye-slash"></i> കീ-പോയിന്റുകൾ മറയ്ക്കുക' : '<i class="fa-solid fa-eye-slash"></i> ഉത്തരം മറയ്ക്കുക';
                 } else {
-                    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Answer';
+                    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Key Points';
                 }
             }
         }
