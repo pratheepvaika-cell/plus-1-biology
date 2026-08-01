@@ -28,7 +28,6 @@
             position: relative; 
         }
         
-        /* Buttons container placed cleanly at the very top */
         .nav-buttons {
             display: flex;
             gap: 12px;
@@ -93,11 +92,35 @@
 
         .note-section { margin-bottom: 30px; }
         
-        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 13px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        th, td { border: 1px solid #e2e8f0; padding: 12px 15px; text-align: left; }
-        th { background: #f8fafc; color: #0f172a; font-weight: bold; }
-        tr:nth-child(even) { background-color: #fdfdfd; }
-        tr:hover { background-color: #f1f5f9; }
+        /* Fixed Table styling to prevent mobile dark-mode text hiding issues */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 25px 0; 
+            font-size: 13px; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+            background-color: #ffffff !important; 
+        }
+        th, td { 
+            border: 1px solid #e2e8f0 !important; 
+            padding: 12px 15px; 
+            text-align: left; 
+            color: #334155 !important; 
+            background-color: #ffffff !important;
+        }
+        th { 
+            background: #f8fafc !important; 
+            color: #0f172a !important; 
+            font-weight: bold; 
+        }
+        tr:nth-child(even) td { 
+            background-color: #fdfdfd !important; 
+        }
+        tr:hover td { 
+            background-color: #f1f5f9 !important; 
+        }
 
         .concept-box { 
             background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%); 
@@ -164,7 +187,6 @@
 <body>
 
     <div class="container">
-        <!-- Buttons placed safely at the top without overlapping text -->
         <div class="nav-buttons">
             <a href="workout_q1.html" class="workout-btn">
                 <i class="fa-solid fa-dumbbell"></i>
