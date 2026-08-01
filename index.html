@@ -103,6 +103,7 @@
             justify-content: space-between;
             gap: 10px;
             transition: all 0.25s ease;
+            cursor: pointer;
         }
         .subject-card:hover {
             transform: translateY(-4px);
@@ -283,6 +284,86 @@
             transition: opacity 0.4s ease, transform 0.4s ease;
             transform: scale(0.9);
         }
+
+        /* --- Flash & Zoom Biology Transition Popup Style --- */
+        .bio-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(16px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+        .bio-transition-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .bio-popup-card {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.95), rgba(4, 47, 46, 0.95));
+            border: 3px solid #34d399;
+            padding: 40px 30px;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+            width: 85%;
+            max-width: 380px;
+            box-shadow: 0 0 60px rgba(52, 211, 153, 0.8), inset 0 0 25px rgba(255, 255, 255, 0.2);
+            transform: scale(0.3);
+            animation: none;
+        }
+        .bio-transition-overlay.show .bio-popup-card {
+            animation: flashZoomEffect 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes flashZoomEffect {
+            0% {
+                transform: scale(0.2);
+                opacity: 0;
+                filter: brightness(2.5);
+            }
+            50% {
+                transform: scale(1.08);
+                opacity: 1;
+                filter: brightness(1.3);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                filter: brightness(1);
+            }
+        }
+
+        .bio-icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .bio-icon-item {
+            background: rgba(255, 255, 255, 0.12);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 26px;
+            color: #34d399;
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.4);
+            animation: flashIcons 0.6s infinite alternate ease-in-out;
+        }
+        @keyframes flashIcons {
+            from { transform: scale(1); filter: drop-shadow(0 0 2px #34d399); }
+            to { transform: scale(1.15); filter: drop-shadow(0 0 12px #6ee7b7); }
+        }
     </style>
 </head>
 <body class="notranslate" translate="no">
@@ -296,6 +377,19 @@
             <h2 id="modalTitle">Welcome to Plus One</h2>
             <p id="modalDesc">Higher Secondary PCMB Study Portal</p>
             <button class="enter-btn" id="modalBtn" onclick="closeWelcomeModal()">Let's Start 🚀</button>
+        </div>
+    </div>
+
+    <!-- Flash & Zoom Biology Transition Popup Modal -->
+    <div id="bioModal" class="bio-transition-overlay">
+        <div class="bio-popup-card">
+            <div class="bio-icons-row">
+                <div class="bio-icon-item" title="Botany"><i class="fa-solid fa-seedling"></i></div>
+                <div class="bio-icon-item" title="DNA"><i class="fa-solid fa-dna" style="color: #6ee7b7;"></i></div>
+                <div class="bio-icon-item" title="Zoology"><i class="fa-solid fa-paw"></i></div>
+            </div>
+            <h2 style="margin: 0 0 10px 0; font-size: 24px; color: #6ee7b7; font-weight: 800; text-shadow: 0 2px 10px rgba(52,211,153,0.5);">Biology Section</h2>
+            <p style="margin: 0; font-size: 14px; color: #d1fae5; font-weight: 500;">Botany & Zoology Loading...</p>
         </div>
     </div>
 
@@ -317,8 +411,8 @@
     <div class="section-title" id="secTitle">പ്രധാന വിഷയങ്ങൾ (Core Subjects)</div>
 
     <div class="subjects-grid">
-        <!-- Biology (Active) -->
-        <a href="biology.html" class="subject-card">
+        <!-- Biology (Active) with Flash Zoom Animation & Full Voice -->
+        <a href="biology.html" class="subject-card" onclick="playBiologyTransition(event)">
             <div class="subject-info">
                 <div class="icon-box bio-icon">
                     <i class="fa-solid fa-dna"></i>
@@ -407,13 +501,11 @@
 <script>
     let currentLang = 'ml';
 
-    // ദിവ്യദർശനം പോലുള്ള ഒരു മാജിക്കൽ/ഹെവൻലി സൗണ്ട് എഫക്റ്റ് (Magical Arpeggio Chime)
+    // Welcome Modal Sound
     function playWelcomeSound() {
         try {
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            
-            // മാജിക്കൽ ഫീൽ തരുന്ന നോട്ടുകളുടെ നിര (C Major Arpeggio with high sparkle)
-            const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51]; // C5, E5, G5, C6, E6
+            const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51];
             
             notes.forEach((freq, index) => {
                 const osc = audioCtx.createOscillator();
@@ -431,14 +523,74 @@
                 osc.start(audioCtx.currentTime + (index * 0.08));
                 osc.stop(audioCtx.currentTime + (index * 0.08) + 0.6);
             });
-
         } catch (e) {
             console.log("Audio not supported");
         }
     }
 
+    // ബയോളജി ക്ലിക്ക് ചെയ്യുമ്പോൾ ഫ്ലാഷ് സൂം ആനിമേഷനും മ്യൂസിക്കും ഫുൾ വോയിസും പ്ലേ ആകും
+    function playBiologyTransition(event) {
+        event.preventDefault(); 
+        const targetUrl = event.currentTarget.href;
+
+        // ഫ്ലാഷ് ആനിമേഷൻ ബോക്സ് സ്ക്രീനിൽ കാണിക്കുക
+        const bioModal = document.getElementById('bioModal');
+        bioModal.classList.add('show');
+
+        // 1. മ്യൂസിക്കൽ കോർഡ് സൗണ്ട്
+        try {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const chordNotes = [440.00, 554.37, 659.25, 880.00, 1108.73];
+            
+            chordNotes.forEach((freq, index) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime + (index * 0.08));
+                
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime + (index * 0.08));
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (index * 0.08) + 1.2);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start(audioCtx.currentTime + (index * 0.08));
+                osc.stop(audioCtx.currentTime + (index * 0.08) + 1.2);
+            });
+        } catch (e) {
+            console.log("Audio Context Error");
+        }
+
+        // 2. വെൽക്കം വോയിസ് പൂർണ്ണമായി പ്ലേ ചെയ്യാൻ
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel(); 
+            const utterance = new SpeechSynthesisUtterance("Welcome to Biology Section");
+            utterance.rate = 0.95; 
+            utterance.pitch = 1.05; 
+            utterance.volume = 1.0; 
+
+            utterance.onend = function() {
+                window.location.href = targetUrl;
+            };
+
+            window.speechSynthesis.speak(utterance);
+
+            // ഫോൾബാക്ക് ടൈമർ (2.2 സെക്കൻഡിനു ശേഷം ഓട്ടോമാറ്റിക്കായി പേജ് മാറും)
+            setTimeout(() => {
+                if (bioModal.classList.contains('show')) {
+                    window.location.href = targetUrl;
+                }
+            }, 2200);
+        } else {
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 1500);
+        }
+    }
+
     function closeWelcomeModal() {
-        playWelcomeSound(); // മാജിക്കൽ സൗണ്ട് പ്ലേ ചെയ്യുന്നു
+        playWelcomeSound();
         const modal = document.getElementById('welcomeModal');
         modal.classList.add('hide-modal');
     }
