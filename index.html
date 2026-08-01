@@ -13,7 +13,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
             color: #333;
             min-height: 100vh;
         }
@@ -23,7 +23,8 @@
             background: #ffffff;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(168, 85, 247, 0.2);
         }
         .top-bar {
             display: flex;
@@ -31,7 +32,7 @@
             margin-bottom: 15px;
         }
         .lang-btn {
-            background-color: #0284c7;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
             color: white;
             border: none;
             padding: 8px 16px;
@@ -39,10 +40,12 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
-            transition: background 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
         }
         .lang-btn:hover {
-            background-color: #0369a1;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(236, 72, 153, 0.5);
         }
         .header-section {
             text-align: center;
@@ -50,34 +53,37 @@
         }
         .curriculum-tag {
             display: inline-block;
-            background-color: #e0f2fe;
-            color: #0369a1;
-            padding: 6px 14px;
+            background: linear-gradient(135deg, #fce7f3, #e0e7ff);
+            color: #7c3aed;
+            padding: 6px 16px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
             margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.1);
         }
         h1 {
-            font-size: 24px;
-            color: #0f172a;
+            font-size: 26px;
+            background: linear-gradient(135deg, #4f46e5, #9333ea, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 0;
         }
         .intro-box {
-            background: linear-gradient(135deg, #0284c7, #0369a1);
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
             color: white;
             padding: 18px 20px;
-            border-radius: 12px;
+            border-radius: 14px;
             margin-bottom: 25px;
             font-size: 15px;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
         }
         .section-title {
             font-size: 16px;
             font-weight: bold;
             color: #1e293b;
             margin-bottom: 15px;
-            border-left: 4px solid #0284c7;
+            border-left: 4px solid #a855f7;
             padding-left: 10px;
         }
         .subjects-grid {
@@ -99,10 +105,10 @@
             transition: all 0.25s ease;
         }
         .subject-card:hover {
-            transform: translateY(-3px);
-            border-color: #0284c7;
-            box-shadow: 0 6px 15px rgba(2, 132, 199, 0.15);
-            background-color: #ffffff;
+            transform: translateY(-4px);
+            border-color: #a855f7;
+            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
+            background: linear-gradient(to right, #ffffff, #fdf4ff);
         }
         .subject-info {
             display: flex;
@@ -168,9 +174,130 @@
             font-size: 12px;
             color: #94a3b8;
         }
+
+        /* --- Ultra Colorful & Glowing 3D Welcome Modal --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 25, 0.9);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeInModal 0.5s ease-in-out;
+        }
+
+        .welcome-card-3d {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.85), rgba(76, 29, 149, 0.85));
+            backdrop-filter: blur(25px);
+            border: 2px solid transparent;
+            background-image: linear-gradient(135deg, rgba(30, 27, 75, 0.85), rgba(76, 29, 149, 0.85)), linear-gradient(135deg, #06b6d4, #a855f7, #ec4899);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            padding: 40px 30px;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+            width: 85%;
+            max-width: 390px;
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.15);
+            transform: perspective(1000px) rotateX(15deg) scale(0.85);
+            animation: popUp3D 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .welcome-icon-box {
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6, #ec4899);
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
+            animation: bounceIcon 2s infinite ease-in-out;
+        }
+
+        .welcome-card-3d h2 {
+            font-size: 26px;
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, #67e8f9, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 15px rgba(168, 85, 247, 0.5);
+            font-weight: 800;
+        }
+
+        .welcome-card-3d p {
+            font-size: 14px;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .enter-btn {
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6, #ec4899);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 18px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.8);
+            background: linear-gradient(135deg, #0891b2, #7c3aed, #db2777);
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes popUp3D {
+            to {
+                transform: perspective(1000px) rotateX(0deg) scale(1);
+            }
+        }
+
+        @keyframes bounceIcon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+
+        .hide-modal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            transform: scale(0.9);
+        }
     </style>
 </head>
 <body class="notranslate" translate="no">
+
+    <!-- Ultra Colorful 3D Welcome Popup Modal -->
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="welcome-card-3d">
+            <div class="welcome-icon-box">
+                <i class="fa-solid fa-graduation-cap" style="color: white;"></i>
+            </div>
+            <h2 id="modalTitle">Welcome to Plus One</h2>
+            <p id="modalDesc">Higher Secondary PCMB Study Portal</p>
+            <button class="enter-btn" id="modalBtn" onclick="closeWelcomeModal()">Let's Start 🚀</button>
+        </div>
+    </div>
 
 <div class="container notranslate" translate="no">
 
@@ -280,6 +407,42 @@
 <script>
     let currentLang = 'ml';
 
+    // ദിവ്യദർശനം പോലുള്ള ഒരു മാജിക്കൽ/ഹെവൻലി സൗണ്ട് എഫക്റ്റ് (Magical Arpeggio Chime)
+    function playWelcomeSound() {
+        try {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // മാജിക്കൽ ഫീൽ തരുന്ന നോട്ടുകളുടെ നിര (C Major Arpeggio with high sparkle)
+            const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51]; // C5, E5, G5, C6, E6
+            
+            notes.forEach((freq, index) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime + (index * 0.08));
+                
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime + (index * 0.08));
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + (index * 0.08) + 0.6);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start(audioCtx.currentTime + (index * 0.08));
+                osc.stop(audioCtx.currentTime + (index * 0.08) + 0.6);
+            });
+
+        } catch (e) {
+            console.log("Audio not supported");
+        }
+    }
+
+    function closeWelcomeModal() {
+        playWelcomeSound(); // മാജിക്കൽ സൗണ്ട് പ്ലേ ചെയ്യുന്നു
+        const modal = document.getElementById('welcomeModal');
+        modal.classList.add('hide-modal');
+    }
+
     function toggleLanguage() {
         let mainTitle = document.getElementById('mainTitle');
         let introText = document.getElementById('introText');
@@ -289,6 +452,10 @@
         let badgeChem = document.getElementById('badgeChem');
         let badgeMath = document.getElementById('badgeMath');
         let badgeEng = document.getElementById('badgeEng');
+        
+        let modalTitle = document.getElementById('modalTitle');
+        let modalDesc = document.getElementById('modalDesc');
+        let modalBtn = document.getElementById('modalBtn');
 
         if (currentLang === 'ml') {
             mainTitle.innerText = "Higher Secondary Plus One (PCMB)";
@@ -296,9 +463,14 @@
             secTitle.innerText = "Core Subjects";
             badgeBio.innerText = "Active";
             badgePhy.innerText = "Coming Soon";
-            badgeChem.innerText, badgeChem.innerText = "Coming Soon";
+            badgeChem.innerText = "Coming Soon";
             badgeMath.innerText = "Coming Soon";
-            badgeEng.innerText = "ComingSoon";
+            badgeEng.innerText = "Coming Soon";
+            
+            modalTitle.innerText = "Welcome to Plus One";
+            modalDesc.innerText = "Higher Secondary PCMB Study Portal";
+            modalBtn.innerText = "Let's Start 🚀";
+            
             currentLang = 'en';
         } else {
             mainTitle.innerText = "ഹയർ സെക്കൻഡറി പ്ലസ് വൺ (PCMB)";
@@ -309,6 +481,11 @@
             badgeChem.innerText = "ഉടൻ വരുന്നു";
             badgeMath.innerText = "ഉടൻ വരുന്നു";
             badgeEng.innerText = "ഉടൻ വരുന്നു";
+            
+            modalTitle.innerText = "പ്ലസ് വണ്ണിലേക്ക് സ്വാഗതം";
+            modalDesc.innerText = "ഹയർ സെക്കൻഡറി പി.സി.എം.ബി പഠന പോർട്ടൽ";
+            modalBtn.innerText = "തുടങ്ങാം 🚀";
+            
             currentLang = 'ml';
         }
     }
