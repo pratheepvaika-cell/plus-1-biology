@@ -21,17 +21,17 @@
             background: var(--bg-color); 
             color: var(--text-main); 
             margin: 0; 
-            padding: 20px; 
-            line-height: 1.7; 
+            padding: 10px; 
+            line-height: 1.5; 
             scroll-behavior: smooth; 
         }
 
         .container { 
-            max-width: 900px; 
+            max-width: 950px; 
             margin: auto; 
             background: var(--card-bg); 
-            padding: 40px; 
-            border-radius: 12px; 
+            padding: 15px; 
+            border-radius: 10px; 
             border: 1px solid var(--border-color); 
             box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
             position: relative; 
@@ -40,25 +40,25 @@
         .nav-buttons {
             display: flex;
             justify-content: flex-end;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 15px;
             align-items: center;
             flex-wrap: wrap;
         }
 
         .lang-switch, .workout-btn, .top-home-btn {
-            padding: 0 16px;
+            padding: 0 12px;
             border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             transition: 0.2s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            height: 40px;
+            height: 35px;
             box-sizing: border-box;
             border: 2px solid var(--primary-color) !important;
             background-color: var(--primary-light) !important;
@@ -71,16 +71,16 @@
             color: #ffffff !important;
         }
 
-        .intro-box { background: #eaf2f8; border-left: 4px solid #3498db; padding: 15px; border-radius: 6px; margin-bottom: 25px; font-size: 15px; }
+        .intro-box { background: #eaf2f8; border-left: 4px solid #3498db; padding: 10px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; }
 
         .main-title {
             text-align: center;
             background-color: #f1f5f9;
-            padding: 12px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 13px;
+            margin-bottom: 10px;
             color: var(--text-heading);
             border: 1px solid var(--border-color);
         }
@@ -88,55 +88,58 @@
             text-align: center;
             background-color: #0f172a;
             color: white;
-            padding: 12px;
+            padding: 10px;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
+        /* Side-by-side layout forced for mobile & desktop */
         .flex-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-wrap: nowrap;
+            gap: 10px;
             justify-content: space-between;
+            overflow-x: auto;
+            padding-bottom: 5px;
         }
         .subkingdom-box {
             flex: 1;
-            min-width: 350px;
+            min-width: 0;
             border: 2px solid var(--border-color);
             border-radius: 8px;
-            padding: 15px;
+            padding: 8px;
             background: #fafafa;
         }
         .sub-title-inv {
             text-align: center;
             color: #1d4ed8;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             border-bottom: 2px solid #bfdbfe;
-            padding-bottom: 8px;
-            font-size: 15px;
+            padding-bottom: 5px;
+            font-size: 12px;
         }
         .sub-title-ver {
             text-align: center;
             color: #15803d;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             border-bottom: 2px solid #bbf7d0;
-            padding-bottom: 8px;
-            font-size: 15px;
+            padding-bottom: 5px;
+            font-size: 12px;
         }
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 6px;
         }
         .card, .ver-card {
             background: white;
             border: 1px solid #cbd5e1;
             border-radius: 6px;
-            padding: 12px;
+            padding: 8px 6px;
             text-align: center;
             text-decoration: none;
             color: var(--text-main);
@@ -147,22 +150,29 @@
         .card:hover, .ver-card:hover {
             background-color: var(--primary-light);
             border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .card-title, .ver-title {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 11px;
             color: var(--text-heading);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .card-desc, .ver-desc {
-            font-size: 12px;
+            font-size: 10px;
             color: #64748b;
-            margin-top: 4px;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .ver-card {
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             text-align: left;
+            padding: 9px 8px;
         }
 
         /* Detail Pages */
@@ -177,23 +187,23 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
             gap: 10px;
         }
         .pageHeading {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--text-heading);
             margin: 0;
         }
         .back-btn {
             background-color: #ef4444;
             color: white;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             border: none;
             cursor: pointer;
@@ -203,7 +213,7 @@
 
         .img-container {
             width: 100%;
-            max-height: 280px;
+            max-height: 250px;
             background-color: #f8fafc;
             border: 2px dashed #cbd5e1;
             border-radius: 8px;
@@ -216,29 +226,30 @@
         .animal-image {
             width: 100%;
             height: auto;
-            max-height: 270px;
+            max-height: 240px;
             object-fit: contain;
             cursor: pointer;
             transition: 0.2s;
         }
         .animal-image:hover { opacity: 0.95; }
-        .click-hint { text-align: center; font-size: 12px; color: var(--primary-color); margin-bottom: 20px; font-weight: bold; }
+        .click-hint { text-align: center; font-size: 11px; color: var(--primary-color); margin-bottom: 15px; font-weight: bold; }
 
         .info-box {
             background: #f8fafc;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border-left: 4px solid var(--primary-color);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-color);
+            font-size: 13px;
         }
-        .info-box h3 { margin-top: 0; color: var(--text-heading); font-size: 16px; }
+        .info-box h3 { margin-top: 0; color: var(--text-heading); font-size: 14px; }
 
         .chart-jump-box {
-            margin-top: 30px;
+            margin-top: 20px;
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            padding: 15px 20px;
+            padding: 12px 15px;
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
@@ -249,7 +260,7 @@
             background: linear-gradient(135deg, #1e293b, #334155);
             transform: translateY(-2px);
         }
-        .chart-jump-title { font-size: 15px; font-weight: bold; color: #38bdf8; }
+        .chart-jump-title { font-size: 13px; font-weight: bold; color: #38bdf8; }
 
         /* Modal Popup */
         .modal {
@@ -263,11 +274,6 @@
         }
         .modal-content { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
         .close-modal { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
-
-        @media(max-width: 768px) {
-            .container { padding: 20px; }
-            .grid-cards { grid-template-columns: repeat(1, 1fr); }
-        }
     </style>
 </head>
 <body>
@@ -340,15 +346,15 @@
                 <div class="sub-title-ver" id="sub2Title">SUBKINGDOM: VERTEBRATA (Chordates)</div>
                 <div onclick="showPage('agnatha')" class="ver-card">
                     <div class="ver-title">SUPERCLASS: AGNATHA</div>
-                    <div class="ver-desc">Jawless Fishes (Hagfish, Lamprey)</div>
+                    <div class="ver-desc">Jawless Fishes</div>
                 </div>
                 <div onclick="showPage('pisces')" class="ver-card">
                     <div class="ver-title">CLASS: PISCES (Fish)</div>
-                    <div class="ver-desc">True Fishes (Salmon, Shark)</div>
+                    <div class="ver-desc">True Fishes</div>
                 </div>
                 <div onclick="showPage('tetrapoda')" class="ver-card">
                     <div class="ver-title">CLASS: TETRAPODA</div>
-                    <div class="ver-desc">Amphibia, Reptilia, Aves, Mammalia</div>
+                    <div class="ver-desc">Amphibia, Reptilia...</div>
                 </div>
             </div>
         </div>
