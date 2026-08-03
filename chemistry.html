@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ml" class="notranslate" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>Chemistry - Higher Secondary Plus One (PCMB)</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(249, 115, 22, 0.2);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .back-btn {
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #e2e8f0;
+        }
+        .lang-btn {
+            background: linear-gradient(135deg, #f97316, #ef4444);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.5);
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .curriculum-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffedd5, #fee2e2);
+            color: #c2410c;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(194, 65, 12, 0.1);
+        }
+        h1 {
+            font-size: 26px;
+            background: linear-gradient(135deg, #ea580c, #dc2626, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+            color: white;
+            padding: 18px 20px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 15px;
+            border-left: 4px solid #f97316;
+            padding-left: 10px;
+        }
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .chapter-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 16px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        .chapter-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 0; /* Important for text truncation */
+        }
+        .chapter-text {
+            flex: 1;
+            min-width: 0;
+        }
+        .chapter-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0f172a;
+            white-space: normal; /* Text wrap ആവാൻ വേണ്ടി */
+            word-break: break-word;
+        }
+        .chapter-desc {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
+            white-space: normal;
+        }
+        .status-badge {
+            font-size: 10px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .badge-active {
+            background-color: #ffedd5;
+            color: #c2410c;
+        }
+        .badge-soon {
+            background-color: #e2e8f0;
+            color: #64748b;
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="notranslate" translate="no">
+
+<div class="container notranslate" translate="no">
+
+    <div class="top-bar">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <button class="lang-btn" onclick="toggleLanguage()">English / മലയാളം</button>
+    </div>
+
+    <div class="header-section">
+        <div class="curriculum-tag">CBSE / NCERT CURRICULUM</div>
+        <h1 id="mainTitle">Chemistry - Plus One (PCMB)</h1>
+    </div>
+
+    <div class="intro-box" id="introText">
+        🧪 കെമിസ്ട്രി പഠന പോർട്ടലിലേക്ക് സ്വാഗതം! താഴെയുള്ള യൂണിറ്റുകളിൽ നിന്ന് ചാപ്റ്ററുകൾ തിരഞ്ഞെടുക്കുക.
+    </div>
+
+    <div class="section-title" id="secTitle">Units & Chapters (യൂണിറ്റുകൾ)</div>
+
+    <div class="chapters-grid">
+        <!-- Unit 1 -->
+        <a href="chemistry chapters/chapter1.html" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-atom"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 1: Some Basic Concepts</div>
+                    <div class="chapter-desc">Mole Concept & Stoichiometry</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-active">Active</span></div>
+        </a>
+
+        <!-- Unit 2 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-circle-nodes"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 2: Structure of Atom</div>
+                    <div class="chapter-desc">Quantum Numbers & Orbitals</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 3 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 3: Classification of Elements</div>
+                    <div class="chapter-desc">Periodic Table & Properties</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 4 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 4: Chemical Bonding</div>
+                    <div class="chapter-desc">VSEPR Theory & Molecular Shape</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 5 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-temperature-high"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 5: Chemical Thermodynamics</div>
+                    <div class="chapter-desc">Enthalpy, Entropy & Gibbs Energy</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 6 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 6: Equilibrium</div>
+                    <div class="chapter-desc">Chemical & Ionic Equilibrium</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 7 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 7: Redox Reactions</div>
+                    <div class="chapter-desc">Oxidation & Reduction</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 8 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-flask"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 8: Organic Chemistry</div>
+                    <div class="chapter-desc">Basic Principles & Techniques</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+
+        <!-- Unit 9 -->
+        <a href="#" class="chapter-card">
+            <div class="chapter-info">
+                <div class="icon-box"><i class="fa-solid fa-fire"></i></div>
+                <div class="chapter-text">
+                    <div class="chapter-name">Unit 9: Hydrocarbons</div>
+                    <div class="chapter-desc">Alkanes, Alkenes & Alkynes</div>
+                </div>
+            </div>
+            <div><span class="status-badge badge-soon">Soon</span></div>
+        </a>
+    </div>
+
+    <div class="footer-text">
+        NCERT Study Hub © 2026. All rights reserved.
+    </div>
+
+</div>
+
+<script>
+    let currentLang = 'ml';
+
+    function toggleLanguage() {
+        let mainTitle = document.getElementById('mainTitle');
+        let introText = document.getElementById('introText');
+        let secTitle = document.getElementById('secTitle');
+        
+        if (currentLang === 'ml') {
+            mainTitle.innerText = "Chemistry - Plus One (PCMB)";
+            introText.innerText = "🧪 Welcome to Chemistry Portal! Select your units and chapters below.";
+            secTitle.innerText = "Units & Chapters";
+            currentLang = 'en';
+        } else {
+            mainTitle.innerText = "കെമിസ്ട്രി - പ്ലസ് വൺ (PCMB)";
+            introText.innerText = "🧪 കെമിസ്ട്രി പഠന പോർട്ടലിലേക്ക് സ്വാഗതം! താഴെയുള്ള യൂണിറ്റുകളിൽ നിന്ന് ചാപ്റ്ററുകൾ തിരഞ്ഞെടുക്കുക.";
+            secTitle.innerText = "യൂണിറ്റുകൾ (Units & Chapters)";
+            currentLang = 'ml';
+        }
+    }
+</script>
+
+</body>
+</html>
