@@ -1,367 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ml" class="notranslate" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: The Living World - Complete Study Notes</title>
-    <!-- FontAwesome Icons for Modern Design -->
+    <meta name="google" content="notranslate">
+    <title>Unit 1: Some Basic Concepts of Chemistry</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, sans-serif; 
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
-            color: #334155; 
-            margin: 0; 
-            padding: 20px; 
-            line-height: 1.7; 
-            scroll-behavior: smooth; 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #333;
             min-height: 100vh;
         }
-        .container { 
-            max-width: 900px; 
-            margin: auto; 
-            background: #ffffff; 
-            padding: 40px; 
-            border-radius: 20px; 
-            border: 1px solid #e2e8f0; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-            position: relative; 
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(249, 115, 22, 0.2);
         }
-        
-        .nav-buttons {
+        .top-bar {
             display: flex;
-            gap: 12px;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
-            justify-content: flex-end;
-            flex-wrap: wrap;
+            margin-bottom: 15px;
         }
-
-        .lang-switch, .workout-btn {
-            padding: 0 18px;
+        .back-btn {
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 8px 14px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
             font-size: 13px;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: bold;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            height: 40px;
-            box-sizing: border-box;
-            border: 2px solid #2563eb !important;
-            background-color: #eff6ff !important;
-            color: #2563eb !important;
-            white-space: nowrap;
+            gap: 6px;
+            transition: background 0.2s;
         }
-        
-        .lang-switch:hover, .workout-btn:hover {
-            background-color: #2563eb !important;
-            color: #ffffff !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        .back-btn:hover {
+            background: #e2e8f0;
         }
-
-        h1 { 
-            color: #0f172a; 
-            font-size: 24px; 
-            border-bottom: 2px solid #f1f5f9; 
-            padding-bottom: 15px; 
-            margin-top: 0; 
-            margin-bottom: 25px; 
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
         }
-        h2 { 
-            font-size: 17px; 
-            margin-top: 35px; 
-            color: #1e293b; 
-            background: #f1f5f9; 
-            padding: 12px 18px; 
-            border-radius: 8px; 
-            border-left: 4px solid #2563eb; 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        h3 { font-size: 15px; color: #334155; margin-top: 20px; }
-        
-        p, li { font-size: 15px; }
-        ul { margin-bottom: 20px; }
-
-        .note-section { margin-bottom: 30px; }
-        
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 25px 0; 
-            font-size: 13px; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
-            background-color: #ffffff !important; 
-        }
-        th, td { 
-            border: 1px solid #e2e8f0 !important; 
-            padding: 12px 15px; 
-            text-align: left; 
-            color: #334155 !important; 
-            background-color: #ffffff !important;
-        }
-        th { 
-            background: #f8fafc !important; 
-            color: #0f172a !important; 
-            font-weight: bold; 
-        }
-        tr:nth-child(even) td { 
-            background-color: #fdfdfd !important; 
-        }
-        tr:hover td { 
-            background-color: #f1f5f9 !important; 
-        }
-
-        .concept-box { 
-            background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%); 
-            border-left: 5px solid #2563eb; 
-            padding: 22px; 
-            border-radius: 10px; 
-            margin: 25px 0; 
-            font-size: 14px; 
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
-        }
-        
-        .scientist-box { 
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); 
-            border-left: 5px solid #16a34a; 
-            padding: 22px; 
-            border-radius: 10px; 
-            margin: 25px 0; 
-            font-size: 14px; 
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.08);
-        }
-
-        .highlight-term {
-            background-color: #fef08a;
-            color: #713f12;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .highlight-tag {
+        .curriculum-tag {
             display: inline-block;
-            background: #dcfce7;
-            color: #166534;
-            padding: 2px 8px;
-            border-radius: 6px;
+            background: linear-gradient(135deg, #ffedd5, #fee2e2);
+            color: #c2410c;
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(194, 65, 12, 0.1);
         }
-
-        .back-link { 
-            display: inline-flex; 
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(135deg, #ea580c, #dc2626, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+            color: white;
+            padding: 18px 20px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 15px;
+            border-left: 4px solid #f97316;
+            padding-left: 10px;
+        }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+        .topic-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px;
+            display: flex;
             align-items: center;
-            gap: 8px;
-            margin-top: 30px; 
-            text-decoration: none; 
-            color: #fff; 
-            background: #64748b; 
-            padding: 12px 20px; 
-            border-radius: 8px; 
-            font-weight: 600; 
-            font-size: 14px; 
-            transition: background 0.2s, transform 0.2s;
+            gap: 14px;
+            transition: all 0.25s ease;
         }
-        .back-link:hover { 
-            background: #475569; 
-            transform: translateY(-2px);
+        .topic-card:hover {
+            transform: translateY(-4px);
+            border-color: #f97316;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+            background: linear-gradient(to right, #ffffff, #fff7ed);
         }
-
-        .lang-en { display: none; }
-        .lang-ml { display: block; }
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: #ffedd5; 
+            color: #c2410c;
+        }
+        .topic-text {
+            min-width: 0;
+        }
+        .topic-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0f172a;
+        }
+        .topic-desc {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
     </style>
 </head>
-<body>
+<body class="notranslate" translate="no">
 
-    <div class="container">
-        <div class="nav-buttons">
-            <a href="workout_q1.html" class="workout-btn">
-                <i class="fa-solid fa-dumbbell"></i>
-                <span class="lang-ml">വർക്ക്ഔട്ട് & എക്സർസൈസ്</span>
-                <span class="lang-en">Workout & Exercises</span>
-            </a>
-            <button class="lang-switch" onclick="toggleLanguage()">
-                <i class="fa-solid fa-globe"></i>
-                <span class="lang-ml">Switch to English</span>
-                <span class="lang-en">മലയാളത്തിലേക്ക്</span>
-            </button>
-        </div>
+<div class="container notranslate" translate="no">
 
-        <h1 class="lang-ml">ചാപ്റ്റർ 1: ജീവിതലോകം (സമ്പൂർണ്ണ പഠനക്കുറിപ്പുകൾ)</h1>
-        <h1 class="lang-en">Chapter 1: The Living World (Complete Study Notes)</h1>
-        
-        <div class="note-section">
-            <div class="scientist-box">
-                <span class="lang-ml highlight-tag"><i class="fa-solid fa-award"></i> പ്രമുഖ ശാസ്ത്രജ്ഞൻ (Notable Scientist)</span>
-                <span class="lang-en highlight-tag"><i class="fa-solid fa-award"></i> Notable Scientist</span>
-                <p class="lang-ml" style="margin-top:6px;"><strong>പ്രത്യേക ശ്രദ്ധയ്ക്ക് (Ernst Mayr):</strong> ഹാർവാർഡ് സർവ്വകലാശാലയിലെ പരിണാമ ജീവശാസ്ത്രജ്ഞനായ <span class="highlight-term">എർൺസ്റ്റ് മേയർ (1904-2004)</span> <span style="color: #166534; font-weight: bold;">'20-ാം നൂറ്റാണ്ടിലെ ഡാർവിൻ'</span> എന്നറിയപ്പെടുന്നു. സ്പീഷിസിന്റെ ആധുനിക നിർവചനം നൽകിയത് അദ്ദേഹമാണ്.</p>
-                <p class="lang-en" style="margin-top:6px;"><strong>Notable Scientist (Ernst Mayr):</strong> Ernst Mayr (1904–2004), the Harvard evolutionary biologist, has been called <span style="color: #166534; font-weight: bold;">'The Darwin of the 20th century'</span>. He pioneered the currently accepted definition of a biological species.</p>
-            </div>
-
-            <h2 class="lang-ml"><i class="fa-solid fa-heart-pulse" style="color: #2563eb;"></i> 1. എന്താണ് ജീവൻ? (What is Living?)</h2>
-            <h2 class="lang-en"><i class="fa-solid fa-heart-pulse" style="color: #2563eb;"></i> 1. What is Living?</h2>
-            <p class="lang-ml">ജീവനുള്ളവയുടെ പ്രധാന ലക്ഷണങ്ങൾ: വളർച്ച (Growth), പ്രജനനം (Reproduction), മെറ്റബോളിസം (Metabolism), കോശഘടന (Cellular organization), ബോധക്ഷമത (Consciousness).</p>
-            <p class="lang-en">Key features: Growth, Reproduction, Metabolism, Cellular organization, and Consciousness.</p>
-            <ul>
-                <li class="lang-ml"><strong>വളർച്ച (Growth):</strong> പിണ്ഡത്തിലെ വർദ്ധനവും എണ്ണത്തിലെ വർദ്ധനവും വളർച്ചയുടെ ഇരട്ട ലക്ഷണങ്ങളാണ്. സസ്യങ്ങളിൽ വളർച്ച ആജീവനാന്തവും ജന്തുക്കളിൽ ഒരു നിശ്ചിത വയസ്സു വരെയും മാത്രമാണ്. നിർജീവ വസ്തുക്കളും (മലകൾ, മണൽക്കൂനകൾ) ബാഹ്യമായി പദാർത്ഥങ്ങൾ അടിഞ്ഞുകൂടി വളർച്ച കാണിക്കാറുണ്ട്. അതിനാൽ <span style="color: #dc2626; font-weight: bold;">വളർച്ച ജീവന്റെ നിർവചിക്കപ്പെട്ട ലക്ഷണമല്ല (Not a defining property)</span>.</li>
-                <li class="lang-en"><strong>Growth:</strong> Increase in mass and increase in number of individuals are twin characteristics of growth. Non-living objects also grow if we take increase in body mass as criteria. Hence, growth is <span style="color: #dc2626; font-weight: bold;">not a defining property</span> of living organisms.</li>
-
-                <li class="lang-ml"><strong>പ്രജനനം (Reproduction):</strong> സ്വന്തം വർഗ്ഗത്തെ നിലനിർത്താൻ പുതിയ ജീവികളെ ഉത്പാദിപ്പിക്കുന്നു. എന്നാൽ മ്യൂളുകൾ (Mules), വന്ധ്യരായ തൊഴിലാളി തേനീച്ചകൾ, വന്ധ്യരായ മനുഷ്യ ദമ്പതികൾ എന്നിവർക്ക് പ്രജനനം നടത്താൻ കഴിയില്ല. അതിനാൽ <span style="color: #dc2626; font-weight: bold;">പ്രജനനവും ജീവന്റെ നിർവചിക്കപ്പെട്ട ലക്ഷണമല്ല</span>.</li>
-                <li class="lang-en"><strong>Reproduction:</strong> In multicellular organisms, reproduction refers to the production of progeny. However, many organisms do not reproduce (e.g., mules, sterile worker bees). Hence, reproduction is <span style="color: #dc2626; font-weight: bold;">not an all-inclusive defining property</span>.</li>
-
-                <li class="lang-ml"><strong>മെറ്റബോളിസം (Metabolism):</strong> ശരീരത്തിനകത്ത് നടക്കുന്ന എല്ലാ രാസപ്രവർത്തനങ്ങളുടെയും ആകെത്തുകയാണ് മെറ്റബോളിസം. നിർജീവ വസ്തുക്കളിൽ മെറ്റബോളിസം നടക്കുന്നില്ല. അതിനാൽ ഇത് <span style="color: #2563eb; font-weight: bold;">ഒരു അപവാദവുമില്ലാത്ത നിർവചിക്കപ്പെട്ട ലക്ഷണമാണ് (Defining property without exception)</span>.</li>
-                <li class="lang-en"><strong>Metabolism:</strong> All living organisms are made of chemicals. The sum total of all chemical reactions occurring in our body is metabolism. It is a <span style="color: #2563eb; font-weight: bold;">defining feature of all living organisms</span> without exception.</li>
-
-                <li class="lang-ml"><strong>ബോധക്ഷമത (Consciousness):</strong> ചുറ്റുമുള്ള പരിസ്ഥിതിയെയോ ഉത്തേജനങ്ങളെയോ (Light, water, temperature, other organisms) അറിയാനും പ്രതികരിക്കാനുമുള്ള ഏറ്റവും പ്രധാനപ്പെട്ട ലക്ഷണമാണിത്. ഇത് ജീവന്റെ ഏറ്റവും സങ്കീർണ്ണവും വ്യക്തവുമായ നിർവചിക്കപ്പെട്ട ലക്ഷണമാണ്.</li>
-                <li class="lang-en"><strong>Consciousness:</strong> The most obvious and technically complicated feature of all living organisms is this ability to sense their surroundings and respond to environmental stimuli.</li>
-            </ul>
-
-            <h2 class="lang-ml"><i class="fa-solid fa-sitemap" style="color: #2563eb;"></i> 2. ജൈവവൈവിധ്യവും നാമകരണവും (Diversity & Nomenclature)</h2>
-            <h2 class="lang-en"><i class="fa-solid fa-sitemap" style="color: #2563eb;"></i> 2. Diversity and Nomenclature</h2>
-            <ul>
-                <li class="lang-ml">ഭൂമിയിൽ ഇതുവരെ തിരിച്ചറിഞ്ഞ സ്പീഷിസുകളുടെ എണ്ണം <span class="highlight-term">1.7 - 1.8 ദശലക്ഷം</span> ആണ് (Biodiversity).</li>
-                <li class="lang-en">Total number of known and described species is between <span class="highlight-term">1.7-1.8 million</span>.</li>
-                <li class="lang-ml"><strong>ICBN:</strong> സസ്യങ്ങളുടെ ശാസ്ത്രീയ നാമകരണത്തിനുള്ള അന്താരാഷ്ട്ര കോഡ് <span style="color: #475569; font-style: italic;">(International Code for Botanical Nomenclature)</span>.</li>
-                <li class="lang-en"><strong>ICBN:</strong> International Code for Botanical Nomenclature.</li>
-                <li class="lang-ml"><strong>ICZN:</strong> ജന്തുക്കളുടെ നാമകരണത്തിനുള്ള അന്താരാഷ്ട്ര കോഡ് <span style="color: #475569; font-style: italic;">(International Code of Zoological Nomenclature)</span>.</li>
-                <li class="lang-en"><strong>ICZN:</strong> International Code of Zoological Nomenclature.</li>
-                <li class="lang-ml"><strong>ഇരുനാമ നാമകരണം (Binomial Nomenclature):</strong> <span style="color: #2563eb; font-weight: bold;">കാർലൂസ് ലിന്നേയസ്</span> ആവിഷ്കരിച്ചത്. ഇതിൽ ജീനസും (Genus), സ്പീഷിസും (Species) അടങ്ങിയിരിക്കുന്നു. പ്രധാന നിയമങ്ങൾ: ലാറ്റിൻ ഭാഷയിൽ ഇറ്റാലിക്സ് ആയി എഴുതണം, കൈകൊണ്ട് എഴുതുമ്പോൾ അടിവരയിടണം, ജീനസ് പേര് വലിയക്ഷരത്തിലും സ്പീഷിസ് ചെറിയക്ഷരത്തിലും തുടങ്ങണം (ഉദാ: <i>Mangifera indica</i> Linn.).</li>
-                <li class="lang-en"><strong>Binomial Nomenclature:</strong> Given by <span style="color: #2563eb; font-weight: bold;">Carolus Linnaeus</span>. Consists of Generic name and specific epithet (e.g., <i>Mangifera indica</i> Linn.). Written in Latin and italicized; handwritten names are underlined.</li>
-            </ul>
-
-            <h2 class="lang-ml"><i class="fa-solid fa-layer-group" style="color: #2563eb;"></i> 3. ടാക്സോണമിക് കാറ്റഗറികളും ഹൈറാർജിയും - സമഗ്ര വിശകലനം (Taxonomic Categories & Hierarchy)</h2>
-            <h2 class="lang-en"><i class="fa-solid fa-layer-group" style="color: #2563eb;"></i> 3. Taxonomic Categories & Hierarchy - Detailed Analysis</h2>
-            
-            <p class="lang-ml">വർഗ്ഗീകരണം എന്നത് ഒറ്റപ്പെട്ട ഒരു പ്രക്രിയയല്ല, മറിച്ച് പടവുകളായുള്ള ക്രമീകരണമാണ് (Hierarchy). ഓരോ പടിയെയും <strong>റാങ്ക് അല്ലെങ്കിൽ കാറ്റഗറി</strong> എന്ന് വിളിക്കുന്നു. ഈ കാറ്റഗറികളുടെ പൊതുവായ യൂണിറ്റാണ് <span class="highlight-term">ടാക്സോൺ (Taxon)</span>.</p>
-            <p class="lang-en">Classification is not a single step process but involves a hierarchy of steps where each step represents a rank or category, known as taxonomic category and taxon.</p>
-
-            <div class="concept-box">
-                <h3 class="lang-ml" style="margin-top:0; color:#1e40af;"><i class="fa-solid fa-lightbulb"></i> ഈ ഹൈറാർജി ഓർമ്മിക്കാൻ (Ascending Order):</h3>
-                <h3 class="lang-en" style="margin-top:0; color:#1e40af;"><i class="fa-solid fa-lightbulb"></i> Taxonomic Hierarchy (Ascending Order):</h3>
-                
-                <p class="lang-ml" style="background: #ffffff; padding: 10px; border-radius: 6px; font-weight: bold; color: #1e40af; border: 1px dashed #93c5fd;">
-                    Species (സ്പീഷിസ്) ➔ Genus (ജീനസ്) ➔ Family (ഫാമിലി) ➔ Order (ഓർഡർ) ➔ Class (ക്ലാസ്) ➔ Phylum/Division (ഫൈലം/ഡിവിഷൻ) ➔ Kingdom (കിങ്ഡം)
-                </p>
-                <p class="lang-en" style="background: #ffffff; padding: 10px; border-radius: 6px; font-weight: bold; color: #1e40af; border: 1px dashed #93c5fd;">
-                    Species ➔ Genus ➔ Family ➔ Order ➔ Class ➔ Phylum/Division ➔ Kingdom
-                </p>
-
-                <p class="lang-ml"><strong>സവിശേഷതകളുടെ മാറ്റം (Rule of Common Characteristics):</strong> താഴെ നിന്ന് മുകളിലേക്ക് പോകുമ്പോൾ (Species ➔ Kingdom) ജീവികൾ തമ്മിലുള്ള പൊതുവായ സവിശേഷതകൾ <span style="color: #dc2626; font-weight: bold;">കുറഞ്ഞുവരുന്നു</span>. സ്പീഷിസ് തലത്തിലാണ് ഏറ്റവും കൂടുതൽ സാദൃശ്യങ്ങളുള്ളത്.</p>
-                <p class="lang-en">As we go higher from species to kingdom, the number of common characteristics <span style="color: #dc2626; font-weight: bold;">goes on decreasing</span>. Lower the taxa, more are the characteristics that the members share.</p>
-            </div>
-
-            <h2 class="lang-ml"><i class="fa-solid fa-table" style="color: #2563eb;"></i> 4. പ്രധാനപ്പെട്ട ജീവികളുടെ വർഗ്ഗീകരണ പട്ടിക (Table 1.1)</h2>
-            <h2 class="lang-en"><i class="fa-solid fa-table" style="color: #2563eb;"></i> 4. Taxonomic Categories Table</h2>
-            <table>
-                <tr>
-                    <th>Common Name</th>
-                    <th>Biological Name</th>
-                    <th>Genus</th>
-                    <th>Family</th>
-                    <th>Order</th>
-                    <th>Class</th>
-                    <th>Phylum/Division</th>
-                </tr>
-                <tr>
-                    <td><strong>Man (മനുഷ്യൻ)</strong></td>
-                    <td><i>Homo sapiens</i></td>
-                    <td>Homo</td>
-                    <td>Hominidae</td>
-                    <td>Primata</td>
-                    <td>Mammalia</td>
-                    <td>Chordata</td>
-                </tr>
-                <tr>
-                    <td><strong>Housefly (ഈച്ച)</strong></td>
-                    <td><i>Musca domestica</i></td>
-                    <td>Musca</td>
-                    <td>Muscidae</td>
-                    <td>Diptera</td>
-                    <td>Insecta</td>
-                    <td>Arthropoda</td>
-                </tr>
-                <tr>
-                    <td><strong>Mango (മാവ്)</strong></td>
-                    <td><i>Mangifera indica</i></td>
-                    <td>Mangifera</td>
-                    <td>Anacardiaceae</td>
-                    <td>Sapindales</td>
-                    <td>Dicotyledonae</td>
-                    <td>Angiospermae</td>
-                </tr>
-                <tr>
-                    <td><strong>Wheat (ഗോതമ്പ്)</strong></td>
-                    <td><i>Triticum aestivum</i></td>
-                    <td>Triticum</td>
-                    <td>Poaceae</td>
-                    <td>Poales</td>
-                    <td>Monocotyledonae</td>
-                    <td>Angiospermae</td>
-                </tr>
-            </table>
-
-            <h2 class="lang-ml"><i class="fa-solid fa-book-bookmark" style="color: #2563eb;"></i> 5. ടാക്സോണമിക് സഹായ ഉപകരണങ്ങൾ (Taxonomic Aids)</h2>
-            <h2 class="lang-en"><i class="fa-solid fa-book-bookmark" style="color: #2563eb;"></i> 5. Taxonomic Aids</h2>
-            <ul>
-                <li class="lang-ml"><strong>ഹെർബേറിയം (Herbarium):</strong> സസ്യജാലങ്ങളെ ശേഖരിച്ച് ഉണക്കി, പ്രസ് ചെയ്ത് ഷീറ്റുകളിൽ സൂക്ഷിക്കുന്ന സ്ഥലം. ലേബലിൽ തീയതി, സ്ഥലം, ഇംഗ്ലീഷ്/સ્થానిక പേര്, ശാസ്ത്രീയ നാമം, കളക്ടറുടെ പേര് എന്നിവ ഉണ്ടായിരിക്കും.</li>
-                <li class="lang-en"><strong>Herbarium:</strong> Storehouse of plant specimens collected, dried, pressed, and preserved on sheets with proper labels indicating date, place of collection, English/local names, botanical name, and collector's name.</li>
-
-                <li class="lang-ml"><strong>ബൊട്ടാണിക്കൽ ഗാർഡൻ (Botanical Gardens):</strong> തിരിച്ചറിയലിനായി ജീവനുള്ള സസ്യങ്ങളെ സംരക്ഷിക്കുന്ന ഉദ്യാനങ്ങൾ (ഉദാ: ക്യൂ ഗാർഡൻ - ഇംഗ്ലണ്ട്, ഇന്ത്യൻ ബൊട്ടാണിക്കൽ ഗാർഡൻ - ഹൗറ).</li>
-                <li class="lang-en"><strong>Botanical Gardens:</strong> Specialized collections of living plants for reference (e.g., Kew Botanical Garden in England).</li>
-
-                <li class="lang-ml"><strong>മ്യൂസിയം (Museum):</strong> സസ്യങ്ങളുടെയും ജന്തുക്കളുടെയും മാതൃകകൾ പ്രിസർവേറ്റീവ് ലായണികളിൽ ജാറുകളിലോ പ്രാണികളെ പെട്ടികളിലോ (Insect boxes) സൂക്ഷിക്കുന്ന സ്ഥലം.</li>
-                <li class="lang-en"><strong>Museum:</strong> Specimens of plants and animals preserved in containers or jars in preservative solutions, or insect boxes after pinning.</li>
-
-                <li class="lang-ml"><strong>സൂോളജിക്കൽ പാർക്കുകൾ (Zoological Parks):</strong> വന്യജീവികളെ മനുഷ്യന്റെ സംരക്ഷണത്തിൽ സ്വാഭാവിക ആവാസവ്യവസ്ഥയോട് സാദൃശ്യമുള്ളProtected environments-ൽ സംരക്ഷിക്കുന്ന സ്ഥലങ്ങൾ.</li>
-                <li class="lang-en"><strong>Zoological Parks:</strong> Places where wild animals are kept in protected environments under human care enabling us to learn about their food habits and behavior.</li>
-
-                <li class="lang-ml"><strong>കീ (Key):</strong> സസ്യങ്ങളെയും ജന്തുക്കളെയും തിരിച്ചറിയാൻ ഉപയോഗിക്കുന്ന അനലിറ്റിക്കൽ ഉപകരണം. ഇത് വിരുദ്ധ സ്വഭാവങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ളതാണ് (Based on contrasting characters). ഇതിലെ ജോഡി സ്വഭാവങ്ങളെ <span class="highlight-term">കപ്ലറ്റ് (Couplet)</span> എന്നും ഓരോ സ്റ്റേറ്റ്‌മെന്റിനെ <span class="highlight-term">ലീഡ് (Lead)</span> എന്നും വിളിക്കുന്നു.</li>
-                <li class="lang-en"><strong>Key:</strong> Taxonomic aid used for identification based on contrasting characters. Each statement in the key is called a <span class="highlight-term">lead</span>, and the pair of contrasting characters is called a <span class="highlight-term">couplet</span>.</li>
-            </ul>
-        </div>
-
-        <a href="../biology.html" class="back-link lang-ml"><i class="fa-solid fa-arrow-left"></i> ബയോളജി ഇൻഡക്സിലേക്ക് മടങ്ങുക</a>
-        <a href="../biology.html" class="back-link lang-en"><i class="fa-solid fa-arrow-left"></i> Back to Biology Index</a>
+    <div class="top-bar">
+        <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Chapters</a>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const currentLang = localStorage.getItem('preferredLang') || 'ml';
-            applyLanguage(currentLang);
-        });
+    <div class="header-section">
+        <div class="curriculum-tag">UNIT 1 - CBSE / NCERT</div>
+        <h1>Some Basic Concepts of Chemistry</h1>
+    </div>
 
-        function toggleLanguage() {
-            const currentLang = localStorage.getItem('preferredLang') || 'ml';
-            const newLang = currentLang === 'ml' ? 'en' : 'ml';
-            
-            localStorage.setItem('preferredLang', newLang);
-            applyLanguage(newLang);
-        }
+    <div class="intro-box">
+        🧪 ഈ യൂണിറ്റിൽ ദ്രവ്യത്തിന്റെ സ്വഭാവങ്ങൾ, രാസസംയോജന നിയമങ്ങൾ, മോൾ സങ്കല്പം എന്നിവ പഠിക്കാം.
+    </div>
 
-        function applyLanguage(lang) {
-            const mlElements = document.querySelectorAll('.lang-ml');
-            const enElements = document.querySelectorAll('.lang-en');
+    <div class="section-title">Core Topics (പ്രധാന ഭാഗങ്ങൾ)</div>
 
-            if (lang === 'en') {
-                mlElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-            } else {
-                enElements.forEach(el => el.style.display = 'none');
-                mlElements.forEach(el => el.style.display = 'block');
-            }
-        }
-    </script>
+    <div class="topics-grid">
+        <!-- Topic 1 -->
+<a href="nature of matter.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="topic-card">
+        <div class="icon-box"><i class="fa-solid fa-cube"></i></div>
+        <div class="topic-text">
+            <div class="topic-name">Nature of Matter</div>
+            <div class="topic-desc">States of matter & properties</div>
+        </div>
+    </div> </a>
+
+        <!-- Topic 2 -->
+        <div class="topic-card">
+            <div class="icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="topic-text">
+                <div class="topic-name">Chemical Combination</div>
+                <div class="topic-desc">Laws of mass & proportions</div>
+            </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="topic-card">
+            <div class="icon-box"><i class="fa-solid fa-atom"></i></div>
+            <div class="topic-text">
+                <div class="topic-name"><a href="charging syst.html" style="text-decoration: none; color: inherit;">Atomic & Molecular Mass</a></div>
+                <div class="topic-desc">Carbon-12 scale & calculations</div>
+            </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="topic-card">
+            <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
+            <div class="topic-text">
+                <div class="topic-name">Mole Concept</div>
+                <div class="topic-desc">Avogadro constant & molar mass</div>
+            </div>
+        </div>
+
+        <!-- Topic 5 -->
+        <div class="topic-card">
+            <div class="icon-box"><i class="fa-solid fa-percent"></i></div>
+            <div class="topic-text">
+                <div class="topic-name">Stoichiometry</div>
+                <div class="topic-desc">Reactants & limiting reagents</div>
+            </div>
+        </div>
+
+        <!-- Topic 6 -->
+        <div class="topic-card">
+            <div class="icon-box"><i class="fa-solid fa-flask-vial"></i></div>
+            <div class="topic-text">
+                <div class="topic-name">Concentration Terms</div>
+                <div class="topic-desc">Molarity, Molality & Mole fraction</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-text">
+        NCERT Study Hub © 2026. All rights reserved.
+    </div>
+
+</div>
+
 </body>
 </html>
