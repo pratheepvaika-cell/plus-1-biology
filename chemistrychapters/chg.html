@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ml" class="notranslate" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>CBSE Class 11 Chemistry - Thomson's e/m Experiment</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- MathJax for Formulas -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .back-btn {
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .lang-switch { display: flex; gap: 8px; }
+        .lang-btn {
+            background: #e2e8f0;
+            color: #1e293b;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .lang-btn.active { background: #f97316; color: white; }
+        .header-section { text-align: center; margin-bottom: 25px; }
+        .curriculum-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffedd5, #fee2e2);
+            color: #c2410c;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(135deg, #ea580c, #dc2626, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .experiment-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .experiment-grid { grid-template-columns: 1fr; }
+        }
+        .diagram-container {
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .diagram-container svg {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+        }
+        .diagram-caption {
+            font-size: 13px;
+            color: #1e293b;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .info-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px;
+        }
+        .info-box h3 { margin-top: 0; color: #c2410c; font-size: 18px; }
+        .info-list { list-style: none; padding: 0; margin: 0; }
+        .info-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+        }
+        .info-item:hover { background: #fff7ed; border-color: #fdba74; }
+        .info-item.highlighted {
+            background: #ffedd5;
+            border-color: #f97316;
+            box-shadow: 0 3px 10px rgba(249, 115, 22, 0.2);
+            font-weight: bold;
+            color: #c2410c;
+        }
+        .info-item strong { display: block; color: #9a3412; margin-bottom: 3px; }
+        .calc-box {
+            margin-top: 20px;
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+        .calc-box h4 { margin: 0 0 10px 0; color: #0369a1; }
+        .formula { text-align: center; font-size: 15px; margin: 10px 0; color: #0284c7; font-weight: bold; }
+        .footer-text { text-align: center; margin-top: 30px; font-size: 12px; color: #94a3b8; }
+        .control-btns {
+            margin-top: 20px;
+            text-align: center;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .btn {
+            background: #f97316;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .btn-secondary { background: #64748b; }
+    </style>
+</head>
+<body class="notranslate" translate="no">
+
+<div class="container notranslate" translate="no" id="mainContainer">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="#" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 
+            <span class="lang-ml">അധ്യായങ്ങളിലേക്ക് മടങ്ങുക</span><span class="lang-en" style="display:none;">Back to Chapters</span>
+        </a>
+        <div class="lang-switch">
+            <button class="lang-btn active" id="btnMl" onclick="setLanguage('ml')">മലയാളം</button>
+            <button class="lang-btn" id="btnEn" onclick="setLanguage('en')">English</button>
+        </div>
+    </div>
+
+    <div class="header-section">
+        <div class="curriculum-tag">CBSE CLASS 11 CHEMISTRY - STRUCTURE OF ATOM</div>
+        <h1>
+            <span class="lang-ml">തോംസണിന്റെ ഇലക്ട്രോൺ ചാർജ്-മാസ് അനുപാത പരീക്ഷണം</span>
+            <span class="lang-en" style="display:none;">Thomson's e/m Ratio Experiment</span>
+        </h1>
+    </div>
+
+    <!-- Experiment Section with Recreated Vector Diagram -->
+    <div class="experiment-grid">
+        <!-- Diagram Container (SVG recreation of Fig 2.2) -->
+        <div class="diagram-container">
+            <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background -->
+                <rect width="600" height="320" fill="#fafafa" rx="10"/>
+                
+                <!-- Cathode Ray Tube Outline -->
+                <path d="M 30 150 Q 30 110 70 110 L 150 110 L 220 130 L 480 80 L 480 240 L 220 190 L 150 210 L 70 210 Q 30 210 30 170 Z" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+                
+                <!-- Cathode & Anode -->
+                <ellipse cx="60" cy="160" rx="10" ry="30" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+                <text x="45" y="115" font-size="12" font-weight="bold" fill="#334155">Cathode</text>
+                
+                <ellipse cx="160" cy="160" rx="12" ry="40" fill="#64748b" stroke="#334155" stroke-width="1.5"/>
+                <circle cx="160" cy="160" r="5" fill="#1e293b"/>
+                <text x="140" y="110" font-size="12" font-weight="bold" fill="#334155">Anode</text>
+
+                <!-- Electric Field Plates -->
+                <rect x="250" y="125" width="70" height="8" fill="#38bdf8" rx="2"/>
+                <text x="280" y="118" font-size="12" font-weight="bold" fill="#0369a1">+</text>
+                <line x1="285" y1="125" x2="285" y2="100" stroke="#0284c7" stroke-width="2"/>
+                
+                <rect x="250" y="185" width="70" height="8" fill="#fbbf24" rx="2"/>
+                <text x="280" y="210" font-size="12" font-weight="bold" fill="#b45309">-</text>
+                <line x1="285" y1="193" x2="285" y2="215" stroke="#b45309" stroke-width="2"/>
+
+                <!-- Electromagnet (C-shape Magnet) -->
+                <path d="M 230 140 L 230 220 L 370 220 L 370 180 L 340 180 L 340 200 L 250 200 L 250 160 L 230 160 Z" fill="#475569" opacity="0.8"/>
+                <circle cx="230" cy="160" r="15" fill="#94a3b8" stroke="#334155"/>
+                <text x="225" y="164" font-size="12" font-weight="bold" fill="#fff">N</text>
+                <text x="350" y="240" font-size="12" font-weight="bold" fill="#334155">Magnet</text>
+
+                <!-- Fluorescent Screen -->
+                <path d="M 480 80 Q 510 160 480 240 Z" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+                <text x="440" y="260" font-size="12" font-weight="bold" fill="#334155">Fluorescent screen</text>
+
+                <!-- Electron Beams & Points A, B, C -->
+                <!-- Central Beam to B -->
+                <line x1="70" y1="160" x2="485" y2="160" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/>
+                <!-- Deflected to A -->
+                <path d="M 160 160 Q 320 160 485 105" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <!-- Deflected to C -->
+                <path d="M 160 160 Q 320 160 485 215" fill="none" stroke="#dc2626" stroke-width="2"/>
+
+                <!-- Points Markers -->
+                <circle cx="485" cy="105" r="5" fill="#b91c1c"/>
+                <text x="495" y="108" font-size="14" font-weight="bold" fill="#b91c1c">A</text>
+                
+                <circle cx="485" cy="160" r="5" fill="#b91c1c"/>
+                <text x="495" y="163" font-size="14" font-weight="bold" fill="#b91c1c">B</text>
+                
+                <circle cx="485" cy="215" r="5" fill="#b91c1c"/>
+                <text x="495" y="218" font-size="14" font-weight="bold" fill="#b91c1c">C</text>
+
+                <!-- Battery connection lines -->
+                <path d="M 60 190 L 60 215 L 180 215 L 180 185" fill="none" stroke="#334155" stroke-width="1.5"/>
+                <line x1="110" y1="210" x2="110" y2="220" stroke="#334155" stroke-width="2"/>
+                <line x1="115" y1="213" x2="115" y2="217" stroke="#334155" stroke-width="2"/>
+                <line x1="120" y1="210" x2="120" y2="220" stroke="#334155" stroke-width="2"/>
+                <line x1="125" y1="213" x2="125" y2="217" stroke="#334155" stroke-width="2"/>
+            </svg>
+            <div class="diagram-caption">
+                <span class="lang-ml">ചിത്രം 2.2: ഇലക്ട്രോണിന്റെ ചാർജ്-മാസ് അനുപാതം ($e/m$) കണ്ടെത്താനുള്ള തോംസൺ ഉപകരണം</span>
+                <span class="lang-en" style="display:none;">Fig 2.2: The apparatus to determine the charge to mass ratio of electron</span>
+            </div>
+        </div>
+
+        <!-- Interactive Info Box -->
+        <div class="info-box">
+            <h3><i class="fa-solid fa-microscope"></i> <span class="lang-ml">പരീക്ഷണ വിവരങ്ങൾ</span><span class="lang-en" style="display:none;">Experiment Details</span></h3>
+            
+            <ul class="info-list">
+                <li class="info-item" id="part1" onclick="highlightPart(1)">
+                    <strong>1. പരീക്ഷണ ഉദ്ദേശം (Objective)</strong>
+                    <span class="lang-ml">ഇലക്ട്രോണിന്റെ ചാർജും മാസും തമ്മിലുള്ള അനുപാതം ($e/m_e$) നിർണ്ണയിക്കുക.</span>
+                    <span class="lang-en" style="display:none;">To determine the charge to mass ratio ($e/m_e$) of an electron.</span>
+                </li>
+                <li class="info-item" id="part2" onclick="highlightPart(2)">
+                    <strong>2. പ്രവർത്തന രീതി (Working Principle)</strong>
+                    <span class="lang-ml">കാതോഡ് ട്യൂബിൽ നിന്നുള്ള ഇലക്ട്രോൺ ബീമിനെ ഇലക്ട്രിക് ഫീൽഡും മാഗ്നറ്റിക് ഫീൽഡും ഉപയോഗിച്ച് വ്യതിചലിപ്പിക്കുന്നു (Deflect).</span>
+                    <span class="lang-en" style="display:none;">Deflecting the electron beam using electric and magnetic fields.</span>
+                </li>
+                <li class="info-item" id="part3" onclick="highlightPart(3)">
+                    <strong>3. സ്ക്രീനിലെ ബിന്ദുക്കൾ (Points A, B, C)</strong>
+                    <span class="lang-ml"><strong>ബിന്ദു A:</strong> ഇലക്ട്രിക് ഫീൽഡ് മാത്രം പ്രവർത്തിക്കുമ്പോൾ.<br><strong>ബിന്ദു B:</strong> ഫീൽഡുകൾ ഇല്ലാത്തപ്പോഴോ ബാലൻസ് ചെയ്യുമ്പോഴോ നേരെ പതിക്കുന്ന സ്ഥലം.<br><strong>ബിന്ദു C:</strong> മാഗ്നറ്റിക് ഫീൽഡ് മാത്രം പ്രവർത്തിക്കുമ്പോൾ.</span>
+                    <span class="lang-en" style="display:none;"><strong>Point A:</strong> Electric field only.<br><strong>Point B:</strong> Balanced fields / no deflection.<br><strong>Point C:</strong> Magnetic field only.</span>
+                </li>
+                <li class="info-item" id="part4" onclick="highlightPart(4)">
+                    <strong>4. ശാസ്ത്രജ്ഞൻ & വർഷം (Scientist & Year)</strong>
+                    <span class="lang-ml">1897-ൽ ബ്രിട്ടീഷ് ഭൗതികശാസ്ത്രജ്ഞനായ <strong>ജെ.ജെ. തോംസൺ</strong> ആണ് ഈ പരീക്ഷണം നടത്തിയത്.</span>
+                    <span class="lang-en" style="display:none;">Conducted by British physicist <strong>J.J. Thomson</strong> in 1897.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Textbook Calculation Section -->
+    <div class="calc-box">
+        <h4><i class="fa-solid fa-calculator"></i> <span class="lang-ml">ടെക്സ്റ്റ്ബുക്ക് കണക്കുകൂട്ടലുകൾ (Calculations)</span><span class="lang-en" style="display:none;">Textbook Calculations</span></h4>
+        <p style="margin-top:0; font-size: 13px;">
+            <span class="lang-ml">തോംസൺ കണ്ടെത്തിയ $e/m$ അനുപാതവും, മില്ലിക്കൻ കണ്ടെത്തിയ ഇലക്ട്രോൺ ചാർജും ($e$) ഉപയോഗിച്ച് ഇലക്ട്രോണിന്റെ മാസ് ($m_e$) കണക്കാക്കുന്നു:</span>
+            <span class="lang-en" style="display:none;">Using Thomson's e/m ratio and Millikan's electron charge, mass of electron ($m_e$) is calculated:</span>
+        </p>
+        <div class="formula">
+            $$m_e = \frac{e}{e/m_e}$$
+        </div>
+        <div style="text-align: center; font-size: 13px; margin-top: 5px;">
+            $$m_e = \frac{1.602176 \times 10^{-19} \text{ C}}{1.758820 \times 10^{11} \text{ C kg}^{-1}} = 9.1094 \times 10^{-31} \text{ kg}$$
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="control-btns">
+        <button class="btn" onclick="autoHighlightSequence()"><i class="fa-solid fa-play"></i> <span class="lang-ml">ഓരോന്നായി പരിശോധിക്കുക</span><span class="lang-en" style="display:none;">Auto Play</span></button>
+        <button class="btn btn-secondary" onclick="resetHighlight()"><i class="fa-solid fa-rotate-left"></i> <span class="lang-ml">റീസെറ്റ്</span><span class="lang-en" style="display:none;">Reset</span></button>
+    </div>
+
+    <div class="footer-text">
+        NCERT Study Hub © 2026. All rights reserved.
+    </div>
+
+</div>
+
+<!-- JavaScript for Interactivity -->
+<script>
+    let currentLang = 'ml';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        const mlElements = document.querySelectorAll('.lang-ml');
+        const enElements = document.querySelectorAll('.lang-en');
+        const btnMl = document.getElementById('btnMl');
+        const btnEn = document.getElementById('btnEn');
+
+        if (lang === 'ml') {
+            mlElements.forEach(el => {
+                el.style.display = (el.tagName === 'H1' || el.classList.contains('intro-box')) ? 'block' : 'inline';
+            });
+            enElements.forEach(el => el.style.display = 'none');
+            btnMl.classList.add('active');
+            btnEn.classList.remove('active');
+        } else {
+            enElements.forEach(el => {
+                el.style.display = (el.tagName === 'H1' || el.classList.contains('intro-box')) ? 'block' : 'inline';
+            });
+            mlElements.forEach(el => el.style.display = 'none');
+            btnEn.classList.add('active');
+            btnMl.classList.remove('active');
+        }
+        MathJax.typeset();
+    }
+
+    function highlightPart(partNum) {
+        for (let i = 1; i <= 4; i++) {
+            let el = document.getElementById('part' + i);
+            if(el) el.classList.remove('highlighted');
+        }
+        let target = document.getElementById('part' + partNum);
+        if(target) target.classList.add('highlighted');
+    }
+
+    let activeSeq = 1;
+    function autoHighlightSequence() {
+        highlightPart(activeSeq);
+        activeSeq++;
+        if (activeSeq > 4) activeSeq = 1;
+    }
+
+    function resetHighlight() {
+        for (let i = 1; i <= 4; i++) {
+            let el = document.getElementById('part' + i);
+            if(el) el.classList.remove('highlighted');
+        }
+        activeSeq = 1;
+    }
+
+    setLanguage('ml');
+</script>
+
+</body>
+</html>
