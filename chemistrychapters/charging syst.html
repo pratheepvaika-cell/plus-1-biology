@@ -281,9 +281,35 @@
         .btn-reset {
             background: linear-gradient(135deg, #64748b, #475569);
         }
+        /* Chapter Navigation Buttons Style */
+        .chapter-nav-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 15px;
+        }
+        .chapter-nav-btn {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .chapter-nav-btn:hover {
+            background: #e2e8f0;
+            color: #ea580c;
+        }
         .footer-text {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 12px;
             color: #94a3b8;
         }
@@ -685,6 +711,20 @@
     <div class="btn-group">
         <button class="action-btn" onclick="runHighlightSolution()"><i class="fa-solid fa-highlighter"></i> <span class="lang-ml">ഹൈലൈറ്റ് ചെയ്യുക</span><span class="lang-en" style="display:none;">Highlight</span></button>
         <button class="action-btn btn-reset" onclick="resetHighlightSolution()"><i class="fa-solid fa-rotate-left"></i> <span class="lang-ml">റീസെറ്റ് ചെയ്യുക</span><span class="lang-en" style="display:none;">Reset</span></button>
+    </div>
+
+    <!-- Chapter Navigation Buttons (Previous & Next Chapter) -->
+    <div class="chapter-nav-bottom">
+        <a href="chapter_prev.html" class="chapter-nav-btn">
+            <i class="fa-solid fa-chevron-left"></i> 
+            <span class="lang-ml">മുൻപത്തെ ചാപ്റ്റർ</span>
+            <span class="lang-en" style="display:none;">Previous Chapter</span>
+        </a>
+        <a href="deepclass.html" class="chapter-nav-btn" style="margin-left: auto;">
+            <span class="lang-ml">അടുത്ത ചാപ്റ്റർ</span>
+            <span class="lang-en" style="display:none;">Next Chapter</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
     </div>
 
     <div class="footer-text">

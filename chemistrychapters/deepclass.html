@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ml" class="notranslate" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <title>പ്ലസ് വൺ കെമിസ്ട്രി - ആറ്റത്തിന്റെ ഘടന</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- KaTeX CSS for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <!-- KaTeX JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 2px solid rgba(249, 115, 22, 0.2);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: nowrap;
+        }
+        .left-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .back-btn, .workout-btn-top {
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .workout-btn-top {
+            background: #ffedd5;
+            color: #c2410c;
+        }
+        .workout-btn-top:hover {
+            background: #fed7aa;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+        }
+        .lang-btn {
+            background: #e2e8f0;
+            color: #1e293b;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: #f97316;
+            color: white;
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .curriculum-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffedd5, #fee2e2);
+            color: #c2410c;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(135deg, #ea580c, #dc2626, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+            color: white;
+            padding: 18px 20px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            text-align: center;
+        }
+        .diagram-box {
+            text-align: center;
+            background: #eef9ff;
+            border: 2px dashed #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .circle-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .nucleus-circle {
+            background-color: #e74c3c;
+        }
+        .electron-circle {
+            background-color: #3498db;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="notranslate" translate="no">
+
+    <div class="container notranslate" translate="no" id="mainContainer">
+
+        <!-- Top Bar -->
+        <div class="top-bar">
+             <div class="left-buttons">
+                <a href="chapter1.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 
+                    <span class="lang-ml">മടങ്ങിപ്പോവുക</span><span class="lang-en" style="display:none;">Back to Chapters</span>
+                </a>
+
+                <a href="workoutatoms.html" class="workout-btn-top">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span class="lang-ml">വർക്ക്ഔട്ട് & എക്സർസൈസ്</span>
+                    <span class="lang-en" style="display:none;">Workout & Exercises</span>
+                </a>
+            </div>
+            
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btnMl" onclick="setLanguage('ml')">മലയാളം</button>
+                <button class="lang-btn" id="btnEn" onclick="setLanguage('en')">English</button>
+            </div>
+        </div>
+
+        <div class="header-section">
+            <div class="curriculum-tag">PLUS ONE CHEMISTRY - STRUCTURE OF ATOM</div>
+            <h1>
+                <span class="lang-ml">പ്ലസ് വൺ കെമിസ്ട്രി: ആറ്റത്തിന്റെ ഘടന</span>
+                <span class="lang-en" style="display:none;">Plus One Chemistry: Structure of Atom</span>
+            </h1>
+        </div>
+
+        <div class="intro-box">
+            <span class="lang-ml">ആദ്യം നമുക്ക് ആറ്റത്തിന്റെ അടിസ്ഥാന ചരിത്രത്തിൽ നിന്നും തുടങ്ങാം.</span>
+            <span class="lang-en" style="display:none;">Let us begin with the basic history of the atom.</span>
+        </div>
+
+        <h2>
+            <span class="lang-ml">1. എന്താണ് ആറ്റം? ആറ്റത്തിനുള്ളിൽ ആരെല്ലാമാണുള്ളത്?</span>
+            <span class="lang-en" style="display:none;">1. What is an Atom? What are inside an atom?</span>
+        </h2>
+        <p>
+            <span class="lang-ml">നമ്മുടെ ചുറ്റുമുള്ള എല്ലാ വസ്തുക്കളും നിർമ്മിച്ചിരിക്കുന്നത് ചെറിയ കണികകൾ കൊണ്ടാണെന്നും, അതിൽ ഏറ്റവും ചെറുതാണ് 'ആറ്റം' എന്നും നമ്മൾ പഠിച്ചിട്ടുണ്ട്. എന്നാൽ ഈ ആറ്റവും പൂർണ്ണമല്ല; ഇതിനുള്ളിലും അതിചെറിയ ചില ഘടകങ്ങളുണ്ട്. അവയെ <strong>Sub-atomic particles</strong> എന്ന് വിളിക്കുന്നു:</span>
+            <span class="lang-en" style="display:none;">We have learned that all matter around us is made of tiny particles, and the smallest among them is the 'atom'. But the atom is not indivisible; it contains sub-atomic particles:</span>
+        </p>
+        
+        <ul>
+            <li><span class="lang-ml"><strong>ഇലക്ട്രോൺ (Electron - e-):</strong> നെഗറ്റീവ് ചാർജ്ജുള്ള കണം.</span><span class="lang-en" style="display:none;"><strong>Electron (e-):</strong> Negatively charged particle.</span></li>
+            <li><span class="lang-ml"><strong>പ്രോട്ടോൺ (Proton - p+):</strong> പോസിറ്റീവ് ചാർജ്ജുള്ള കണം.</span><span class="lang-en" style="display:none;"><strong>Proton (p+):</strong> Positively charged particle.</span></li>
+            <li><span class="lang-ml"><strong>ന്യൂട്രോൺ (Neutron - n):</strong> ചാർജ്ജ് തീരെ ഇല്ലാത്ത (ന്യൂട്രൽ ആയ) കണം.</span><span class="lang-en" style="display:none;"><strong>Neutron (n):</strong> Neutral particle without any charge.</span></li>
+        </ul>
+
+        <p>
+            <span class="lang-ml">ഒരു ആറ്റമെടുത്താൽ, അതിന്റെ തൊട്ടുമധ്യത്തിൽ അതിശക്തമായ ഒരു കേന്ദ്രമുണ്ട് - അതിനെയാണ് <strong>ന്യൂക്ലിയസ് (Nucleus)</strong> എന്ന് വിളിക്കുന്നത്. പ്രോട്ടോണും ന്യൂട്രോണും ആറ്റത്തിന്റെ ഈ കേന്ദ്രത്തിലാണ് (ന്യൂക്ലിയസിൽ) ഒതുങ്ങിനിൽക്കുന്നത്. എന്നാൽ ഇലക്ട്രോണുകളാകട്ടെ, ഈ ന്യൂക്ലിയസിന് പുറത്തുകൂടി വട്ടത്തിൽ കറങ്ങിക്കൊണ്ടിരിക്കുകയാണ്.</span>
+            <span class="lang-en" style="display:none;">At the center of an atom is a dense core called the <strong>Nucleus</strong>. Protons and neutrons reside in the nucleus, while electrons revolve around the nucleus.</span>
+        </p>
+
+        <!-- ഡയഗ്രാം റെപ്രസെന്റേഷൻ -->
+        <div class="diagram-box">
+            <strong class="lang-ml">ആറ്റത്തിന്റെ ഘടന (ലളിതമായ മാതൃക):</strong>
+            <strong class="lang-en" style="display:none;">Structure of Atom (Simple Model):</strong>
+            <div class="circle-group">
+                <div>
+                    <div class="circle nucleus-circle">N</div>
+                    <small><span class="lang-ml">ന്യൂക്ലിയസ് (N)</span><span class="lang-en" style="display:none;">Nucleus (N)</span></small>
+                </div>
+                <div>
+                    <div class="circle electron-circle">e-</div>
+                    <small><span class="lang-ml">ഇലക്ട്രോൺ (e-)</span><span class="lang-en" style="display:none;">Electron (e-)</span></small>
+                </div>
+            </div>
+        </div>
+
+        <h2>
+            <span class="lang-ml">2. ആറ്റത്തിന് എന്തൊക്കെ ചാർജ്ജും ഭാരവുമുണ്ട്? (Discovery of Fundamental Particles)</span>
+            <span class="lang-en" style="display:none;">2. Charges and Masses of Fundamental Particles</span>
+        </h2>
+        <p>
+            <span class="lang-ml">പരീക്ഷയ്ക്ക് പലപ്പോഴും ചോദിക്കുന്ന അടിസ്ഥാന കാര്യങ്ങൾ നോക്കാം:</span>
+            <span class="lang-en" style="display:none;">Important fundamental points frequently asked in exams:</span>
+        </p>
+        
+        <ul>
+            <li><span class="lang-ml"><strong>ഇലക്ട്രോൺ കണ്ടുപിടിച്ചത്:</strong> ജെ.ജെ. തോംസൺ (Cathode Ray Tube പരീക്ഷണത്തിലൂടെ).</span><span class="lang-en" style="display:none;"><strong>Electron discovered by:</strong> J.J. Thomson (via Cathode Ray Tube experiment).</span></li>
+            <li><span class="lang-ml"><strong>പ്രോട്ടോൺ കണ്ടെത്തിയത്:</strong> ഗോൾഡ്‌സ്റ്റീൻ (Canal Rays പരീക്ഷണത്തിലൂടെ).</span><span class="lang-en" style="display:none;"><strong>Proton discovered by:</strong> Goldstein (via Canal Rays experiment).</span></li>
+            <li><span class="lang-ml"><strong>ന്യൂട്രോൺ കണ്ടെത്തിയത്:</strong> ജെയിംസ് ചാഡ്വിക്ക് (ബെറിലിയം തകിടിൽ ആൽഫ കതിരുകൾ അടിച്ച്).</span><span class="lang-en" style="display:none;"><strong>Neutron discovered by:</strong> James Chadwick (bombarding beryllium with alpha rays).</span></li>
+        </ul>
+
+        <p>
+            <span class="lang-ml">ഇവയുടെ ചാർജ്ജും മാസ്സും (Mass) ഓർത്തു വെക്കേണ്ടത് വളരെ എളുപ്പമാണ്:</span>
+            <span class="lang-en" style="display:none;">It is very easy to remember their charges and masses:</span>
+        </p>
+        <ul>
+            <li><span class="lang-ml">ഒരു ഇലക്ട്രോണിന്റെ ചാർജ്ജ് ഏകദേശം -1.6 x 10^-19 C ആണ്. ഇതിന്റെ ഭാരം അതി സൂക്ഷ്മമായതിനാൽ പ്രോട്ടോണുമായി താരതമ്യം ചെയ്യുമ്പോൾ വളരെ കുറവാണ്.</span><span class="lang-en" style="display:none;">The charge of an electron is approximately -1.6 x 10^-19 C, and its mass is extremely small compared to a proton.</span></li>
+            <li><span class="lang-ml">പ്രോട്ടോണിന്റെയും ന്യൂട്രോണിന്റെയും ഭാരം ഏതാണ്ട് തുല്യമാണ്. ആറ്റത്തിന്റെ മൊത്തത്തിലുള്ള ഭാരം മുഴുവൻ ഈ കേന്ദ്രത്തിലുള്ള (ന്യൂക്ലിയസിലെ) പ്രോട്ടോണുകളുടെയും ന്യൂട്രോണുകളുടെയും എണ്ണത്തെ ആശ്രയിച്ചാണിരിക്കുന്നത്.</span><span class="lang-en" style="display:none;">The masses of a proton and a neutron are nearly equal. The total mass of an atom depends on the total number of protons and neutrons in the nucleus.</span></li>
+        </ul>
+
+        <h2>
+            <span class="lang-ml">3. അറ്റോമിക നമ്പറും മാസ് നമ്പറും (Atomic Number and Mass Number)</span>
+            <span class="lang-en" style="display:none;">3. Atomic Number and Mass Number</span>
+        </h2>
+        <p>
+            <span class="lang-ml"><strong>അറ്റോമിക നമ്പർ (Atomic Number - Z):</strong> എന്താണ് ഇത്? ഒരു ആറ്റത്തിന്റെ ന്യൂക്ലിയസിൽ ഉള്ള പ്രോട്ടോണുകളുടെ എണ്ണത്തെയാണ് നമ്മൾ അറ്റോമിക നമ്പർ എന്ന് വിളിക്കുന്നത്.</span>
+            <span class="lang-en" style="display:none;"><strong>Atomic Number (Z):</strong> What is this? The number of protons present in the nucleus of an atom is called its atomic number.</span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml"><strong>ലളിതമായി പറഞ്ഞാൽ:</strong> ഒരു മൂലകത്തിന്റെ (Element) ഐഡന്റിറ്റി കാർഡ് പോലെയാണ് ഇത്. ഉദാഹരണത്തിന്, ഹൈഡ്രജന്റെ അറ്റോമിക നമ്പർ 1 ആണ് (കാരണം അതിൽ ഒരു പ്രോട്ടോൺ ഉണ്ട്). കാർബണിന്റേത് 6 ആണ് (6 പ്രോട്ടോണുകൾ).</span>
+                <span class="lang-en" style="display:none;"><strong>Simply put:</strong> It acts like an identity card of an element. For example, hydrogen has an atomic number of 1 (one proton), and carbon has 6 (six protons).</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>പ്രത്യേകം ശ്രദ്ധിക്കുക:</strong> ഒരു ആറ്റത്തിന് പുറമേ നിന്ന് ചാർജ് ഒന്നും കിട്ടിയിട്ടില്ലാത്ത സാധാരണ അവസ്ഥയിലാണെങ്കിൽ (Neutral atom), അതിൽ എത്ര പ്രോട്ടോൺ ഉണ്ടോ അത്രതന്നെ ഇലക്ട്രോണുകളും ഉണ്ടായിരിക്കും.</span>
+                <span class="lang-en" style="display:none;"><strong>Special Note:</strong> In a neutral atom (without any external charge), the number of electrons is equal to the number of protons.</span>
+            </li>
+        </ul>
+
+        <p style="margin-top: 15px;">
+            <span class="lang-ml"><strong>മാസ് നമ്പർ (Mass Number - A):</strong> എന്താണ് ഇത്? ഒരു ആറ്റത്തിന്റെ കേന്ദ്രത്തിലുള്ള (ന്യൂക്ലിയസിലെ) പ്രോട്ടോണുകളുടെയും ന്യൂട്രോണുകളുടെയും ആകെ തുകയാണ് മാസ് നമ്പർ.</span>
+            <span class="lang-en" style="display:none;"><strong>Mass Number (A):</strong> What is this? The total sum of protons and neutrons present in the nucleus of an atom is the mass number.</span>
+        </p>
+        
+        <div class="formula-box">
+            <span class="lang-ml">മാസ് നമ്പർ (A) = പ്രോട്ടോണുകളുടെ എണ്ണം (Z) + ന്യൂട്രോണുകളുടെ എണ്ണം (n)</span>
+            <span class="lang-en" style="display:none;">Mass Number (A) = Number of Protons (Z) + Number of Neutrons (n)</span>
+        </div>
+
+        <p>
+            <span class="lang-ml"><strong>ലളിതമായി പറഞ്ഞാൽ:</strong> ഒരു ആറ്റത്തിന്റെ മൊത്തം ഭാരം മുഴുവൻ കിടക്കുന്നത് അതിന്റെ കേന്ദ്രത്തിലുള്ള പ്രോട്ടോണിലും ന്യൂട്രോണിലുമാണ് (ഇലക്ട്രോണിന്റെ ഭാരം അതിസൂക്ഷ്മമായതിനാൽ നമ്മൾ ഭാരത്തിനായി കൂട്ടാറില്ല). അതുകൊണ്ട് പ്രോട്ടോണും ന്യൂട്രോണും കൂട്ടിയാൽ ആ ആറ്റത്തിന്റെ ഭാരം അതായത് മാസ് നമ്പർ കിട്ടും.</span>
+            <span class="lang-en" style="display:none;"><strong>Simply put:</strong> Almost the entire mass of an atom is concentrated in its nucleus (protons and neutrons), as electron mass is negligible. Thus, adding protons and neutrons gives the mass number.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">4. ഐസോടോപ്പുകൾ (Isotopes)</span>
+            <span class="lang-en" style="display:none;">4. Isotopes</span>
+        </h2>
+        <p>
+            <span class="lang-ml"><strong>എന്താണ് ഐസോടോപ്പുകൾ?</strong> ഒരേ മൂലകത്തിന്റെ ആറ്റങ്ങൾ തന്നെയായിരിക്കും, അവയ്ക്ക് അറ്റോമിക നമ്പർ (പ്രോട്ടോണുകളുടെ എണ്ണം) ഒരേപോലെ തന്നെയായിരിക്കും. എന്നാൽ അവയുടെ മാസ് നമ്പർ (ഭാരം) വ്യത്യസ്തമായിരിക്കും. ഇതിന് കാരണം അവയിലെ ന്യൂട്രോണുകളുടെ എണ്ണത്തിൽ വരുന്ന വ്യത്യാസമാണ്.</span>
+            <span class="lang-en" style="display:none;"><strong>What are Isotopes?</strong> Atoms of the same element having the same atomic number (number of protons) but different mass numbers (weights) due to a difference in the number of neutrons.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>ഉദാഹരണം:</strong> നമ്മുടെ ഹൈഡ്രജൻ എടുക്കാം. ഹൈഡ്രജന് മൂന്ന് വകഭേദങ്ങൾ (ഐസോടോപ്പുകൾ) ഉണ്ട്:</span>
+            <span class="lang-en" style="display:none;"><strong>Example:</strong> Take hydrogen. It has three variants (isotopes):</span>
+        </p>
+        <ul>
+            <li><span class="lang-ml">പ്രോട്ടിയം (Protium)</span><span class="lang-en" style="display:none;">Protium</span></li>
+            <li><span class="lang-ml">ഡ്യൂട്ടീരിയം (Deuterium)</span><span class="lang-en" style="display:none;">Deuterium</span></li>
+            <li><span class="lang-ml">ട്രിഷിയം (Tritium)</span><span class="lang-en" style="display:none;">Tritium</span></li>
+        </ul>
+        <p>
+            <span class="lang-ml">ഇവയെല്ലാം ഹൈഡ്രജൻ തന്നെയാണ് (അതുകൊണ്ട് അറ്റോമിക നമ്പർ 1 ആണ്), പക്ഷേ ഉള്ളിലെ ന്യൂട്രോണുകളുടെ എണ്ണം മാറുമ്പോൾ അവയുടെ ഭാരം (മാസ് നമ്പർ) വ്യത്യാസപ്പെടുന്നു.</span>
+            <span class="lang-en" style="display:none;">All these are hydrogen (hence atomic number is 1), but their masses (mass numbers) differ due to varying neutron counts.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">5. റഥർഫോർഡിന്റെ ആൽഫ കതിർ വിസരണ പരീക്ഷണവും ആറ്റോമിക് മോഡലും (Rutherford's Model)</span>
+            <span class="lang-en" style="display:none;">5. Rutherford's Alpha Ray Scattering Experiment and Atomic Model</span>
+        </h2>
+        <p>
+            <span class="lang-ml">ആറ്റത്തിന്റെ ഉള്ളിൽ എന്താണെന്ന് കണ്ടെത്താൻ എർണസ്റ്റ് റഥർഫോർഡ് നടത്തിയ പ്രസിദ്ധമായ പരീക്ഷണമാണിത്.</span>
+            <span class="lang-en" style="display:none;">This is the famous experiment conducted by Ernest Rutherford to discover what is inside an atom.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>പരീക്ഷണം (Alpha Ray Scattering Experiment):</strong> വളരെ നേർത്ത ഒരു സ്വർണ്ണ തകിടിലേക്ക് (Gold foil) അതിവേഗതയുള്ള ആൽഫ കതിരുകൾ (alpha-particles) കടത്തിവിട്ടു. സ്വർണ്ണ തകിടിന് ചുറ്റും പ്രത്യേക സ്ക്രീൻ വെച്ച് കതിരുകൾ എവിടെയെല്ലാം പതിക്കുന്നു എന്ന് നിരീക്ഷിച്ചു.</span>
+            <span class="lang-en" style="display:none;"><strong>Experiment:</strong> High-speed alpha particles were directed at a very thin gold foil. A special circular screen around the gold foil was used to observe where the particles struck.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>പ്രധാന നിരീക്ഷണങ്ങളും കണ്ടെത്തലുകളും:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>Main Observations and Findings:</strong></span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml"><strong>ആറ്റത്തിന്റെ ഭൂരിഭാഗം സ്ഥലവും ശൂന്യമാണ്:</strong> മിക്ക ആൽഫ കതിരുകളും യാതൊരു തടസ്സവുമില്ലാതെ സ്വർണ്ണ തകിടിലൂടെ നേരെ കടന്നുപോയി.</span>
+                <span class="lang-en" style="display:none;"><strong>Most of the space in an atom is empty:</strong> Most alpha particles passed straight through the gold foil without any deflection.</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>ന്യൂക്ലിയസിന്റെ കണ്ടെത്തൽ:</strong> വളരെ കുറച്ച് കതിരുകൾ ചെറിയ കോണുകളിൽ വ്യതിചലിച്ചു (Deflect ചെയ്തു). എന്നാൽ ആയിരക്കണക്കിൽ കതിരുകളിൽ ഒന്ന് മാത്രം നേരെ പിറകോട്ട് തിരിച്ചു വന്നു. ആറ്റത്തിന്റെ കേന്ദ്രത്തിൽ അതിശക്തമായ പോസിറ്റീവ് ചാർജുള്ള അതീവ ചെറിയൊരു ഭാഗം ഉണ്ടെന്നാണ് ഇത് കാണിക്കുന്നത്. അതാണ് ന്യൂക്ലിയസ് (Nucleus).</span>
+                <span class="lang-en" style="display:none;"><strong>Discovery of the Nucleus:</strong> A very few particles were deflected at small angles. However, about one in every 20,000 particles bounced straight back. This indicated the presence of a heavy, positively charged dense center called the Nucleus.</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>ഇലക്ട്രോണുകളുടെ സ്ഥാനം:</strong> ന്യൂക്ലിയസിന് പുറത്തുകൂടി ഇലക്ട്രോണുകൾ വൃത്താകൃതിയിലുള്ള പാതയിലൂടെ കറങ്ങിക്കൊണ്ടിരിക്കുന്നു (സൗരയൂഥത്തിൽ സൂര്യന് ചുറ്റും ഗ്രഹങ്ങൾ കറങ്ങുന്നത് പോലെ).</span>
+                <span class="lang-en" style="display:none;"><strong>Position of Electrons:</strong> Electrons revolve around the nucleus in circular paths (similar to planets revolving around the sun in the solar system).</span>
+            </li>
+        </ul>
+
+        <p>
+            <span class="lang-ml"><strong>റഥർഫോർഡ് മോഡലിന്റെ പ്രധാന പരിമിതി (Drawback):</strong></span>
+            <span class="lang-en" style="display:none;"><strong>Major Drawback of Rutherford's Model:</strong></span>
+        </p>
+        <p>
+            <span class="lang-ml">ഭൗതികശാസ്ത്രത്തിലെ നിയമങ്ങൾ പ്രകാരം, ചാർജുള്ള ഒരു കണം (ഇലക്ട്രോൺ) വട്ടത്തിൽ കറങ്ങിക്കൊണ്ടിരുന്നാൽ അത് നിരന്തരം ഊർജ്ജം നഷ്ടപ്പെടുത്തിക്കൊണ്ടിരിക്കും (Energy loss). അങ്ങനെയാണെങ്കിൽ കറങ്ങിക്കൊണ്ടിരിക്കുന്ന ഇലക്ട്രോണിന്റെ ഊർജ്ജം തീർന്നുപോയി ഒടുവിൽ അത് ന്യൂക്ലിയസിൽ ചെന്ന് പതിക്കുകയും ആറ്റം നശിച്ചുപോകുകയും വേണം.</span>
+            <span class="lang-en" style="display:none;">According to classical electromagnetic theory, a charged particle (electron) moving in a circular orbit should continuously radiate energy. If it loses energy, the electron would spiral into the nucleus, and the atom would collapse.</span>
+        </p>
+        <p>
+            <span class="lang-ml">എന്നാൽ യഥാർത്ഥത്തിൽ ആറ്റങ്ങൾ വളരെ സ്ഥിരതയുള്ളവയാണ് (Stable). ആറ്റത്തിന്റെ ഈ സ്ഥിരത എന്തുകൊണ്ടാണെന്ന് വിശദീകരിക്കാൻ റഥർഫോർഡിന്റെ മോഡലിന് കഴിഞ്ഞില്ല.</span>
+            <span class="lang-en" style="display:none;">However, atoms are stable. Rutherford's model could not explain the stability of atoms.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">6. ബോറിന്റെ ആറ്റോമിക് മോഡൽ (Bohr's Atomic Model)</span>
+            <span class="lang-en" style="display:none;">6. Bohr's Atomic Model</span>
+        </h2>
+        <p>
+            <span class="lang-ml">റഥർഫോർഡിന്റെ മോഡലിന് വിശദീകരിക്കാൻ കഴിയാത്ത ആറ്റത്തിന്റെ സ്ഥിരത (Stability) പരിഹരിച്ചുകൊണ്ട് 1913-ൽ നീൽസ് ബോർ (Niels Bohr) അവതരിപ്പിച്ച മാതൃകയാണിത്. ഇതിന്റെ പ്രധാന ആശയങ്ങൾ താഴെ പറയുന്നവയാണ്:</span>
+            <span class="lang-en" style="display:none;">Presented by Niels Bohr in 1913, this model overcame the stability issue of the atom that Rutherford's model failed to explain. Its main concepts are as follows:</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>ഊർജ്ജ നിലകൾ അല്ലെങ്കിൽ ഷെല്ലുകൾ (Energy Levels / Shells):</strong> ആറ്റത്തിലെ ഇലക്ട്രോണുകൾ ന്യൂക്ലിയസിന് ചുറ്റും ഏതെങ്കിലും വഴികളിലൂടെയല്ല, മറിച്ച് നിശ്ചിത വൃത്താകൃതിയിലുള്ള പാതകളിലൂടെയാണ് കറങ്ങുന്നത്. ഈ പാതകളെ ഓർബിറ്റുകൾ (Orbits) അല്ലെങ്കിൽ ഷെല്ലുകൾ (Shells) എന്ന് വിളിക്കുന്നു.</span>
+            <span class="lang-en" style="display:none;"><strong>Energy Levels / Shells:</strong> Electrons in an atom revolve around the nucleus not in any arbitrary path, but in certain fixed circular paths called orbits or shells.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>പേരുകളും നമ്പറുകളും:</strong> ഈ ഷെല്ലുകളെ ന്യൂക്ലിയസിൽ നിന്ന് പുറത്തേക്ക് K, L, M, N ... എന്നിങ്ങനെ അക്ഷരങ്ങൾ കൊണ്ടോ അല്ലെങ്കിൽ n = 1, 2, 3, 4 ... എന്ന് നമ്പറുകൾ കൊണ്ടോ സൂചിപ്പിക്കുന്നു.</span>
+            <span class="lang-en" style="display:none;"><strong>Names and Numbers:</strong> These shells are represented by letters K, L, M, N ... or numbers n = 1, 2, 3, 4 ... starting outward from the nucleus:</span>
+        </p>
+        <ul>
+            <li><span class="lang-ml">ന്യൂക്ലിയസിനോട് ഏറ്റവും അടുത്തുള്ള ആദ്യത്തെ ഷെൽ: K ഷെൽ (n = 1)</span><span class="lang-en" style="display:none;">First shell closest to the nucleus: K shell (n = 1)</span></li>
+            <li><span class="lang-ml">രണ്ടാമത്തെ ഷെൽ: L ഷെൽ (n = 2)</span><span class="lang-en" style="display:none;">Second shell: L shell (n = 2)</span></li>
+            <li><span class="lang-ml">മൂന്നാമത്തെ ഷെൽ: M ഷെൽ (n = 3) എന്നിങ്ങനെ പോകുന്നു.</span><span class="lang-en" style="display:none;">Third shell: M shell (n = 3) and so on.</span></li>
+        </ul>
+        <p>
+            <span class="lang-ml"><strong>സ്ഥിരതയുള്ള പാതകൾ (Stationary Orbits):</strong> ഒരു ഇലക്ട്രോൺ ഒരു പ്രത്യേക ഷെല്ലിൽ കറങ്ങിക്കൊണ്ടിരിക്കുന്നിടത്തോളം കാലം അത് ഊർജ്ജം നഷ്ടപ്പെടുത്തുകയോ പുറത്തുവിടുകയോ ഇല്ല. അതുകൊണ്ടാണ് ആറ്റങ്ങൾ സ്ഥിരതയുള്ളവയായി (Stable) ഇരിക്കുന്നത്.</span>
+            <span class="lang-en" style="display:none;"><strong>Stationary Orbits:</strong> As long as an electron is revolving in a particular shell, it neither loses nor gains energy. This is why atoms remain stable.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>ഊർജ്ജത്തിന്റെ മാറ്റം (Energy Emission/Absorption):</strong> ഒരു ഇലക്ട്രോണിന് താഴെ കിടക്കുന്ന ഷെല്ലിൽ നിന്ന് മുകളിലുള്ള ഷെല്ലിലേക്ക് പോകണമെങ്കിൽ ഊർജ്ജം ആഗിരണം (absorb) ചെയ്യണം. തിരിച്ചാണെങ്കിൽ ഊർജ്ജം പുറത്തുവിടുന്നു (emit).</span>
+            <span class="lang-en" style="display:none;"><strong>Energy Change:</strong> For an electron to jump from a lower shell to a higher shell, it must absorb energy. Conversely, it emits energy when moving from a higher shell to a lower shell.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">7. ഇലക്ട്രോണിക് വിന്യാസം (Electronic Configuration)</span>
+            <span class="lang-en" style="display:none;">7. Electronic Configuration</span>
+        </h2>
+        <p>
+            <span class="lang-ml">ബോർ-ബറി നിയമങ്ങൾ (Bohr-Bury Scheme) അനുസരിച്ചാണ് ഇലക്ട്രോണുകൾ ഷെല്ലുകളിൽ നിറയുന്നത്:</span>
+            <span class="lang-en" style="display:none;">Electrons are filled in shells according to the Bohr-Bury Scheme:</span>
+        </p>
+        
+        <div class="formula-box">
+            <span class="lang-ml">സൂത്രവാക്യം: ഒരു ഷെല്ലിൽ ഉൾക്കൊള്ളാൻ കഴിയുന്ന പരമാവധി ഇലക്ട്രോണുകളുടെ എണ്ണം കണ്ടെത്തുന്നത് 2n^2 എന്ന സമവാക്യം വഴിയാണ് (ഇവിടെ n എന്നത് ഷെല്ലിന്റെ നമ്പർ അല്ലെങ്കിൽ ഓർബിറ്റ് നമ്പറാണ്).</span>
+            <span class="lang-en" style="display:none;">Formula: The maximum number of electrons accommodated in a shell is given by 2n^2 (where n is the shell number or orbit number).</span>
+        </div>
+
+        <ul>
+            <li><span class="lang-ml"><strong>K ഷെൽ (n=1):</strong> 2 x (1)^2 = 2 ഇലക്ട്രോണുകൾ.</span><span class="lang-en" style="display:none;"><strong>K shell (n=1):</strong> 2 x (1)^2 = 2 electrons.</span></li>
+            <li><span class="lang-ml"><strong>L ഷെൽ (n=2):</strong> 2 x (2)^2 = 8 ഇലക്ട്രോണുകൾ.</span><span class="lang-en" style="display:none;"><strong>L shell (n=2):</strong> 2 x (2)^2 = 8 electrons.</span></li>
+            <li><span class="lang-ml"><strong>M ഷെൽ (n=3):</strong> 2 x (3)^2 = 18 ഇലക്ട്രോണുകൾ.</span><span class="lang-en" style="display:none;"><strong>M shell (n=3):</strong> 2 x (3)^2 = 18 electrons.</span></li>
+            <li><span class="lang-ml"><strong>N ഷെൽ (n=4):</strong> 2 x (4)^2 = 32 ഇലക്ട്രോണുകൾ.</span><span class="lang-en" style="display:none;"><strong>N shell (n=4):</strong> 2 x (4)^2 = 32 electrons.</span></li>
+        </ul>
+
+        <p>
+            <span class="lang-ml"><strong>പ്രധാന നിയമങ്ങൾ:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>Main Rules:</strong></span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml">ഇലക്ട്രോണുകൾ ആദ്യം ഏറ്റവും ഉള്ളിലുള്ള ഷെല്ലുകളിലാണ് (കുറഞ്ഞ ഊർജ്ജ നില) നിറയുന്നത്. ആ ഷെൽ പൂർണ്ണമായാൽ മാത്രമേ അടുത്ത ഷെല്ലിലേക്ക് ഇലക്ട്രോണുകൾ പോകൂ.</span>
+                <span class="lang-en" style="display:none;">Electrons are filled in the innermost shells first (lower energy level). Only when that shell is full do electrons move to the next shell.</span>
+            </li>
+            <li>
+                <span class="lang-ml">ഏറ്റവും പുറമേയുള്ള ഷെല്ലിൽ (Valence shell) പരമാവധി 8 ഇലക്ട്രോണുകൾ മാത്രമേ നിലനിൽക്കാൻ പാടുകയുള്ളൂ.</span>
+                <span class="lang-en" style="display:none;">The outermost shell (Valence shell) can accommodate a maximum of 8 electrons.</span>
+            </li>
+        </ul>
+
+        <p>
+            <span class="lang-ml"><strong>ചില ഉദാഹരണങ്ങൾ:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>Some Examples:</strong></span>
+        </p>
+        <ul>
+            <li><span class="lang-ml">ഹൈഡ്രജൻ (Atomic Number 1): 1 (K=1)</span><span class="lang-en" style="display:none;">Hydrogen (Atomic Number 1): 1 (K=1)</span></li>
+            <li><span class="lang-ml">ഹീലിയം (Atomic Number 2): 2 (K=2)</span><span class="lang-en" style="display:none;">Helium (Atomic Number 2): 2 (K=2)</span></li>
+            <li><span class="lang-ml">കാർബൺ (Atomic Number 6): 2,4 (K=2, L=4)</span><span class="lang-en" style="display:none;">Carbon (Atomic Number 6): 2,4 (K=2, L=4)</span></li>
+            <li><span class="lang-ml">സോഡിയം (Atomic Number 11): 2,8,1 (K=2, L=8, M=1)</span><span class="lang-en" style="display:none;">Sodium (Atomic Number 11): 2,8,1 (K=2, L=8, M=1)</span></li>
+            <li><span class="lang-ml">കാൽസ്യം (Atomic Number 20): 2,8,8,2 (K=2, L=8, M=8, N=2)</span><span class="lang-en" style="display:none;">Calcium (Atomic Number 20): 2,8,8,2 (K=2, L=8, M=8, N=2)</span></li>
+        </ul>
+
+        <h2>
+            <span class="lang-ml">8. യോജ്യത (Valency)</span>
+            <span class="lang-en" style="display:none;">8. Valency</span>
+        </h2>
+        <p>
+            <span class="lang-ml"><strong>എന്താണ് യോജ്യത?</strong> ഒരു ആറ്റം മറ്റ് ആറ്റങ്ങളുമായി ചേർന്ന് രാസബന്ധനം (Chemical bond) ഉണ്ടാക്കാനോ സംയോജിക്കാനോ ഉള്ള കഴിവിനെയാണ് യോജ്യത എന്ന് വിളിക്കുന്നത്. ഏറ്റവും പുറമേയുള്ള ഷെല്ലിലെ (Valence Shell) ഇലക്ട്രോണുകളുടെ എണ്ണത്തെ ആശ്രയിച്ചാണ് ഇത് തീരുമാനിക്കുന്നത്.</span>
+            <span class="lang-en" style="display:none;"><strong>What is Valency?</strong> The combining capacity of an atom with other atoms to form a chemical bond is called valency. It depends on the number of electrons present in the outermost shell (Valence Shell).</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>കണക്കാക്കുന്ന വിധം:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>How to calculate:</strong></span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml">പുറംഷെല്ലിൽ 1, 2, 3, അല്ലെങ്കിൽ 4 ഇലക്ട്രോണുകൾ ആണെങ്കിൽ, അതിന്റെ യോജ്യത ആ ഇലക്ട്രോണുകളുടെ എണ്ണം തന്നെയായിരിക്കും (Valency = 1, 2, 3, 4).</span>
+                <span class="lang-en" style="display:none;">If the valence shell has 1, 2, 3, or 4 electrons, the valency is equal to that number of electrons (Valency = 1, 2, 3, 4).</span>
+            </li>
+            <li>
+                <span class="lang-ml">പുറംഷെല്ലിൽ 5, 6, 7 അല്ലെങ്കിൽ 8 ഇലക്ട്രോണുകൾ ആണെങ്കിൽ, 8-ൽ നിന്ന് ആ ഇലക്ട്രോണുകളുടെ എണ്ണം കുറച്ചാൽ യോജ്യത കിട്ടും (Valency = 8 - Valence electrons).</span>
+                <span class="lang-en" style="display:none;">If the valence shell has 5, 6, 7, or 8 electrons, subtract that number from 8 to get the valency (Valency = 8 - Valence electrons).</span>
+            </li>
+        </ul>
+        <p>
+            <span class="lang-ml"><strong>ഉദാഹരണം:</strong> ക്ലോറിന്റെ ഇലക്ട്രോണിക് വിന്യാസം 2, 8, 7 ആണ്. പുറംഷെല്ലിൽ 7 ഇലക്ട്രോണുകൾ ഉള്ളതിനാൽ ഇതിന്റെ യോജ്യത 8 - 7 = 1 ആണ്.</span>
+            <span class="lang-en" style="display:none;"><strong>Example:</strong> The electronic configuration of chlorine is 2, 8, 7. Since there are 7 electrons in the valence shell, its valency is 8 - 7 = 1.</span>
+        </p>
+        <p>
+            <span class="lang-ml">പുറംഷെല്ലിൽ പൂർണ്ണമായി 8 ഇലക്ട്രോണുകൾ ഉള്ള മൂലകങ്ങളുടെ (ഇനർട്ട് ഗ്യാസുകൾ) യോജ്യത 0 ആയിരിക്കും.</span>
+            <span class="lang-en" style="display:none;">Elements with a completely filled valence shell of 8 electrons (inert gases) have a valency of 0.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">9. ഐസോബാറുകൾ (Isobars)</span>
+            <span class="lang-en" style="display:none;">9. Isobars</span>
+        </h2>
+        <p>
+            <span class="lang-ml"><strong>എന്താണ് ഐസോബാറുകൾ?</strong> വ്യത്യസ്ത അറ്റോമിക നമ്പറുകളും എന്നാൽ ഒരേ മാസ് നമ്പറുമുള്ള (ഭാരമുള്ള) വ്യത്യസ്ത മൂലകങ്ങളുടെ ആറ്റങ്ങളെയാണ് ഐസോബാറുകൾ എന്ന് വിളിക്കുന്നത്.</span>
+            <span class="lang-en" style="display:none;"><strong>What are Isobars?</strong> Atoms of different elements having different atomic numbers but the same mass number (weight) are called isobars.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>ഉദാഹരണം:</strong> ആർഗോൺ (Ar) ഉം കാൽസ്യം (Ca) ഉം നോക്കാം:</span>
+            <span class="lang-en" style="display:none;"><strong>Example:</strong> Let us consider Argon (Ar) and Calcium (Ca):</span>
+        </p>
+        <ul>
+            <li><span class="lang-ml">ആർഗോണിന്റെ അറ്റോമിക നമ്പർ 18, മാസ് നമ്പർ 40.</span><span class="lang-en" style="display:none;">Argon has an atomic number of 18 and a mass number of 40.</span></li>
+            <li><span class="lang-ml">കാൽസ്യത്തിന്റെ അറ്റോമിക നമ്പർ 20, മാസ് നമ്പർ 40.</span><span class="lang-en" style="display:none;">Calcium has an atomic number of 20 and a mass number of 40.</span></li>
+        </ul>
+        <p>
+            <span class="lang-ml">ഇവിടെ രണ്ടിന്റെയും മാസ് നമ്പർ 40 എന്ന് തുല്യമാണ്, പക്ഷേ അറ്റോമിക നമ്പർ വ്യത്യാസമാണ്. അതുകൊണ്ട് ഇവയെ ഐസോബാറുകൾ എന്ന് വിളിക്കുന്നു.</span>
+            <span class="lang-en" style="display:none;">Here, the mass number for both is 40, but their atomic numbers are different. Therefore, they are called isobars.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">10. ഓർബിറ്റലുകൾ (Orbitals)</span>
+            <span class="lang-en" style="display:none;">10. Orbitals</span>
+        </h2>
+        <p>
+            <span class="lang-ml">ബോർ പറഞ്ഞതുപോലെ ഇലക്ട്രോണുകൾ വെറുമൊരു വട്ടത്തിലുള്ള പരന്ന പാതയിലൂടെ (Orbits) മാത്രമല്ല കറങ്ങുന്നത്. ന്യൂക്ലിയസിന് ചുറ്റും ഇലക്ട്രോണുകളെ കണ്ടെത്താൻ ഏറ്റവും കൂടുതൽ സാധ്യതയുള്ള (Probability of finding electron) ത്രിമാന (3D) സ്ഥലത്തെയാണ് <strong>ഓർബിറ്റൽ (Orbital)</strong> എന്ന് വിളിക്കുന്നത്.</span>
+            <span class="lang-en" style="display:none;">As Bohr suggested, electrons do not just revolve in simple flat circular paths (orbits). The three-dimensional (3D) space around the nucleus where the probability of finding an electron is maximum is called an <strong>Orbital</strong>.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>പ്രധാനപ്പെട്ട നാല് തരം ഓർബിറ്റലുകൾ താഴെ പറയുന്നവയാണ്:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>The four main types of orbitals are:</strong></span>
+        </p>
+        <ul>
+            <li><span class="lang-ml"><strong>s ഓർബിറ്റൽ:</strong> ഗോളാകൃതിയിലാണ് (Spherical).</span><span class="lang-en" style="display:none;"><strong>s Orbital:</strong> Spherical in shape.</span></li>
+            <li><span class="lang-ml"><strong>p ഓർബിറ്റൽ:</strong> ഡംബെൽ ആകൃതിയിലാണ് (Dumbbell shape). ഇതിന് മൂന്ന് ഓറിയന്റേഷനുകൾ ഉണ്ട് (p_x, p_y, p_z).</span><span class="lang-en" style="display:none;"><strong>p Orbital:</strong> Dumbbell shape. It has three orientations (p_x, p_y, p_z).</span></li>
+            <li><span class="lang-ml"><strong>d ഓർബിറ്റൽ:</strong> ഡബിൾ ഡംബെൽ ആകൃതിയിലാണ് (Double dumbbell).</span><span class="lang-en" style="display:none;"><strong>d Orbital:</strong> Double dumbbell shape.</span></li>
+            <li><span class="lang-ml"><strong>f ഓർബിറ്റൽ:</strong> കൂടുതൽ സങ്കീർണ്ണമായ ആകൃതിയാണ് ഇതിനുള്ളത്.</span><span class="lang-en" style="display:none;"><strong>f Orbital:</strong> It has a more complex shape.</span></li>
+        </ul>
+
+        <h2>
+            <span class="lang-ml">11. ക്വാണ്ടം നമ്പറുകൾ (Quantum Numbers)</span>
+            <span class="lang-en" style="display:none;">11. Quantum Numbers</span>
+        </h2>
+        <p>
+            <span class="lang-ml">ഒരു ആറ്റത്തിലെ ഏത് ഇലക്ട്രോണിന്റെയും കൃത്യമായ മേൽവിലാസം (Address) അല്ലെങ്കിൽ വിവരങ്ങൾ പൂർണ്ണമായി മനസ്സിലാക്കാൻ സഹായിക്കുന്ന നാല് സംഖ്യകളാണ് <strong>ക്വാണ്ടം നമ്പറുകൾ</strong>.</span>
+            <span class="lang-en" style="display:none;"><strong>Quantum numbers</strong> are a set of four numbers used to completely describe the address and characteristics of any electron in an atom.</span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml"><strong>പ്രിൻസിപ്പൽ ക്വാണ്ടം നമ്പർ (Principal Quantum Number - n):</strong> ഇലക്ട്രോൺ ഏത് പ്രധാന ഊർജ്ജ നിലയിലാണെന്ന് (Shell) ഇത് വ്യക്തമാക്കുന്നു. ഇതിന്റെ മൂല്യങ്ങൾ ധനപൂർണ്ണസംഖ്യകളായിരിക്കും: 1, 2, 3, 4 ... (K, L, M, N ...).</span>
+                <span class="lang-en" style="display:none;"><strong>Principal Quantum Number (n):</strong> It identifies the main energy level (shell) of the electron. Its values are positive integers: 1, 2, 3, 4 ... (K, L, M, N ...).</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>അസിമുതൽ ക്വാണ്ടം നമ്പർ (Azimuthal Quantum Number - l):</strong> ഓർബിറ്റലിന്റെ ആകൃതിയും (Shape) അത് ഏത് സബ്ഷെല്ലിലാണ് (s, p, d, f) ഉള്ളതെന്നും ഇത് കാണിക്കുന്നു. l-ന്റെ മൂല്യങ്ങൾ 0 മുതൽ n-1 വരെയാണ് (l = 0 എന്നാൽ s, 1 എന്നാൽ p, 2 എന്നാൽ d, 3 എന്നാൽ f).</span>
+                <span class="lang-en" style="display:none;"><strong>Azimuthal Quantum Number (l):</strong> It describes the shape of the orbital and the subshell (s, p, d, f). Its values range from 0 to n-1 (l = 0 for s, 1 for p, 2 for d, 3 for f).</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>മാഗ്നറ്റിക് ക്വാണ്ടം നമ്പർ (Magnetic Quantum Number - m_l):</strong> ബഹിരാകാശത്ത് അല്ലെങ്കിൽ കാന്തികക്ഷേത്രത്തിൽ ഓർബിറ്റലുകൾ എങ്ങനെയാണ് ക്രമീകരിച്ചിരിക്കുന്നത് എന്ന് (Spatial orientation) ഇത് വ്യക്തമാക്കുന്നു. ഇതിന്റെ മൂല്യങ്ങൾ -l മുതൽ +l വരെയുള്ള സംഖ്യകളും പൂജ്യവും അടങ്ങുന്നതാണ്.</span>
+                <span class="lang-en" style="display:none;"><strong>Magnetic Quantum Number (m_l):</strong> It describes the spatial orientation of the orbital in space. Its values range from -l through 0 to +l.</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>സ്പിൻ ക്വാണ്ടം നമ്പർ (Spin Quantum Number - m_s):</strong> സ്വന്തം അച്ചുതണ്ടിൽ ഇലക്ട്രോൺ കറങ്ങുന്ന ദിശയെ (Spin direction - Clockwise അല്ലെങ്കിൽ Anticlockwise) ഇത് കാണിക്കുന്നു. ഇതിന്റെ മൂല്യങ്ങൾ +1/2 അല്ലെങ്കിൽ -1/2 ആയിരിക്കും.</span>
+                <span class="lang-en" style="display:none;"><strong>Spin Quantum Number (m_s):</strong> It describes the direction of the electron's spin on its own axis (Clockwise or Anticlockwise). Its values are +1/2 or -1/2.</span>
+            </li>
+        </ul>
+
+        <h2>
+            <span class="lang-ml">12. പ്ലാങ്കിന്റെ ക്വാണ്ടം തിയറി (Planck's Quantum Theory)</span>
+            <span class="lang-en" style="display:none;">12. Planck's Quantum Theory</span>
+        </h2>
+        <p>
+            <span class="lang-ml">മാക്സ് പ്ലാങ്ക് (Max Planck) അവതരിപ്പിച്ച ഈ തിയറി പ്രകാശത്തിന്റെ സ്വഭാവം വിശദീകരിക്കാൻ സഹായിക്കുന്നു:</span>
+            <span class="lang-en" style="display:none;">Presented by Max Planck, this theory helps explain the nature of light:</span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml"><strong>ഊർജ്ജ പാക്കറ്റുകൾ (Quanta / Photons):</strong> പ്രകാശം അല്ലെങ്കിൽ ഊർജ്ജം എന്നത് തുടർച്ചയായ തരംഗങ്ങളായല്ല (Continuous wave), മറിച്ച് ചെറിയ ഊർജ്ജ പാക്കറ്റുകളുടെ രൂപത്തിലാണ് സഞ്ചരിക്കുന്നത്. ഈ ചെറിയ ഊർജ്ജ പാക്കറ്റുകളെ ക്വാണ്ടം (Quantum) എന്നും, പ്രകാശത്തിന്റെ കാര്യത്തിൽ ഇവയെ ഫോട്ടോണുകൾ (Photons) എന്നും വിളിക്കുന്നു.</span>
+                <span class="lang-en" style="display:none;"><strong>Energy Packets (Quanta / Photons):</strong> Light or energy travels not as a continuous wave, but in the form of small packets of energy called quanta, or photons in the case of light.</span>
+            </li>
+            <li>
+                <span class="lang-ml"><strong>ഊർജ്ജ സമവാക്യം (E = hv):</strong> ഓരോ ഫോട്ടോണിന്റെയും ഊർജ്ജം (E) അതിന്റെ ആവൃത്തിക്ക് (v - Frequency) നേർപാതയിലുള്ളതാണ്.</span>
+                <span class="lang-en" style="display:none;"><strong>Energy Equation (E = hv):</strong> The energy (E) of each photon is directly proportional to its frequency (v).</span>
+            </li>
+        </ul>
+        
+        <div class="formula-box">
+            <span class="lang-ml">E = hv (ഇവിടെ h എന്നത് പ്ലാങ്ക് സ്ഥിരാങ്കമാണ് - Planck's constant, ഇതിന്റെ മൂല്യം 6.626 x 10^-34 Js ആണ്).</span>
+            <span class="lang-en" style="display:none;">E = hv (where h is Planck's constant, with a value of 6.626 x 10^-34 Js).</span>
+        </div>
+
+        <h2>
+            <span class="lang-ml">13. ഫോട്ടോ ഇലക്ട്രിക് പ്രഭാവം (Photoelectric Effect)</span>
+            <span class="lang-en" style="display:none;">13. Photoelectric Effect</span>
+        </h2>
+        <p>
+            <span class="lang-ml">ആൽബർട്ട് ഐൻസ്റ്റൈൻ (Albert Einstein) വിശദീകരിച്ച ഈ പ്രതിഭാസം പരീക്ഷയ്ക്ക് വളരെ പ്രധാനപ്പെട്ട ഒന്നാണ്:</span>
+            <span class="lang-en" style="display:none;">Explained by Albert Einstein, this phenomenon is very important for exams:</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>എന്താണ് ഫോട്ടോ ഇലക്ട്രിക് പ്രഭാവം?</strong> ഉചിതമായ ആവൃതിയുള്ള (Suitable frequency) പ്രകാശം ഒരു ലോഹത്തിന്റെ (Metal) ഉപരിതലത്തിൽ പതിക്കുമ്പോൾ, ആ ലോഹത്തിൽ നിന്ന് ഇലക്ട്രോണുകൾ പുറത്തേക്ക് തെറിച്ചുപോകുന്ന പ്രതിഭാസമാണിത്. ഈ പുറത്തുപോകുന്ന ഇലക്ട്രോണുകളെ ഫോട്ടോ-ഇലക്ട്രോണുകൾ എന്ന് വിളിക്കുന്നു.</span>
+            <span class="lang-en" style="display:none;"><strong>What is Photoelectric Effect?</strong> The phenomenon in which electrons are ejected from the surface of a metal when light of a suitable frequency falls on it. These ejected electrons are called photo-electrons.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>പ്രധാന നിരീക്ഷണങ്ങൾ:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>Main Observations:</strong></span>
+        </p>
+        <ul>
+            <li>
+                <span class="lang-ml">പ്രകാശം ലോഹത്തിൽ പതിച്ച ഉടൻതന്നെ ഇലക്ട്രോണുകൾ പുറത്തേക്ക് തെറിക്കുന്നു (സമയതാമസമില്ല).</span>
+                <span class="lang-en" style="display:none;">Electrons are ejected instantly as soon as light falls on the metal (no time lag).</span>
+            </li>
+            <li>
+                <span class="lang-ml">പുറത്തുവരുന്ന ഇലക്ട്രോണുകളുടെ എണ്ണം പതിക്കുന്ന പ്രകാശത്തിന്റെ തീവ്രതയെ (Intensity) ആശ്രയിച്ചിരിക്കുന്നു.</span>
+                <span class="lang-en" style="display:none;">The number of electrons ejected depends on the intensity of the incident light.</span>
+            </li>
+            <li>
+                <span class="lang-ml">എന്നാൽ ഇലക്ട്രോണുകളുടെ വേഗത (Kinetic energy) ആശ്രയിക്കുന്നത് പ്രകാശത്തിന്റെ ആവൃത്തിയെയാണ് (Frequency).</span>
+                <span class="lang-en" style="display:none;">However, the velocity (kinetic energy) of the electrons depends on the frequency of the light.</span>
+            </li>
+        </ul>
+        <p>
+            <span class="lang-ml"><strong>വർക്ക് ഫങ്ഷൻ (Work Function - W_0):</strong> ലോഹത്തിൽ നിന്ന് ഇലക്ട്രോണുകളെ പുറത്തെടുക്കാൻ ആവശ്യമായ ഏറ്റവും കുറഞ്ഞ ഊർജ്ജത്തെയാണ് വർക്ക് ഫങ്ഷൻ എന്ന് വിളിക്കുന്നത്.</span>
+            <span class="lang-en" style="display:none;"><strong>Work Function (W_0):</strong> The minimum energy required to eject electrons from a metal is called the work function.</span>
+        </p>
+
+        <h2>
+            <span class="lang-ml">14. ഡീ ബ്രോഗ്ലിയുടെ ദ്രവ്യത്തിന്റെ ഇരട്ട സ്വഭാവം (De Broglie's Dual Nature of Matter)</span>
+            <span class="lang-en" style="display:none;">14. De Broglie's Dual Nature of Matter</span>
+        </h2>
+        <p>
+            <span class="lang-ml"><strong>ആശയം:</strong> ലൂയി ഡീ ബ്രോഗ്ലി (Louis de Broglie) നിർദ്ദേശിച്ചത് പ്രകാശത്തിന് മാത്രമല്ല, ഇലക്ട്രോൺ പോലുള്ള ചലിക്കുന്ന അതിസൂക്ഷ്മ കണികകൾക്കും തരംഗ സ്വഭാവവും (Wave nature) കണികാ സ്വഭാവവും (Particle nature) ഉണ്ടെന്നാണ്. അതായത്, ഇവയ്ക്ക് ഇരട്ട സ്വഭാവം (Dual nature) ഉണ്ട്.</span>
+            <span class="lang-en" style="display:none;"><strong>Concept:</strong> Louis de Broglie suggested that not only light, but moving microscopic particles like electrons also possess both wave nature and particle nature. That is, they have a dual nature.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>ഡീ ബ്രോഗ്ലി സമവാക്യം:</strong> ഒരു ദ്രവ്യകണത്തിന്റെ തരംഗദൈർഘ്യം (lambda) അതിന്റെ പിണ്ഡത്തിനും (m) വേഗതയ്ക്കും (v) എതിർപാതയിലായിരിക്കും.</span>
+            <span class="lang-en" style="display:none;"><strong>De Broglie Equation:</strong> The wavelength (lambda) of a matter particle is inversely proportional to its mass (m) and velocity (v).</span>
+        </p>
+
+        <div class="formula-box">
+            <span class="lang-ml">lambda = h / (mv) (ഇവിടെ h = പ്ലാങ്ക് സ്ഥിരാങ്കം, m = പിണ്ഡം, v = വേഗത, mv എന്നാൽ മൊമെന്റം p ആണ്).</span>
+            <span class="lang-en" style="display:none;">lambda = h / (mv) (where h = Planck's constant, m = mass, v = velocity, and mv is momentum p).</span>
+        </div>
+
+        <h2>
+            <span class="lang-ml">15. ഹൈസൻബർഗിന്റെ അനിശ്ചിതത്വ തത്വം (Heisenberg's Uncertainty Principle)</span>
+            <span class="lang-en" style="display:none;">15. Heisenberg's Uncertainty Principle</span>
+        </h2>
+        <p>
+            <span class="lang-ml"><strong>എന്താണ് ഈ തത്വം?</strong> വെർണർ ഹൈസൻബർഗ് (Werner Heisenberg) അവതരിപ്പിച്ച ഈ നിയമം അനുസരിച്ച്, അതിവേഗം സഞ്ചരിക്കുന്ന ഒരു ഇലക്ട്രോണിന്റെ കൃത്യമായ സ്ഥാനവും [Δ (Delta) x] വേഗതയും/മൊമെന്റവും [Δ (Delta) p] ഒരേ സമയം പൂർണ്ണ കൃത്യതയോടെ കണക്കാക്കുക എന്നത് അസാധ്യമാണ്.</span>
+            <span class="lang-en" style="display:none;"><strong>What is this principle?</strong> According to this law presented by Werner Heisenberg, it is impossible to determine simultaneously both the exact position [Δ (Delta) x] and momentum/velocity [Δ (Delta) p] of a fast-moving electron with absolute accuracy.</span>
+        </p>
+        <p>
+            <span class="lang-ml"><strong>സൂത്രവാക്യം:</strong></span>
+            <span class="lang-en" style="display:none;"><strong>Formula:</strong></span>
+        </p>
+
+        <div class="formula-box">
+            <span class="lang-ml">Δ (Delta) x · Δ (Delta) p ≥ h / (4π)</span>
+            <span class="lang-en" style="display:none;">Δ (Delta) x · Δ (Delta) p ≥ h / (4π)</span>
+        </div>
+
+        <p>
+            <span class="lang-ml">അതായത്, സ്ഥാനത്തിലെ അനിശ്ചിതത്വവും [Δ (Delta) x] മൊമെന്റത്തിലെ അനിശ്ചിതത്വവും [Δ (Delta) p] തമ്മിലുള്ള ഗുണനഫലം എപ്പോഴും ഒരു നിശ്ചിത പരിധിയിൽ കൂടുതലായിരിക്കും. ഒന്നിന്റെ കൃത്യത കൂടുന്നതിനനുസരിച്ച് മറ്റേതിലെ പിഴവ് കൂടിക്കൊണ്ടിരിക്കും.</span>
+            <span class="lang-en" style="display:none;">That is, the product of the uncertainty in position [Δ (Delta) x] and uncertainty in momentum [Δ (Delta) p] is always greater than or equal to a constant limit. As the accuracy of one increases, the error in the other increases.</span>
+        </p>
+
+        <div class="highlight">
+            <strong>
+                <span class="lang-ml">ശ്രദ്ധിക്കുക: അടുത്ത ഭാഗം ചേർക്കാൻ തയ്യാറാണ്!</span>
+                <span class="lang-en" style="display:none;">Note: Ready to add the next part!</span>
+            </strong>
+        </div>
+    </div>
+
+    <!-- JavaScript for Language Toggle Functionality -->
+    <script>
+        function setLanguage(lang) {
+            const mlElements = document.querySelectorAll('.lang-ml');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btnMl = document.getElementById('btnMl');
+            const btnEn = document.getElementById('btnEn');
+
+            if (lang === 'ml') {
+                mlElements.forEach(el => {
+                    el.style.display = (el.tagName === 'H1' || el.classList.contains('intro-box')) ? 'block' : 'inline';
+                });
+                enElements.forEach(el => el.style.display = 'none');
+                btnMl.classList.add('active');
+                btnEn.classList.remove('active');
+            } else {
+                enElements.forEach(el => {
+                    el.style.display = (el.tagName === 'H1' || el.classList.contains('intro-box')) ? 'block' : 'inline';
+                });
+                mlElements.forEach(el => el.style.display = 'none');
+                btnEn.classList.add('active');
+                btnMl.classList.remove('active');
+            }
+        }
+        setLanguage('ml');
+    </script>
+</body>
+</html>

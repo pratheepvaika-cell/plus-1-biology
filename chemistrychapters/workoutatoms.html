@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ml" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>പ്ലസ് വൺ കെമിസ്ട്രി - അൾട്ടിമേറ്റ് മെഗാ ക്വിസ് വേൾഡ് 💖</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe6f2;
+            color: #4a0033;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+            border: 3px solid #ffb3d9;
+            position: relative;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-btn {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 3px 8px rgba(255, 105, 180, 0.3);
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: #ff1493; }
+        
+        .lang-power-container {
+            display: flex;
+            gap: 5px;
+            background: #fff0f5;
+            padding: 5px;
+            border-radius: 20px;
+            border: 2px solid #ffb3d9;
+        }
+        .lang-btn {
+            background-color: transparent;
+            color: #c71585;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        .lang-btn.active {
+            background-color: #ff1493;
+            color: white;
+            box-shadow: 0 2px 5px rgba(255, 20, 147, 0.4);
+        }
+
+        h1 { text-align: center; color: #d81b60; font-size: 28px; margin-bottom: 5px; }
+        .subtitle { text-align: center; color: #c71585; font-size: 16px; margin-bottom: 20px; }
+        .live-score {
+            background-color: #ffe4e1;
+            padding: 12px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #c71585;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 2px dashed #ff69b4;
+            position: sticky;
+            top: 10px;
+            z-index: 10;
+        }
+        .section-title {
+            background-color: #ff1493;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .question-box {
+            margin-bottom: 20px;
+            padding: 18px;
+            background-color: #fff0f5;
+            border-radius: 10px;
+            border-left: 6px solid #ff1493;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .question { font-weight: bold; font-size: 18px; margin-bottom: 12px; color: #8b008b; }
+        .options label { display: block; margin-bottom: 8px; font-size: 16px; cursor: pointer; color: #4a0033; }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ffb3d9;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-top: 5px;
+            outline: none;
+            background-color: #fff;
+        }
+        input[type="text"]:focus { border-color: #ff1493; }
+        
+        .formula-box, .math-box, .experiment-box {
+            background-color: #fff5f8;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffb3d9;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .formula-box h3, .math-box h3, .experiment-box h3 { color: #d81b60; margin-top: 0; }
+        
+        .action-btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: 0.3s;
+        }
+        .action-btn:hover { background-color: #ff1493; }
+        
+        .feedback-msg {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 15px;
+            display: none;
+        }
+        .feedback-correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback-wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .hidden-answer {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffe4e1;
+            border-radius: 6px;
+            border-left: 4px solid #ff1493;
+            display: none;
+            font-weight: bold;
+            color: #8b008b;
+        }
+
+        button.submit-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 20, 147, 0.4);
+        }
+        button.submit-btn:hover { background-color: #c71585; }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .modal-content {
+            background-color: #fff5f8;
+            margin: 10% auto;
+            padding: 35px;
+            border: 4px solid #ff69b4;
+            width: 85%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .modal-content h2 { color: #d81b60; margin-top: 0; font-size: 26px; }
+        .modal-content p { font-size: 18px; color: #4a0033; line-height: 1.6; }
+        .close-btn {
+            background-color: #ff1493;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" translate="no">
+    <div class="top-bar">
+        <button class="back-btn" onclick="goBackToChapters()" id="backBtnText">⬅️ ബാക്ക് ടു ചാപ്റ്റർ (Back)</button>
+        <div class="lang-power-container">
+            <button class="lang-btn active" id="mlLangBtn" onclick="setLanguage('ml')">മലയാളം</button>
+            <button class="lang-btn" id="enLangBtn" onclick="setLanguage('en')">English</button>
+        </div>
+    </div>
+
+    <h1 id="mainTitle">💖 പ്ലസ് വൺ കെമിസ്ട്രി: ആറ്റത്തിന്റെ ഘടന (മെഗാ ക്വിസ്) 💖</h1>
+    <div class="subtitle" id="subTitleText">ഉത്തരങ്ങൾ തത്സമയം പരിശോധിച്ച് ഫുൾ സെറ്റാകാം! ✨</div>
+    
+    <div class="live-score" id="liveScoreDisplay">തത്സമയ സ്കോർ (Live Score): 0 / 40</div>
+
+    <div class="section-title" id="sec1Title">ഭാഗം 1: ചോയ്സ് ചോദ്യങ്ങൾ (Multiple Choice Questions - 20 Questions)</div>
+    <div id="mcq-container"></div>
+
+    <div class="section-title" id="sec2Title">ഭാഗം 2: ശരിയോ തെറ്റോ (True or False - 10 Questions)</div>
+    <div id="tf-container"></div>
+
+    <div class="section-title" id="sec3Title">ഭാഗം 3: വിട്ടുപോയ ഭാഗം പൂരിപ്പിക്കുക (Fill in the Blanks - 10 Questions)</div>
+    <div id="fill-container"></div>
+
+    <div class="section-title" id="sec4Title">ഭാഗം 4: പ്രധാന ഫോർമുലകൾ സ്വയം എഴുതുക (Write Important Formulas)</div>
+    <div class="formula-box" id="formulaContainer"></div>
+
+    <div class="section-title" id="sec5Title">ഭാഗം 5: വിപുലമായ കണക്കുകൾ & പരിശീലനം (Advanced Numerical Problems)</div>
+    <div id="numerical-container"></div>
+
+    <div class="section-title" id="sec6Title">ഭാഗം 6: പരീക്ഷണങ്ങളും പ്രിൻസിപ്പലുകളും (Experiments & Principles)</div>
+    <div class="experiment-box" id="experimentContainer"></div>
+
+    <button class="submit-btn" id="submitBtnText" onclick="submitQuiz()">ഉത്തരങ്ങൾ സമർപ്പിച്ച് ഫൈനൽ സ്കോർ അറിയുക (Submit & Check Final Score)</button>
+</div>
+
+<div id="resultModal" class="modal">
+    <div class="modal-content">
+        <h2 id="modalTitle">ക്വിസ് ഫലം 🌟</h2>
+        <p id="modalMessage"></p>
+        <button class="close-btn" onclick="closeModal()">ശരി / OK 🌸</button>
+    </div>
+</div>
+
+<script class="notranslate">
+    const contentData = {
+        ml: {
+            mainTitle: "💖 പ്ലസ് വൺ കെമിസ്ട്രി: ആറ്റത്തിന്റെ ഘടന (മെഗാ ക്വിസ്) 💖",
+            subTitle: "ഉത്തരങ്ങൾ തത്സമയം പരിശോധിച്ച് ഫുൾ സെറ്റാകാം! ✨",
+            backBtn: "⬅️ ബാക്ക് ടു ചാപ്റ്റർ (Back)",
+            sec1: "ഭാഗം 1: ചോയ്സ് ചോദ്യങ്ങൾ (Multiple Choice Questions - 20 Questions)",
+            sec2: "ഭാഗം 2: ശരിയോ തെറ്റോ (True or False - 10 Questions)",
+            sec3: "ഭാഗം 3: വിട്ടുപോയ ഭാഗം പൂരിപ്പിക്കുക (Fill in the Blanks - 10 Questions)",
+            sec4: "ഭാഗം 4: പ്രധാന ഫോർമുലകൾ സ്വയം എഴുതുക (Write Important Formulas)",
+            sec5: "ഭാഗം 5: വിപുലമായ കണക്കുകൾ & പരിശീലനം (Advanced Numerical Problems)",
+            sec6: "ഭാഗം 6: പരീക്ഷണങ്ങളും പ്രിൻസിപ്പലുകളും (Experiments & Principles)",
+            submitBtn: "ഉത്തരങ്ങൾ സമർപ്പിച്ച് ഫൈനൽ സ്കോർ അറിയുക (Submit & Check Final Score)",
+            formulasList: [
+                { title: "മാസ് നമ്പർ (Mass Number)", prompt: "മാസ് നമ്പർ കാണാനുള്ള ഫോർമുല എഴുതുക:", ans: "A = Z + n" },
+                { title: "ഷെൽ ഇലക്ട്രോൺ ശേഷി (Shell Capacity)", prompt: "ഷെല്ലുകളിലെ ഇലക്ട്രോൺ ধারণശേഷി കാണാനുള്ള സമവാക്യം എഴുതുക:", ans: "2n^2" },
+                { title: "പ്ലാങ്കിന്റെ ഊർജ്ജ സമവാക്യം (Planck's Equation)", prompt: "പ്ലാങ്കിന്റെ ഊർജ്ജ സമവാക്യം എഴുതുക:", ans: "E = hν" },
+                { title: "ഡീ ബ്രോഗ്ലി സമവാക്യം (De Broglie Equation)", prompt: "ഡീ ബ്രോഗ്ലി തരംഗദൈർഘ്യ സമവാക്യം എഴുതുക:", ans: "λ = h/mv" },
+                { title: "ഹൈസൻബർഗ് അനിശ്ചിതത്വ തത്വം (Heisenberg Uncertainty)", prompt: "ഹൈസൻബർഗ് അനിശ്ചിതത്വ സമവാക്യം എഴുതുക:", ans: "Δx * Δp >= h/4π" }
+            ],
+            numericals: `
+                <div class="math-box">
+                    <p><b>കണക്ക് 1:</b> 600 nm തരംഗദൈർഘ്യമുള്ള ഒരു ഫോട്ടോന്റെ ഊർജ്ജം കണക്കാക്കുക. (h = 6.626 x 10^-34 Js, c = 3 x 10^8 m/s)</p>
+                    <p><i>പരിഹാരം:</i> E = hc / λ = 3.313 x 10^-19 J</p>
+                </div>
+                <div class="math-box">
+                    <p><b>കണക്ക് 2:</b> 100 g ഭാരമുള്ളതും 100 m/s വേഗതയിൽ സഞ്ചരിക്കുന്നതുമായ ഒരു പന്തിന്റെ ഡീ ബ്രോഗ്ലി തരംഗദൈർഘ്യം (λ) കണ്ടെത്തുക.</p>
+                    <p><i>പരിഹാരം:</i> λ = h / mv = 6.626 x 10^-35 m</p>
+                </div>
+            `,
+            experiments: `
+                <h3>🧪 1. റഥർഫോർഡിന്റെ ആൽഫ കതിർ വിസരണ പരീക്ഷണം (Alpha Scattering)</h3>
+                <p>റേഡിയോ ആക്ടീവ് സ്രോതസ്സിൽ നിന്നുള്ള ആൽഫ കണങ്ങളെ സ്വർണ്ണ തകിടിലേക്ക് കടത്തിവിടുന്നു. ഭൂരിഭാഗം കണങ്ങളും നേരെ കടന്നുപോകുന്നു. ചെറിയൊരു ശതമാനം വ്യതിചലിക്കുന്നു. ഇത് ആറ്റത്തിന്റെ കേന്ദ്രത്തിൽ ചെറിയൊരു 'ന്യൂക്ലിയസ്' ഉണ്ടെന്ന് തെളിയിക്കുന്നു.</p>
+            `,
+            mcq: [
+                { q: "1. ഇലക്ട്രോൺ കണ്ടുപിടിച്ചത് ആര്?", options: ["ജെ.ജെ. തോംസൺ", "ഗോൾഡ്‌സ്റ്റീൻ", "ചാഡ്വിക്ക്", "റഥർഫോർഡ്"], ans: 0 },
+                { q: "2. ന്യൂട്രോൺ കണ്ടെത്തിയത് ആര്?", options: ["തോംസൺ", "ജെയിംസ് ചാഡ്വിക്ക്", "നീൽസ് ബോർ", "ഐൻസ്റ്റൈൻ"], ans: 1 },
+                { q: "3. പ്രോട്ടോൺ കണ്ടെത്തിയത് ആര്?", options: ["ഗോൾഡ്‌സ്റ്റീൻ", "തോംസൺ", "ചാഡ്വിക്ക്", "ബോർ"], ans: 0 },
+                { q: "4. ആറ്റത്തിന്റെ കേന്ദ്രഭാഗം ഏതുപേരിൽ അറിയപ്പെടുന്നു?", options: ["ഓർബിറ്റ്", "ഷെൽ", "ന്യൂക്ലിയസ്", "ഓർബിറ്റൽ"], ans: 2 },
+                { q: "5. s ഓർബിറ്റലിന്റെ ആകൃതി എങ്ങനെയുള്ളതാണ്?", options: ["ഡംബെൽ", "ഗോളാകൃതി (Spherical)", "ഡബിൾ ഡംബെൽ", "വൃത്താകൃതി മാത്രം"], ans: 1 },
+                { q: "6. p ഓർബിറ്റലിന്റെ ആകൃതി എങ്ങനെയുള്ളതാണ്?", options: ["ഗോളാകൃതി", "ഡംബെൽ (Dumbbell)", "ഡബിൾ ഡംബെൽ", "രേഖാമൂലം"], ans: 1 },
+                { q: "7. പ്ലാങ്കിന്റെ സ്ഥിരാങ്കം (h) സൂചിപ്പിക്കുന്ന സമവാക്യം ഏത്?", options: ["E = mc^2", "E = hν", "F = ma", "λ = h/mv"], ans: 1 },
+                { q: "8. K ഷെല്ലിൽ ഉൾക്കൊള്ളാൻ കഴിയുന്ന പരമാവധി ഇലക്ട്രോണുകൾ എത്ര?", options: ["2", "8", "18", "32"], ans: 0 },
+                { q: "9. L ഷെല്ലിന്റെ പരമാവധി ഇലക്ട്രോൺ ধারণശേഷി എത്ര?", options: ["2", "8", "18", "32"], ans: 1 },
+                { q: "10. M ഷെല്ലിന്റെ പരമാവധി ഇലക്ട്രോൺ ধারণശേഷി എത്ര?", options: ["8", "18", "32", "50"], ans: 1 },
+                { q: "11. താഴെ പറയുന്നവരിൽ ആറ്റത്തിന്റെ കണ്ട്പിടുത്തവുമായി ബന്ധമില്ലാത്തത് ആര്?", options: ["തോംസൺ", "റഥർഫോർഡ്", "ന്യൂട്ടൺ", "ബോർ"], ans: 2 },
+                { q: "12. ഹൈഡ്രജന്റെ റേഡിയോ ആക്ടീവ് ഐസോടോപ്പ് ഏത്?", options: ["പ്രോട്ടിയം", "ഡ്യൂട്ടീരിയം", "ട്രിഷിയം", "ഹീലിയം"], ans: 2 },
+                { q: "13. ക്വാണ്ടം നമ്പറുകളുടെ എണ്ണം എത്ര?", options: ["2", "3", "4", "5"], ans: 2 },
+                { q: "14. പ്രിൻസിപ്പൽ ക്വാണ്ടം നമ്പർ എന്ത് സൂചിപ്പിക്കുന്നു?", options: ["ഷെൽ (Shell/Energy level)", "ആകൃതി", "സ്പിൻ", "ഓർബിറ്റൽ ഓറിയന്റേഷൻ"], ans: 0 },
+                { q: "15. അസിമുത്തൽ ക്വാണ്ടം നമ്പർ സൂചിപ്പിക്കുന്നത്?", options: ["പ്രധാന ഊർജ്ജ നില", "സബ്ഷെൽ/ആകൃതി (Subshell)", "സ്പിൻ", "ന്യൂക്ലിയസ് ചാർജ്"], ans: 1 },
+                { q: "16. പൗലിയുടെ അപവർജ്ജന തത്വം അനുസരിച്ച് ഒരു ഓർബിറ്റലിൽ പരമാവധി എത്ര ഇലക്ട്രോണുകൾ ഉണ്ടാകാം?", options: ["1", "2", "6", "10"], ans: 1 },
+                { q: "17. ഹണ്ടിന്റെ നിയമം (Hund's Rule) എന്തുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു?", options: ["ഇലക്ട്രോൺ ഫില്ലിംഗ് ഇൻ സബ്ഷെൽസ്", "ഊർജ്ജം", "തരംഗദൈർഘ്യം", "വേഗത"], ans: 0 },
+                { q: "18. അഫ്ബൗ തത്വം (Aufbau Principle) അനുസരിച്ച് ഇലക്ട്രോണുകൾ നിറയുന്നത് എങ്ങനെ?", options: ["കൂടിയ ഊർജ്ജമുള്ള ഓർബിറ്റലിൽ നിന്ന് കുറഞ്ഞതിലേക്ക്", "കുറഞ്ഞ ഊർജ്ജമുള്ള ഓർബിറ്റലിൽ നിന്ന് കൂടിയതിലേക്ക്", "ക്രമരഹിതമായി", "തുല്യ ഊർജ്ജമുള്ളവയിൽ മാത്രം"], ans: 1 },
+                { q: "19. കോപ്പറിന്റെ (Cu) തെറ്റായ അറ്റോമിക കോൺഫിഗറേഷന് കാരണം എന്താണ്?", options: ["പൂർണ്ണമായ സ്ഥിരത (Full/Half filled stability)", "വലിപ്പം കുറവ്", "ന്യൂട്രോൺ കുറവ്", "പ്രോട്ടോൺ കുറവ്"], ans: 0 },
+                { q: "20. ഇലക്ട്രോണിന്റെ മാസ് മൂല്യം എത്രയാണ്?", options: ["9.1 x 10^-31 kg", "1.6 x 10^-27 kg", "3 x 10^8 m/s", "6.626 x 10^-34"], ans: 0 }
+            ],
+            tf: [
+                { q: "21. പ്രോട്ടോണിന് പോസിറ്റീവ് ചാർജ്ജാണ് ഉള്ളത്.", ans: "ശരി" },
+                { q: "22. ഹൈഡ്രജന്റെ ഒരു ഐസോടോപ്പാണ് ട്രിഷിയം.", ans: "ശരി" },
+                { q: "23. റഥർഫോർഡ് പരീക്ഷണത്തിൽ സിൽവർ തകിടാണ് ഉപയോഗിച്ചത്.", ans: "തെറ്റ്" },
+                { q: "24. ഇലക്ട്രോണിന് നെഗറ്റീവ് ചാർജ്ജാണുള്ളത്.", ans: "ശരി" },
+                { q: "25. ഓർബിറ്റലും ഓർബിറ്റും ഒന്നാണ്.", ans: "തെറ്റ്" },
+                { q: "26. ഡി ബ്രോഗ്ലി കണികകൾക്കും തരംഗങ്ങൾക്കും ഇരട്ട സ്വഭാവം ഉണ്ടെന്ന് പറഞ്ഞു.", ans: "ശരി" },
+                { q: "27. ഹൈസൻബർഗ് അനിശ്ചിതത്വ തത്വം പൊസിഷനും മൊമെന്റവും ഒരേ സമയം കാണാൻ പറ്റില്ല എന്ന് പറയുന്നു.", ans: "ശരി" },
+                { q: "28. d ഓർബിറ്റലിൽ പരമാവധി 10 ഇലക്ട്രോണുകൾ ഉൾക്കൊള്ളാം.", ans: "ശരി" },
+                { q: "29. f ഓർബിറ്റലിന്റെ ആകൃതി ഡംബെൽ ആണ്.", ans: "തെറ്റ്" },
+                { q: "30. ഫോട്ടോഇലക്ട്രിക് എഫക്റ്റ് കണ്ടെത്തിയത് ഐൻസ്റ്റൈൻ ആണ്.", ans: "ശരി" }
+            ],
+            fill: [
+                { q: "31. കനാൽ റേസ് പരീക്ഷണത്തിലൂടെ കണ്ടെത്തിയത് ................. ആണ്.", ans: "പ്രോട്ടോൺ" },
+                { q: "32. ബോർ-ബറി നിയമപ്രകാരം ഷെല്ലുകളിൽ ഇലക്ട്രോണുകൾ നിറയുന്ന സൂത്രവാക്യം ................. ആണ്.", ans: "2n^2" },
+                { q: "33. ഹൈഡ്രജന്റെ മാസ് നമ്പർ ഏറ്റവും കുറവുള്ള ഐസോടോപ്പ് ................. ആണ്.", ans: "പ്രോട്ടിയം" },
+                { q: "34. അറ്റോമിക നമ്പർ എന്നാൽ ആറ്റത്തിലെ ................. എണ്ണമാണ്.", ans: "പ്രോട്ടോൺ" },
+                { q: "35. മാസ് നമ്പർ എന്നത് പ്രോട്ടോണുകളുടെയും ................. എണ്ണവും ചേർന്നതാണ്.", ans: "ന്യൂട്രോൺ" },
+                { q: "36. ഒരു ഇലക്ട്രോണിന്റെ ചാർജ് നെഗറ്റീവ് മൂല്യം ................. ആണ്.", ans: "1.6 x 10^-19 C" },
+                { q: "37. മാഗ്നറ്റിക് ക്വാണ്ടം നമ്പർ സൂചിപ്പിക്കുന്നത് ഓർബിറ്റലുകളുടെ ................. ആണ്.", ans: "ഓറിയന്റേഷൻ" },
+                { q: "38. സ്പിൻ ക്വാണ്ടം നമ്പറിന്റെ മൂല്യങ്ങൾ ................. ആകാം.", ans: "+1/2, -1/2" },
+                { q: "39. 3d ഓർബിറ്റലിന് തൊട്ടുമുമ്പ് ഇലക്ട്രോൺ പ്രവേശിക്കുന്നത് ................. ഓർബിറ്റലിലാണ്.", ans: "4s" },
+                { q: "40. പ്രകാശത്തിന്റെ വേഗത ................. ന് തുല്യമാണ്.", ans: "3 x 10^8 m/s" }
+            ]
+        },
+        en: {
+            mainTitle: "💖 Plus One Chemistry: Structure of Atom (Mega Quiz) 💖",
+            subTitle: "Check Answers Instantly and Master Concepts! ✨",
+            backBtn: "⬅️ Back to Chapters",
+            sec1: "Part 1: Multiple Choice Questions (20 Questions)",
+            sec2: "Part 2: True or False (10 Questions)",
+            sec3: "Part 3: Fill in the Blanks (10 Questions)",
+            sec4: "Part 4: Write Important Formulas Yourself",
+            sec5: "Part 5: Advanced Numerical Problems",
+            sec6: "Part 6: Experiments & Principles",
+            submitBtn: "Submit Answers & Check Final Score",
+            formulasList: [
+                { title: "Mass Number", prompt: "Write formula to calculate Mass Number:", ans: "A = Z + n" },
+                { title: "Shell Electron Capacity", prompt: "Write formula for maximum shell electrons:", ans: "2n^2" },
+                { title: "Planck's Energy Equation", prompt: "Write Planck's energy equation:", ans: "E = hν" },
+                { title: "De Broglie Equation", prompt: "Write De Broglie wavelength equation:", ans: "λ = h/mv" },
+                { title: "Heisenberg Uncertainty Principle", prompt: "Write Heisenberg uncertainty relation:", ans: "Δx * Δp >= h/4π" }
+            ],
+            numericals: `
+                <div class="math-box">
+                    <p><b>Problem 1:</b> Calculate the energy of a photon with a wavelength of 600 nm. (h = 6.626 x 10^-34 Js, c = 3 x 10^8 m/s)</p>
+                    <p><i>Solution:</i> E = hc / λ = 3.313 x 10^-19 J</p>
+                </div>
+                <div class="math-box">
+                    <p><b>Problem 2:</b> Calculate the de Broglie wavelength (λ) of a ball weighing 100 g and moving at 100 m/s.</p>
+                    <p><i>Solution:</i> λ = h / mv = 6.626 x 10^-35 m</p>
+                </div>
+            `,
+            experiments: `
+                <h3>🧪 1. Rutherford's Alpha Scattering Experiment</h3>
+                <p>Alpha particles are bombarded on a gold foil. Most pass straight through, a few deflect. This proved the presence of a central 'Nucleus'.</p>
+            `,
+            mcq: [
+                { q: "1. Who discovered the Electron?", options: ["J.J. Thomson", "Goldstein", "Chadwick", "Rutherford"], ans: 0 },
+                { q: "2. Who discovered the Neutron?", options: ["Thomson", "James Chadwick", "Niels Bohr", "Einstein"], ans: 1 },
+                { q: "3. Who discovered the Proton?", options: ["Goldstein", "Thomson", "Chadwick", "Bohr"], ans: 0 },
+                { q: "4. What is the central core of an atom called?", options: ["Orbit", "Shell", "Nucleus", "Orbital"], ans: 2 },
+                { q: "5. What is the shape of an s-orbital?", options: ["Dumbbell", "Spherical", "Double dumbbell", "Circular only"], ans: 1 },
+                { q: "6. What is the shape of a p-orbital?", options: ["Spherical", "Dumbbell", "Double dumbbell", "Linear"], ans: 1 },
+                { q: "7. Which equation represents Planck's energy?", options: ["E = mc^2", "E = hν", "F = ma", "λ = h/mv"], ans: 1 },
+                { q: "8. Maximum number of electrons in K shell is?", options: ["2", "8", "18", "32"], ans: 0 },
+                { q: "9. Maximum number of electrons in L shell is?", options: ["2", "8", "18", "32"], ans: 1 },
+                { q: "10. Maximum number of electrons in M shell is?", options: ["8", "18", "32", "50"], ans: 1 },
+                { q: "11. Who has no direct contribution to atomic models?", options: ["Thomson", "Rutherford", "Newton", "Bohr"], ans: 2 },
+                { q: "12. Radioactive isotope of Hydrogen is?", options: ["Protium", "Deuterium", "Tritium", "Helium"], ans: 2 },
+                { q: "13. Total number of quantum numbers is?", options: ["2", "3", "4", "5"], ans: 2 },
+                { q: "14. Principal quantum number signifies?", options: ["Shell/Energy level", "Shape", "Spin", "Orientation"], ans: 0 },
+                { q: "15. Azimuthal quantum number signifies?", options: ["Energy level", "Subshell/Shape", "Spin", "Charge"], ans: 1 },
+                { q: "16. Pauli's Exclusion Principle states maximum electrons in an orbital are?", options: ["1", "2", "6", "10"], ans: 1 },
+                { q: "17. Hund's Rule is related to?", options: ["Electron filling in subshells", "Energy", "Wavelength", "Speed"], ans: 0 },
+                { q: "18. According to Aufbau Principle, electrons fill orbitals in order of?", options: ["Higher to lower energy", "Lower to higher energy", "Randomly", "Equal energy only"], ans: 1 },
+                { q: "19. Exception in Copper (Cu) configuration is due to?", options: ["Full/Half filled stability", "Smaller size", "Fewer neutrons", "Fewer protons"], ans: 0 },
+                { q: "20. Mass value of an electron is?", options: ["9.1 x 10^-31 kg", "1.6 x 10^-27 kg", "3 x 10^8 m/s", "6.626 x 10^-34"], ans: 0 }
+            ],
+            tf: [
+                { q: "21. Proton carries a positive charge.", ans: "True" },
+                { q: "22. Tritium is an isotope of Hydrogen.", ans: "True" },
+                { q: "23. Silver foil was used in Rutherford's experiment.", ans: "False" },
+                { q: "24. Electron carries a negative charge.", ans: "True" },
+                { q: "25. Orbit and Orbital are the same.", ans: "False" },
+                { q: "26. De Broglie proposed dual nature of matter.", ans: "True" },
+                { q: "27. Heisenberg Uncertainty Principle states position and momentum can't be measured simultaneously with absolute accuracy.", ans: "True" },
+                { q: "28. d-orbital can accommodate a maximum of 10 electrons.", ans: "True" },
+                { q: "29. Shape of f-orbital is dumbbell.", ans: "False" },
+                { q: "30. Photoelectric effect was explained by Einstein.", ans: "True" }
+            ],
+            fill: [
+                { q: "31. Canal ray experiment led to the discovery of ..................", ans: "Proton" },
+                { q: "32. Formula for maximum electrons in a shell according to Bohr-Bury is ..................", ans: "2n^2" },
+                { q: "33. The isotope of Hydrogen with the lowest mass number is ..................", ans: "Protium" },
+                { q: "34. Atomic number is equal to the number of ................. in an atom.", ans: "Proton" },
+                { q: "35. Mass number is the sum of protons and ..................", ans: "Neutron" },
+                { q: "36. Negative charge value of an electron is ..................", ans: "1.6 x 10^-19 C" },
+                { q: "37. Magnetic quantum number describes orbital ..................", ans: "Orientation" },
+                { q: "38. Values of Spin quantum number can be ..................", ans: "+1/2, -1/2" },
+                { q: "39. Electrons enter .................. orbital just before 3d.", ans: "4s" },
+                { q: "40. Speed of light is equal to ..................", ans: "3 x 10^8 m/s" }
+            ]
+        }
+    };
+
+    let currentLang = "ml";
+
+    function loadQuiz() {
+        const data = contentData[currentLang];
+
+        document.getElementById("mainTitle").innerText = data.mainTitle;
+        document.getElementById("subTitleText").innerText = data.subTitle;
+        document.getElementById("backBtnText").innerText = data.backBtn;
+        document.getElementById("sec1Title").innerText = data.sec1;
+        document.getElementById("sec2Title").innerText = data.sec2;
+        document.getElementById("sec3Title").innerText = data.sec3;
+        document.getElementById("sec4Title").innerText = data.sec4;
+        document.getElementById("sec5Title").innerText = data.sec5;
+        document.getElementById("sec6Title").innerText = data.sec6;
+        document.getElementById("submitBtnText").innerText = data.submitBtn;
+
+        document.getElementById("numerical-container").innerHTML = data.numericals;
+        document.getElementById("experimentContainer").innerHTML = data.experiments;
+
+        let formulaHtml = "";
+        data.formulasList.forEach((item, index) => {
+            let placeholderText = currentLang === "ml" ? "ഫോർമുല ഇവിടെ ടൈപ്പ് ചെയ്യുക..." : "Type formula here...";
+            let btnText = currentLang === "ml" ? "ശരിയായ ഫോർമുല കാണുക (Show Answer)" : "Show Answer";
+            let ansLabel = currentLang === "ml" ? "ശരിയായ ഫോർമുല:" : "Correct Formula:";
+            formulaHtml += `
+                <div class="question-box">
+                    <div class="question"><b>${item.title}</b>: ${item.prompt}</div>
+                    <input type="text" id="formulaInput${index}" placeholder="${placeholderText}">
+                    <button class="action-btn" onclick="toggleFormulaAns(${index})">${btnText}</button>
+                    <div class="hidden-answer" id="formulaAns${index}">${ansLabel} <b>${item.ans}</b></div>
+                </div>
+            `;
+        });
+        document.getElementById("formulaContainer").innerHTML = formulaHtml;
+
+        let mcqHtml = "";
+        data.mcq.forEach((item, index) => {
+            let optHtml = "";
+            item.options.forEach((opt, i) => {
+                optHtml += `<label><input type="radio" name="mcq${index}" value="${i}" onclick="checkMCQ(${index}, ${i})"> ${opt}</label>`;
+            });
+            let fbText = currentLang === "ml" ? "ശരിയായ ഉത്തരം:" : "Correct Answer:";
+            mcqHtml += `
+                <div class="question-box">
+                    <div class="question">${item.q}</div>
+                    <div class="options">${optHtml}</div>
+                    <div id="mcqFeedback${index}" class="feedback-msg"></div>
+                </div>`;
+        });
+        document.getElementById("mcq-container").innerHTML = mcqHtml;
+
+        let tfHtml = "";
+        data.tf.forEach((item, index) => {
+            let opt1 = currentLang === "ml" ? "ശരി" : "True";
+            let opt2 = currentLang === "ml" ? "തെറ്റ്" : "False";
+            tfHtml += `
+                <div class="question-box">
+                    <div class="question">${item.q}</div>
+                    <div class="options">
+                        <label><input type="radio" name="tf${index}" value="${opt1}" onclick="checkTF(${index}, '${opt1}')"> ${opt1}</label>
+                        <label><input type="radio" name="tf${index}" value="${opt2}" onclick="checkTF(${index}, '${opt2}')"> ${opt2}</label>
+                    </div>
+                    <div id="tfFeedback${index}" class="feedback-msg"></div>
+                </div>`;
+        });
+        document.getElementById("tf-container").innerHTML = tfHtml;
+
+        let fillHtml = "";
+        data.fill.forEach((item, index) => {
+            let placeholderText = currentLang === "ml" ? "ഉത്തരം ഇവിടെ എഴുതുക..." : "Type answer here...";
+            let checkBtnText = currentLang === "ml" ? "പരിശോധിക്കുക (Check)" : "Check Answer";
+            fillHtml += `
+                <div class="question-box">
+                    <div class="question">${item.q}</div>
+                    <input type="text" id="fill${index}" placeholder="${placeholderText}" oninput="updateLiveScore()">
+                    <button class="action-btn" onclick="checkFill(${index})">${checkBtnText}</button>
+                    <div id="fillFeedback${index}" class="feedback-msg"></div>
+                </div>`;
+        });
+        document.getElementById("fill-container").innerHTML = fillHtml;
+
+        updateLiveScore();
+    }
+
+    function checkMCQ(qIndex, selectedOpt) {
+        const data = contentData[currentLang];
+        const item = data.mcq[qIndex];
+        const fbDiv = document.getElementById(`mcqFeedback${qIndex}`);
+        fbDiv.style.display = "block";
+
+        if (selectedOpt === item.ans) {
+            fbDiv.className = "feedback-msg feedback-correct";
+            fbDiv.innerText = currentLang === "ml" ? "ശരിയാണ്! 🎉" : "Correct! 🎉";
+        } else {
+            fbDiv.className = "feedback-msg feedback-wrong";
+            let correctText = item.options[item.ans];
+            fbDiv.innerText = currentLang === "ml" ? `തെറ്റാണ്. ശരിയായ ഉത്തരം: ${correctText}` : `Wrong. Correct Answer: ${correctText}`;
+        }
+        updateLiveScore();
+    }
+
+    function checkTF(qIndex, selectedVal) {
+        const data = contentData[currentLang];
+        const item = data.tf[qIndex];
+        const fbDiv = document.getElementById(`tfFeedback${qIndex}`);
+        fbDiv.style.display = "block";
+
+        if (selectedVal === item.ans) {
+            fbDiv.className = "feedback-msg feedback-correct";
+            fbDiv.innerText = currentLang === "ml" ? "ശരിയാണ്! 🎉" : "Correct! 🎉";
+        } else {
+            fbDiv.className = "feedback-msg feedback-wrong";
+            fbDiv.innerText = currentLang === "ml" ? `തെറ്റാണ്. ശരിയായ ഉത്തരം: ${item.ans}` : `Wrong. Correct Answer: ${item.ans}`;
+        }
+        updateLiveScore();
+    }
+
+    function checkFill(qIndex) {
+        const data = contentData[currentLang];
+        const item = data.fill[qIndex];
+        const val = document.getElementById(`fill${qIndex}`).value.trim();
+        const fbDiv = document.getElementById(`fillFeedback${qIndex}`);
+        fbDiv.style.display = "block";
+
+        if (val.toLowerCase() === item.ans.toLowerCase()) {
+            fbDiv.className = "feedback-msg feedback-correct";
+            fbDiv.innerText = currentLang === "ml" ? "ശരിയാണ്! 🎉" : "Correct! 🎉";
+        } else {
+            fbDiv.className = "feedback-msg feedback-wrong";
+            fbDiv.innerText = currentLang === "ml" ? `തെറ്റാണ്. ശരിയായ ഉത്തരം: ${item.ans}` : `Wrong. Correct Answer: ${item.ans}`;
+        }
+        updateLiveScore();
+    }
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        if(lang === 'ml') {
+            document.getElementById("mlLangBtn").classList.add("active");
+            document.getElementById("enLangBtn").classList.remove("active");
+        } else {
+            document.getElementById("enLangBtn").classList.add("active");
+            document.getElementById("mlLangBtn").classList.remove("active");
+        }
+        loadQuiz();
+    }
+
+    function toggleFormulaAns(index) {
+        const ansDiv = document.getElementById(`formulaAns${index}`);
+        ansDiv.style.display = (ansDiv.style.display === "block") ? "none" : "block";
+    }
+
+    function goBackToChapters() {
+        window.location.href = "deepclass.html";
+    }
+
+    function updateLiveScore() {
+        let score = 0;
+        const data = contentData[currentLang];
+
+        data.mcq.forEach((item, index) => {
+            const selected = document.querySelector(`input[name="mcq${index}"]:checked`);
+            if (selected && parseInt(selected.value) === item.ans) score++;
+        });
+
+        data.tf.forEach((item, index) => {
+            const selected = document.querySelector(`input[name="tf${index}"]:checked`);
+            if (selected && selected.value === item.ans) score++;
+        });
+
+        data.fill.forEach((item, index) => {
+            const val = document.getElementById(`fill${index}`).value.trim();
+            if (val.toLowerCase() === item.ans.toLowerCase()) score++;
+        });
+
+        let scoreTextML = `തത്സമയ സ്കോർ (Live Score): ${score} / 40`;
+        let scoreTextEN = `Live Score: ${score} / 40`;
+        document.getElementById("liveScoreDisplay").innerText = currentLang === "ml" ? scoreTextML : scoreTextEN;
+    }
+
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = currentLang === 'ml' ? 'ml-IN' : 'en-US';
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function submitQuiz() {
+        let score = 0;
+        const data = contentData[currentLang];
+
+        data.mcq.forEach((item, index) => {
+            const selected = document.querySelector(`input[name="mcq${index}"]:checked`);
+            if (selected && parseInt(selected.value) === item.ans) score++;
+        });
+
+        data.tf.forEach((item, index) => {
+            const selected = document.querySelector(`input[name="tf${index}"]:checked`);
+            if (selected && selected.value === item.ans) score++;
+        });
+
+        data.fill.forEach((item, index) => {
+            const val = document.getElementById(`fill${index}`).value.trim();
+            if (val.toLowerCase() === item.ans.toLowerCase()) score++;
+        });
+
+        let motivationMsg = "";
+        if (currentLang === "ml") {
+            if (score === 40) {
+                motivationMsg = `അഭിനന്ദനങ്ങൾ! നിങ്ങൾ 40-ൽ 40 ഉം ശരിയാക്കി ഫുൾ മാർക്ക് നേടിയിരിക്കുന്നു! സൂപ്പർ! 🌸✨`;
+            } else if (score >= 30) {
+                motivationMsg = `വളരെ മികച്ച പ്രകടനം! നിങ്ങൾക്ക് 40-ൽ ${score} മാർക്ക് ലഭിച്ചിട്ടുണ്ട്. 💖🌷`;
+            } else {
+                motivationMsg = `നല്ല ശ്രമം! നിങ്ങൾക്ക് 40-ൽ ${score} മാർക്ക് ലഭിച്ചിട്ടുണ്ട്. ഫോർമുലകളും കണക്കുകളും ഒന്നുകൂടി നോക്കുക! 💪✨`;
+            }
+            document.getElementById("modalTitle").innerText = `നിങ്ങളുടെ ഫൈനൽ സ്കോർ: ${score} / 40`;
+        } else {
+            if (score === 40) {
+                motivationMsg = `Congratulations! You scored 40 out of 40! Full marks! 🌸✨`;
+            } else if (score >= 30) {
+                motivationMsg = `Great job! You scored ${score} out of 40. Keep it up! 💖🌷`;
+            } else {
+                motivationMsg = `Good effort! You scored ${score} out of 40. Review the formulas and problems once again! 💪✨`;
+            }
+            document.getElementById("modalTitle").innerText = `Your Final Score: ${score} / 40`;
+        }
+
+        document.getElementById("modalMessage").innerText = motivationMsg;
+        document.getElementById("resultModal").style.display = "block";
+        speakText(motivationMsg);
+    }
+
+    function closeModal() {
+        document.getElementById("resultModal").style.display = "none";
+    }
+
+    loadQuiz();
+</script>
+
+</body>
+</html>
